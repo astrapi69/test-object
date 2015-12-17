@@ -5,13 +5,13 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-java-parent</artifactId>
-		<version>2.2.0</version>
+		<version>2.4.0</version>
 		<relativePath></relativePath>
 	</parent>
 
 	<artifactId>test-objects</artifactId>
-	<version>4.8.0</version>	
-	
+	<version>4.8.0</version>
+
 	<name>${project.artifactId}</name>
 
 	<description>
@@ -35,14 +35,14 @@
 		<system>github</system>
 		<url>https://github.com/lightblueseas/test-objects/issues</url>
 	</issueManagement>
-	
+
 	<dependencies>
-	
+
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 		</dependency>
-		
+
 	</dependencies>
-	
+
 </project>
