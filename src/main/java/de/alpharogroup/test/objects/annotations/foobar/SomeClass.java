@@ -25,7 +25,7 @@
 package de.alpharogroup.test.objects.annotations.foobar;
 
 /**
- * The Class SomeClass.
+ * The class SomeClass.
  */
 public class SomeClass
 {
