@@ -37,7 +37,7 @@ import de.alpharogroup.test.objects.annotations.Mandatory;
 import de.alpharogroup.test.objects.enums.Brands;
 
 /**
- * The Class Customer.
+ * The class Customer.
  */
 @Getter
 @Setter
