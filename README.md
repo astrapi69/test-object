@@ -1,5 +1,6 @@
 # test-objects
 
+Project that holds test objects for unit tests
 
 ## License
 
@@ -52,6 +53,7 @@ Do not hesitate to contact the test-objects developers with your questions, conc
 
 # Donate
 
+If you like this library, please consider a donation through 
 <a href="https://flattr.com/submit/auto?fid=r7vp62&url=https%3A%2F%2Fgithub.com%2Flightblueseas%2Ftest-objects" target="_blank">
 <img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" />
 </a>
