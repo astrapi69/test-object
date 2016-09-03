@@ -35,7 +35,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 /**
- * The Class Person.
+ * The class Person.
  */
 @Getter
 @Setter

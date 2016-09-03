@@ -25,7 +25,7 @@
 package de.alpharogroup.test.objects.exceptions;
 
 /**
- * The Class ExceptionEvent.
+ * The class ExceptionEvent.
  */
 public class ExceptionEvent
 {

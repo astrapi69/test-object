@@ -25,7 +25,7 @@
 package de.alpharogroup.test.objects;
 
 /**
- * The Class A.
+ * The class A.
  */
 public class A
 {
