@@ -40,7 +40,7 @@ import lombok.experimental.Accessors;
 @EqualsAndHashCode
 @ToString
 @Accessors(chain = true)
-final @Builder
+@Builder
 public class Roles
 {
 
