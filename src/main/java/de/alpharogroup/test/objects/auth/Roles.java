@@ -26,19 +26,25 @@ package de.alpharogroup.test.objects.auth;
 
 import java.util.Set;
 
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.Singular;
+import lombok.ToString;
+import lombok.experimental.Accessors;
+
+
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
+@Accessors(chain = true)
+final @Builder
 public class Roles
 {
 
+	@Singular
 	Set<Role> roles;
-
-	public Set<Role> getRoles()
-	{
-		return roles;
-	}
-
-	public void setRoles(final Set<Role> roles)
-	{
-		this.roles = roles;
-	}
 
 }

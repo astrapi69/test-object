@@ -26,6 +26,20 @@ package de.alpharogroup.test.objects.auth;
 
 import java.util.Set;
 
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+import lombok.experimental.Accessors;
+
+
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
+@Accessors(chain = true)
+@Builder
 public class Role
 {
 
@@ -33,24 +47,4 @@ public class Role
 
 	Set<AccessRight> rights;
 
-
-	public String getDescription()
-	{
-		return description;
-	}
-
-	public Set<AccessRight> getRights()
-	{
-		return rights;
-	}
-
-	public void setDescription(final String description)
-	{
-		this.description = description;
-	}
-
-	public void setRights(final Set<AccessRight> rights)
-	{
-		this.rights = rights;
-	}
 }
