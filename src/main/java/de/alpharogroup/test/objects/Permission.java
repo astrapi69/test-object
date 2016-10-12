@@ -24,6 +24,21 @@
  */
 package de.alpharogroup.test.objects;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Permission
 {
 
@@ -32,47 +47,5 @@ public class Permission
 	private String shortcut;
 
 	private String description;
-
-	public Permission()
-	{
-		super();
-	}
-
-	public Permission(final String name, final String description)
-	{
-		this();
-		this.name = name;
-		this.description = description;
-	}
-
-	public String getDescription()
-	{
-		return this.description;
-	}
-
-	public String getName()
-	{
-		return this.name;
-	}
-
-	public String getShortcut()
-	{
-		return shortcut;
-	}
-
-	public void setDescription(final String description)
-	{
-		this.description = description;
-	}
-
-	public void setName(final String name)
-	{
-		this.name = name;
-	}
-
-	public void setShortcut(final String shortcut)
-	{
-		this.shortcut = shortcut;
-	}
 
 }

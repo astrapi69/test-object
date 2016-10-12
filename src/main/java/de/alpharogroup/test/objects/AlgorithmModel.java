@@ -24,32 +24,23 @@
  */
 package de.alpharogroup.test.objects;
 
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+import lombok.experimental.Accessors;
+
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
+@Accessors(chain = true)
+@Builder
 public class AlgorithmModel
 {
-
 	private int a;
 
 	private int b;
 
-	public int getA()
-	{
-		return a;
-	}
-
-	public int getB()
-	{
-		return b;
-	}
-
-	public AlgorithmModel setA(final int a)
-	{
-		this.a = a;
-		return this;
-	}
-
-	public AlgorithmModel setB(final int b)
-	{
-		this.b = b;
-		return this;
-	}
 }

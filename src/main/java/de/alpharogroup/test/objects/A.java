@@ -24,60 +24,25 @@
  */
 package de.alpharogroup.test.objects;
 
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+import lombok.experimental.Accessors;
+
 /**
  * The class A.
  */
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
+@Accessors(chain = true)
+@Builder
 public class A
 {
-
 	/** The a. */
 	private String a;
-
-	/**
-	 * Returns <code>true</code> if this <code>A</code> is the same as the o argument.
-	 * 
-	 * @param o
-	 *            the o
-	 * @return is the same as the o argument.
-	 */
-	@Override
-	public boolean equals(final Object o)
-	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (o == null)
-		{
-			return false;
-		}
-		if (o.getClass() != getClass())
-		{
-			return false;
-		}
-		final A castedObj = (A)o;
-		return this.a == null ? castedObj.a == null : this.a.equals(castedObj.a);
-	}
-
-	/**
-	 * Gets the a.
-	 * 
-	 * @return the a
-	 */
-	public String getA()
-	{
-		return a;
-	}
-
-	/**
-	 * Sets the a.
-	 * 
-	 * @param a
-	 *            the new a
-	 */
-	public void setA(final String a)
-	{
-		this.a = a;
-	}
 
 }
