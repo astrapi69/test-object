@@ -24,6 +24,21 @@
  */
 package de.alpharogroup.test.objects;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Television
 {
 
@@ -33,7 +48,7 @@ public class Television
 
 	public int getChannel()
 	{
-		return channel;
+		return this.channel;
 	}
 
 	public void setChannel(final int channel)
@@ -43,11 +58,11 @@ public class Television
 
 	public void switchOff()
 	{
-		on = false;
+		this.on = false;
 	}
 
 	public void switchOn()
 	{
-		on = true;
+		this.on = true;
 	}
 }

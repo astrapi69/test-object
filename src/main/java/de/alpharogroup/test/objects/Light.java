@@ -24,20 +24,27 @@
  */
 package de.alpharogroup.test.objects;
 
-//Concrete Receiver
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+/**
+ * The Class Light is a concrete receiver.
+ */
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Light
 {
 	private boolean on;
-
-	public boolean isOn()
-	{
-		return on;
-	}
-
-	public void setOn(final boolean on)
-	{
-		this.on = on;
-	}
 
 	public void switchOff()
 	{

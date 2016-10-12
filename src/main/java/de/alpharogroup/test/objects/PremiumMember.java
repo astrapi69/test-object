@@ -24,20 +24,23 @@
  */
 package de.alpharogroup.test.objects;
 
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
+@NoArgsConstructor
+@AllArgsConstructor
 public class PremiumMember extends Member
 {
 
 	private static final long serialVersionUID = 1L;
 	private String credits;
-
-	public String getCredits()
-	{
-		return credits;
-	}
-
-	public void setCredits(final String credits)
-	{
-		this.credits = credits;
-	}
 
 }
