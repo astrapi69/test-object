@@ -26,6 +26,8 @@ package de.alpharogroup.test.objects;
 
 import java.io.Serializable;
 
+import de.alpharogroup.test.objects.annotations.Mandatory;
+import de.alpharogroup.test.objects.enums.Brands;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
@@ -33,11 +35,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-import de.alpharogroup.test.objects.annotations.Mandatory;
-import de.alpharogroup.test.objects.enums.Brands;
+import lombok.experimental.Accessors;
 
 /**
- * The class Customer.
+ * The class {@link Customer}.
  */
 @Getter
 @Setter
@@ -45,6 +46,7 @@ import de.alpharogroup.test.objects.enums.Brands;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
+@Accessors(chain = true)
 @Builder
 public class Customer implements Serializable
 {

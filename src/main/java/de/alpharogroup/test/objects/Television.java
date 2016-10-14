@@ -31,38 +31,47 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
 
+/**
+ * The class {@link Television}.
+ */
 @Getter
 @Setter
 @EqualsAndHashCode
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
+@Accessors(chain = true)
 @Builder
 public class Television
 {
 
+	/** The on flag. */
 	boolean on;
 
+	/** The channel. */
 	int channel;
 
-	public int getChannel()
-	{
-		return this.channel;
-	}
-
-	public void setChannel(final int channel)
-	{
-		this.channel = channel;
-	}
-
-	public void switchOff()
+	/**
+	 * Switch off.
+	 *
+	 * @return the television
+	 */
+	public Television switchOff()
 	{
 		this.on = false;
+		return this;
 	}
 
-	public void switchOn()
+	/**
+	 * Switch on.
+	 *
+	 * @return the television
+	 */
+	public Television switchOn()
 	{
 		this.on = true;
+		return this;
 	}
 }

@@ -24,6 +24,9 @@
  */
 package de.alpharogroup.test.objects.annotations;
 
+/**
+ * The class {@link SubAnnotatedClass}.
+ */
 public class SubAnnotatedClass extends AnnotatedClass
 {
 

@@ -24,14 +24,34 @@
  */
 package de.alpharogroup.test.objects.generics;
 
+/**
+ * The Class GenericDao.
+ *
+ * @param <E>
+ *            the element type
+ * @param <PK>
+ *            the generic type
+ */
 public abstract class GenericDao<E, PK>
 {
 
+	/**
+	 * Delete.
+	 *
+	 * @param entity
+	 *            the entity
+	 */
 	void delete(final E entity)
 	{
 
 	}
 
+	/**
+	 * Save.
+	 *
+	 * @param entity
+	 *            the entity
+	 */
 	void save(final E entity)
 	{
 

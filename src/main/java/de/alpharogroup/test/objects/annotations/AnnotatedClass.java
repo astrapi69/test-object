@@ -27,7 +27,7 @@ package de.alpharogroup.test.objects.annotations;
 import de.alpharogroup.test.objects.TestAnnotation;
 
 /**
- * The class AnnotatedClass.
+ * The class {@link AnnotatedClass}.
  */
 @TestAnnotation
 public class AnnotatedClass

@@ -33,9 +33,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
 
 /**
- * The class Person.
+ * The class {@link Person}.
  */
 @Getter
 @Setter
@@ -43,6 +44,7 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
+@Accessors(chain = true)
 @Builder
 public class Person implements Serializable, Comparable<Person>
 {
@@ -55,15 +57,21 @@ public class Person implements Serializable, Comparable<Person>
 	/** The name. */
 	private String name = "";
 
+	/** The nickname. */
 	private String nickname = "";
 
 	/** The gender. */
 	private Gender gender = Gender.UNDEFINED;
 
+	/** The about. */
 	private String about = "";
 
+	/** The married flag. */
 	private Boolean married = Boolean.FALSE;
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public int compareTo(final Person o)
 	{

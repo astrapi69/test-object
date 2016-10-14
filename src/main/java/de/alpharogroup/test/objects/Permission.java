@@ -31,21 +31,29 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
 
+/**
+ * The class {@link Permission}.
+ */
 @Getter
 @Setter
 @EqualsAndHashCode
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
+@Accessors(chain = true)
 @Builder
 public class Permission
 {
 
+	/** The name. */
 	private String name;
 
+	/** The shortcut. */
 	private String shortcut;
 
+	/** The description. */
 	private String description;
 
 }

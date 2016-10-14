@@ -26,13 +26,34 @@ package de.alpharogroup.test.objects.enums;
 
 import lombok.Getter;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The enum {@link Brands}.
+ */
 public enum Brands
 {
 
-	LAMBORGINI("Lamborgini"), MASERATI("Maserati"), FERRARI("Ferrari"), PORSCHE("Porsche");
-	@Getter
-	private String value;
+	/** The lamborgini. */
+	LAMBORGINI("Lamborgini"),
+	/** The maserati. */
+	MASERATI("Maserati"),
+	/** The ferrari. */
+	FERRARI("Ferrari"),
+	/** The porsche. */
+	PORSCHE("Porsche");
 
+	/**
+	 * The value
+	 */
+	@Getter
+	private final String value;
+
+	/**
+	 * Instantiates a new {@link Brands}.
+	 *
+	 * @param value
+	 *            the value
+	 */
 	Brands(final String value)
 	{
 		this.value = value;

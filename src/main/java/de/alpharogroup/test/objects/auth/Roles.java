@@ -35,15 +35,19 @@ import lombok.ToString;
 import lombok.experimental.Accessors;
 
 
+/**
+ * The class {@link Roles}.
+ */
 @Getter
 @Setter
 @EqualsAndHashCode
 @ToString
 @Accessors(chain = true)
-@Builder
+final @Builder
 public class Roles
 {
 
+	/** The roles. */
 	@Singular
 	Set<Role> roles;
 

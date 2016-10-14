@@ -26,21 +26,29 @@ package de.alpharogroup.date;
 
 import java.util.Date;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+import lombok.experimental.Accessors;
+
+/**
+ * The class {@link DateDecorator}.
+ */
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@Accessors(chain = true)
+@Builder
 public class DateDecorator
 {
+
+	/** The date. */
 	private Date date;
-
-	public DateDecorator()
-	{
-	}
-
-	public Date getDate()
-	{
-		return date;
-	}
-
-	public void setDate(final Date date)
-	{
-		this.date = date;
-	}
 }

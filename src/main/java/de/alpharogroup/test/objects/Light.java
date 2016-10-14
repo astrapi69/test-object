@@ -31,9 +31,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
 
 /**
- * The Class Light is a concrete receiver.
+ * The class {@link Light} is a concrete receiver.
  */
 @Getter
 @Setter
@@ -41,18 +42,33 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
+@Accessors(chain = true)
 @Builder
 public class Light
 {
+
+	/** The on flag. */
 	private boolean on;
 
-	public void switchOff()
+	/**
+	 * Switch off.
+	 *
+	 * @return the light
+	 */
+	public Light switchOff()
 	{
 		setOn(false);
+		return this;
 	}
 
-	public void switchOn()
+	/**
+	 * Switch on.
+	 *
+	 * @return the light
+	 */
+	public Light switchOn()
 	{
 		setOn(true);
+		return this;
 	}
 }

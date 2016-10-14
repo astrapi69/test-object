@@ -27,7 +27,7 @@ package de.alpharogroup.test.objects.annotations;
 import de.alpharogroup.test.objects.TestAnnotation;
 
 /**
- * The Interface AnnotatedInterface.
+ * The nterface {@link AnnotatedInterface}.
  */
 @TestAnnotation
 public interface AnnotatedInterface

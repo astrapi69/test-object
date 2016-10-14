@@ -33,13 +33,18 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
 
+/**
+ * The class {@link Company}.
+ */
 @Getter
 @Setter
 @EqualsAndHashCode
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
+@Accessors(chain = true)
 @Builder
 public class Company implements Serializable
 {
@@ -47,5 +52,7 @@ public class Company implements Serializable
 	 * The serialVersionUID.
 	 */
 	private static final long serialVersionUID = 1L;
+
+	/** The name. */
 	private String name;
 }

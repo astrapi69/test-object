@@ -26,6 +26,9 @@ package de.alpharogroup.test.objects.generics;
 
 import de.alpharogroup.test.objects.Person;
 
+/**
+ * The class {@link PersonDao}.
+ */
 public class PersonDao extends GenericDao<Person, Integer>
 {
 
