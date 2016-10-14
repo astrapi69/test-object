@@ -33,7 +33,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-import lombok.experimental.Accessors;
 
 /**
  * The class {@link Employee}.
@@ -44,7 +43,6 @@ import lombok.experimental.Accessors;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@Accessors(chain = true)
 @Builder
 public class Employee implements Serializable
 {

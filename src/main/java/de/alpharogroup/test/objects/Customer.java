@@ -35,7 +35,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-import lombok.experimental.Accessors;
 
 /**
  * The class {@link Customer}.
@@ -46,7 +45,6 @@ import lombok.experimental.Accessors;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@Accessors(chain = true)
 @Builder
 public class Customer implements Serializable
 {

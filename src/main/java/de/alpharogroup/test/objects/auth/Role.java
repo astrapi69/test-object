@@ -31,7 +31,6 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import lombok.experimental.Accessors;
 
 
 /**
@@ -41,7 +40,6 @@ import lombok.experimental.Accessors;
 @Setter
 @EqualsAndHashCode
 @ToString
-@Accessors(chain = true)
 @Builder
 public class Role
 {
