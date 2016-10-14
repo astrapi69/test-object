@@ -27,7 +27,7 @@ package de.alpharogroup.test.objects.annotations.foobar;
 import de.alpharogroup.test.objects.TestAnnotation;
 
 /**
- * The class OtherAnnotatedClass.
+ * The class {@link OtherAnnotatedClass}.
  */
 @TestAnnotation
 public class OtherAnnotatedClass

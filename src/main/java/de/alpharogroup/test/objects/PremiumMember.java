@@ -30,17 +30,25 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
 
+/**
+ * The class {@link PremiumMember}.
+ */
 @Getter
 @Setter
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
+@Accessors(chain = true)
 public class PremiumMember extends Member
 {
 
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
+
+	/** The credits. */
 	private String credits;
 
 }

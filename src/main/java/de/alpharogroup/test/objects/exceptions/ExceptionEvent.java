@@ -24,53 +24,29 @@
  */
 package de.alpharogroup.test.objects.exceptions;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+import lombok.experimental.Accessors;
+
 /**
- * The class ExceptionEvent.
+ * The class {@link ExceptionEvent}.
  */
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@Accessors(chain = true)
+@Builder
 public class ExceptionEvent
 {
-
 	/** The value. */
 	private Throwable value;
-
-	public ExceptionEvent(final Throwable value)
-	{
-		super();
-		this.value = value;
-	}
-
-	/**
-	 * Gets the value.
-	 * 
-	 * @return the value
-	 */
-	public Throwable getValue()
-	{
-		return value;
-	}
-
-	/**
-	 * Override hashCode.
-	 * 
-	 * @return the Objects hashcode.
-	 */
-	@Override
-	public int hashCode()
-	{
-		int hashCode = 1;
-		hashCode = 31 * hashCode + (value == null ? 0 : value.hashCode());
-		return hashCode;
-	}
-
-	/**
-	 * Sets the value.
-	 * 
-	 * @param value
-	 *            the new value
-	 */
-	public void setValue(final Throwable value)
-	{
-		this.value = value;
-	}
 
 }

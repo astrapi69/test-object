@@ -34,6 +34,9 @@ import lombok.ToString;
 import lombok.experimental.Accessors;
 
 
+/**
+ * The class {@link Role}.
+ */
 @Getter
 @Setter
 @EqualsAndHashCode
@@ -43,8 +46,10 @@ import lombok.experimental.Accessors;
 public class Role
 {
 
+	/** The description. */
 	String description;
 
+	/** The rights. */
 	Set<AccessRight> rights;
 
 }

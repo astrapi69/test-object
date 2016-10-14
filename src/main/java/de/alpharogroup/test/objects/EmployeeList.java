@@ -27,17 +27,32 @@ package de.alpharogroup.test.objects;
 
 import java.util.List;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.Singular;
+import lombok.ToString;
+import lombok.experimental.Accessors;
+
+/**
+ * The class {@link EmployeeList} encapsulates a list of {@link Employee}.
+ */
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@Accessors(chain = true)
+final @Builder
 public class EmployeeList
 {
-	List<Employee> list;
 
-	public List<Employee> getList()
-	{
-		return list;
-	}
+	/** The employees. */
+	@Singular
+	List<Employee> employees;
 
-	public void setList(final List<Employee> list)
-	{
-		this.list = list;
-	}
 }

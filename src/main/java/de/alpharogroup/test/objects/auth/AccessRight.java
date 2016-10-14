@@ -31,6 +31,9 @@ import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.Accessors;
 
+/**
+ * The class {@link AccessRight}.
+ */
 @Getter
 @Setter
 @EqualsAndHashCode
@@ -39,6 +42,8 @@ import lombok.experimental.Accessors;
 @Builder
 public class AccessRight
 {
+
+	/** The description. */
 	String description;
 
 }

@@ -32,18 +32,28 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
 
+/**
+ * The class {@link Member}.
+ */
 @Getter
 @Setter
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
+@Accessors(chain = true)
 public class Member extends Person
 {
 
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
+
+	/** The dateofbirth. */
 	private Date dateofbirth;
+
+	/** The dateof marriage. */
 	private Date dateofMarriage;
 
 }

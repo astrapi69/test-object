@@ -24,7 +24,15 @@
  */
 package de.alpharogroup.test.objects;
 
+/**
+ * The enum {@link Gender}.
+ */
 public enum Gender
 {
-	MALE, FEMALE, UNDEFINED;
+	/** The male. */
+	MALE,
+	/** The female. */
+	FEMALE,
+	/** The undefined. */
+	UNDEFINED;
 }

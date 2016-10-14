@@ -24,20 +24,24 @@
  */
 package de.alpharogroup.test.objects;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.Accessors;
 
 /**
- * The class A.
+ * The class {@link A}.
  */
 @Getter
 @Setter
 @EqualsAndHashCode
 @ToString
+@NoArgsConstructor
+@AllArgsConstructor
 @Accessors(chain = true)
 @Builder
 public class A

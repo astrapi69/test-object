@@ -26,21 +26,30 @@ package de.alpharogroup.date;
 
 import java.sql.Timestamp;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+import lombok.experimental.Accessors;
+
+/**
+ * The class {@link SqlTimestampDecorator}.
+ */
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@Accessors(chain = true)
+@Builder
 public class SqlTimestampDecorator
 {
+
+	/** The date. */
 	private Timestamp date;
 
-	public SqlTimestampDecorator()
-	{
-	}
-
-	public Timestamp getDate()
-	{
-		return date;
-	}
-
-	public void setDate(final Timestamp date)
-	{
-		this.date = date;
-	}
 }

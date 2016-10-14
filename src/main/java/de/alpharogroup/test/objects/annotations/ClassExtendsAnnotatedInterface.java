@@ -24,7 +24,9 @@
  */
 package de.alpharogroup.test.objects.annotations;
 
+/**
+ * The class {@link ClassExtendsAnnotatedInterface}.
+ */
 public class ClassExtendsAnnotatedInterface implements AnnotatedInterface
 {
-
 }

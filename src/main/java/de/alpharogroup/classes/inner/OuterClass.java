@@ -24,17 +24,29 @@
  */
 package de.alpharogroup.classes.inner;
 
-
+/**
+ * The class {@link OuterClass}.
+ */
 public class OuterClass
 {
 
+	/**
+	 * The class {@link InnerClass}.
+	 */
 	public class InnerClass
 	{
 
 	}
 
+	/**
+	 * The class {@link StaticNestedClass}.
+	 */
 	static class StaticNestedClass
 	{
+
+		/**
+		 * Static nested class method.
+		 */
 		public static void staticNestedClassMethod()
 		{
 			final Runnable runnable = new Runnable()
@@ -55,6 +67,11 @@ public class OuterClass
 		}
 	}
 
+	/**
+	 * The main method.
+	 *
+	 * @param args the arguments
+	 */
 	public static void main(final String... args)
 	{
 		StaticNestedClass.staticNestedClassMethod();
