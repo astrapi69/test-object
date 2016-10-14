@@ -30,7 +30,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-import lombok.experimental.Accessors;
 
 /**
  * The class {@link PremiumMember}.
@@ -41,7 +40,6 @@ import lombok.experimental.Accessors;
 @ToString(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
-@Accessors(chain = true)
 public class PremiumMember extends Member
 {
 

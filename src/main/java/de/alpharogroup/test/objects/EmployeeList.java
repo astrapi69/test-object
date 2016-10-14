@@ -35,7 +35,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.Singular;
 import lombok.ToString;
-import lombok.experimental.Accessors;
 
 /**
  * The class {@link EmployeeList} encapsulates a list of {@link Employee}.
@@ -46,8 +45,7 @@ import lombok.experimental.Accessors;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@Accessors(chain = true)
-final @Builder
+@Builder
 public class EmployeeList
 {
 
