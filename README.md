@@ -22,7 +22,7 @@ Add the following maven dependency to your project `pom.xml` if you want to impo
 Than you can add the dependency to your dependencies:
 
 		<!-- test-objects version -->
-		<test-objects.version>4.12.0</test-objects.version>
+		<test-objects.version>4.13.0</test-objects.version>
 
 		<dependencies>
 			...
