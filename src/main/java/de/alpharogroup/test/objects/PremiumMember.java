@@ -48,6 +48,18 @@ public class PremiumMember extends Member
 	/** The credits. */
 	private String credits;
 
+	/**
+	 * Instantiates a new {@link PremiumMember} object with the given parameters..
+	 *
+	 * @param name the name
+	 * @param nickname the nickname
+	 * @param gender the gender
+	 * @param about the about
+	 * @param married the married
+	 * @param dateofbirth the dateofbirth
+	 * @param dateofMarriage the dateof marriage
+	 * @param credits the credits
+	 */
 	@Builder(builderMethodName = "buildPremiumMember" )
 	public PremiumMember(final String name, final String nickname,
 		final Gender gender, final String about, final Boolean married,
