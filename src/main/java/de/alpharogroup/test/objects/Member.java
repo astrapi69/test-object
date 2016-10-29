@@ -26,10 +26,9 @@ package de.alpharogroup.test.objects;
 
 import java.util.Date;
 
-import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -40,8 +39,6 @@ import lombok.ToString;
 @Setter
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-@NoArgsConstructor
-@AllArgsConstructor
 public class Member extends Person
 {
 
@@ -54,4 +51,10 @@ public class Member extends Person
 	/** The dateof marriage. */
 	private Date dateofMarriage;
 
+	@Builder(builderMethodName = "buildMember")
+	public Member(final String name, final String nickname, final Gender gender, final String about, final Boolean married, final Date dateofbirth, final Date dateofMarriage) {
+		super(name, nickname, gender, about, married);
+		this.dateofbirth = dateofbirth;
+		this.dateofMarriage = dateofMarriage;
+	}
 }
