@@ -40,8 +40,6 @@ import lombok.ToString;
 @Setter
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-@NoArgsConstructor
-@AllArgsConstructor
 public class Member extends Person
 {
 
@@ -53,5 +51,11 @@ public class Member extends Person
 
 	/** The dateof marriage. */
 	private Date dateofMarriage;
-
+	
+	@Builder
+	public Member(String name, String nickname, Gender gender, String about, Boolean married, Date dateofbirth, Date dateofMarriage) {
+		super(name, nickname, gender, about, married);
+		this.dateofbirth = dateofbirth;
+		this.dateofMarriage = dateofMarriage;
+	}
 }
