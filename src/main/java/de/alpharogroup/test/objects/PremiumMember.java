@@ -24,10 +24,11 @@
  */
 package de.alpharogroup.test.objects;
 
-import lombok.AllArgsConstructor;
+import java.util.Date;
+
+import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -38,8 +39,6 @@ import lombok.ToString;
 @Setter
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-@NoArgsConstructor
-@AllArgsConstructor
 public class PremiumMember extends Member
 {
 
@@ -48,5 +47,13 @@ public class PremiumMember extends Member
 
 	/** The credits. */
 	private String credits;
+
+	@Builder(builderMethodName = "buildPremiumMember" )
+	public PremiumMember(final String name, final String nickname,
+		final Gender gender, final String about, final Boolean married,
+		final Date dateofbirth, final Date dateofMarriage, final String credits) {
+		super(name, nickname, gender, about, married, dateofbirth, dateofMarriage);
+		this.credits = credits;
+	}
 
 }
