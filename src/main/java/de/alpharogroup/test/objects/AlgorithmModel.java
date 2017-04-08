@@ -41,9 +41,18 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-public class AlgorithmModel
+@Builder(toBuilder=true)
+public class AlgorithmModel implements Cloneable
 {
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public AlgorithmModel clone() throws CloneNotSupportedException
+	{
+		return this.toBuilder().build();
+	}
 
 	/** The a. */
 	private int a;

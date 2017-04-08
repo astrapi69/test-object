@@ -26,9 +26,8 @@ package de.alpharogroup.test.objects.enums;
 
 import lombok.Getter;
 
-// TODO: Auto-generated Javadoc
 /**
- * The enum {@link Brands}.
+ * The enum {@link Brands} holds some brands from famous cars.
  */
 public enum Brands
 {
