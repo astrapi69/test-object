@@ -53,18 +53,23 @@ public class Person implements Serializable, Comparable<Person>
 	private static final long serialVersionUID = 1L;
 
 	/** The name. */
+	@Builder.Default
 	private String name = "";
 
 	/** The nickname. */
+	@Builder.Default
 	private String nickname = "";
 
 	/** The gender. */
+	@Builder.Default
 	private Gender gender = Gender.UNDEFINED;
 
 	/** The about. */
+	@Builder.Default
 	private String about = "";
 
 	/** The married flag. */
+	@Builder.Default
 	private Boolean married = Boolean.FALSE;
 
 	/**

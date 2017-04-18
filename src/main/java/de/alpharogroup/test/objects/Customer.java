@@ -54,9 +54,11 @@ public class Customer implements Serializable
 
 	/** The name. */
 	@Mandatory
+	@Builder.Default
 	public String name = "";
 
 	/** The car. */
+	@Builder.Default
 	public Brands car = Brands.FERRARI;
 
 	/** The premium. */
