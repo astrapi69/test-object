@@ -1,7 +1,7 @@
 /**
  * The MIT License
  *
- * Copyright (C) 2007 Asterios Raptis
+ * Copyright (C) 2015 Asterios Raptis
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -26,9 +26,8 @@ package de.alpharogroup.test.objects.enums;
 
 import lombok.Getter;
 
-// TODO: Auto-generated Javadoc
 /**
- * The enum {@link Brands}.
+ * The enum {@link Brands} holds some brands from famous cars.
  */
 public enum Brands
 {

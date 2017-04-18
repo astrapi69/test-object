@@ -1,7 +1,7 @@
 /**
  * The MIT License
  *
- * Copyright (C) 2007 Asterios Raptis
+ * Copyright (C) 2015 Asterios Raptis
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -45,7 +45,7 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@Builder(toBuilder = true)
 public class Customer implements Serializable
 {
 
@@ -54,9 +54,11 @@ public class Customer implements Serializable
 
 	/** The name. */
 	@Mandatory
+	@Builder.Default
 	public String name = "";
 
 	/** The car. */
+	@Builder.Default
 	public Brands car = Brands.FERRARI;
 
 	/** The premium. */

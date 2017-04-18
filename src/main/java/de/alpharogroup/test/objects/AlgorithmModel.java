@@ -1,7 +1,7 @@
 /**
  * The MIT License
  *
- * Copyright (C) 2007 Asterios Raptis
+ * Copyright (C) 2015 Asterios Raptis
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -41,8 +41,8 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-public class AlgorithmModel
+@Builder(toBuilder = true)
+public class AlgorithmModel implements Cloneable
 {
 
 	/** The a. */
@@ -50,5 +50,14 @@ public class AlgorithmModel
 
 	/** The b. */
 	private int b;
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public AlgorithmModel clone() throws CloneNotSupportedException
+	{
+		return this.toBuilder().build();
+	}
 
 }
