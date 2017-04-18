@@ -37,7 +37,7 @@ import lombok.ToString;
 @Setter
 @EqualsAndHashCode
 @ToString
-@Builder(toBuilder=true)
+@Builder(toBuilder = true)
 public class AccessRight
 {
 
