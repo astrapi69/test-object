@@ -46,7 +46,7 @@ The source code for test-objects are on GitHub. Please feel free to fork and sen
 
 Create your own fork of [lightblueseas/test-objects/fork](https://github.com/lightblueseas/test-objects/fork)
 
-To share your changes, [submit a pull request](https://github.com/lightblueseas/test-objects/pull/new/master).
+To share your changes, [submit a pull request](https://github.com/lightblueseas/test-objects/pull/new/develop).
 
 Don't forget to add new units tests on your changes.
 
