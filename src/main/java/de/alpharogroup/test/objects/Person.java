@@ -1,7 +1,7 @@
 /**
  * The MIT License
  *
- * Copyright (C) 2007 Asterios Raptis
+ * Copyright (C) 2015 Asterios Raptis
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -43,7 +43,7 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@Builder(toBuilder = true)
 public class Person implements Serializable, Comparable<Person>
 {
 
@@ -53,18 +53,23 @@ public class Person implements Serializable, Comparable<Person>
 	private static final long serialVersionUID = 1L;
 
 	/** The name. */
+	@Builder.Default
 	private String name = "";
 
 	/** The nickname. */
+	@Builder.Default
 	private String nickname = "";
 
 	/** The gender. */
+	@Builder.Default
 	private Gender gender = Gender.UNDEFINED;
 
 	/** The about. */
+	@Builder.Default
 	private String about = "";
 
 	/** The married flag. */
+	@Builder.Default
 	private Boolean married = Boolean.FALSE;
 
 	/**
