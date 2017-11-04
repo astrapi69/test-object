@@ -22,39 +22,37 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.test.objects.generics;
+package de.alpharogroup.test.messages;
+
+import static org.testng.AssertJUnit.assertEquals;
+
+import org.testng.annotations.Test;
 
 /**
- * The Class GenericDao.
- *
- * @param <E>
- *            the element type
- * @param <PK>
- *            the generic type
+ * The unit test class for the class {@link TestMessagesExtensions}.
  */
-public abstract class GenericDao<E, PK>
+public class TestMessagesExtensionsTest
 {
 
 	/**
-	 * Delete.
-	 *
-	 * @param entity
-	 *            the entity
+	 * Test method for {@link TestMessagesExtensions#newFailMessage(String, String, String)}.
 	 */
-	void delete(final E entity)
+	@Test
+	public void testNewFailMessage()
 	{
-
-	}
-
-	/**
-	 * Save.
-	 *
-	 * @param entity
-	 *            the entity
-	 */
-	void save(final E entity)
-	{
-
+		String expected;
+		String actual;
+		String expectedVariableName;
+		String expectedInput;
+		String actualInput;
+		expectedVariableName = "fooPath";
+		expectedInput = "bla";
+		actualInput = "fasel";
+		expected = "Expected " + expectedVariableName + " should be '" + expectedInput
+			+ "' but actual result is '" + actualInput + "'.";
+		actual = TestMessagesExtensions.newFailMessage(expectedVariableName, expectedInput,
+			actualInput);
+		assertEquals(expected, actual);
 	}
 
 }

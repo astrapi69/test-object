@@ -1,7 +1,7 @@
 /**
  * The MIT License
  *
- * Copyright (C) 2007 Asterios Raptis
+ * Copyright (C) 2015 Asterios Raptis
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -51,8 +51,28 @@ public class Member extends Person
 	/** The dateof marriage. */
 	private Date dateofMarriage;
 
+	/**
+	 * Instantiates a new {@link Member} object with the given parameters.
+	 *
+	 * @param name
+	 *            the name
+	 * @param nickname
+	 *            the nickname
+	 * @param gender
+	 *            the gender
+	 * @param about
+	 *            the about
+	 * @param married
+	 *            the married
+	 * @param dateofbirth
+	 *            the dateofbirth
+	 * @param dateofMarriage
+	 *            the dateof marriage
+	 */
 	@Builder(builderMethodName = "buildMember")
-	public Member(final String name, final String nickname, final Gender gender, final String about, final Boolean married, final Date dateofbirth, final Date dateofMarriage) {
+	public Member(final String name, final String nickname, final Gender gender, final String about,
+		final Boolean married, final Date dateofbirth, final Date dateofMarriage)
+	{
 		super(name, nickname, gender, about, married);
 		this.dateofbirth = dateofbirth;
 		this.dateofMarriage = dateofMarriage;

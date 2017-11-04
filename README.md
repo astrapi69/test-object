@@ -6,11 +6,16 @@ Project that holds test objects for unit tests
 
 The source code comes under the liberal MIT License, making test-objects great for all types of applications.
 
-# Build status and latest maven version
+## Build status
 [![Build Status](https://travis-ci.org/lightblueseas/test-objects.svg?branch=master)](https://travis-ci.org/lightblueseas/test-objects)
 
+## Maven Central
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/test-objects/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/test-objects)
+
+## javadoc
+
+test-objects [![Javadocs](http://www.javadoc.io/badge/de.alpharogroup/test-objects.svg)](http://www.javadoc.io/doc/de.alpharogroup/test-objects)
 
 ## Maven dependency
 
@@ -21,8 +26,8 @@ Add the following maven dependency to your project `pom.xml` if you want to impo
 
 Than you can add the dependency to your dependencies:
 
-		<!-- test-objects version -->
-		<test-objects.version>4.14.0</test-objects.version>
+		<!-- TEST-OBJECTS version -->
+		<test-objects.version>4.17.0</test-objects.version>
 
 		<dependencies>
 			...
@@ -41,7 +46,7 @@ The source code for test-objects are on GitHub. Please feel free to fork and sen
 
 Create your own fork of [lightblueseas/test-objects/fork](https://github.com/lightblueseas/test-objects/fork)
 
-To share your changes, [submit a pull request](https://github.com/lightblueseas/test-objects/pull/new/master).
+To share your changes, [submit a pull request](https://github.com/lightblueseas/test-objects/pull/new/develop).
 
 Don't forget to add new units tests on your changes.
 
@@ -50,6 +55,9 @@ Don't forget to add new units tests on your changes.
 Do not hesitate to contact the test-objects developers with your questions, concerns, comments, bug reports, or feature requests.
 - Feature requests, questions and bug reports can be reported at the [issues page](https://github.com/lightblueseas/test-objects/issues).
 
+## Note
+
+No animals were harmed in the making of this library.
 
 # Donate
 

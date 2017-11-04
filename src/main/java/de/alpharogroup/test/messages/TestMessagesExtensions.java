@@ -22,39 +22,34 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.test.objects.generics;
+package de.alpharogroup.test.messages;
+
+import lombok.experimental.UtilityClass;
 
 /**
- * The Class GenericDao.
- *
- * @param <E>
- *            the element type
- * @param <PK>
- *            the generic type
+ * The class {@link TestMessagesExtensions} generates any messages that are needed in test classes.
  */
-public abstract class GenericDao<E, PK>
+@UtilityClass
+public class TestMessagesExtensions
 {
 
 	/**
-	 * Delete.
+	 * Factory method for create a new fail message for a test as String object.
 	 *
-	 * @param entity
-	 *            the entity
+	 * @param expectedVariableName
+	 *            the expected variable name
+	 * @param expected
+	 *            the expected
+	 * @param actual
+	 *            the actual
+	 * @return the new fail message for a test as String object
 	 */
-	void delete(final E entity)
+	public static String newFailMessage(final String expectedVariableName, final String expected,
+		final String actual)
 	{
-
-	}
-
-	/**
-	 * Save.
-	 *
-	 * @param entity
-	 *            the entity
-	 */
-	void save(final E entity)
-	{
-
+		final String failMessage = "Expected " + expectedVariableName + " should be '" + expected
+			+ "' but actual result is '" + actual + "'.";
+		return failMessage;
 	}
 
 }
