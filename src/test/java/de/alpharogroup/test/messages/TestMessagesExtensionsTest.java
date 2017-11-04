@@ -24,32 +24,34 @@
  */
 package de.alpharogroup.test.messages;
 
-import lombok.experimental.UtilityClass;
+import static org.testng.AssertJUnit.*;
+import org.testng.annotations.Test;
 
 /**
- * The class {@link TestMessagesExtensions} generates any messages that are needed in test classes.
+ * The unit test class for the class {@link TestMessagesExtensions}.
  */
-@UtilityClass
-public class TestMessagesExtensions
+public class TestMessagesExtensionsTest
 {
 
 	/**
-	 * Factory method for create a new fail message for a test as String object.
-	 *
-	 * @param expectedVariableName
-	 *            the expected variable name
-	 * @param expected
-	 *            the expected
-	 * @param actual
-	 *            the actual
-	 * @return the new fail message for a test as String object
+	 * Test method for {@link TestMessagesExtensions#newFailMessage(String, String, String)}.
 	 */
-	public static String newFailMessage(final String expectedVariableName, final String expected,
-		final String actual)
+	@Test
+	public void testNewFailMessage()
 	{
-		final String failMessage = "Expected " + expectedVariableName + " should be '" + expected
-			+ "' but actual result is '" + actual + "'.";
-		return failMessage;
+		String expected;
+		String actual;
+		String expectedVariableName;
+		String expectedInput;
+		String actualInput;
+		expectedVariableName = "fooPath";
+		expectedInput = "bla";
+		actualInput = "fasel";
+		expected = "Expected " + expectedVariableName + " should be '" + expectedInput
+			+ "' but actual result is '" + actualInput + "'.";
+		actual = TestMessagesExtensions.newFailMessage(expectedVariableName, expectedInput,
+			actualInput);
+		assertEquals(expected, actual);
 	}
 
 }
