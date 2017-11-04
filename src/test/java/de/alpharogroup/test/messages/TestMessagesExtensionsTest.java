@@ -24,7 +24,8 @@
  */
 package de.alpharogroup.test.messages;
 
-import static org.testng.AssertJUnit.*;
+import static org.testng.AssertJUnit.assertEquals;
+
 import org.testng.annotations.Test;
 
 /**
