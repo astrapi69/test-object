@@ -31,6 +31,7 @@ Than you can add the dependency to your dependencies:
 
 		<dependencies>
 			...
+			<!-- TEST-OBJECTS DEPENDENCY -->
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>test-objects</artifactId>
