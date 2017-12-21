@@ -22,7 +22,11 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.test.objects.annotations;
+package de.alpharogroup.test.objects.annotations.classes;
+
+import de.alpharogroup.test.objects.annotations.TestFieldAnnotation;
+import de.alpharogroup.test.objects.annotations.TestMethodAnnotation;
+import de.alpharogroup.test.objects.annotations.TestTypeAnnotation;
 
 /**
  * The class {@link AnnotatedTestClass}.

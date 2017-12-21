@@ -26,6 +26,7 @@ package de.alpharogroup.test.objects;
 
 import java.io.Serializable;
 
+import de.alpharogroup.test.objects.enums.Gender;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;

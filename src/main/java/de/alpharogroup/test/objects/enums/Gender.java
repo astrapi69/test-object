@@ -22,15 +22,17 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.test.objects.annotations;
-
-import de.alpharogroup.test.objects.TestAnnotation;
+package de.alpharogroup.test.objects.enums;
 
 /**
- * The nterface {@link AnnotatedInterface}.
+ * The enum {@link Gender}.
  */
-@TestAnnotation
-public interface AnnotatedInterface
+public enum Gender
 {
-
+	/** The male. */
+	MALE,
+	/** The female. */
+	FEMALE,
+	/** The undefined. */
+	UNDEFINED;
 }
