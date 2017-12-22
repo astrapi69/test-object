@@ -22,64 +22,34 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.test.objects;
+package de.alpharogroup.test.messages;
 
-import java.io.Serializable;
-
-import de.alpharogroup.test.objects.enums.Gender;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.experimental.UtilityClass;
 
 /**
- * The class {@link Person}.
+ * The class {@link TestMessagesExtensions} generates any messages that are needed in test classes.
  */
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder(toBuilder = true)
-public class Person implements Serializable, Comparable<Person>
+@UtilityClass
+public class TestMessagesExtensions
 {
 
 	/**
-	 * The serialVersionUID.
+	 * Factory method for create a new fail message for a test as String object.
+	 *
+	 * @param expectedVariableName
+	 *            the expected variable name
+	 * @param expected
+	 *            the expected
+	 * @param actual
+	 *            the actual
+	 * @return the new fail message for a test as String object
 	 */
-	private static final long serialVersionUID = 1L;
-
-	/** The name. */
-	@Builder.Default
-	private String name = "";
-
-	/** The nickname. */
-	@Builder.Default
-	private String nickname = "";
-
-	/** The gender. */
-	@Builder.Default
-	private Gender gender = Gender.UNDEFINED;
-
-	/** The about. */
-	@Builder.Default
-	private String about = "";
-
-	/** The married flag. */
-	@Builder.Default
-	private Boolean married = Boolean.FALSE;
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public int compareTo(final Person o)
+	public static String newFailMessage(final String expectedVariableName, final String expected,
+		final String actual)
 	{
-		return this.getName().toString().compareTo(o.getName().toString());
+		final String failMessage = "Expected " + expectedVariableName + " should be '" + expected
+			+ "' but actual result is '" + actual + "'.";
+		return failMessage;
 	}
 
 }

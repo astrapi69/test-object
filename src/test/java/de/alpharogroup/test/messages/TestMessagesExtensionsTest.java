@@ -22,64 +22,37 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.test.objects;
+package de.alpharogroup.test.messages;
 
-import java.io.Serializable;
+import static org.testng.AssertJUnit.assertEquals;
 
-import de.alpharogroup.test.objects.enums.Gender;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import org.testng.annotations.Test;
 
 /**
- * The class {@link Person}.
+ * The unit test class for the class {@link TestMessagesExtensions}.
  */
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder(toBuilder = true)
-public class Person implements Serializable, Comparable<Person>
+public class TestMessagesExtensionsTest
 {
 
 	/**
-	 * The serialVersionUID.
+	 * Test method for {@link TestMessagesExtensions#newFailMessage(String, String, String)}.
 	 */
-	private static final long serialVersionUID = 1L;
-
-	/** The name. */
-	@Builder.Default
-	private String name = "";
-
-	/** The nickname. */
-	@Builder.Default
-	private String nickname = "";
-
-	/** The gender. */
-	@Builder.Default
-	private Gender gender = Gender.UNDEFINED;
-
-	/** The about. */
-	@Builder.Default
-	private String about = "";
-
-	/** The married flag. */
-	@Builder.Default
-	private Boolean married = Boolean.FALSE;
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public int compareTo(final Person o)
+	@Test
+	public void testNewFailMessage()
 	{
-		return this.getName().toString().compareTo(o.getName().toString());
+		String expected;
+		String actual;
+		String expectedVariableName;
+		String expectedInput;
+		String actualInput;
+		expectedVariableName = "fooPath";
+		expectedInput = "bla";
+		actualInput = "fasel";
+		expected = "Expected " + expectedVariableName + " should be '" + expectedInput
+			+ "' but actual result is '" + actualInput + "'.";
+		actual = TestMessagesExtensions.newFailMessage(expectedVariableName, expectedInput,
+			actualInput);
+		assertEquals(expected, actual);
 	}
 
 }

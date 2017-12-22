@@ -22,28 +22,30 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.test.objects.annotations;
+package de.alpharogroup.test.objects;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 /**
- * The class {@link AnnotatedTestClass}.
+ * The class {@link NotSerializable} is a class intended for use in unit tests.
  */
-@TestTypeAnnotation("type test value")
-public class AnnotatedTestClass
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder(toBuilder = true)
+public class NotSerializable
 {
 
 	/** The name. */
-	@TestFieldAnnotation("name test value")
 	private String name;
-
-	/**
-	 * Gets the fullname.
-	 *
-	 * @return the fullname
-	 */
-	@TestMethodAnnotation("method test value")
-	private String getFullname()
-	{
-		return "fullname";
-	}
 
 }

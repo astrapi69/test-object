@@ -22,18 +22,15 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.test.objects;
+package de.alpharogroup.test.objects.annotations.interfaces;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+import de.alpharogroup.test.objects.annotations.TestAnnotation;
 
 /**
- * The annotation {@link TestAnnotation}.
+ * The interface {@link AnnotatedInterface}.
  */
-@Target(ElementType.TYPE)
-@Retention(RetentionPolicy.RUNTIME)
-public @interface TestAnnotation {
+@TestAnnotation
+public interface AnnotatedInterface
+{
 
 }

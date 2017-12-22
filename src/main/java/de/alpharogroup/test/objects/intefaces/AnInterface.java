@@ -22,64 +22,12 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.test.objects;
-
-import java.io.Serializable;
-
-import de.alpharogroup.test.objects.enums.Gender;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+package de.alpharogroup.test.objects.intefaces;
 
 /**
- * The class {@link Person}.
+ * The interface {@link AnInterface} is an interface intended for use in unit tests.
  */
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder(toBuilder = true)
-public class Person implements Serializable, Comparable<Person>
+public interface AnInterface
 {
-
-	/**
-	 * The serialVersionUID.
-	 */
-	private static final long serialVersionUID = 1L;
-
-	/** The name. */
-	@Builder.Default
-	private String name = "";
-
-	/** The nickname. */
-	@Builder.Default
-	private String nickname = "";
-
-	/** The gender. */
-	@Builder.Default
-	private Gender gender = Gender.UNDEFINED;
-
-	/** The about. */
-	@Builder.Default
-	private String about = "";
-
-	/** The married flag. */
-	@Builder.Default
-	private Boolean married = Boolean.FALSE;
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public int compareTo(final Person o)
-	{
-		return this.getName().toString().compareTo(o.getName().toString());
-	}
 
 }

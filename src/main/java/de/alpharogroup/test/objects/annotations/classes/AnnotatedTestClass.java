@@ -22,64 +22,32 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.test.objects;
+package de.alpharogroup.test.objects.annotations.classes;
 
-import java.io.Serializable;
-
-import de.alpharogroup.test.objects.enums.Gender;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import de.alpharogroup.test.objects.annotations.TestFieldAnnotation;
+import de.alpharogroup.test.objects.annotations.TestMethodAnnotation;
+import de.alpharogroup.test.objects.annotations.TestTypeAnnotation;
 
 /**
- * The class {@link Person}.
+ * The class {@link AnnotatedTestClass}.
  */
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder(toBuilder = true)
-public class Person implements Serializable, Comparable<Person>
+@TestTypeAnnotation("type test value")
+public class AnnotatedTestClass
 {
 
-	/**
-	 * The serialVersionUID.
-	 */
-	private static final long serialVersionUID = 1L;
-
 	/** The name. */
-	@Builder.Default
-	private String name = "";
-
-	/** The nickname. */
-	@Builder.Default
-	private String nickname = "";
-
-	/** The gender. */
-	@Builder.Default
-	private Gender gender = Gender.UNDEFINED;
-
-	/** The about. */
-	@Builder.Default
-	private String about = "";
-
-	/** The married flag. */
-	@Builder.Default
-	private Boolean married = Boolean.FALSE;
+	@TestFieldAnnotation("name test value")
+	private String name;
 
 	/**
-	 * {@inheritDoc}
+	 * Gets the fullname.
+	 *
+	 * @return the fullname
 	 */
-	@Override
-	public int compareTo(final Person o)
+	@TestMethodAnnotation("method test value")
+	private String getFullname()
 	{
-		return this.getName().toString().compareTo(o.getName().toString());
+		return "fullname";
 	}
 
 }

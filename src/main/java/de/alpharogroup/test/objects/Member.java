@@ -26,6 +26,7 @@ package de.alpharogroup.test.objects;
 
 import java.util.Date;
 
+import de.alpharogroup.test.objects.enums.Gender;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
