@@ -30,10 +30,17 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * The annotation {@link TestTypeAnnotation} for tests with type.
+ * The annotation {@link TestTypeAnnotation} is an annotation intended for use in unit tests with
+ * target type.
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 public @interface TestTypeAnnotation {
+
+	/**
+	 * The value.
+	 *
+	 * @return the value as string
+	 */
 	String value() default "";
 }

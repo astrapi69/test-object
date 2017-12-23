@@ -25,7 +25,7 @@
 package de.alpharogroup.test.objects.annotations.classes;
 
 /**
- * The class {@link SubAnnotatedClass}.
+ * The class {@link SubAnnotatedClass} is a class intended for use in unit tests.
  */
 public class SubAnnotatedClass extends AnnotatedClass
 {

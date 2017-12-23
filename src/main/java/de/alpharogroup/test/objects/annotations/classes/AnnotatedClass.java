@@ -27,7 +27,7 @@ package de.alpharogroup.test.objects.annotations.classes;
 import de.alpharogroup.test.objects.annotations.TestAnnotation;
 
 /**
- * The class {@link AnnotatedClass}.
+ * The class {@link AnnotatedClass} is a class intended for use in unit tests.
  */
 @TestAnnotation
 public class AnnotatedClass

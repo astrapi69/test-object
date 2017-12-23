@@ -27,7 +27,7 @@ package de.alpharogroup.test.objects.annotations.interfaces;
 import de.alpharogroup.test.objects.annotations.TestAnnotation;
 
 /**
- * The interface {@link AnnotatedInterface}.
+ * The interface {@link AnnotatedInterface} is a interface intended for use in unit tests.
  */
 @TestAnnotation
 public interface AnnotatedInterface

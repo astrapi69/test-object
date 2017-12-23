@@ -33,7 +33,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 /**
- * The class {@link Television}.
+ * The class {@link Television} is a class intended for use in unit tests.
  */
 @Getter
 @Setter

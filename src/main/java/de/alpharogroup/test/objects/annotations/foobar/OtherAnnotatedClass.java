@@ -27,7 +27,7 @@ package de.alpharogroup.test.objects.annotations.foobar;
 import de.alpharogroup.test.objects.annotations.TestAnnotation;
 
 /**
- * The class {@link OtherAnnotatedClass}.
+ * The class {@link OtherAnnotatedClass} is a class intended for use in unit tests.
  */
 @TestAnnotation
 public class OtherAnnotatedClass

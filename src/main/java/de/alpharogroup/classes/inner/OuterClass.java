@@ -25,13 +25,13 @@
 package de.alpharogroup.classes.inner;
 
 /**
- * The class {@link OuterClass}.
+ * The class {@link OuterClass} is a class intended for use in unit tests.
  */
 public class OuterClass
 {
 
 	/**
-	 * The class {@link InnerClass}.
+	 * The class {@link InnerClass} is a class intended for use in unit tests.
 	 */
 	public class InnerClass
 	{
@@ -39,7 +39,7 @@ public class OuterClass
 	}
 
 	/**
-	 * The class {@link StaticNestedClass}.
+	 * The class {@link StaticNestedClass} is a class intended for use in unit tests.
 	 */
 	static class StaticNestedClass
 	{
@@ -58,6 +58,7 @@ public class OuterClass
 			};
 			System.out.println(runnable.getClass().getName());
 			System.out.println("Is anonymous class:" + runnable.getClass().isAnonymousClass());
+			System.out.println("Is synthetic class:" + runnable.getClass().isSynthetic());
 			System.out.println("Enclosing class:" + runnable.getClass().getEnclosingClass());
 			System.out.println("Canonical Name:" + runnable.getClass().getCanonicalName());
 			System.out.println("toString:" + runnable.getClass().toString());

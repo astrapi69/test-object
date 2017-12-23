@@ -27,7 +27,7 @@ package de.alpharogroup.test.objects.annotations.classes;
 import de.alpharogroup.test.objects.annotations.interfaces.AnnotatedInterface;
 
 /**
- * The class {@link ClassExtendsAnnotatedInterface}.
+ * The class {@link ClassExtendsAnnotatedInterface} is a class intended for use in unit tests.
  */
 public class ClassExtendsAnnotatedInterface implements AnnotatedInterface
 {

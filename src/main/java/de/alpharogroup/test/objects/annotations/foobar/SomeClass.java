@@ -25,7 +25,7 @@
 package de.alpharogroup.test.objects.annotations.foobar;
 
 /**
- * The class {@link SomeClass}.
+ * The class {@link SomeClass} is a class intended for use in unit tests.
  */
 public class SomeClass
 {

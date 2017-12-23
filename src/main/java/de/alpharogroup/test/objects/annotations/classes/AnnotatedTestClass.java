@@ -29,7 +29,7 @@ import de.alpharogroup.test.objects.annotations.TestMethodAnnotation;
 import de.alpharogroup.test.objects.annotations.TestTypeAnnotation;
 
 /**
- * The class {@link AnnotatedTestClass}.
+ * The class {@link AnnotatedTestClass} is a class intended for use in unit tests.
  */
 @TestTypeAnnotation("type test value")
 public class AnnotatedTestClass

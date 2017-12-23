@@ -27,7 +27,8 @@ package de.alpharogroup.test.objects.enums;
 import lombok.Getter;
 
 /**
- * The enum {@link Brands} holds some brands from famous cars.
+ * The enum {@link Brands} is an enum intended for use in unit tests and holds some brands from
+ * famous cars.
  */
 public enum Brands
 {

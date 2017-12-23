@@ -35,7 +35,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 /**
- * The class {@link SqlTimestampDecorator}.
+ * The class {@link SqlTimestampDecorator} is a {@link Timestamp} decorator.
  */
 @Getter
 @Setter
