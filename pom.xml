@@ -15,9 +15,15 @@
 
 	<name>${project.artifactId}</name>
 
-	<description>Project that holds test objects for unit tests</description>
+	<description>
+		Project that holds test objects for unit tests
+	</description>
 
 	<url>https://github.com/lightblueseas/test-objects</url>
+
+	<properties>
+		<runtime-compiler.version>1.1.0</runtime-compiler.version>
+	</properties>
 
 	<licenses>
 		<license>
@@ -43,12 +49,32 @@
 		<url>https://travis-ci.org/lightblueseas/test-objects</url>
 	</ciManagement>
 
+	<dependencyManagement>
+
+		<dependencies>
+
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
+				<artifactId>runtime-compiler</artifactId>
+				<version>${runtime-compiler.version}</version>
+			</dependency>
+
+		</dependencies>
+
+	</dependencyManagement>
+
 	<dependencies>
 
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 		</dependency>
+
+<!-- 		<dependency> -->
+<!-- 			<groupId>de.alpharogroup</groupId> -->
+<!-- 			<artifactId>runtime-compiler</artifactId> -->
+<!-- 			<scope>test</scope> -->
+<!-- 		</dependency> -->
 
 	</dependencies>
 
