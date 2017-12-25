@@ -25,7 +25,7 @@
 package de.alpharogroup.test.objects.enums;
 
 /**
- * The enum {@link Gender}.
+ * The enum {@link Gender} is an enum intended for use in unit tests.
  */
 public enum Gender
 {

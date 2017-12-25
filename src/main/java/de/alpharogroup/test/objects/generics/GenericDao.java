@@ -25,7 +25,7 @@
 package de.alpharogroup.test.objects.generics;
 
 /**
- * The Class GenericDao.
+ * The Class GenericDao is a class intended for use in unit tests.
  *
  * @param <E>
  *            the element type

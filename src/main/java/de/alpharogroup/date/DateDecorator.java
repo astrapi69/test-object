@@ -35,7 +35,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 /**
- * The class {@link DateDecorator}.
+ * The class {@link DateDecorator} is a {@link Date} decorator.
  */
 @Getter
 @Setter

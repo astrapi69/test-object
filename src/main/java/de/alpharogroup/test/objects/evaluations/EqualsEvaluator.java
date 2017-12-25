@@ -22,41 +22,34 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.test.objects.enums;
+package de.alpharogroup.test.objects.evaluations;
 
-import lombok.Getter;
+import lombok.experimental.UtilityClass;
 
 /**
- * The enum {@link Brands} is an enum intended for use in unit tests and holds some brands from
- * famous cars.
+ * The class {@link EqualsEvaluator} provides algorithms for evaluate the equals contract of an
+ * given object.
  */
-public enum Brands
+@UtilityClass
+public class EqualsEvaluator
 {
 
-	/** The lamborgini. */
-	LAMBORGINI("Lamborgini"),
-	/** The maserati. */
-	MASERATI("Maserati"),
-	/** The ferrari. */
-	FERRARI("Ferrari"),
-	/** The porsche. */
-	PORSCHE("Porsche");
-
 	/**
-	 * The value
-	 */
-	@Getter
-	private final String value;
-
-	/**
-	 * Instantiates a new {@link Brands}.
+	 * Evaluate reflexivity of the given object, that means according to
+	 * {@link Object#equals(Object)} for any non-null reference value x, x.equals(x) should return
+	 * true.
 	 *
-	 * @param value
-	 *            the value
+	 * @param object
+	 *            the object
+	 * @return true, if reflexivity is given otherwise false
 	 */
-	Brands(final String value)
+	public static boolean evaluateReflexivity(Object object)
 	{
-		this.value = value;
+		if (object == null)
+		{
+			return false;
+		}
+		return object.equals(object);
 	}
 
 }

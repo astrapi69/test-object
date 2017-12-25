@@ -22,41 +22,42 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.test.objects.enums;
+package de.alpharogroup.test.objects;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 /**
- * The enum {@link Brands} is an enum intended for use in unit tests and holds some brands from
- * famous cars.
+ * The class {@link ClonableObject} is a class intended for use in unit tests that represents a
+ * clonable object and implements {@link Cloneable}.
  */
-public enum Brands
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder(toBuilder = true)
+public class ClonableObject implements Cloneable
 {
 
-	/** The lamborgini. */
-	LAMBORGINI("Lamborgini"),
-	/** The maserati. */
-	MASERATI("Maserati"),
-	/** The ferrari. */
-	FERRARI("Ferrari"),
-	/** The porsche. */
-	PORSCHE("Porsche");
+	/** The name. */
+	private String name;
 
 	/**
-	 * The value
+	 * {@inheritDoc}
 	 */
-	@Getter
-	private final String value;
-
-	/**
-	 * Instantiates a new {@link Brands}.
-	 *
-	 * @param value
-	 *            the value
-	 */
-	Brands(final String value)
+	@Override
+	protected Object clone() throws CloneNotSupportedException
 	{
-		this.value = value;
+		ClonableObject clone = new ClonableObject();
+		clone.setName(this.name);
+		return clone;
 	}
 
 }

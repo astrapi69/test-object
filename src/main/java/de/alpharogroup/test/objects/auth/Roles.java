@@ -33,9 +33,8 @@ import lombok.Setter;
 import lombok.Singular;
 import lombok.ToString;
 
-
 /**
- * The class {@link Roles}.
+ * The class {@link Roles} is a class intended for use in unit tests.
  */
 @Getter
 @Setter

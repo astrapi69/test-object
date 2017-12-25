@@ -28,7 +28,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
 /**
- * The annotation {@link Mandatory} marks a field as mandatory.
+ * The annotation {@link Mandatory} is an annotation intended for use in unit tests and marks a
+ * field as mandatory.
  */
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Mandatory {

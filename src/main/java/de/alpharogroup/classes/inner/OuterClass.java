@@ -24,14 +24,17 @@
  */
 package de.alpharogroup.classes.inner;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
- * The class {@link OuterClass}.
+ * The class {@link OuterClass} is a class intended for use in unit tests.
  */
+@Slf4j
 public class OuterClass
 {
 
 	/**
-	 * The class {@link InnerClass}.
+	 * The class {@link InnerClass} is a class intended for use in unit tests.
 	 */
 	public class InnerClass
 	{
@@ -39,7 +42,7 @@ public class OuterClass
 	}
 
 	/**
-	 * The class {@link StaticNestedClass}.
+	 * The class {@link StaticNestedClass} is a class intended for use in unit tests.
 	 */
 	static class StaticNestedClass
 	{
@@ -56,14 +59,7 @@ public class OuterClass
 				{
 				};
 			};
-			System.out.println(runnable.getClass().getName());
-			System.out.println("Is anonymous class:" + runnable.getClass().isAnonymousClass());
-			System.out.println("Enclosing class:" + runnable.getClass().getEnclosingClass());
-			System.out.println("Canonical Name:" + runnable.getClass().getCanonicalName());
-			System.out.println("toString:" + runnable.getClass().toString());
-			System.out.println(StaticNestedClass.class.getName());
-			System.out.println("getEnclosingMethod():" + runnable.getClass().getEnclosingMethod());
-			// Object[] objects = { runnable };
+			showInfo(runnable.getClass());
 		}
 	}
 
@@ -76,6 +72,28 @@ public class OuterClass
 	public static void main(final String... args)
 	{
 		StaticNestedClass.staticNestedClassMethod();
-		System.out.println(InnerClass.class);
+		showInfo(OuterClass.class);
+		showInfo(InnerClass.class);
+		showInfo(StaticNestedClass.class);
+	}
+
+	/**
+	 * Show info from given class.
+	 *
+	 * @param clazz
+	 *            the clazz
+	 */
+	public static void showInfo(Class<?> clazz)
+	{
+		log.info("========================================================================");
+		log.info("class name is {}.", clazz.getName());
+		log.info("= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = ");
+		log.info("is class {} anonymous class:{}", clazz.getSimpleName(), clazz.isAnonymousClass());
+		log.info("is class {} synthetic class:{}", clazz.getSimpleName(), clazz.isSynthetic());
+		log.info("is class {} enclosing class:{}", clazz.getSimpleName(),
+			clazz.getEnclosingClass());
+		log.info("canonical name of class {}:{}", clazz.getSimpleName(), clazz.getCanonicalName());
+		log.info("enclosing method:{}", clazz.getEnclosingMethod());
+		log.info("========================================================================");
 	}
 }

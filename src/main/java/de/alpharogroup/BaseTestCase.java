@@ -28,8 +28,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 /**
- * The abstract class BaseTestCase is for tests in all packages 'de.alpharogroup.*'.
- * 
+ * The abstract class BaseTestCase is for unit tests.
+ *
  * @version 1.0
  * @author Asterios Raptis
  */

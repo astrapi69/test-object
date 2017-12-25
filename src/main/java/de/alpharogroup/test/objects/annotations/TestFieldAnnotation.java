@@ -30,7 +30,8 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * The annotation {@link TestFieldAnnotation} for tests with field.
+ * The annotation {@link TestFieldAnnotation} is an annotation intended for use in unit tests with a
+ * field.
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
