@@ -64,23 +64,6 @@ public class OuterClass
 	}
 
 	/**
-	 * Show info from given class.
-	 *
-	 * @param clazz the clazz
-	 */
-	public static void showInfo(Class<?> clazz) {
-		log.info("========================================================================");
-		log.info("class name is {}.", clazz.getName());
-		log.info("= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = ");
-		log.info("is class {} anonymous class:{}", clazz.getSimpleName(), clazz.isAnonymousClass());
-		log.info("is class {} synthetic class:{}", clazz.getSimpleName(), clazz.isSynthetic());
-		log.info("is class {} enclosing class:{}", clazz.getSimpleName(), clazz.getEnclosingClass());
-		log.info("canonical name of class {}:{}", clazz.getSimpleName(), clazz.getCanonicalName());
-		log.info("enclosing method:{}", clazz.getEnclosingMethod());
-		log.info("========================================================================");
-	}
-
-	/**
 	 * The main method.
 	 *
 	 * @param args
@@ -92,5 +75,25 @@ public class OuterClass
 		showInfo(OuterClass.class);
 		showInfo(InnerClass.class);
 		showInfo(StaticNestedClass.class);
+	}
+
+	/**
+	 * Show info from given class.
+	 *
+	 * @param clazz
+	 *            the clazz
+	 */
+	public static void showInfo(Class<?> clazz)
+	{
+		log.info("========================================================================");
+		log.info("class name is {}.", clazz.getName());
+		log.info("= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = ");
+		log.info("is class {} anonymous class:{}", clazz.getSimpleName(), clazz.isAnonymousClass());
+		log.info("is class {} synthetic class:{}", clazz.getSimpleName(), clazz.isSynthetic());
+		log.info("is class {} enclosing class:{}", clazz.getSimpleName(),
+			clazz.getEnclosingClass());
+		log.info("canonical name of class {}:{}", clazz.getSimpleName(), clazz.getCanonicalName());
+		log.info("enclosing method:{}", clazz.getEnclosingMethod());
+		log.info("========================================================================");
 	}
 }

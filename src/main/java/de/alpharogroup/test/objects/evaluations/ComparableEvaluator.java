@@ -33,27 +33,6 @@ public class ComparableEvaluator
 {
 
 	/**
-	 * Evaluates the reversal comparison of the given objects.<br>
-	 * <br>
-	 *
-	 * reversal comparison should be: signum(object.compareTo(anotherObject)) ==
-	 * -signum(anotherObject.compareTo(object))
-	 *
-	 * @param <T>
-	 *            the generic type
-	 * @param object
-	 *            the object
-	 * @param anotherObject
-	 *            the another object
-	 * @return true, if reversal comparison is given otherwise false
-	 */
-	public static <T extends Comparable<T>> boolean evaluateReversalComparison(T object,
-		T anotherObject)
-	{
-		return signum(object.compareTo(anotherObject)) == -signum(anotherObject.compareTo(object));
-	}
-
-	/**
 	 * Evaluate consistency of a comparator. Consistency is given if and only if
 	 * object.compareTo(anotherObject) == 0 returns the same boolean value as
 	 * object.equals(anotherObject).<br>
@@ -73,6 +52,27 @@ public class ComparableEvaluator
 		boolean equal = object.equals(anotherObject);
 		boolean compareTo = object.compareTo(anotherObject) == 0;
 		return equal && compareTo;
+	}
+
+	/**
+	 * Evaluates the reversal comparison of the given objects.<br>
+	 * <br>
+	 *
+	 * reversal comparison should be: signum(object.compareTo(anotherObject)) ==
+	 * -signum(anotherObject.compareTo(object))
+	 *
+	 * @param <T>
+	 *            the generic type
+	 * @param object
+	 *            the object
+	 * @param anotherObject
+	 *            the another object
+	 * @return true, if reversal comparison is given otherwise false
+	 */
+	public static <T extends Comparable<T>> boolean evaluateReversalComparison(T object,
+		T anotherObject)
+	{
+		return signum(object.compareTo(anotherObject)) == -signum(anotherObject.compareTo(object));
 	}
 
 	/**

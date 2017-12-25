@@ -35,8 +35,9 @@ public class EqualsEvaluator
 {
 
 	/**
-	 * Evaluate reflexivity of the given object, that means according to {@link Object#equals(Object)} for any non-null
-	 * reference value x, x.equals(x) should return true.
+	 * Evaluate reflexivity of the given object, that means according to
+	 * {@link Object#equals(Object)} for any non-null reference value x, x.equals(x) should return
+	 * true.
 	 *
 	 * @param object
 	 *            the object
