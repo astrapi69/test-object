@@ -22,52 +22,33 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.test.objects;
+package de.alpharogroup.test.objects.evaluations;
+
+import lombok.experimental.UtilityClass;
 
 /**
- * The class {@link HashcodeEvaluator} provides algorithms for evaluate the hashcode contract of an
+ * The class {@link EqualsEvaluator} provides algorithms for evaluate the equals contract of an
  * given object.
  */
-public class HashcodeEvaluator
+@UtilityClass
+public class EqualsEvaluator
 {
 
 	/**
-	 * Evaluate consistency, that means the call of {@link Object#hashCode()} of the given object
-	 * should return always the same int value.
+	 * Evaluate reflexivity of the given object, that means according to {@link Object#equals(Object)} for any non-null
+	 * reference value x, x.equals(x) should return true.
 	 *
 	 * @param object
 	 *            the object
-	 * @return true, if consistency is given otherwise false
+	 * @return true, if reflexivity is given otherwise false
 	 */
-	public static boolean evaluateConsistency(Object object)
+	public static boolean evaluateReflexivity(Object object)
 	{
-
 		if (object == null)
 		{
 			return false;
 		}
-		return object.hashCode() == object.hashCode();
-	}
-
-	/**
-	 * Evaluate equality of hash code from the given objects that should be equal, if not an
-	 * {@link IllegalArgumentException} will be thrown.
-	 *
-	 * @param object
-	 *            the object
-	 * @param anotherObject
-	 *            the another object
-	 * @return true, if equality of hash code from the given objects is given otherwise false
-	 */
-	public static boolean evaluateEqualityOfHashCode(Object object, Object anotherObject)
-	{
-
-		if (object.equals(anotherObject))
-		{
-			return object.hashCode() == object.hashCode();
-		}
-		throw new IllegalArgumentException(
-			"Given arguments should be equal for evaluate equality of hash code");
+		return object.equals(object);
 	}
 
 }
