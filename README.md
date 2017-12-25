@@ -78,4 +78,6 @@ or over flattr: <a href="https://flattr.com/submit/auto?fid=r7vp62&url=https%3A%
 <img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" />
 </a>
 
+# Similar projects
 
+[meanBean](http://meanbean.sourceforge.net/) Automated JavaBean Testing.

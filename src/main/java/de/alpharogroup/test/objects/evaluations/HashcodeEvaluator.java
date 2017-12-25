@@ -25,7 +25,8 @@
 package de.alpharogroup.test.objects.evaluations;
 
 /**
- * The class {@link HashcodeEvaluator} provides algorithms for evaluate the hashcode contract of an
+ * The class {@link HashcodeEvaluator} provides algorithms for evaluate the <a href=
+ * "https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#hashCode--">hashcode contract</a> of an
  * given object.
  */
 public class HashcodeEvaluator
