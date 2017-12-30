@@ -90,12 +90,11 @@ public class HashcodeEvaluator
 	 * {@link IllegalArgumentException} will be thrown), that means according to
 	 * {@link Object#hashCode()} that this method should evaluate the following contract condition:
 	 * <ul>
-	 * <li>It is <em>not</em> required that if two objects are unequal
-     *     according to the {@link java.lang.Object#equals(java.lang.Object)}
-     *     method, then calling the {@code hashCode} method on each of the
-     *     two objects must produce distinct integer results.  However, the
-     *     programmer should be aware that producing distinct integer results
-     *     for unequal objects may improve the performance of hash tables.
+	 * <li>It is <em>not</em> required that if two objects are unequal according to the
+	 * {@link java.lang.Object#equals(java.lang.Object)} method, then calling the {@code hashCode}
+	 * method on each of the two objects must produce distinct integer results. However, the
+	 * programmer should be aware that producing distinct integer results for unequal objects may
+	 * improve the performance of hash tables.
 	 * </ul>
 	 *
 	 * @param object

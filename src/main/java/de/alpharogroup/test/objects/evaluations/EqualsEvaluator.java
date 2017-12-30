@@ -37,7 +37,8 @@ public class EqualsEvaluator
 
 	/**
 	 * Evaluate reflexivity of the given object, that means according to
-	 * {@link Object#equals(Object)} that this method should evaluate the following contract condition:
+	 * {@link Object#equals(Object)} that this method should evaluate the following contract
+	 * condition:
 	 * <ul>
 	 * <li>It is <i>reflexive</i>: for any non-null reference value {@code x}, {@code x.equals(x)}
 	 * should return {@code true}.
@@ -60,7 +61,8 @@ public class EqualsEvaluator
 
 	/**
 	 * Evaluate symmetric of the given objects, that means according to
-	 * {@link Object#equals(Object)} that this method should evaluate the following contract condition:
+	 * {@link Object#equals(Object)} that this method should evaluate the following contract
+	 * condition:
 	 * <ul>
 	 * <li>It is <i>symmetric</i>: for any non-null reference values {@code x} and {@code y},
 	 * {@code x.equals(y)} should return {@code true} if and only if {@code y.equals(x)} returns
@@ -88,7 +90,8 @@ public class EqualsEvaluator
 
 	/**
 	 * Evaluate transitivity of the given objects, that means according to
-	 * {@link Object#equals(Object)} that this method should evaluate the following contract condition:
+	 * {@link Object#equals(Object)} that this method should evaluate the following contract
+	 * condition:
 	 * <ul>
 	 * <li>It is <i>transitive</i>: for any non-null reference values {@code x}, {@code y}, and
 	 * {@code z}, if {@code x.equals(y)} returns {@code true} and {@code y.equals(z)} returns
@@ -119,7 +122,8 @@ public class EqualsEvaluator
 
 	/**
 	 * Evaluate non-null condition is given of the given object, that means according to
-	 * {@link Object#equals(Object)} that this method should evaluate the following contract condition:
+	 * {@link Object#equals(Object)} that this method should evaluate the following contract
+	 * condition:
 	 * <ul>
 	 * <li>For any non-null reference value {@code x}, {@code x.equals(null)} should return
 	 * {@code false}.
@@ -144,7 +148,8 @@ public class EqualsEvaluator
 
 	/**
 	 * Evaluate consistency of the given objects, that means according to
-	 * {@link Object#equals(Object)} that this method should evaluate the following contract condition:
+	 * {@link Object#equals(Object)} that this method should evaluate the following contract
+	 * condition:
 	 * <ul>
 	 * <li>It is <i>consistent</i>: for any non-null reference values {@code x} and {@code y},
 	 * multiple invocations of {@code x.equals(y)} consistently return {@code true} or consistently
@@ -152,8 +157,10 @@ public class EqualsEvaluator
 	 * objects is modified.
 	 * </ul>
 	 *
-	 * Note: The upper list is taken from the javadoc from {@link Object#equals(Object)}<br><br>
-	 * This method calls the same name method with default iterations of 7<br><br>
+	 * Note: The upper list is taken from the javadoc from {@link Object#equals(Object)}<br>
+	 * <br>
+	 * This method calls the same name method with default iterations of 7<br>
+	 * <br>
 	 *
 	 * @param <T>
 	 *            the generic type
@@ -161,8 +168,6 @@ public class EqualsEvaluator
 	 *            the object
 	 * @param anotherObject
 	 *            the another object
-	 * @param iterations
-	 *            the iterations of call of equals method.
 	 * @return true, if consistency contract condition is given otherwise false
 	 */
 	public static <T> boolean evaluateConsistency(T object, T anotherObject)
@@ -172,7 +177,8 @@ public class EqualsEvaluator
 
 	/**
 	 * Evaluate consistency of the given objects, that means according to
-	 * {@link Object#equals(Object)} that this method should evaluate the following contract condition:
+	 * {@link Object#equals(Object)} that this method should evaluate the following contract
+	 * condition:
 	 * <ul>
 	 * <li>It is <i>consistent</i>: for any non-null reference values {@code x} and {@code y},
 	 * multiple invocations of {@code x.equals(y)} consistently return {@code true} or consistently
