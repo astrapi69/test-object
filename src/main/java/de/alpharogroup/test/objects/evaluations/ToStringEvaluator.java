@@ -62,8 +62,7 @@ public class ToStringEvaluator
 	}
 
 	/**
-	 * Evaluate consistency of method {@link Object#toString()} for the given objects
-	 * <br>
+	 * Evaluate consistency of method {@link Object#toString()} for the given objects <br>
 	 * This method calls the same name method with default iterations of 7<br>
 	 * <br>
 	 *
@@ -73,8 +72,8 @@ public class ToStringEvaluator
 	 *            the object
 	 * @param anotherObject
 	 *            the another object
-	 * @return true, if consistency of method {@link Object#toString()} for the given objectsöä#
-	 *  is given otherwise false
+	 * @return true, if consistency of method {@link Object#toString()} for the given objectsöä# is
+	 *         given otherwise false
 	 */
 	public static <T> boolean evaluateConsistency(T object)
 	{
@@ -82,8 +81,7 @@ public class ToStringEvaluator
 	}
 
 	/**
-	 * Evaluate consistency of method {@link Object#toString()} for the given objects
-	 * <br>
+	 * Evaluate consistency of method {@link Object#toString()} for the given objects <br>
 	 *
 	 * @param <T>
 	 *            the generic type
