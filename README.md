@@ -27,7 +27,7 @@ Add the following maven dependency to your project `pom.xml` if you want to impo
 Than you can add the dependency to your dependencies:
 
 		<!-- TEST-OBJECTS version -->
-		<test-objects.version>4.19.0</test-objects.version>
+		<test-objects.version>4.20.0</test-objects.version>
 
 		<dependencies>
 			...
@@ -81,3 +81,5 @@ or over flattr: <a href="https://flattr.com/submit/auto?fid=r7vp62&url=https%3A%
 # Similar projects
 
 [meanBean](http://meanbean.sourceforge.net/) Automated JavaBean Testing.
+[awaitility](https://github.com/awaitility/awaitility) Awaitility is a small Java DSL for synchronizing asynchronous operations
+[podam](https://github.com/devopsfolks/podam) PODAM is a lightweight tool to auto-fill Java POJOs with data.
