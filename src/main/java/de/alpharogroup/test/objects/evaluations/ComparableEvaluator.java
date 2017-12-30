@@ -26,9 +26,12 @@ package de.alpharogroup.test.objects.evaluations;
 
 import static java.lang.Math.signum;
 
+import lombok.experimental.UtilityClass;
+
 /**
  * The class {@link ComparableEvaluator} is intended to evaluate {@link Comparable} objects.
  */
+@UtilityClass
 public class ComparableEvaluator
 {
 

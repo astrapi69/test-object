@@ -24,11 +24,14 @@
  */
 package de.alpharogroup.test.objects.evaluations;
 
+import lombok.experimental.UtilityClass;
+
 /**
  * The class {@link HashcodeEvaluator} provides algorithms for evaluate the
  * <a href= "https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#hashCode--">hashcode
  * contract</a> of an given object.
  */
+@UtilityClass
 public class HashcodeEvaluator
 {
 
@@ -76,10 +79,13 @@ public class HashcodeEvaluator
 	 */
 	public static boolean evaluateEquality(Object object, Object anotherObject)
 	{
-
+		if (object == null)
+		{
+			return false;
+		}
 		if (object.equals(anotherObject))
 		{
-			return object.hashCode() == object.hashCode();
+			return object.hashCode() == anotherObject.hashCode();
 		}
 		throw new IllegalArgumentException(
 			"Given arguments should be equal for evaluate equality of hash code");
@@ -105,10 +111,13 @@ public class HashcodeEvaluator
 	 */
 	public static boolean evaluateUnequality(Object object, Object anotherObject)
 	{
-
+		if (object == null)
+		{
+			return false;
+		}
 		if (!object.equals(anotherObject))
 		{
-			return object.hashCode() != object.hashCode();
+			return object.hashCode() != anotherObject.hashCode();
 		}
 		throw new IllegalArgumentException(
 			"Given arguments should be unequal for evaluate unequality of hash code");
