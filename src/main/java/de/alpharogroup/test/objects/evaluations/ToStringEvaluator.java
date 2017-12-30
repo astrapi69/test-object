@@ -70,8 +70,6 @@ public class ToStringEvaluator
 	 *            the generic type
 	 * @param object
 	 *            the object
-	 * @param anotherObject
-	 *            the another object
 	 * @return true, if consistency of method {@link Object#toString()} for the given objectsöä# is
 	 *         given otherwise false
 	 */
@@ -87,8 +85,6 @@ public class ToStringEvaluator
 	 *            the generic type
 	 * @param object
 	 *            the object
-	 * @param anotherObject
-	 *            the another object
 	 * @param iterations
 	 *            the iterations of call of equals method.
 	 * @return true, if consistency of method {@link Object#toString()} is given otherwise false
