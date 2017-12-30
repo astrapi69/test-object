@@ -24,11 +24,14 @@
  */
 package de.alpharogroup.test.objects.evaluations;
 
+import lombok.experimental.UtilityClass;
+
 /**
  * The class {@link HashcodeEvaluator} provides algorithms for evaluate the
  * <a href= "https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#hashCode--">hashcode
  * contract</a> of an given object.
  */
+@UtilityClass
 public class HashcodeEvaluator
 {
 
