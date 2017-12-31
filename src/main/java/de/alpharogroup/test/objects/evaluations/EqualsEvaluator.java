@@ -46,6 +46,8 @@ public class EqualsEvaluator
 	 *
 	 * Note: The upper list entry is taken from the javadoc from {@link Object#equals(Object)}
 	 *
+	 * @param <T>
+	 *            the generic type
 	 * @param object
 	 *            the object
 	 * @return true, if reflexivity contract condition is given otherwise false
@@ -71,6 +73,8 @@ public class EqualsEvaluator
 	 *
 	 * Note: The upper list entry is taken from the javadoc from {@link Object#equals(Object)}
 	 *
+	 * @param <T>
+	 *            the generic type
 	 * @param object
 	 *            the object
 	 * @param anotherObject
@@ -100,6 +104,8 @@ public class EqualsEvaluator
 	 *
 	 * Note: The upper list entry is taken from the javadoc from {@link Object#equals(Object)}
 	 *
+	 * @param <T>
+	 *            the generic type
 	 * @param a
 	 *            the object
 	 * @param b
@@ -271,6 +277,8 @@ public class EqualsEvaluator
 	 *
 	 * Note: The upper list entries is taken from the javadoc from {@link Object#equals(Object)}
 	 *
+	 * @param <T>
+	 *            the generic type
 	 * @param object
 	 *            the object
 	 * @param anotherObject
@@ -313,10 +321,12 @@ public class EqualsEvaluator
 	 *
 	 * Note: The upper list entries is taken from the javadoc from {@link Object#equals(Object)}
 	 *
+	 * @param <T>
+	 *            the generic type
 	 * @param object
 	 *            the object
-	 * @param anotherObject
-	 *            the another object
+	 * @param otherObject
+	 *            the other object
 	 * @return true, if reflexivity, non null, symmetric and consistency contract conditions is
 	 *         given otherwise false
 	 */
