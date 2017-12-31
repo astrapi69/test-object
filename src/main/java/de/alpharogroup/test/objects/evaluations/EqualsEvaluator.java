@@ -36,7 +36,7 @@ public class EqualsEvaluator
 {
 
 	/**
-	 * Evaluate reflexivity of the given object, that means according to
+	 * Evaluates the contract condition for reflexivity of the given object, that means according to
 	 * {@link Object#equals(Object)} that this method should evaluate the following contract
 	 * condition:
 	 * <ul>
@@ -44,13 +44,13 @@ public class EqualsEvaluator
 	 * should return {@code true}.
 	 * </ul>
 	 *
-	 * Note: The upper list is taken from the javadoc from {@link Object#equals(Object)}
+	 * Note: The upper list entry is taken from the javadoc from {@link Object#equals(Object)}
 	 *
 	 * @param object
 	 *            the object
 	 * @return true, if reflexivity contract condition is given otherwise false
 	 */
-	public static boolean evaluateReflexivity(Object object)
+	public static <T> boolean evaluateReflexivity(T object)
 	{
 		if (object == null)
 		{
@@ -60,7 +60,7 @@ public class EqualsEvaluator
 	}
 
 	/**
-	 * Evaluate symmetric of the given objects, that means according to
+	 * Evaluates the contract condition for symmetric of the given objects, that means according to
 	 * {@link Object#equals(Object)} that this method should evaluate the following contract
 	 * condition:
 	 * <ul>
@@ -69,7 +69,7 @@ public class EqualsEvaluator
 	 * {@code true}.
 	 * </ul>
 	 *
-	 * Note: The upper list is taken from the javadoc from {@link Object#equals(Object)}
+	 * Note: The upper list entry is taken from the javadoc from {@link Object#equals(Object)}
 	 *
 	 * @param object
 	 *            the object
@@ -77,7 +77,7 @@ public class EqualsEvaluator
 	 *            the another object
 	 * @return true, if symmetric contract condition is given otherwise false
 	 */
-	public static boolean evaluateSymmetric(Object object, Object anotherObject)
+	public static <T> boolean evaluateSymmetric(T object, T anotherObject)
 	{
 		if (object == null)
 		{
@@ -85,12 +85,12 @@ public class EqualsEvaluator
 		}
 		boolean even = object.equals(anotherObject);
 		boolean odd = anotherObject.equals(object);
-		return even && odd;
+		return even == odd;
 	}
 
 	/**
-	 * Evaluate transitivity of the given objects, that means according to
-	 * {@link Object#equals(Object)} that this method should evaluate the following contract
+	 * Evaluates the contract condition for transitivity of the given objects, that means according
+	 * to {@link Object#equals(Object)} that this method should evaluate the following contract
 	 * condition:
 	 * <ul>
 	 * <li>It is <i>transitive</i>: for any non-null reference values {@code x}, {@code y}, and
@@ -98,7 +98,7 @@ public class EqualsEvaluator
 	 * {@code true}, then {@code x.equals(z)} should return {@code true}.
 	 * </ul>
 	 *
-	 * Note: The upper list is taken from the javadoc from {@link Object#equals(Object)}
+	 * Note: The upper list entry is taken from the javadoc from {@link Object#equals(Object)}
 	 *
 	 * @param a
 	 *            the object
@@ -108,7 +108,7 @@ public class EqualsEvaluator
 	 *            another object
 	 * @return true, if symmetric contract condition is given otherwise false
 	 */
-	public static boolean evaluateTransitivity(Object a, Object b, Object c)
+	public static <T> boolean evaluateTransitivity(T a, T b, T c)
 	{
 		if (a == null)
 		{
@@ -121,21 +121,24 @@ public class EqualsEvaluator
 	}
 
 	/**
-	 * Evaluate non-null condition is given of the given object, that means according to
-	 * {@link Object#equals(Object)} that this method should evaluate the following contract
-	 * condition:
+	 * Evaluates the contract condition for non-null condition is given of the given object, that
+	 * means according to {@link Object#equals(Object)} that this method should evaluate the
+	 * following contract condition:
 	 * <ul>
 	 * <li>For any non-null reference value {@code x}, {@code x.equals(null)} should return
 	 * {@code false}.
 	 * </ul>
 	 *
-	 * Note: The upper list is taken from the javadoc from {@link Object#equals(Object)}
+	 * Note: The upper list entry is taken from the javadoc from {@link Object#equals(Object)} <br>
+	 *
+	 * @param <T>
+	 *            the generic type
 	 *
 	 * @param object
 	 *            the object
 	 * @return true, if non-null contract condition is given otherwise false
 	 */
-	public static boolean evaluateNonNull(Object object)
+	public static <T> boolean evaluateNonNull(T object)
 	{
 		if (object == null)
 		{
@@ -147,8 +150,8 @@ public class EqualsEvaluator
 	}
 
 	/**
-	 * Evaluate consistency of the given objects, that means according to
-	 * {@link Object#equals(Object)} that this method should evaluate the following contract
+	 * Evaluates the contract condition for consistency of the given objects, that means according
+	 * to {@link Object#equals(Object)} that this method should evaluate the following contract
 	 * condition:
 	 * <ul>
 	 * <li>It is <i>consistent</i>: for any non-null reference values {@code x} and {@code y},
@@ -157,7 +160,7 @@ public class EqualsEvaluator
 	 * objects is modified.
 	 * </ul>
 	 *
-	 * Note: The upper list is taken from the javadoc from {@link Object#equals(Object)}<br>
+	 * Note: The upper list entry is taken from the javadoc from {@link Object#equals(Object)}<br>
 	 * <br>
 	 * This method calls the same name method with default iterations of 7<br>
 	 * <br>
@@ -176,8 +179,8 @@ public class EqualsEvaluator
 	}
 
 	/**
-	 * Evaluate consistency of the given objects, that means according to
-	 * {@link Object#equals(Object)} that this method should evaluate the following contract
+	 * Evaluates the contract condition for consistency of the given objects, that means according
+	 * to {@link Object#equals(Object)} that this method should evaluate the following contract
 	 * condition:
 	 * <ul>
 	 * <li>It is <i>consistent</i>: for any non-null reference values {@code x} and {@code y},
@@ -186,7 +189,7 @@ public class EqualsEvaluator
 	 * objects is modified.
 	 * </ul>
 	 *
-	 * Note: The upper list is taken from the javadoc from {@link Object#equals(Object)}
+	 * Note: The upper list entry is taken from the javadoc from {@link Object#equals(Object)}
 	 *
 	 * @param <T>
 	 *            the generic type
@@ -215,6 +218,123 @@ public class EqualsEvaluator
 			}
 		}
 		return valid;
+	}
+
+	/**
+	 * Evaluates the contract conditions for reflexivity and non null, that means according to
+	 * {@link Object#equals(Object)} that this method should evaluate the following contract
+	 * condition:
+	 * <ul>
+	 * <li>It is <i>reflexive</i>: for any non-null reference value {@code x}, {@code x.equals(x)}
+	 * should return {@code true}.
+	 * <li>For any non-null reference value {@code x}, {@code x.equals(null)} should return
+	 * {@code false}.
+	 * </ul>
+	 *
+	 * Note: The upper list entries is taken from the javadoc from {@link Object#equals(Object)}
+	 *
+	 * @param <T>
+	 *            the generic type
+	 * @param object
+	 *            the object
+	 * @return true, if reflexivity and non-null contract conditions is given otherwise false
+	 */
+	public static <T> boolean evaluateReflexivityAndNonNull(T object)
+	{
+		boolean evaluated;
+		evaluated = evaluateReflexivity(object);
+		if (!evaluated)
+		{
+			return false;
+		}
+		evaluated = evaluateNonNull(object);
+		if (!evaluated)
+		{
+			return false;
+		}
+		return evaluated;
+	}
+
+	/**
+	 * Evaluates the contract conditions for symmetric and consistency of the given objects, that
+	 * means according to {@link Object#equals(Object)} that this method should evaluate the
+	 * following contract condition:
+	 * <ul>
+	 * <li>It is <i>symmetric</i>: for any non-null reference values {@code x} and {@code y},
+	 * {@code x.equals(y)} should return {@code true} if and only if {@code y.equals(x)} returns
+	 * {@code true}.
+	 * <li>It is <i>consistent</i>: for any non-null reference values {@code x} and {@code y},
+	 * multiple invocations of {@code x.equals(y)} consistently return {@code true} or consistently
+	 * return {@code false}, provided no information used in {@code equals} comparisons on the
+	 * objects is modified.
+	 * </ul>
+	 *
+	 * Note: The upper list entries is taken from the javadoc from {@link Object#equals(Object)}
+	 *
+	 * @param object
+	 *            the object
+	 * @param anotherObject
+	 *            the another object
+	 * @return true, if symmetric and consistency contract conditions is given otherwise false
+	 */
+	public static <T> boolean evaluateSymmetricAndConsistency(T object, T anotherObject)
+	{
+		boolean evaluated;
+		evaluated = evaluateSymmetric(object, anotherObject);
+		if (!evaluated)
+		{
+			return false;
+		}
+		evaluated = evaluateConsistency(object, anotherObject);
+		if (!evaluated)
+		{
+			return false;
+		}
+		return evaluated;
+	}
+
+	/**
+	 * Evaluates the contract conditions for reflexivity, non null, symmetric and consistency of the
+	 * given objects, that means according to {@link Object#equals(Object)} that this method should
+	 * evaluate the following contract condition:
+	 * <ul>
+	 * <li>It is <i>reflexive</i>: for any non-null reference value {@code x}, {@code x.equals(x)}
+	 * should return {@code true}.
+	 * <li>For any non-null reference value {@code x}, {@code x.equals(null)} should return
+	 * {@code false}.
+	 * <li>It is <i>symmetric</i>: for any non-null reference values {@code x} and {@code y},
+	 * {@code x.equals(y)} should return {@code true} if and only if {@code y.equals(x)} returns
+	 * {@code true}.
+	 * <li>It is <i>consistent</i>: for any non-null reference values {@code x} and {@code y},
+	 * multiple invocations of {@code x.equals(y)} consistently return {@code true} or consistently
+	 * return {@code false}, provided no information used in {@code equals} comparisons on the
+	 * objects is modified.
+	 * </ul>
+	 *
+	 * Note: The upper list entries is taken from the javadoc from {@link Object#equals(Object)}
+	 *
+	 * @param object
+	 *            the object
+	 * @param anotherObject
+	 *            the another object
+	 * @return true, if reflexivity, non null, symmetric and consistency contract conditions is
+	 *         given otherwise false
+	 */
+	public static <T> boolean evaluateReflexivityNonNullSymmetricAndConsistency(T object,
+		T otherObject)
+	{
+		boolean evaluated;
+		evaluated = evaluateReflexivityAndNonNull(object);
+		if (!evaluated)
+		{
+			return false;
+		}
+		evaluated = evaluateSymmetricAndConsistency(object, otherObject);
+		if (!evaluated)
+		{
+			return false;
+		}
+		return evaluated;
 	}
 
 }
