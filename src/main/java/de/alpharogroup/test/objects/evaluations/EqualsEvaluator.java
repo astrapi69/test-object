@@ -112,7 +112,7 @@ public class EqualsEvaluator
 	 *            other object
 	 * @param c
 	 *            another object
-	 * @return true, if symmetric contract condition is given otherwise false
+	 * @return true, if transitivity contract condition is given otherwise false
 	 */
 	public static <T> boolean evaluateTransitivity(T a, T b, T c)
 	{
@@ -340,6 +340,57 @@ public class EqualsEvaluator
 			return false;
 		}
 		evaluated = evaluateSymmetricAndConsistency(object, otherObject);
+		if (!evaluated)
+		{
+			return false;
+		}
+		return evaluated;
+	}
+
+	/**
+	 * Evaluates the contract conditions for reflexivity, non null, symmetric, consistency and
+	 * transitivity of the given objects, that means according to {@link Object#equals(Object)} that
+	 * this method should evaluate the following contract condition:
+	 * <ul>
+	 * <li>It is <i>reflexive</i>: for any non-null reference value {@code x}, {@code x.equals(x)}
+	 * should return {@code true}.
+	 * <li>For any non-null reference value {@code x}, {@code x.equals(null)} should return
+	 * {@code false}.
+	 * <li>It is <i>symmetric</i>: for any non-null reference values {@code x} and {@code y},
+	 * {@code x.equals(y)} should return {@code true} if and only if {@code y.equals(x)} returns
+	 * {@code true}.
+	 * <li>It is <i>consistent</i>: for any non-null reference values {@code x} and {@code y},
+	 * multiple invocations of {@code x.equals(y)} consistently return {@code true} or consistently
+	 * return {@code false}, provided no information used in {@code equals} comparisons on the
+	 * objects is modified.
+	 * <li>It is <i>transitive</i>: for any non-null reference values {@code x}, {@code y}, and
+	 * {@code z}, if {@code x.equals(y)} returns {@code true} and {@code y.equals(z)} returns
+	 * {@code true}, then {@code x.equals(z)} should return {@code true}.
+	 * </ul>
+	 *
+	 * Note: The upper list entries is taken from the javadoc from {@link Object#equals(Object)}
+	 *
+	 * @param <T>
+	 *            the generic type
+	 * @param object
+	 *            the object
+	 * @param otherObject
+	 *            the other object
+	 * @param anotherObject
+	 *            the another object
+	 * @return true, if reflexivity, non null, symmetric, consistency and transitivity contract
+	 *         conditions is given otherwise false
+	 */
+	public static <T> boolean evaluateReflexivityNonNullSymmetricConsistencyAndTransitivity(
+		T object, T otherObject, T anotherObject)
+	{
+		boolean evaluated;
+		evaluated = evaluateReflexivityNonNullSymmetricAndConsistency(otherObject, otherObject);
+		if (!evaluated)
+		{
+			return false;
+		}
+		evaluated = evaluateTransitivity(object, otherObject, anotherObject);
 		if (!evaluated)
 		{
 			return false;
