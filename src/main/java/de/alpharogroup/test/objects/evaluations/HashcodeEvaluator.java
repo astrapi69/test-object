@@ -48,12 +48,14 @@ public class HashcodeEvaluator
 	 *
 	 * Note: The upper list is taken from the javadoc from {@link Object#hashCode()}
 	 *
+	 * @param <T>
+	 *            the generic type
 	 * @param object
 	 *            the object
 	 * @return true, if consistency contract condition of {@link Object#hashCode()} is given
 	 *         otherwise false
 	 */
-	public static boolean evaluateConsistency(Object object)
+	public static <T> boolean evaluateConsistency(T object)
 	{
 		if (object == null)
 		{
@@ -71,13 +73,15 @@ public class HashcodeEvaluator
 	 * {@code hashCode} method on each of the two objects must produce the same integer result.
 	 * </ul>
 	 *
+	 * @param <T>
+	 *            the generic type
 	 * @param object
 	 *            the object
 	 * @param anotherObject
 	 *            the another object
 	 * @return true, if equality of hash code from the given objects is given otherwise false
 	 */
-	public static boolean evaluateEquality(Object object, Object anotherObject)
+	public static <T> boolean evaluateEquality(T object, T anotherObject)
 	{
 		if (object == null)
 		{
@@ -103,13 +107,15 @@ public class HashcodeEvaluator
 	 * improve the performance of hash tables.
 	 * </ul>
 	 *
+	 * @param <T>
+	 *            the generic type
 	 * @param object
 	 *            the object
 	 * @param anotherObject
 	 *            the another object
 	 * @return true, if unequality of hash code from the given objects is given otherwise false
 	 */
-	public static boolean evaluateUnequality(Object object, Object anotherObject)
+	public static <T> boolean evaluateUnequality(T object, T anotherObject)
 	{
 		if (object == null)
 		{
