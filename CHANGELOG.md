@@ -10,6 +10,7 @@ ADDED:
 - new class EqualsHashCodeAndToStringEvaluator created 
 - extended README.md with similar project reference link
 - new launch script for change log created
+- new CHANGELOG.md file created
 
 FIXED:
 
