@@ -70,7 +70,7 @@ public class ToStringEvaluator
 	 *            the generic type
 	 * @param object
 	 *            the object
-	 * @return true, if consistency of method {@link Object#toString()} for the given objectsöä# is
+	 * @return true, if consistency of method {@link Object#toString()} for the given objects is
 	 *         given otherwise false
 	 */
 	public static <T> boolean evaluateConsistency(T object)
