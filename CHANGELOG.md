@@ -31,7 +31,7 @@ Version 4.19.0
 ADDED: 
 
 - new classes created for evaluation of equals, hashcode and comparable
-- javadoc for packages
+- provide package.html for the javadoc of packages
 
 CHANGED:
 
