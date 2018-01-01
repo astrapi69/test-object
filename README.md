@@ -84,3 +84,10 @@ or over flattr: <a href="https://flattr.com/submit/auto?fid=r7vp62&url=https%3A%
 [awaitility](https://github.com/awaitility/awaitility) Awaitility is a small Java DSL for synchronizing asynchronous operations
 [podam](https://github.com/devopsfolks/podam) PODAM is a lightweight tool to auto-fill Java POJOs with data.
 [random-beans](https://github.com/benas/random-beans) Because life is too short to generate random Java beans by hand.
+
+## Credits
+
+|Travis CI|
+|:-:|
+|![Travis CI](https://travis-ci.com/images/logos/TravisCI-Full-Color.png)|
+|Many thanks to [Travis CI](https://travis-ci.org) for providing a free continuous integration service for open source projects.|
