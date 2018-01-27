@@ -7,6 +7,13 @@ Version 4.22.0-SNAPSHOT
 ADDED: 
 
 - new evaluator methods created for equals, hashcode and toString 
+- new section for credits in the README.md file
+
+CHANGED:
+
+- update of parent version
+- moved build-status, maven-central and javadoc icons to the top
+- javadoc extended and improved
 
 Version 4.21.0
 -------------
