@@ -1,6 +1,13 @@
 ## Change log
 ----------------------
 
+Version 4.22.0-SNAPSHOT
+-------------
+
+ADDED: 
+
+- new evaluator methods created for equals, hashcode and toString 
+
 Version 4.21.0
 -------------
 
