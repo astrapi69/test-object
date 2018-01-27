@@ -1,21 +1,19 @@
 # test-objects
 
+<div align="center">
+
+[![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](http://opensource.org/licenses/MIT)
+[![Build Status](https://travis-ci.org/lightblueseas/test-objects.svg?branch=master)](https://travis-ci.org/lightblueseas/test-objects)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/test-objects/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/test-objects)
+[![Javadocs](http://www.javadoc.io/badge/de.alpharogroup/test-objects.svg)](http://www.javadoc.io/doc/de.alpharogroup/test-objects)
+
+</div>
+
 Project that holds test objects for unit tests
 
 ## License
 
 The source code comes under the liberal MIT License, making test-objects great for all types of applications.
-
-## Build status
-[![Build Status](https://travis-ci.org/lightblueseas/test-objects.svg?branch=master)](https://travis-ci.org/lightblueseas/test-objects)
-
-## Maven Central
-
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/test-objects/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/test-objects)
-
-## javadoc
-
-test-objects [![Javadocs](http://www.javadoc.io/badge/de.alpharogroup/test-objects.svg)](http://www.javadoc.io/doc/de.alpharogroup/test-objects)
 
 ## Maven dependency
 
@@ -27,7 +25,7 @@ Add the following maven dependency to your project `pom.xml` if you want to impo
 Than you can add the dependency to your dependencies:
 
 		<!-- TEST-OBJECTS version -->
-		<test-objects.version>4.21.0</test-objects.version>
+		<test-objects.version>4.22.0</test-objects.version>
 
 		<dependencies>
 			...
@@ -74,13 +72,21 @@ or over ether with:
 
 0xaB6EaE10F352268B0CA672Dd6e999C86344D49D8
 
-or over flattr: <a href="https://flattr.com/submit/auto?fid=r7vp62&url=https%3A%2F%2Fgithub.com%2Flightblueseas%2Ftest-objects" target="_blank">
+or over flattr: 
+<a href="https://flattr.com/submit/auto?fid=r7vp62&url=https%3A%2F%2Fgithub.com%2Flightblueseas%2Ftest-objects" target="_blank">
 <img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" />
 </a>
 
 # Similar projects
 
-[meanBean](http://meanbean.sourceforge.net/) Automated JavaBean Testing.
-[awaitility](https://github.com/awaitility/awaitility) Awaitility is a small Java DSL for synchronizing asynchronous operations
-[podam](https://github.com/devopsfolks/podam) PODAM is a lightweight tool to auto-fill Java POJOs with data.
-[random-beans](https://github.com/benas/random-beans) Because life is too short to generate random Java beans by hand.
+- [meanBean](http://meanbean.sourceforge.net/) Automated JavaBean Testing.
+- [awaitility](https://github.com/awaitility/awaitility) Awaitility is a small Java DSL for synchronizing asynchronous operations
+- [podam](https://github.com/devopsfolks/podam) PODAM is a lightweight tool to auto-fill Java POJOs with data.
+- [random-beans](https://github.com/benas/random-beans) Because life is too short to generate random Java beans by hand.
+
+## Credits
+
+|Travis CI|
+|:-:|
+|![Travis CI](https://travis-ci.com/images/logos/TravisCI-Full-Color.png)|
+|Many thanks to [Travis CI](https://travis-ci.org) for providing a free continuous integration service for open source projects.|

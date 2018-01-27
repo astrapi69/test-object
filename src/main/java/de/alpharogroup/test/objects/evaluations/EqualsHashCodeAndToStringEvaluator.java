@@ -31,6 +31,64 @@ public class EqualsHashCodeAndToStringEvaluator
 {
 
 	/**
+	 * Evaluates the all the contract conditions for the methods {@link Object#equals(Object)} and
+	 * {@link Object#hashCode()}.
+	 *
+	 * @param <T>
+	 *            the generic type
+	 * @param first
+	 *            the first object
+	 * @param second
+	 *            the second object that have to be uneqal to the first object
+	 * @param third
+	 *            the third object have to be equal to first object and fourth object
+	 * @param fourth
+	 *            the fourth object have to be equal to first object and third object
+	 * @return true, if all contract conditions for the methods {@link Object#equals(Object)} and
+	 *         {@link Object#hashCode()} is given otherwise false
+	 */
+	public static <T> boolean evaluateEqualsAndHashcode(final T first, final T second,
+		final T third, final T fourth)
+	{
+		final boolean evaluated = true;
+		if (first.equals(second))
+		{
+			return false;
+		}
+		if (!first.equals(third))
+		{
+			return false;
+		}
+
+		if (!EqualsEvaluator.evaluateReflexivityNonNullSymmetricAndConsistency(first, second))
+		{
+			return false;
+		}
+
+		if (!EqualsEvaluator.evaluateReflexivityNonNullSymmetricConsistencyAndTransitivity(first,
+			third, fourth))
+		{
+			return false;
+		}
+
+		if (!HashcodeEvaluator.evaluateEquality(first, fourth))
+		{
+			return false;
+		}
+
+		if (!HashcodeEvaluator.evaluateUnequality(first, second))
+		{
+			return false;
+		}
+
+		if (!HashcodeEvaluator.evaluateConsistency(first))
+		{
+			return false;
+		}
+		return evaluated;
+	}
+
+	/**
 	 * Evaluates the contract conditions for reflexivity, non null, symmetric and consistency of the
 	 * given objects, that means according to {@link Object#equals(Object)} that this method should
 	 * evaluate the following contract condition:
@@ -67,7 +125,7 @@ public class EqualsHashCodeAndToStringEvaluator
 	 * @return true, if reflexivity, non null, symmetric and consistency contract conditions and
 	 *         equality of hash code from the given objects is given otherwise false
 	 */
-	public static <T> boolean evaluateEqualsAndHashcodeEquality(T object, T otherObject)
+	public static <T> boolean evaluateEqualsAndHashcodeEquality(final T object, final T otherObject)
 	{
 		boolean evaluated;
 		evaluated = EqualsEvaluator.evaluateReflexivityNonNullSymmetricAndConsistency(object,
@@ -124,7 +182,8 @@ public class EqualsHashCodeAndToStringEvaluator
 	 * @return true, if reflexivity, non null, symmetric and consistency contract conditions and
 	 *         unequality of hash code from the given objects is given otherwise false
 	 */
-	public static <T> boolean evaluateEqualsAndHashcodeUnequality(T object, T otherObject)
+	public static <T> boolean evaluateEqualsAndHashcodeUnequality(final T object,
+		final T otherObject)
 	{
 		boolean evaluated;
 		evaluated = EqualsEvaluator.evaluateReflexivityNonNullSymmetricAndConsistency(object,
@@ -174,7 +233,7 @@ public class EqualsHashCodeAndToStringEvaluator
 	 *         {@link Object#equals(Object)} and the consistency contract condition of
 	 *         {@link Object#hashCode()} is given otherwise false
 	 */
-	public static <T> boolean evaluateEqualsHashcodeAndToString(T object)
+	public static <T> boolean evaluateEqualsHashcodeAndToString(final T object)
 	{
 		boolean evaluated;
 		evaluated = EqualsEvaluator.evaluateReflexivityAndNonNull(object);
@@ -189,6 +248,45 @@ public class EqualsHashCodeAndToStringEvaluator
 		}
 		evaluated = ToStringEvaluator.evaluateConsistency(object);
 		if (!evaluated)
+		{
+			return false;
+		}
+		return evaluated;
+	}
+
+
+	/**
+	 * Evaluates the all the contract conditions for the methods {@link Object#equals(Object)},
+	 * {@link Object#hashCode()} and {@link Object#toString()}.
+	 *
+	 * @param <T>
+	 *            the generic type
+	 * @param first
+	 *            the first object
+	 * @param second
+	 *            the second object that have to be uneqal to the first object
+	 * @param third
+	 *            the third object have to be equal to first object and fourth object
+	 * @param fourth
+	 *            the fourth object have to be equal to first object and third object
+	 * @return true, if all contract conditions for the methods {@link Object#equals(Object)},
+	 *         {@link Object#hashCode()} and {@link Object#toString()} is given otherwise false
+	 */
+	public static <T> boolean evaluateEqualsHashcodeAndToString(final T first, final T second,
+		final T third, final T fourth)
+	{
+		final boolean evaluated = evaluateEqualsAndHashcode(first, second, third, fourth);
+		if (!evaluated)
+		{
+			return false;
+		}
+
+		if (!ToStringEvaluator.evaluate(first.getClass()))
+		{
+			return false;
+		}
+
+		if (!ToStringEvaluator.evaluateConsistency(first))
 		{
 			return false;
 		}
@@ -253,8 +351,8 @@ public class EqualsHashCodeAndToStringEvaluator
 	 *         of hash code from the given objects is given and if reflexivity, non null, symmetric,
 	 *         consistency and transitivity contract conditions is given otherwise false
 	 */
-	public static <T> boolean evaluateEqualsHashcodeEqualityAndToString(T object, T otherObject,
-		T anotherObject)
+	public static <T> boolean evaluateEqualsHashcodeEqualityAndToString(final T object,
+		final T otherObject, final T anotherObject)
 	{
 		boolean evaluated;
 		evaluated = ToStringEvaluator.evaluateConsistency(object);
