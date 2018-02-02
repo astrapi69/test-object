@@ -36,11 +36,16 @@ import org.testng.annotations.BeforeMethod;
 public class BaseTestCase
 {
 
-	/** The boolean result from the tests. */
+	/** The boolean result from the tests.
+	 *
+	 **/
+	@Deprecated
 	protected boolean result;
+	/** The boolean result from the tests. */
+	protected boolean actual;
 
 	/**
-	 * Sets up method will be invoked before every unit test method in this class
+	 * Sets up method will be invoked before every unit test method
 	 *
 	 * @throws Exception
 	 *             is thrown if an exception occurs
@@ -51,7 +56,7 @@ public class BaseTestCase
 	}
 
 	/**
-	 * Tear down method will be invoked after every unit test method in this class
+	 * Tear down method will be invoked after every unit test method
 	 *
 	 * @throws Exception
 	 *             is thrown if an exception occurs
