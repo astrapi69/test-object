@@ -36,8 +36,8 @@ import org.testng.annotations.BeforeMethod;
 public class BaseTestCase
 {
 
-	/** The boolean result from the tests.
-	 *
+	/**
+	 * The boolean result from the tests.
 	 **/
 	@Deprecated
 	protected boolean result;
