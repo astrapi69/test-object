@@ -6,7 +6,13 @@ Version 4.23.0-SNAPSHOT
 
 ADDED: 
 
-- 
+- new evaluator method created for equals, hashcode and toString with class parameter
+- new dependency of random-beans
+- new dependency of commons-beanutils
+
+CHANGED:
+
+- update of parent version
 
 Version 4.22.0
 -------------
