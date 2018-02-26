@@ -24,6 +24,13 @@
  */
 package de.alpharogroup.test.objects.evaluations;
 
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+
+import org.apache.commons.beanutils.BeanUtils;
+
+import io.github.benas.randombeans.api.EnhancedRandom;
+
 /**
  * The class {@link EqualsHashCodeAndToStringEvaluator} is a combination of all evaluators.
  */
@@ -198,6 +205,43 @@ public class EqualsHashCodeAndToStringEvaluator
 			return false;
 		}
 		return evaluated;
+	}
+
+	/**
+	 * Evaluates all the contract conditions for the methods {@link Object#equals(Object)},
+	 * {@link Object#hashCode()} and {@link Object#toString()} from the given {@link Class}.
+	 *
+	 * @param <T>
+	 *            the generic type
+	 * @param cls
+	 *            the class
+	 * @return true, if all contract conditions for the methods {@link Object#equals(Object)},
+	 *         {@link Object#hashCode()} and {@link Object#toString()} is given otherwise false
+	 *
+	 *
+	 * @throws IllegalAccessException
+	 *             if the caller does not have access to the property accessor method
+	 * @throws InstantiationException
+	 *             if a new instance of the bean's class cannot be instantiated
+	 * @throws InvocationTargetException
+	 *             if the property accessor method throws an exception
+	 * @throws NoSuchMethodException
+	 *             if an accessor method for this property cannot be found
+	 * @throws IOException
+	 *             Signals that an I/O exception has occurred.
+	 */
+	@SuppressWarnings("unchecked")
+	public static <T> boolean evaluateEqualsHashcodeAndToString(Class<T> cls)
+		throws NoSuchMethodException, IllegalAccessException, InvocationTargetException,
+		InstantiationException, IOException
+	{
+		final T first = EnhancedRandom.random(cls);
+		final T second = EnhancedRandom.random(cls);
+		final T third = (T)BeanUtils.cloneBean(first);
+		final T fourth = (T)BeanUtils.cloneBean(third);
+
+		return EqualsHashCodeAndToStringEvaluator.evaluateEqualsHashcodeAndToString(first, second,
+			third, fourth);
 	}
 
 	/**
