@@ -1,6 +1,34 @@
 ## Change log
 ----------------------
 
+Version 4.23.0
+-------------
+
+ADDED: 
+
+- new evaluator method created for equals, hashcode and toString with class parameter
+- new dependency of random-beans
+- new dependency of commons-beanutils
+- new launch script for display dependencies updates
+
+CHANGED:
+
+- update of parent version
+
+Version 4.22.0
+-------------
+
+ADDED: 
+
+- new evaluator methods created for equals, hashcode and toString 
+- new section for credits in the README.md file
+
+CHANGED:
+
+- update of parent version
+- moved build-status, maven-central and javadoc icons to the top
+- javadoc extended and improved
+
 Version 4.21.0
 -------------
 
@@ -31,7 +59,7 @@ Version 4.19.0
 ADDED: 
 
 - new classes created for evaluation of equals, hashcode and comparable
-- javadoc for packages
+- provide package.html for the javadoc of packages
 
 CHANGED:
 
