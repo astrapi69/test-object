@@ -81,7 +81,7 @@
 	</dependencyManagement>
 
 	<dependencies>
-
+		<!-- TESTNG DEPENDENCY -->
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
