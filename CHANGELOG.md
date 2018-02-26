@@ -9,6 +9,7 @@ ADDED:
 - new evaluator method created for equals, hashcode and toString with class parameter
 - new dependency of random-beans
 - new dependency of commons-beanutils
+- new launch script for display dependencies updates
 
 CHANGED:
 
