@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-java-parent</artifactId>
-		<version>3.5.0</version>
+		<version>3.7.0</version>
 		<relativePath></relativePath>
 	</parent>
 
@@ -22,7 +22,12 @@
 	<url>https://github.com/lightblueseas/test-objects</url>
 
 	<properties>
+		<!-- RUNTIME-COMPILER version -->
 		<runtime-compiler.version>1.1.0</runtime-compiler.version>
+		<!-- RANDOM-BEANS version -->
+		<random-beans.version>3.7.0</random-beans.version>
+		<!-- COMMONS-BEANUTILS version -->
+		<commons-beanutils.version>1.9.3</commons-beanutils.version>
 	</properties>
 
 	<licenses>
@@ -52,11 +57,23 @@
 	<dependencyManagement>
 
 		<dependencies>
-
+			<!-- RUNTIME-COMPILER DEPENDENCY -->
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>runtime-compiler</artifactId>
 				<version>${runtime-compiler.version}</version>
+			</dependency>
+			<!-- RANDOM-BEANS DEPENDENCY -->
+			<dependency>
+				<groupId>io.github.benas</groupId>
+				<artifactId>random-beans</artifactId>
+				<version>${random-beans.version}</version>
+			</dependency>
+			<!-- COMMONS-BEANUTILS DEPENDENCY -->
+			<dependency>
+				<groupId>commons-beanutils</groupId>
+				<artifactId>commons-beanutils</artifactId>
+				<version>${commons-beanutils.version}</version>
 			</dependency>
 
 		</dependencies>
@@ -68,6 +85,16 @@
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
+		</dependency>
+		<!-- RANDOM-BEANS DEPENDENCY -->
+		<dependency>
+			<groupId>io.github.benas</groupId>
+			<artifactId>random-beans</artifactId>
+		</dependency>
+		<!-- COMMONS-BEANUTILS DEPENDENCY -->
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
 		</dependency>
 
 	</dependencies>
