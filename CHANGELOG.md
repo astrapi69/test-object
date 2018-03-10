@@ -1,12 +1,13 @@
 ## Change log
 ----------------------
 
-Version 4.24.0-SNAPSHOT
+Version 4.24.0
 -------------
 
 ADDED: 
 
 - new evaluator that evaluates classes in a silent manner
+- new launch script for display dependencies updates
 
 CHANGED:
 
