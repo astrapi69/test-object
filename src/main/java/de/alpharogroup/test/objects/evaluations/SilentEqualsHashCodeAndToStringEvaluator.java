@@ -22,48 +22,41 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup;
+package de.alpharogroup.test.objects.evaluations;
 
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 
 /**
- * The abstract class BaseTestCase is for unit tests.
- *
- * @version 1.0
- * @author Asterios Raptis
+ * The class {@link SilentEqualsHashCodeAndToStringEvaluator} evaluates classes in a silent manner
  */
-public class BaseTestCase
+public class SilentEqualsHashCodeAndToStringEvaluator
 {
 
 	/**
-	 * The boolean result from the tests.
-	 **/
-	@Deprecated
-	protected boolean result;
-	/** The boolean result from the tests. */
-	protected boolean actual;
-
-	/**
-	 * Sets up method will be invoked before every unit test method
+	 * Evaluates all the contract conditions for the methods {@link Object#equals(Object)},
+	 * {@link Object#hashCode()} and {@link Object#toString()} from the given {@link Class}.
 	 *
-	 * @throws Exception
-	 *             is thrown if an exception occurs
+	 * @param <T>
+	 *            the generic type
+	 * @param cls
+	 *            the class
+	 * @return true, if all contract conditions for the methods {@link Object#equals(Object)},
+	 *         {@link Object#hashCode()} and {@link Object#toString()} is given otherwise false
 	 */
-	@BeforeMethod
-	protected void setUp() throws Exception
+	public static <T> boolean evaluateEqualsHashcodeAndToStringQuietly(Class<T> cls)
 	{
-	}
-
-	/**
-	 * Tear down method will be invoked after every unit test method
-	 *
-	 * @throws Exception
-	 *             is thrown if an exception occurs
-	 */
-	@AfterMethod
-	protected void tearDown() throws Exception
-	{
+		boolean evaluated;
+		try
+		{
+			evaluated = EqualsHashCodeAndToStringEvaluator.evaluateEqualsHashcodeAndToString(cls);
+		}
+		catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException
+			| InstantiationException | IOException e)
+		{
+			evaluated = false;
+		}
+		return evaluated;
 	}
 
 }
