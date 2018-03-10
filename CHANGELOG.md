@@ -4,6 +4,10 @@
 Version 4.24.0-SNAPSHOT
 -------------
 
+ADDED: 
+
+- new evaluator that evaluates classes in a silent manner
+
 CHANGED:
 
 - update of parent version to 3.9.0
