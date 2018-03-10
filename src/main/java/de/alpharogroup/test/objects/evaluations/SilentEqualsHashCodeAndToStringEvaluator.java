@@ -24,14 +24,11 @@
  */
 package de.alpharogroup.test.objects.evaluations;
 
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 
-import org.apache.commons.beanutils.BeanUtils;
-
-import io.github.benas.randombeans.api.EnhancedRandom;
-
 /**
- * The class {@link SilentEqualsHashCodeAndToStringEvaluator} is a combination of all evaluators.
+ * The class {@link SilentEqualsHashCodeAndToStringEvaluator} evaluates classes in a silent manner
  */
 public class SilentEqualsHashCodeAndToStringEvaluator
 {
@@ -49,39 +46,17 @@ public class SilentEqualsHashCodeAndToStringEvaluator
 	 */
 	public static <T> boolean evaluateEqualsHashcodeAndToStringQuietly(Class<T> cls)
 	{
-		final T first = EnhancedRandom.random(cls);
-		final T second = EnhancedRandom.random(cls);
-		final T third = cloneBeanQuietly(first);
-		final T fourth = cloneBeanQuietly(third);
 		boolean evaluated;
-		evaluated = EqualsHashCodeAndToStringEvaluator.evaluateEqualsHashcodeAndToString(first, second,
-			third, fourth);
-		return evaluated;
-	}
-
-	/**
-	 * Clone the given bean quietly.
-	 *
-	 * @param <T>
-	 *            the generic type of the given bean
-	 * @param bean
-	 *            the bean to clone
-	 * @return the cloned bean or null if the clone process failed.
-	 */
-	@SuppressWarnings("unchecked")
-	public static <T> T cloneBeanQuietly(T bean)
-	{
-		T clonedBean;
 		try
 		{
-			clonedBean = (T)BeanUtils.cloneBean(bean);
+			evaluated = EqualsHashCodeAndToStringEvaluator.evaluateEqualsHashcodeAndToString(cls);
 		}
-		catch (IllegalAccessException | InstantiationException | InvocationTargetException
-			| NoSuchMethodException e)
+		catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException
+			| InstantiationException | IOException e)
 		{
-			clonedBean = null;
+			evaluated = false;
 		}
-		return clonedBean;
+		return evaluated;
 	}
 
 }
