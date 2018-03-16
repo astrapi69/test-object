@@ -4,6 +4,13 @@
 Version 4.25.0-SNAPSHOT
 -------------
 
+ADDED: 
+
+- new boolean expected instance variable in BaseTestCase class
+
+CHANGED:
+
+- tagged evaluation classes as deprecated and made a note which class to use instead
 
 Version 4.24.0
 -------------
