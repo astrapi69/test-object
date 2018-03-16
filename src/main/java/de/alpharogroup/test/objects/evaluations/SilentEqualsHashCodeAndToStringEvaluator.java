@@ -36,6 +36,7 @@ import lombok.experimental.UtilityClass;
  * @deprecated Use instead the same name class from project jobject-evaluate.
  * Note: This class will be deleted in the next minor release.
  */
+@UtilityClass
 @Deprecated
 public class SilentEqualsHashCodeAndToStringEvaluator
 {
