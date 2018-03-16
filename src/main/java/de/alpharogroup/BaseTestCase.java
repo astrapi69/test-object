@@ -37,12 +37,15 @@ public class BaseTestCase
 {
 
 	/**
-	 * The boolean result from the tests.
+	 * The boolean result of the tests.
 	 **/
 	@Deprecated
 	protected boolean result;
-	/** The boolean result from the tests. */
+	/** The boolean actual result of the tests. */
 	protected boolean actual;
+
+	/** The boolean expected result of the tests. */
+	protected boolean expected;
 
 	/**
 	 * Sets up method will be invoked before every unit test method
