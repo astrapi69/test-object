@@ -30,7 +30,10 @@ import lombok.experimental.UtilityClass;
 
 /**
  * The class {@link ComparableEvaluator} is intended to evaluate {@link Comparable} objects.
+ * @deprecated Use instead the same name class from project jobject-evaluate.
+ * Note: This class will be deleted in the next minor release.
  */
+@Deprecated
 @UtilityClass
 public class ComparableEvaluator
 {

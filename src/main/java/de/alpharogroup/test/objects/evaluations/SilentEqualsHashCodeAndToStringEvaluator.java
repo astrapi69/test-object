@@ -27,9 +27,16 @@ package de.alpharogroup.test.objects.evaluations;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 
+import lombok.experimental.UtilityClass;
+
 /**
  * The class {@link SilentEqualsHashCodeAndToStringEvaluator} evaluates classes in a silent manner
+ *
+ *
+ * @deprecated Use instead the same name class from project jobject-evaluate.
+ * Note: This class will be deleted in the next minor release.
  */
+@Deprecated
 public class SilentEqualsHashCodeAndToStringEvaluator
 {
 
