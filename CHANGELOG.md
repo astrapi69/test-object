@@ -6,7 +6,7 @@ Version 4.25-SNAPSHOT
 
 ADDED: 
 
-- new boolean expected instance variable in BaseTestCase class
+- new boolean expected instance variable in class BaseTestCase 
 
 CHANGED:
 
