@@ -11,7 +11,7 @@
 	</parent>
 
 	<artifactId>test-objects</artifactId>
-	<version>4.25-SNAPSHOT</version>
+	<version>4.25</version>
 
 	<name>${project.artifactId}</name>
 
