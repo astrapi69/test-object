@@ -1,7 +1,7 @@
 ## Change log
 ----------------------
 
-Version 4.25.0-SNAPSHOT
+Version 4.25-SNAPSHOT
 -------------
 
 ADDED: 
@@ -11,6 +11,9 @@ ADDED:
 CHANGED:
 
 - tagged evaluation classes as deprecated and made a note which class to use instead
+- update of parent version to 3.11
+- removed unneeded .0 at the end of version
+- tagged boolean flag result in class BaseTestCase as deprecated
 
 Version 4.24.0
 -------------
