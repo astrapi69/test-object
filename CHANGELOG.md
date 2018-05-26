@@ -3,9 +3,11 @@
 
 Version 4.26-SNAPSHOT
 -------------
+
 CHANGED:
 
 - removed deprecated classes in the package de.alpharogroup.test.objects.evaluations
+- removed deprecated boolean flag result in class BaseTestCase
 
 Version 4.25
 -------------
