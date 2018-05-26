@@ -38,9 +38,13 @@ public class BaseTestCase
 
 	/**
 	 * The boolean result of the tests.
+	 * 
+	 * @deprecated use instead the actual flag. Note: this flag will be removed on next minor
+	 *             release.
 	 **/
 	@Deprecated
 	protected boolean result;
+	
 	/** The boolean actual result of the tests. */
 	protected boolean actual;
 
