@@ -1,6 +1,32 @@
 ## Change log
 ----------------------
 
+Version 4.25
+-------------
+
+ADDED: 
+
+- new boolean expected instance variable in class BaseTestCase 
+
+CHANGED:
+
+- tagged evaluation classes as deprecated and made a note which class to use instead
+- update of parent version to 3.11
+- removed unneeded .0 at the end of version
+- tagged boolean flag result in class BaseTestCase as deprecated
+
+Version 4.24.0
+-------------
+
+ADDED: 
+
+- new evaluator that evaluates classes in a silent manner
+- new launch script for display dependencies updates
+
+CHANGED:
+
+- update of parent version to 3.9.0
+
 Version 4.23.0
 -------------
 

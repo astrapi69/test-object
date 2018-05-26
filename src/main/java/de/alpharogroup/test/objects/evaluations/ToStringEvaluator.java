@@ -31,7 +31,12 @@ import lombok.experimental.UtilityClass;
 /**
  * The class {@link ToStringEvaluator} provides algorithms for evaluate the
  * {@link Object#toString()} method.
+ *
+ *
+ * @deprecated Use instead the same name class from project jobject-evaluate. Note: This class will
+ *             be deleted in the next minor release.
  */
+@Deprecated
 @UtilityClass
 public class ToStringEvaluator
 {

@@ -30,10 +30,17 @@ import java.lang.reflect.InvocationTargetException;
 import org.apache.commons.beanutils.BeanUtils;
 
 import io.github.benas.randombeans.api.EnhancedRandom;
+import lombok.experimental.UtilityClass;
 
 /**
  * The class {@link EqualsHashCodeAndToStringEvaluator} is a combination of all evaluators.
+ *
+ *
+ * @deprecated Use instead the same name class from project jobject-evaluate. Note: This class will
+ *             be deleted in the next minor release.
  */
+@UtilityClass
+@Deprecated
 public class EqualsHashCodeAndToStringEvaluator
 {
 

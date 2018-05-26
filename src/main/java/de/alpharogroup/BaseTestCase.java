@@ -37,12 +37,19 @@ public class BaseTestCase
 {
 
 	/**
-	 * The boolean result from the tests.
+	 * The boolean result of the tests.
+	 * 
+	 * @deprecated use instead the actual flag. Note: this flag will be removed on next minor
+	 *             release.
 	 **/
 	@Deprecated
 	protected boolean result;
-	/** The boolean result from the tests. */
+
+	/** The boolean actual result of the tests. */
 	protected boolean actual;
+
+	/** The boolean expected result of the tests. */
+	protected boolean expected;
 
 	/**
 	 * Sets up method will be invoked before every unit test method

@@ -30,7 +30,12 @@ import lombok.experimental.UtilityClass;
  * The class {@link HashcodeEvaluator} provides algorithms for evaluate the
  * <a href= "https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#hashCode--">hashcode
  * contract</a> of an given object.
+ *
+ *
+ * @deprecated Use instead the same name class from project jobject-evaluate. Note: This class will
+ *             be deleted in the next minor release.
  */
+@Deprecated
 @UtilityClass
 public class HashcodeEvaluator
 {
