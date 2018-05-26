@@ -3,7 +3,9 @@
 
 Version 4.26-SNAPSHOT
 -------------
+CHANGED:
 
+- removed deprecated classes in the package de.alpharogroup.test.objects.evaluations
 
 Version 4.25
 -------------
