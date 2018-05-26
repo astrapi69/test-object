@@ -31,8 +31,8 @@ import lombok.experimental.UtilityClass;
  * "https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#equals-java.lang.Object-">equals
  * contract</a> of an given object.
  *
- * @deprecated Use instead the same name class from project jobject-evaluate.
- * Note: This class will be deleted in the next minor release.
+ * @deprecated Use instead the same name class from project jobject-evaluate. Note: This class will
+ *             be deleted in the next minor release.
  */
 @Deprecated
 @UtilityClass

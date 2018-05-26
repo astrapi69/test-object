@@ -36,8 +36,8 @@ import lombok.experimental.UtilityClass;
  * The class {@link EqualsHashCodeAndToStringEvaluator} is a combination of all evaluators.
  *
  *
- * @deprecated Use instead the same name class from project jobject-evaluate.
- * Note: This class will be deleted in the next minor release.
+ * @deprecated Use instead the same name class from project jobject-evaluate. Note: This class will
+ *             be deleted in the next minor release.
  */
 @UtilityClass
 @Deprecated

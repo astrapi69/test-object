@@ -33,8 +33,8 @@ import lombok.experimental.UtilityClass;
  * The class {@link SilentEqualsHashCodeAndToStringEvaluator} evaluates classes in a silent manner
  *
  *
- * @deprecated Use instead the same name class from project jobject-evaluate.
- * Note: This class will be deleted in the next minor release.
+ * @deprecated Use instead the same name class from project jobject-evaluate. Note: This class will
+ *             be deleted in the next minor release.
  */
 @UtilityClass
 @Deprecated

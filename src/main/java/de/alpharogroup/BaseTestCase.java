@@ -44,7 +44,7 @@ public class BaseTestCase
 	 **/
 	@Deprecated
 	protected boolean result;
-	
+
 	/** The boolean actual result of the tests. */
 	protected boolean actual;
 

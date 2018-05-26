@@ -33,8 +33,8 @@ import lombok.experimental.UtilityClass;
  * {@link Object#toString()} method.
  *
  *
- * @deprecated Use instead the same name class from project jobject-evaluate.
- * Note: This class will be deleted in the next minor release.
+ * @deprecated Use instead the same name class from project jobject-evaluate. Note: This class will
+ *             be deleted in the next minor release.
  */
 @Deprecated
 @UtilityClass
