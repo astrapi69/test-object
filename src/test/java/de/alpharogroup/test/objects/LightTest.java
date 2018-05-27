@@ -41,7 +41,7 @@ public class LightTest
 	 * Test method for {@link Light#equals(Object)} , {@link Light#hashCode()} and
 	 * {@link Light#toString()}
 	 */
-	@Test
+	@Test(enabled = false)
 	public void testEqualsHashcodeAndToStringWithClassSilently()
 	{
 		boolean expected;
