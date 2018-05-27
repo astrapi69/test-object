@@ -22,46 +22,45 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup;
+package de.alpharogroup.date;
 
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import static org.testng.AssertJUnit.assertEquals;
+
+import org.meanbean.factories.ObjectCreationException;
+import org.meanbean.test.BeanTestException;
+import org.meanbean.test.BeanTester;
+import org.testng.annotations.Test;
+
+import de.alpharogroup.evaluate.object.SilentEqualsHashCodeAndToStringEvaluator;
 
 /**
- * The abstract class BaseTestCase is for unit tests.
- *
- * @version 1.0
- * @author Asterios Raptis
+ * The unit test class for the class {@link SqlTimestampDecorator}.
  */
-public abstract class BaseTestCase
+public class SqlTimestampDecoratorTest
 {
 
-	/** The boolean actual result of the tests. */
-	protected boolean actual;
-
-	/** The boolean expected result of the tests. */
-	protected boolean expected;
-
 	/**
-	 * Sets up method will be invoked before every unit test method
-	 *
-	 * @throws Exception
-	 *             is thrown if an exception occurs
+	 * Test method for {@link SqlTimestampDecorator#equals(Object)} ,
+	 * {@link SqlTimestampDecorator#hashCode()} and {@link SqlTimestampDecorator#toString()}
 	 */
-	@BeforeMethod
-	protected void setUp() throws Exception
+	@Test
+	public void testEqualsHashcodeAndToStringWithClassSilently()
 	{
+		boolean expected;
+		boolean actual;
+		actual = SilentEqualsHashCodeAndToStringEvaluator
+			.evaluateEqualsHashcodeAndToStringQuietly(SqlTimestampDecorator.class);
+		expected = true;
+		assertEquals(expected, actual);
 	}
 
 	/**
-	 * Tear down method will be invoked after every unit test method
-	 *
-	 * @throws Exception
-	 *             is thrown if an exception occurs
+	 * Test method for {@link SqlTimestampDecorator}
 	 */
-	@AfterMethod
-	protected void tearDown() throws Exception
+	@Test(expectedExceptions = { BeanTestException.class, ObjectCreationException.class })
+	public void testWithBeanTester()
 	{
+		final BeanTester beanTester = new BeanTester();
+		beanTester.testBean(SqlTimestampDecorator.class);
 	}
-
 }

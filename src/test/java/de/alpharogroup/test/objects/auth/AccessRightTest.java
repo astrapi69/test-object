@@ -24,32 +24,41 @@
  */
 package de.alpharogroup.test.objects.auth;
 
-import java.util.Set;
+import static org.testng.AssertJUnit.assertEquals;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.Singular;
-import lombok.ToString;
+import org.meanbean.test.BeanTester;
+import org.testng.annotations.Test;
+
+import de.alpharogroup.evaluate.object.SilentEqualsHashCodeAndToStringEvaluator;
 
 /**
- * The class {@link Roles} is a class intended for use in unit tests.
+ * The unit test class for the class {@link AccessRight}.
  */
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder(toBuilder = true)
-public class Roles
+public class AccessRightTest
 {
 
-	/** The roles. */
-	@Singular
-	Set<Role> roles;
+	/**
+	 * Test method for {@link AccessRight#equals(Object)} , {@link AccessRight#hashCode()} and
+	 * {@link AccessRight#toString()}
+	 */
+	@Test
+	public void testEqualsHashcodeAndToStringWithClassSilently()
+	{
+		boolean expected;
+		boolean actual;
+		actual = SilentEqualsHashCodeAndToStringEvaluator
+			.evaluateEqualsHashcodeAndToStringQuietly(AccessRight.class);
+		expected = true;
+		assertEquals(expected, actual);
+	}
 
+	/**
+	 * Test method for {@link AccessRight}
+	 */
+	@Test
+	public void testWithBeanTester()
+	{
+		final BeanTester beanTester = new BeanTester();
+		beanTester.testBean(AccessRight.class);
+	}
 }
