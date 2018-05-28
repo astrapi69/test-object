@@ -4,6 +4,10 @@
 Version 4.27-SNAPSHOT
 -------------
 
+ADDED: 
+
+- new coverage status icon
+
 Version 4.26
 -------------
 
