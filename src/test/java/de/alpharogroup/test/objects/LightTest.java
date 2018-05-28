@@ -53,7 +53,35 @@ public class LightTest
 	}
 
 	/**
-	 * Test method for {@link Light}
+	 * Test method for {@link Light#switchOff()}
+	 */
+	@Test
+	public void testSwitchOff()
+	{
+		Light light = new Light();
+		boolean expected;
+		boolean actual;
+		actual = light.switchOff().isOn();
+		expected = false;
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * Test method for {@link Light#switchOn()}
+	 */
+	@Test
+	public void testSwitchOn()
+	{
+		Light light = new Light();
+		boolean expected;
+		boolean actual;
+		actual = light.switchOn().isOn();
+		expected = true;
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * Test method for {@link Light#switchOn()}
 	 */
 	@Test
 	public void testWithBeanTester()
