@@ -24,13 +24,41 @@
  */
 package de.alpharogroup;
 
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+
 /**
- * The abstract class {@link BaseTestCase} is for unit tests.
- *
- * @version 1.0
- * @author Asterios Raptis
+ * The abstract class {@link AbstractTestCase} is for unit tests.
  */
-public abstract class BaseTestCase extends AbstractTestCase<Boolean, Boolean>
+public abstract class AbstractTestCase<A, E>
 {
+
+	/** The boolean actual result of the tests. */
+	protected A actual;
+
+	/** The boolean expected result of the tests. */
+	protected E expected;
+
+	/**
+	 * Sets up method will be invoked before every unit test method
+	 *
+	 * @throws Exception
+	 *             is thrown if an exception occurs
+	 */
+	@BeforeMethod
+	protected void setUp() throws Exception
+	{
+	}
+
+	/**
+	 * Tear down method will be invoked after every unit test method
+	 *
+	 * @throws Exception
+	 *             is thrown if an exception occurs
+	 */
+	@AfterMethod
+	protected void tearDown() throws Exception
+	{
+	}
 
 }
