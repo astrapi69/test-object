@@ -24,7 +24,10 @@
  */
 package de.alpharogroup.test.objects;
 
+import static org.testng.Assert.assertNotNull;
 import static org.testng.AssertJUnit.assertEquals;
+
+import java.util.ArrayList;
 
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
@@ -37,6 +40,20 @@ import de.alpharogroup.evaluate.object.SilentEqualsHashCodeAndToStringEvaluator;
 public class EmployeeListTest
 {
 
+	/**
+	 * Test method for {@link EmployeeList} constructors
+	 */
+	@Test
+	public final void testConstructors()
+	{
+		EmployeeList model = new EmployeeList();
+		assertNotNull(model);
+		model = new EmployeeList(new ArrayList<>());
+		assertNotNull(model);
+		model = EmployeeList.builder().build();
+		assertNotNull(model);
+	}
+	
 	/**
 	 * Test method for {@link EmployeeList#equals(Object)} , {@link EmployeeList#hashCode()} and
 	 * {@link EmployeeList#toString()}

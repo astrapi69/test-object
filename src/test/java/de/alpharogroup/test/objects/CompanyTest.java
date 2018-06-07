@@ -24,6 +24,7 @@
  */
 package de.alpharogroup.test.objects;
 
+import static org.testng.Assert.assertNotNull;
 import static org.testng.AssertJUnit.assertEquals;
 
 import org.meanbean.test.BeanTester;
@@ -36,6 +37,20 @@ import de.alpharogroup.evaluate.object.SilentEqualsHashCodeAndToStringEvaluator;
  */
 public class CompanyTest
 {
+
+	/**
+	 * Test method for {@link Company} constructors
+	 */
+	@Test
+	public final void testConstructors()
+	{
+		Company model = new Company();
+		assertNotNull(model);
+		model = new Company("");
+		assertNotNull(model);
+		model = Company.builder().build();
+		assertNotNull(model);
+	}
 
 	/**
 	 * Test method for {@link Company#equals(Object)} , {@link Company#hashCode()} and

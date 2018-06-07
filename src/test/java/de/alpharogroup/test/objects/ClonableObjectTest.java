@@ -24,6 +24,7 @@
  */
 package de.alpharogroup.test.objects;
 
+import static org.testng.Assert.assertNotNull;
 import static org.testng.AssertJUnit.assertEquals;
 
 import org.meanbean.test.BeanTester;
@@ -37,6 +38,20 @@ import de.alpharogroup.evaluate.object.SilentEqualsHashCodeAndToStringEvaluator;
 public class ClonableObjectTest
 {
 
+	/**
+	 * Test method for {@link ClonableObject} constructors
+	 */
+	@Test
+	public final void testConstructors()
+	{
+		ClonableObject model = new ClonableObject();
+		assertNotNull(model);
+		model = new ClonableObject("");
+		assertNotNull(model);
+		model = ClonableObject.builder().build();
+		assertNotNull(model);
+	}
+	
 	/**
 	 * Test method for {@link ClonableObject#equals(Object)} , {@link ClonableObject#hashCode()} and
 	 * {@link ClonableObject#toString()}

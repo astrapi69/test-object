@@ -24,18 +24,34 @@
  */
 package de.alpharogroup.test.objects;
 
+import static org.testng.Assert.assertNotNull;
 import static org.testng.AssertJUnit.assertEquals;
 
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
 import de.alpharogroup.evaluate.object.SilentEqualsHashCodeAndToStringEvaluator;
+import de.alpharogroup.test.objects.enums.Brands;
 
 /**
  * The unit test class for the class {@link Customer}.
  */
 public class CustomerTest
 {
+
+	/**
+	 * Test method for {@link Customer} constructors
+	 */
+	@Test
+	public final void testConstructors()
+	{
+		Customer model = new Customer();
+		assertNotNull(model);
+		model = new Customer("", Brands.FERRARI, true);
+		assertNotNull(model);
+		model = Customer.builder().build();
+		assertNotNull(model);
+	}
 
 	/**
 	 * Test method for {@link Customer#equals(Object)} , {@link Customer#hashCode()} and
