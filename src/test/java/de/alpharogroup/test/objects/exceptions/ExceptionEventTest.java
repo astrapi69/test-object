@@ -53,7 +53,7 @@ public class ExceptionEventTest
 		model = ExceptionEvent.builder().build();
 		assertNotNull(model);
 	}
-	
+
 	/**
 	 * Test method for {@link ExceptionEvent#equals(Object)} , {@link ExceptionEvent#hashCode()} and
 	 * {@link ExceptionEvent#toString()}

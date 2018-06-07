@@ -29,8 +29,6 @@ import static org.testng.AssertJUnit.assertEquals;
 
 import java.util.Date;
 
-import org.meanbean.factories.ObjectCreationException;
-import org.meanbean.test.BeanTestException;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
@@ -51,19 +49,19 @@ public class MemberTest
 	{
 		Member model = new Member();
 		assertNotNull(model);
-		String name = "Foo"; 
-		String nickname = "man"; 
-		Gender gender = Gender.MALE; 
+		String name = "Foo";
+		String nickname = "man";
+		Gender gender = Gender.MALE;
 		String about = "";
-		Boolean married = false; 
-		Date dateofbirth = new Date(); 
+		Boolean married = false;
+		Date dateofbirth = new Date();
 		Date dateofMarriage = new Date();
 		model = new Member(name, nickname, gender, about, married, dateofbirth, dateofMarriage);
 		assertNotNull(model);
 		model = Member.buildMember().build();
 		assertNotNull(model);
 	}
-	
+
 	/**
 	 * Test method for {@link Member#equals(Object)} , {@link Member#hashCode()} and
 	 * {@link Member#toString()}

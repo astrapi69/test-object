@@ -24,6 +24,7 @@
  */
 package de.alpharogroup.test.objects;
 
+import static org.testng.Assert.assertNotNull;
 import static org.testng.AssertJUnit.assertEquals;
 
 import org.meanbean.test.BeanTester;
@@ -36,6 +37,20 @@ import de.alpharogroup.evaluate.object.SilentEqualsHashCodeAndToStringEvaluator;
  */
 public class TelevisionTest
 {
+
+	/**
+	 * Test method for {@link Television} constructors
+	 */
+	@Test
+	public final void testConstructors()
+	{
+		Television model = new Television();
+		assertNotNull(model);
+		model = new Television(true, 0);
+		assertNotNull(model);
+		model = Television.builder().build();
+		assertNotNull(model);
+	}
 
 	/**
 	 * Test method for {@link Television#equals(Object)} , {@link Television#hashCode()} and
@@ -53,6 +68,34 @@ public class TelevisionTest
 	}
 
 	/**
+	 * Test method for {@link Television#switchOff()}
+	 */
+	@Test
+	public void testSwitchOff()
+	{
+		Television light = new Television();
+		boolean expected;
+		boolean actual;
+		actual = light.switchOff().isOn();
+		expected = false;
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * Test method for {@link Television#switchOn()}
+	 */
+	@Test
+	public void testSwitchOn()
+	{
+		Television light = new Television();
+		boolean expected;
+		boolean actual;
+		actual = light.switchOn().isOn();
+		expected = true;
+		assertEquals(expected, actual);
+	}
+
+	/**
 	 * Test method for {@link Television}
 	 */
 	@Test
@@ -61,4 +104,5 @@ public class TelevisionTest
 		final BeanTester beanTester = new BeanTester();
 		beanTester.testBean(Television.class);
 	}
+
 }

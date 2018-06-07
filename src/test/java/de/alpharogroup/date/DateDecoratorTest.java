@@ -53,7 +53,7 @@ public class DateDecoratorTest
 		model = DateDecorator.builder().build();
 		assertNotNull(model);
 	}
-	
+
 	/**
 	 * Test method for {@link DateDecorator#equals(Object)} , {@link DateDecorator#hashCode()} and
 	 * {@link DateDecorator#toString()}

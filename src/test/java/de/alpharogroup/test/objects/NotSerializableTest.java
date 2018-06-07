@@ -50,8 +50,8 @@ public class NotSerializableTest
 		assertNotNull(model);
 		model = NotSerializable.builder().build();
 		assertNotNull(model);
-	}	
-	
+	}
+
 	/**
 	 * Test method for {@link NotSerializable#equals(Object)} , {@link NotSerializable#hashCode()}
 	 * and {@link NotSerializable#toString()}

@@ -51,7 +51,7 @@ public class AccessRightTest
 		model = AccessRight.builder().build();
 		assertNotNull(model);
 	}
-	
+
 	/**
 	 * Test method for {@link AccessRight#equals(Object)} , {@link AccessRight#hashCode()} and
 	 * {@link AccessRight#toString()}

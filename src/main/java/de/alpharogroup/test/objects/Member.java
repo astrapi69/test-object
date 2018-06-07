@@ -44,7 +44,6 @@ public class Member extends Person
 {
 
 
-
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 
@@ -53,14 +52,14 @@ public class Member extends Person
 
 	/** The dateof marriage. */
 	private Date dateofMarriage;
-	
+
 	/**
 	 * Instantiates a new {@link Member} object.
 	 */
 	public Member()
 	{
 	}
-	
+
 	/**
 	 * Instantiates a new {@link Member} object with the given parameters.
 	 *

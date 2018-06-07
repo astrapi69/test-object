@@ -46,12 +46,12 @@ public class PermissionTest
 	{
 		Permission model = new Permission();
 		assertNotNull(model);
-		model = new Permission("","","");
+		model = new Permission("", "", "");
 		assertNotNull(model);
 		model = Permission.builder().build();
 		assertNotNull(model);
 	}
-	
+
 	/**
 	 * Test method for {@link Permission#equals(Object)} , {@link Permission#hashCode()} and
 	 * {@link Permission#toString()}

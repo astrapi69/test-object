@@ -29,8 +29,6 @@ import static org.testng.AssertJUnit.assertEquals;
 
 import java.util.Date;
 
-import org.meanbean.factories.ObjectCreationException;
-import org.meanbean.test.BeanTestException;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
@@ -51,20 +49,21 @@ public class PremiumMemberTest
 	{
 		PremiumMember model = new PremiumMember();
 		assertNotNull(model);
-		String name = "Foo"; 
-		String nickname = "man"; 
-		Gender gender = Gender.MALE; 
+		String name = "Foo";
+		String nickname = "man";
+		Gender gender = Gender.MALE;
 		String about = "";
-		Boolean married = false; 
-		Date dateofbirth = new Date(); 
+		Boolean married = false;
+		Date dateofbirth = new Date();
 		Date dateofMarriage = new Date();
 		String credits = "";
-		model = new PremiumMember(name, nickname, gender, about, married, dateofbirth, dateofMarriage, credits);
+		model = new PremiumMember(name, nickname, gender, about, married, dateofbirth,
+			dateofMarriage, credits);
 		assertNotNull(model);
 		model = PremiumMember.buildPremiumMember().build();
 		assertNotNull(model);
 	}
-	
+
 	/**
 	 * Test method for {@link PremiumMember#equals(Object)} , {@link PremiumMember#hashCode()} and
 	 * {@link PremiumMember#toString()}

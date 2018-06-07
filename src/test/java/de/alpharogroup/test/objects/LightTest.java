@@ -53,7 +53,7 @@ public class LightTest
 		assertNotNull(model);
 		model = Light.builder().build();
 		assertNotNull(model);
-	}	
+	}
 
 	/**
 	 * Test method for {@link Light#equals(Object)}

@@ -56,7 +56,7 @@ public class SqlTimestampDecoratorTest
 		model = SqlTimestampDecorator.builder().build();
 		assertNotNull(model);
 	}
-	
+
 	/**
 	 * Test method for {@link SqlTimestampDecorator#equals(Object)} ,
 	 * {@link SqlTimestampDecorator#hashCode()} and {@link SqlTimestampDecorator#toString()}

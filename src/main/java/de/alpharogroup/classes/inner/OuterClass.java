@@ -95,5 +95,5 @@ public class OuterClass
 		log.info("enclosing method:{}", clazz.getEnclosingMethod());
 		log.info("========================================================================");
 	}
-	
+
 }

@@ -53,7 +53,7 @@ public class EmployeeListTest
 		model = EmployeeList.builder().build();
 		assertNotNull(model);
 	}
-	
+
 	/**
 	 * Test method for {@link EmployeeList#equals(Object)} , {@link EmployeeList#hashCode()} and
 	 * {@link EmployeeList#toString()}

@@ -53,7 +53,7 @@ public class RolesTest
 		model = Roles.builder().build();
 		assertNotNull(model);
 	}
-	
+
 	/**
 	 * Test method for {@link Roles#equals(Object)} , {@link Roles#hashCode()} and
 	 * {@link Roles#toString()}

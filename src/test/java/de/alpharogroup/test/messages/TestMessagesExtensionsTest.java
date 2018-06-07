@@ -57,7 +57,7 @@ public class TestMessagesExtensionsTest
 			actualInput);
 		assertEquals(expected, actual);
 	}
-	
+
 	/**
 	 * Test method for {@link TestMessagesExtensions}
 	 */

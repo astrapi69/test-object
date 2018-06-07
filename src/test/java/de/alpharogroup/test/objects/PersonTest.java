@@ -47,16 +47,17 @@ public class PersonTest
 	{
 		Person model = new Person();
 		assertNotNull(model);
-		String name = "Foo"; 
-		String nickname = "man"; 
-		Gender gender = Gender.MALE; 
+		String name = "Foo";
+		String nickname = "man";
+		Gender gender = Gender.MALE;
 		String about = "";
-		Boolean married = false; 
+		Boolean married = false;
 		model = new Person(name, nickname, gender, about, married);
 		assertNotNull(model);
 		model = Person.builder().build();
 		assertNotNull(model);
 	}
+
 	/**
 	 * Test method for {@link Person#equals(Object)} , {@link Person#hashCode()} and
 	 * {@link Person#toString()}

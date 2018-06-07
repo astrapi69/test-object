@@ -51,7 +51,7 @@ public class ClonableObjectTest
 		model = ClonableObject.builder().build();
 		assertNotNull(model);
 	}
-	
+
 	/**
 	 * Test method for {@link ClonableObject#equals(Object)} , {@link ClonableObject#hashCode()} and
 	 * {@link ClonableObject#toString()}

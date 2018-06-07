@@ -42,13 +42,13 @@ public class AnnotatedTestClassTest
 	public void testGetFullname()
 	{
 		String expected;
-		String actual;		
+		String actual;
 		AnnotatedTestClass annotatedTestClass = new AnnotatedTestClass();
 		actual = annotatedTestClass.getFullname();
 		expected = "fullname";
 		assertEquals(expected, actual);
 	}
-	
+
 	/**
 	 * Test method for {@link AnnotatedTestClass}
 	 */
