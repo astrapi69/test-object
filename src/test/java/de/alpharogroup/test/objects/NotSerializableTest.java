@@ -24,6 +24,7 @@
  */
 package de.alpharogroup.test.objects;
 
+import static org.testng.Assert.assertNotNull;
 import static org.testng.AssertJUnit.assertEquals;
 
 import org.meanbean.test.BeanTester;
@@ -37,6 +38,20 @@ import de.alpharogroup.evaluate.object.SilentEqualsHashCodeAndToStringEvaluator;
 public class NotSerializableTest
 {
 
+	/**
+	 * Test method for {@link NotSerializable} constructors
+	 */
+	@Test
+	public final void testConstructors()
+	{
+		NotSerializable model = new NotSerializable();
+		assertNotNull(model);
+		model = new NotSerializable("");
+		assertNotNull(model);
+		model = NotSerializable.builder().build();
+		assertNotNull(model);
+	}	
+	
 	/**
 	 * Test method for {@link NotSerializable#equals(Object)} , {@link NotSerializable#hashCode()}
 	 * and {@link NotSerializable#toString()}

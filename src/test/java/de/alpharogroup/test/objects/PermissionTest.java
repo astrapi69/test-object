@@ -24,6 +24,7 @@
  */
 package de.alpharogroup.test.objects;
 
+import static org.testng.Assert.assertNotNull;
 import static org.testng.AssertJUnit.assertEquals;
 
 import org.meanbean.test.BeanTester;
@@ -37,6 +38,20 @@ import de.alpharogroup.evaluate.object.SilentEqualsHashCodeAndToStringEvaluator;
 public class PermissionTest
 {
 
+	/**
+	 * Test method for {@link Permission} constructors
+	 */
+	@Test
+	public final void testConstructors()
+	{
+		Permission model = new Permission();
+		assertNotNull(model);
+		model = new Permission("","","");
+		assertNotNull(model);
+		model = Permission.builder().build();
+		assertNotNull(model);
+	}
+	
 	/**
 	 * Test method for {@link Permission#equals(Object)} , {@link Permission#hashCode()} and
 	 * {@link Permission#toString()}

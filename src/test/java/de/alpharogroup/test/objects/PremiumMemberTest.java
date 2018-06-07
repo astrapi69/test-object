@@ -24,7 +24,10 @@
  */
 package de.alpharogroup.test.objects;
 
+import static org.testng.Assert.assertNotNull;
 import static org.testng.AssertJUnit.assertEquals;
+
+import java.util.Date;
 
 import org.meanbean.factories.ObjectCreationException;
 import org.meanbean.test.BeanTestException;
@@ -32,6 +35,7 @@ import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
 import de.alpharogroup.evaluate.object.SilentEqualsHashCodeAndToStringEvaluator;
+import de.alpharogroup.test.objects.enums.Gender;
 
 /**
  * The unit test class for the class {@link PremiumMember}.
@@ -39,6 +43,28 @@ import de.alpharogroup.evaluate.object.SilentEqualsHashCodeAndToStringEvaluator;
 public class PremiumMemberTest
 {
 
+	/**
+	 * Test method for {@link PremiumMember} constructors
+	 */
+	@Test
+	public final void testConstructors()
+	{
+		PremiumMember model = new PremiumMember();
+		assertNotNull(model);
+		String name = "Foo"; 
+		String nickname = "man"; 
+		Gender gender = Gender.MALE; 
+		String about = "";
+		Boolean married = false; 
+		Date dateofbirth = new Date(); 
+		Date dateofMarriage = new Date();
+		String credits = "";
+		model = new PremiumMember(name, nickname, gender, about, married, dateofbirth, dateofMarriage, credits);
+		assertNotNull(model);
+		model = PremiumMember.buildPremiumMember().build();
+		assertNotNull(model);
+	}
+	
 	/**
 	 * Test method for {@link PremiumMember#equals(Object)} , {@link PremiumMember#hashCode()} and
 	 * {@link PremiumMember#toString()}
@@ -57,7 +83,6 @@ public class PremiumMemberTest
 	/**
 	 * Test method for {@link PremiumMember}
 	 */
-	@Test(expectedExceptions = { BeanTestException.class, ObjectCreationException.class })
 	public void testWithBeanTester()
 	{
 		final BeanTester beanTester = new BeanTester();

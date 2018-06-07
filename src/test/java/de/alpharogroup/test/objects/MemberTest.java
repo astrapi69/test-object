@@ -24,7 +24,10 @@
  */
 package de.alpharogroup.test.objects;
 
+import static org.testng.Assert.assertNotNull;
 import static org.testng.AssertJUnit.assertEquals;
+
+import java.util.Date;
 
 import org.meanbean.factories.ObjectCreationException;
 import org.meanbean.test.BeanTestException;
@@ -32,6 +35,7 @@ import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
 import de.alpharogroup.evaluate.object.SilentEqualsHashCodeAndToStringEvaluator;
+import de.alpharogroup.test.objects.enums.Gender;
 
 /**
  * The unit test class for the class {@link Member}.
@@ -39,6 +43,27 @@ import de.alpharogroup.evaluate.object.SilentEqualsHashCodeAndToStringEvaluator;
 public class MemberTest
 {
 
+	/**
+	 * Test method for {@link Member} constructors
+	 */
+	@Test
+	public final void testConstructors()
+	{
+		Member model = new Member();
+		assertNotNull(model);
+		String name = "Foo"; 
+		String nickname = "man"; 
+		Gender gender = Gender.MALE; 
+		String about = "";
+		Boolean married = false; 
+		Date dateofbirth = new Date(); 
+		Date dateofMarriage = new Date();
+		model = new Member(name, nickname, gender, about, married, dateofbirth, dateofMarriage);
+		assertNotNull(model);
+		model = Member.buildMember().build();
+		assertNotNull(model);
+	}
+	
 	/**
 	 * Test method for {@link Member#equals(Object)} , {@link Member#hashCode()} and
 	 * {@link Member#toString()}
@@ -57,7 +82,6 @@ public class MemberTest
 	/**
 	 * Test method for {@link Member}
 	 */
-	@Test(expectedExceptions = { BeanTestException.class, ObjectCreationException.class })
 	public void testWithBeanTester()
 	{
 		final BeanTester beanTester = new BeanTester();

@@ -43,6 +43,7 @@ import lombok.ToString;
 public class PremiumMember extends Member
 {
 
+
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 
@@ -50,7 +51,14 @@ public class PremiumMember extends Member
 	private String credits;
 
 	/**
-	 * Instantiates a new {@link PremiumMember} object with the given parameters..
+	 * Instantiates a new {@link PremiumMember} object.
+	 */
+	public PremiumMember()
+	{
+	}
+
+	/**
+	 * Instantiates a new {@link PremiumMember} object with the given parameters.
 	 *
 	 * @param name
 	 *            the name

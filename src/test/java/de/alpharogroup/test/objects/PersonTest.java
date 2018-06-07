@@ -24,12 +24,14 @@
  */
 package de.alpharogroup.test.objects;
 
+import static org.testng.Assert.assertNotNull;
 import static org.testng.AssertJUnit.assertEquals;
 
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
 import de.alpharogroup.evaluate.object.SilentEqualsHashCodeAndToStringEvaluator;
+import de.alpharogroup.test.objects.enums.Gender;
 
 /**
  * The unit test class for the class {@link Person}.
@@ -37,6 +39,24 @@ import de.alpharogroup.evaluate.object.SilentEqualsHashCodeAndToStringEvaluator;
 public class PersonTest
 {
 
+	/**
+	 * Test method for {@link Person} constructors
+	 */
+	@Test
+	public final void testConstructors()
+	{
+		Person model = new Person();
+		assertNotNull(model);
+		String name = "Foo"; 
+		String nickname = "man"; 
+		Gender gender = Gender.MALE; 
+		String about = "";
+		Boolean married = false; 
+		model = new Person(name, nickname, gender, about, married);
+		assertNotNull(model);
+		model = Person.builder().build();
+		assertNotNull(model);
+	}
 	/**
 	 * Test method for {@link Person#equals(Object)} , {@link Person#hashCode()} and
 	 * {@link Person#toString()}
