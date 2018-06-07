@@ -45,7 +45,7 @@ public class AnnotatedTestClass
 	 * @return the fullname
 	 */
 	@TestMethodAnnotation("method test value")
-	private String getFullname()
+	public String getFullname()
 	{
 		return "fullname";
 	}

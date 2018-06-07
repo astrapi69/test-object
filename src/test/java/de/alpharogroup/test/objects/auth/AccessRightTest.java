@@ -24,6 +24,7 @@
  */
 package de.alpharogroup.test.objects.auth;
 
+import static org.testng.Assert.assertNotNull;
 import static org.testng.AssertJUnit.assertEquals;
 
 import org.meanbean.test.BeanTester;
@@ -37,6 +38,20 @@ import de.alpharogroup.evaluate.object.SilentEqualsHashCodeAndToStringEvaluator;
 public class AccessRightTest
 {
 
+	/**
+	 * Test method for {@link AccessRight} constructors
+	 */
+	@Test
+	public final void testConstructors()
+	{
+		AccessRight model = new AccessRight();
+		assertNotNull(model);
+		model = new AccessRight("");
+		assertNotNull(model);
+		model = AccessRight.builder().build();
+		assertNotNull(model);
+	}
+	
 	/**
 	 * Test method for {@link AccessRight#equals(Object)} , {@link AccessRight#hashCode()} and
 	 * {@link AccessRight#toString()}

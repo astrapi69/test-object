@@ -24,6 +24,8 @@
  */
 package de.alpharogroup.test.objects.annotations.classes;
 
+import static org.testng.AssertJUnit.assertEquals;
+
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
@@ -32,6 +34,21 @@ import org.testng.annotations.Test;
  */
 public class AnnotatedTestClassTest
 {
+
+	/**
+	 * Test method for {@link AnnotatedTestClass#getFullname()}.
+	 */
+	@Test
+	public void testGetFullname()
+	{
+		String expected;
+		String actual;		
+		AnnotatedTestClass annotatedTestClass = new AnnotatedTestClass();
+		actual = annotatedTestClass.getFullname();
+		expected = "fullname";
+		assertEquals(expected, actual);
+	}
+	
 	/**
 	 * Test method for {@link AnnotatedTestClass}
 	 */

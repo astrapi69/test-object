@@ -24,7 +24,10 @@
  */
 package de.alpharogroup.date;
 
+import static org.testng.Assert.assertNotNull;
 import static org.testng.AssertJUnit.assertEquals;
+
+import java.util.Date;
 
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
@@ -37,6 +40,20 @@ import de.alpharogroup.evaluate.object.SilentEqualsHashCodeAndToStringEvaluator;
 public class DateDecoratorTest
 {
 
+	/**
+	 * Test method for {@link DateDecorator} constructors
+	 */
+	@Test
+	public final void testConstructors()
+	{
+		DateDecorator model = new DateDecorator();
+		assertNotNull(model);
+		model = new DateDecorator(new Date());
+		assertNotNull(model);
+		model = DateDecorator.builder().build();
+		assertNotNull(model);
+	}
+	
 	/**
 	 * Test method for {@link DateDecorator#equals(Object)} , {@link DateDecorator#hashCode()} and
 	 * {@link DateDecorator#toString()}

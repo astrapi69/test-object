@@ -24,7 +24,11 @@
  */
 package de.alpharogroup.date;
 
+import static org.testng.Assert.assertNotNull;
 import static org.testng.AssertJUnit.assertEquals;
+
+import java.sql.Timestamp;
+import java.util.Date;
 
 import org.meanbean.factories.ObjectCreationException;
 import org.meanbean.test.BeanTestException;
@@ -39,6 +43,20 @@ import de.alpharogroup.evaluate.object.SilentEqualsHashCodeAndToStringEvaluator;
 public class SqlTimestampDecoratorTest
 {
 
+	/**
+	 * Test method for {@link SqlTimestampDecorator} constructors
+	 */
+	@Test
+	public final void testConstructors()
+	{
+		SqlTimestampDecorator model = new SqlTimestampDecorator();
+		assertNotNull(model);
+		model = new SqlTimestampDecorator(new Timestamp(new Date().getTime()));
+		assertNotNull(model);
+		model = SqlTimestampDecorator.builder().build();
+		assertNotNull(model);
+	}
+	
 	/**
 	 * Test method for {@link SqlTimestampDecorator#equals(Object)} ,
 	 * {@link SqlTimestampDecorator#hashCode()} and {@link SqlTimestampDecorator#toString()}

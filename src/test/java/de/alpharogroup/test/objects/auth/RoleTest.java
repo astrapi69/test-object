@@ -24,7 +24,10 @@
  */
 package de.alpharogroup.test.objects.auth;
 
+import static org.testng.Assert.assertNotNull;
 import static org.testng.AssertJUnit.assertEquals;
+
+import java.util.HashSet;
 
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
@@ -37,6 +40,21 @@ import de.alpharogroup.evaluate.object.SilentEqualsHashCodeAndToStringEvaluator;
 public class RoleTest
 {
 
+
+	/**
+	 * Test method for {@link Role} constructors
+	 */
+	@Test
+	public final void testConstructors()
+	{
+		Role model = new Role();
+		assertNotNull(model);
+		model = new Role("", new HashSet<>());
+		assertNotNull(model);
+		model = Role.builder().build();
+		assertNotNull(model);
+	}
+	
 	/**
 	 * Test method for {@link Role#equals(Object)} , {@link Role#hashCode()} and
 	 * {@link Role#toString()}

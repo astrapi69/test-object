@@ -24,6 +24,7 @@
  */
 package de.alpharogroup.test.objects.exceptions;
 
+import static org.testng.Assert.assertNotNull;
 import static org.testng.AssertJUnit.assertEquals;
 
 import org.meanbean.factories.ObjectCreationException;
@@ -39,6 +40,20 @@ import de.alpharogroup.evaluate.object.SilentEqualsHashCodeAndToStringEvaluator;
 public class ExceptionEventTest
 {
 
+	/**
+	 * Test method for {@link ExceptionEvent} constructors
+	 */
+	@Test
+	public final void testConstructors()
+	{
+		ExceptionEvent model = new ExceptionEvent();
+		assertNotNull(model);
+		model = new ExceptionEvent(new NullPointerException());
+		assertNotNull(model);
+		model = ExceptionEvent.builder().build();
+		assertNotNull(model);
+	}
+	
 	/**
 	 * Test method for {@link ExceptionEvent#equals(Object)} , {@link ExceptionEvent#hashCode()} and
 	 * {@link ExceptionEvent#toString()}
