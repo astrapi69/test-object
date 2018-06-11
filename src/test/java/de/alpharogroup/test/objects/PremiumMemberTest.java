@@ -22,50 +22,69 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.test.messages;
+package de.alpharogroup.test.objects;
 
+import static org.testng.Assert.assertNotNull;
 import static org.testng.AssertJUnit.assertEquals;
 
-import org.meanbean.factories.ObjectCreationException;
-import org.meanbean.test.BeanTestException;
+import java.util.Date;
+
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
+import de.alpharogroup.evaluate.object.SilentEqualsHashCodeAndToStringEvaluator;
+import de.alpharogroup.test.objects.enums.Gender;
+
 /**
- * The unit test class for the class {@link TestMessagesExtensions}.
+ * The unit test class for the class {@link PremiumMember}.
  */
-public class TestMessagesExtensionsTest
+public class PremiumMemberTest
 {
 
 	/**
-	 * Test method for {@link TestMessagesExtensions#newFailMessage(String, String, String)}.
+	 * Test method for {@link PremiumMember} constructors
 	 */
 	@Test
-	public void testNewFailMessage()
+	public final void testConstructors()
 	{
-		String expected;
-		String actual;
-		String expectedVariableName;
-		String expectedInput;
-		String actualInput;
-		expectedVariableName = "fooPath";
-		expectedInput = "bla";
-		actualInput = "fasel";
-		expected = "Expected " + expectedVariableName + " should be '" + expectedInput
-			+ "' but actual result is '" + actualInput + "'.";
-		actual = TestMessagesExtensions.newFailMessage(expectedVariableName, expectedInput,
-			actualInput);
+		PremiumMember model = new PremiumMember();
+		assertNotNull(model);
+		String name = "Foo";
+		String nickname = "man";
+		Gender gender = Gender.MALE;
+		String about = "";
+		Boolean married = false;
+		Date dateofbirth = new Date();
+		Date dateofMarriage = new Date();
+		String credits = "";
+		model = new PremiumMember(name, nickname, gender, about, married, dateofbirth,
+			dateofMarriage, credits);
+		assertNotNull(model);
+		model = PremiumMember.buildPremiumMember().build();
+		assertNotNull(model);
+	}
+
+	/**
+	 * Test method for {@link PremiumMember#equals(Object)} , {@link PremiumMember#hashCode()} and
+	 * {@link PremiumMember#toString()}
+	 */
+	@Test
+	public void testEqualsHashcodeAndToStringWithClassSilently()
+	{
+		boolean expected;
+		boolean actual;
+		actual = SilentEqualsHashCodeAndToStringEvaluator
+			.evaluateEqualsHashcodeAndToStringQuietly(PremiumMember.class);
+		expected = true;
 		assertEquals(expected, actual);
 	}
 
 	/**
-	 * Test method for {@link TestMessagesExtensions}
+	 * Test method for {@link PremiumMember}
 	 */
-	@Test(expectedExceptions = { BeanTestException.class, ObjectCreationException.class })
 	public void testWithBeanTester()
 	{
 		final BeanTester beanTester = new BeanTester();
-		beanTester.testBean(TestMessagesExtensions.class);
+		beanTester.testBean(PremiumMember.class);
 	}
-
 }

@@ -22,8 +22,9 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.test.messages;
+package de.alpharogroup.test.objects.exceptions;
 
+import static org.testng.Assert.assertNotNull;
 import static org.testng.AssertJUnit.assertEquals;
 
 import org.meanbean.factories.ObjectCreationException;
@@ -31,41 +32,50 @@ import org.meanbean.test.BeanTestException;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
+import de.alpharogroup.evaluate.object.SilentEqualsHashCodeAndToStringEvaluator;
+
 /**
- * The unit test class for the class {@link TestMessagesExtensions}.
+ * The unit test class for the class {@link ExceptionEvent}.
  */
-public class TestMessagesExtensionsTest
+public class ExceptionEventTest
 {
 
 	/**
-	 * Test method for {@link TestMessagesExtensions#newFailMessage(String, String, String)}.
+	 * Test method for {@link ExceptionEvent} constructors
 	 */
 	@Test
-	public void testNewFailMessage()
+	public final void testConstructors()
 	{
-		String expected;
-		String actual;
-		String expectedVariableName;
-		String expectedInput;
-		String actualInput;
-		expectedVariableName = "fooPath";
-		expectedInput = "bla";
-		actualInput = "fasel";
-		expected = "Expected " + expectedVariableName + " should be '" + expectedInput
-			+ "' but actual result is '" + actualInput + "'.";
-		actual = TestMessagesExtensions.newFailMessage(expectedVariableName, expectedInput,
-			actualInput);
+		ExceptionEvent model = new ExceptionEvent();
+		assertNotNull(model);
+		model = new ExceptionEvent(new NullPointerException());
+		assertNotNull(model);
+		model = ExceptionEvent.builder().build();
+		assertNotNull(model);
+	}
+
+	/**
+	 * Test method for {@link ExceptionEvent#equals(Object)} , {@link ExceptionEvent#hashCode()} and
+	 * {@link ExceptionEvent#toString()}
+	 */
+	@Test
+	public void testEqualsHashcodeAndToStringWithClassSilently()
+	{
+		boolean expected;
+		boolean actual;
+		actual = SilentEqualsHashCodeAndToStringEvaluator
+			.evaluateEqualsHashcodeAndToStringQuietly(ExceptionEvent.class);
+		expected = true;
 		assertEquals(expected, actual);
 	}
 
 	/**
-	 * Test method for {@link TestMessagesExtensions}
+	 * Test method for {@link ExceptionEvent}
 	 */
 	@Test(expectedExceptions = { BeanTestException.class, ObjectCreationException.class })
 	public void testWithBeanTester()
 	{
 		final BeanTester beanTester = new BeanTester();
-		beanTester.testBean(TestMessagesExtensions.class);
+		beanTester.testBean(ExceptionEvent.class);
 	}
-
 }

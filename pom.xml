@@ -11,7 +11,7 @@
 	</parent>
 
 	<artifactId>test-objects</artifactId>
-	<version>4.26</version>
+	<version>4.27</version>
 
 	<name>${project.artifactId}</name>
 
@@ -26,6 +26,9 @@
 		<runtime-compiler.version>1.1.0</runtime-compiler.version>
 		<!-- COMMONS-BEANUTILS version -->
 		<commons-beanutils.version>1.9.3</commons-beanutils.version>
+		<!-- JOBJECT-EXTENSIONS versions -->
+		<jobject-extensions.version>1.11</jobject-extensions.version>
+		<jobject-evaluate.version>${jobject-extensions.version}</jobject-evaluate.version>
 	</properties>
 
 	<licenses>
@@ -67,6 +70,18 @@
 				<artifactId>commons-beanutils</artifactId>
 				<version>${commons-beanutils.version}</version>
 			</dependency>
+			<!-- JOBJECT-EVALUATE DEPENDENCY -->
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
+				<artifactId>jobject-evaluate</artifactId>
+				<version>${jobject-evaluate.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>de.alpharogroup</groupId>
+						<artifactId>test-objects</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
 
 		</dependencies>
 
@@ -88,7 +103,142 @@
 			<groupId>commons-beanutils</groupId>
 			<artifactId>commons-beanutils</artifactId>
 		</dependency>
+		<!-- JOBJECT-EVALUATE DEPENDENCY -->
+		<dependency>
+			<groupId>de.alpharogroup</groupId>
+			<artifactId>jobject-evaluate</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- MEANBEAN DEPENDENCY -->
+		<dependency>
+			<groupId>org.meanbean</groupId>
+			<artifactId>meanbean</artifactId>
+			<scope>test</scope>
+		</dependency>
 
 	</dependencies>
+
+	<build>
+
+		<resources>
+
+			<resource>
+				<filtering>false</filtering>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**</include>
+				</includes>
+				<excludes>
+					<exclude>**/*.java</exclude>
+					<exclude>**/package.html</exclude>
+				</excludes>
+			</resource>
+
+			<resource>
+				<filtering>false</filtering>
+				<directory>src/main/resources</directory>
+			</resource>
+
+			<resource>
+				<filtering>false</filtering>
+				<directory>src/site</directory>
+			</resource>
+
+		</resources>
+
+		<testResources>
+
+			<testResource>
+				<filtering>false</filtering>
+				<directory>src/test/java</directory>
+				<includes>
+					<include>**</include>
+				</includes>
+				<excludes>
+					<exclude>**/*.java</exclude>
+					<exclude>**/package.html</exclude>
+				</excludes>
+			</testResource>
+			<testResource>
+				<filtering>false</filtering>
+				<directory>src/test/resources</directory>
+			</testResource>
+
+		</testResources>
+
+		<pluginManagement>
+
+			<plugins>
+
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>cobertura-maven-plugin</artifactId>
+					<configuration>
+						<instrumentation>
+							<excludes>
+								<!-- abstract classes -->
+								<!-- annotations -->
+								<!-- enums -->
+								<!-- beans -->
+								<!-- exceptions -->
+								<!-- interfaces -->
+								<!-- deprecated classes -->
+								<!-- constant classes with only constants -->
+								<!-- explicit abstract classes -->
+								<exclude>de/alpharogroup/AbstractTestCase.class</exclude>
+								<exclude>de/alpharogroup/BaseTestCase.class</exclude>
+								<exclude>de/alpharogroup/test/objects/generics/GenericDao.class</exclude>
+								<!-- explicit annotations -->
+								<exclude>de/alpharogroup/test/objects/annotations/AnotherTestAnnotation.class</exclude>
+								<exclude>de/alpharogroup/test/objects/annotations/Mandatory.class</exclude>
+								<exclude>de/alpharogroup/test/objects/annotations/TestAnnotation.class</exclude>
+								<exclude>de/alpharogroup/test/objects/annotations/TestFieldAnnotation.class</exclude>
+								<exclude>de/alpharogroup/test/objects/annotations/TestMethodAnnotation.class</exclude>
+								<exclude>de/alpharogroup/test/objects/annotations/TestTypeAnnotation.class</exclude>
+								<!-- explicit bean classes -->
+								<!-- explicit classes -->
+								<exclude>de/alpharogroup/classes/inner/OuterClass.class</exclude>
+								<!-- explicit deprecated classes -->
+								<!-- explicit enums -->
+								<exclude>de/alpharogroup/test/objects/enums/Brands.class</exclude>
+								<exclude>de/alpharogroup/test/objects/enums/Gender.class</exclude>
+								<!-- explicit exceptions -->
+								<!-- explicit interfaces -->
+								<exclude>de/alpharogroup/test/objects/annotations/interfaces/AnnotatedInterface.class</exclude>
+								<exclude>de/alpharogroup/test/objects/interfaces/AnInterface.class</exclude>
+								<!-- explicit abstract classes -->
+								<!-- explicit constant classes with only constants -->
+								<!-- explicit delegation classes -->
+							</excludes>
+						</instrumentation>
+					</configuration>
+					<executions>
+						<execution>
+							<goals>
+								<goal>clean</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+
+			</plugins>
+
+		</pluginManagement>
+
+		<plugins>
+
+			<plugin>
+				<inherited>true</inherited>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
+
+			<plugin>
+				<inherited>true</inherited>
+				<artifactId>maven-source-plugin</artifactId>
+			</plugin>
+
+		</plugins>
+
+	</build>
 
 </project>

@@ -22,50 +22,58 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.test.messages;
+package de.alpharogroup.test.objects;
 
+import static org.testng.Assert.assertNotNull;
 import static org.testng.AssertJUnit.assertEquals;
 
-import org.meanbean.factories.ObjectCreationException;
-import org.meanbean.test.BeanTestException;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
+import de.alpharogroup.evaluate.object.SilentEqualsHashCodeAndToStringEvaluator;
+
 /**
- * The unit test class for the class {@link TestMessagesExtensions}.
+ * The unit test class for the class {@link ClonableObject}.
  */
-public class TestMessagesExtensionsTest
+public class ClonableObjectTest
 {
 
 	/**
-	 * Test method for {@link TestMessagesExtensions#newFailMessage(String, String, String)}.
+	 * Test method for {@link ClonableObject} constructors
 	 */
 	@Test
-	public void testNewFailMessage()
+	public final void testConstructors()
 	{
-		String expected;
-		String actual;
-		String expectedVariableName;
-		String expectedInput;
-		String actualInput;
-		expectedVariableName = "fooPath";
-		expectedInput = "bla";
-		actualInput = "fasel";
-		expected = "Expected " + expectedVariableName + " should be '" + expectedInput
-			+ "' but actual result is '" + actualInput + "'.";
-		actual = TestMessagesExtensions.newFailMessage(expectedVariableName, expectedInput,
-			actualInput);
+		ClonableObject model = new ClonableObject();
+		assertNotNull(model);
+		model = new ClonableObject("");
+		assertNotNull(model);
+		model = ClonableObject.builder().build();
+		assertNotNull(model);
+	}
+
+	/**
+	 * Test method for {@link ClonableObject#equals(Object)} , {@link ClonableObject#hashCode()} and
+	 * {@link ClonableObject#toString()}
+	 */
+	@Test
+	public void testEqualsHashcodeAndToStringWithClassSilently()
+	{
+		boolean expected;
+		boolean actual;
+		actual = SilentEqualsHashCodeAndToStringEvaluator
+			.evaluateEqualsHashcodeAndToStringQuietly(ClonableObject.class);
+		expected = true;
 		assertEquals(expected, actual);
 	}
 
 	/**
-	 * Test method for {@link TestMessagesExtensions}
+	 * Test method for {@link ClonableObject}
 	 */
-	@Test(expectedExceptions = { BeanTestException.class, ObjectCreationException.class })
+	@Test
 	public void testWithBeanTester()
 	{
 		final BeanTester beanTester = new BeanTester();
-		beanTester.testBean(TestMessagesExtensions.class);
+		beanTester.testBean(ClonableObject.class);
 	}
-
 }

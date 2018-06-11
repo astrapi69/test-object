@@ -22,50 +22,58 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.test.messages;
+package de.alpharogroup.test.objects.auth;
 
+import static org.testng.Assert.assertNotNull;
 import static org.testng.AssertJUnit.assertEquals;
 
-import org.meanbean.factories.ObjectCreationException;
-import org.meanbean.test.BeanTestException;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
+import de.alpharogroup.evaluate.object.SilentEqualsHashCodeAndToStringEvaluator;
+
 /**
- * The unit test class for the class {@link TestMessagesExtensions}.
+ * The unit test class for the class {@link AccessRight}.
  */
-public class TestMessagesExtensionsTest
+public class AccessRightTest
 {
 
 	/**
-	 * Test method for {@link TestMessagesExtensions#newFailMessage(String, String, String)}.
+	 * Test method for {@link AccessRight} constructors
 	 */
 	@Test
-	public void testNewFailMessage()
+	public final void testConstructors()
 	{
-		String expected;
-		String actual;
-		String expectedVariableName;
-		String expectedInput;
-		String actualInput;
-		expectedVariableName = "fooPath";
-		expectedInput = "bla";
-		actualInput = "fasel";
-		expected = "Expected " + expectedVariableName + " should be '" + expectedInput
-			+ "' but actual result is '" + actualInput + "'.";
-		actual = TestMessagesExtensions.newFailMessage(expectedVariableName, expectedInput,
-			actualInput);
+		AccessRight model = new AccessRight();
+		assertNotNull(model);
+		model = new AccessRight("");
+		assertNotNull(model);
+		model = AccessRight.builder().build();
+		assertNotNull(model);
+	}
+
+	/**
+	 * Test method for {@link AccessRight#equals(Object)} , {@link AccessRight#hashCode()} and
+	 * {@link AccessRight#toString()}
+	 */
+	@Test
+	public void testEqualsHashcodeAndToStringWithClassSilently()
+	{
+		boolean expected;
+		boolean actual;
+		actual = SilentEqualsHashCodeAndToStringEvaluator
+			.evaluateEqualsHashcodeAndToStringQuietly(AccessRight.class);
+		expected = true;
 		assertEquals(expected, actual);
 	}
 
 	/**
-	 * Test method for {@link TestMessagesExtensions}
+	 * Test method for {@link AccessRight}
 	 */
-	@Test(expectedExceptions = { BeanTestException.class, ObjectCreationException.class })
+	@Test
 	public void testWithBeanTester()
 	{
 		final BeanTester beanTester = new BeanTester();
-		beanTester.testBean(TestMessagesExtensions.class);
+		beanTester.testBean(AccessRight.class);
 	}
-
 }

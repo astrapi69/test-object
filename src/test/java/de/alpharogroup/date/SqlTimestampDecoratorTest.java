@@ -22,50 +22,63 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.test.messages;
+package de.alpharogroup.date;
 
+import static org.testng.Assert.assertNotNull;
 import static org.testng.AssertJUnit.assertEquals;
+
+import java.sql.Timestamp;
+import java.util.Date;
 
 import org.meanbean.factories.ObjectCreationException;
 import org.meanbean.test.BeanTestException;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
+import de.alpharogroup.evaluate.object.SilentEqualsHashCodeAndToStringEvaluator;
+
 /**
- * The unit test class for the class {@link TestMessagesExtensions}.
+ * The unit test class for the class {@link SqlTimestampDecorator}.
  */
-public class TestMessagesExtensionsTest
+public class SqlTimestampDecoratorTest
 {
 
 	/**
-	 * Test method for {@link TestMessagesExtensions#newFailMessage(String, String, String)}.
+	 * Test method for {@link SqlTimestampDecorator} constructors
 	 */
 	@Test
-	public void testNewFailMessage()
+	public final void testConstructors()
 	{
-		String expected;
-		String actual;
-		String expectedVariableName;
-		String expectedInput;
-		String actualInput;
-		expectedVariableName = "fooPath";
-		expectedInput = "bla";
-		actualInput = "fasel";
-		expected = "Expected " + expectedVariableName + " should be '" + expectedInput
-			+ "' but actual result is '" + actualInput + "'.";
-		actual = TestMessagesExtensions.newFailMessage(expectedVariableName, expectedInput,
-			actualInput);
+		SqlTimestampDecorator model = new SqlTimestampDecorator();
+		assertNotNull(model);
+		model = new SqlTimestampDecorator(new Timestamp(new Date().getTime()));
+		assertNotNull(model);
+		model = SqlTimestampDecorator.builder().build();
+		assertNotNull(model);
+	}
+
+	/**
+	 * Test method for {@link SqlTimestampDecorator#equals(Object)} ,
+	 * {@link SqlTimestampDecorator#hashCode()} and {@link SqlTimestampDecorator#toString()}
+	 */
+	@Test
+	public void testEqualsHashcodeAndToStringWithClassSilently()
+	{
+		boolean expected;
+		boolean actual;
+		actual = SilentEqualsHashCodeAndToStringEvaluator
+			.evaluateEqualsHashcodeAndToStringQuietly(SqlTimestampDecorator.class);
+		expected = true;
 		assertEquals(expected, actual);
 	}
 
 	/**
-	 * Test method for {@link TestMessagesExtensions}
+	 * Test method for {@link SqlTimestampDecorator}
 	 */
 	@Test(expectedExceptions = { BeanTestException.class, ObjectCreationException.class })
 	public void testWithBeanTester()
 	{
 		final BeanTester beanTester = new BeanTester();
-		beanTester.testBean(TestMessagesExtensions.class);
+		beanTester.testBean(SqlTimestampDecorator.class);
 	}
-
 }

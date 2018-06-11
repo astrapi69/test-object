@@ -22,34 +22,41 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.test.objects.auth;
+package de.alpharogroup.test.objects.annotations.classes;
 
-import java.util.Set;
+import static org.testng.AssertJUnit.assertEquals;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.Singular;
-import lombok.ToString;
+import org.meanbean.test.BeanTester;
+import org.testng.annotations.Test;
 
 /**
- * The class {@link Roles} is a class intended for use in unit tests.
+ * The unit test class for the class {@link AnnotatedTestClass}.
  */
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder(toBuilder = true)
-public class Roles
+public class AnnotatedTestClassTest
 {
 
-	/** The roles. */
-	@Singular
-	Set<Role> roles;
+	/**
+	 * Test method for {@link AnnotatedTestClass#getFullname()}.
+	 */
+	@Test
+	public void testGetFullname()
+	{
+		String expected;
+		String actual;
+		AnnotatedTestClass annotatedTestClass = new AnnotatedTestClass();
+		actual = annotatedTestClass.getFullname();
+		expected = "fullname";
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * Test method for {@link AnnotatedTestClass}
+	 */
+	@Test
+	public void testWithBeanTester()
+	{
+		final BeanTester beanTester = new BeanTester();
+		beanTester.testBean(AnnotatedTestClass.class);
+	}
 
 }

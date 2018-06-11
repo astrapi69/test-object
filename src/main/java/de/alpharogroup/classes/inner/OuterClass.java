@@ -38,7 +38,6 @@ public class OuterClass
 	 */
 	public class InnerClass
 	{
-
 	}
 
 	/**
@@ -96,4 +95,5 @@ public class OuterClass
 		log.info("enclosing method:{}", clazz.getEnclosingMethod());
 		log.info("========================================================================");
 	}
+
 }

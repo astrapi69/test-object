@@ -24,32 +24,59 @@
  */
 package de.alpharogroup.test.objects.auth;
 
-import java.util.Set;
+import static org.testng.Assert.assertNotNull;
+import static org.testng.AssertJUnit.assertEquals;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.Singular;
-import lombok.ToString;
+import java.util.HashSet;
+
+import org.meanbean.test.BeanTester;
+import org.testng.annotations.Test;
+
+import de.alpharogroup.evaluate.object.SilentEqualsHashCodeAndToStringEvaluator;
 
 /**
- * The class {@link Roles} is a class intended for use in unit tests.
+ * The unit test class for the class {@link Role}.
  */
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder(toBuilder = true)
-public class Roles
+public class RoleTest
 {
 
-	/** The roles. */
-	@Singular
-	Set<Role> roles;
 
+	/**
+	 * Test method for {@link Role} constructors
+	 */
+	@Test
+	public final void testConstructors()
+	{
+		Role model = new Role();
+		assertNotNull(model);
+		model = new Role("", new HashSet<>());
+		assertNotNull(model);
+		model = Role.builder().build();
+		assertNotNull(model);
+	}
+
+	/**
+	 * Test method for {@link Role#equals(Object)} , {@link Role#hashCode()} and
+	 * {@link Role#toString()}
+	 */
+	@Test
+	public void testEqualsHashcodeAndToStringWithClassSilently()
+	{
+		boolean expected;
+		boolean actual;
+		actual = SilentEqualsHashCodeAndToStringEvaluator
+			.evaluateEqualsHashcodeAndToStringQuietly(Role.class);
+		expected = true;
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * Test method for {@link Role}
+	 */
+	@Test
+	public void testWithBeanTester()
+	{
+		final BeanTester beanTester = new BeanTester();
+		beanTester.testBean(Role.class);
+	}
 }

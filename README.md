@@ -3,6 +3,7 @@
 <div align="center">
 
 [![Build Status](https://travis-ci.org/lightblueseas/test-objects.svg?branch=master)](https://travis-ci.org/lightblueseas/test-objects)
+[![Coverage Status](https://coveralls.io/repos/github/lightblueseas/test-objects/badge.svg?branch=develop)](https://coveralls.io/github/lightblueseas/test-objects?branch=develop)
 [![Open Issues](https://img.shields.io/github/issues/lightblueseas/test-objects.svg?style=flat)](https://github.com/lightblueseas/test-objects/issues) 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/test-objects/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/test-objects)
 [![Javadocs](http://www.javadoc.io/badge/de.alpharogroup/test-objects.svg)](http://www.javadoc.io/doc/de.alpharogroup/test-objects)
@@ -35,7 +36,7 @@ Add the following maven dependency to your project `pom.xml` if you want to impo
 Than you can add the dependency to your dependencies:
 
 		<!-- TEST-OBJECTS version -->
-		<test-objects.version>4.25</test-objects.version>
+		<test-objects.version>4.27</test-objects.version>
 
 		<dependencies>
 			...
@@ -48,6 +49,15 @@ Than you can add the dependency to your dependencies:
 			...
 		</dependencies>
 
+## Semantic Versioning
+
+The versions of jcommons-lang are maintained with the Semantic Versioning guidelines.
+
+Release version numbers will be incremented in the following format:
+
+`<major>.<minor>.<patch>`
+
+For detailed information on versioning you can visit the [wiki page](https://github.com/lightblueseas/mvn-parent-projects/wiki/Semantic-Versioning).
 
 ## Want to Help and improve it? ###
 
