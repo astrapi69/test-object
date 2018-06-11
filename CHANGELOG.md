@@ -7,6 +7,13 @@ Version 4.27-SNAPSHOT
 ADDED: 
 
 - new coverage status icon
+- new abstract class AbstractTestCase with generic types for actual and expected
+- new dependency of jobject-extensions
+- javadoc extended and improved
+
+CHANGED:
+
+- unit tests extended for improve code coverage
 
 Version 4.26
 -------------
