@@ -50,6 +50,33 @@ public class AlgorithmModelTest
 			.evaluateEqualsHashcodeAndToStringQuietly(AlgorithmModel.class);
 		expected = true;
 		assertEquals(expected, actual);
+	}	
+
+	/**
+	 * Test method for {@link AlgorithmModel#getA()} 
+	 */
+	@Test
+	public void testGetA() {
+		int expected;
+		int actual;
+		expected = 2;
+		AlgorithmModel model = AlgorithmModel.builder().a(expected).build();
+		actual = model.getA();
+		assertEquals(expected, actual);		
+	}
+
+	/**
+	 * Test method for {@link AlgorithmModel#getB()} 
+	 */
+	@Test
+	public void testGetB() {
+		int expected;
+		int actual;
+		expected = 2;
+		AlgorithmModel model = AlgorithmModel.builder().b(expected).build();
+		actual = model.getB();
+		assertEquals(expected, actual);
+		
 	}
 
 	/**

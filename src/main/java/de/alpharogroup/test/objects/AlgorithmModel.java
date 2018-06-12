@@ -35,9 +35,9 @@ import lombok.ToString;
 /**
  * The class {@link AlgorithmModel} is a class intended for use in unit tests.
  */
+@EqualsAndHashCode
 @Getter
 @Setter
-@EqualsAndHashCode
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
