@@ -24,7 +24,8 @@
  */
 package de.alpharogroup.test.objects;
 
-import static org.testng.Assert.assertNotNull;
+import static org.testng.AssertJUnit.assertNotNull;
+import static org.testng.AssertJUnit.assertTrue;
 import static org.testng.AssertJUnit.assertEquals;
 
 import org.meanbean.test.BeanTester;
@@ -56,6 +57,28 @@ public class PersonTest
 		assertNotNull(model);
 		model = Person.builder().build();
 		assertNotNull(model);
+	}
+
+	/**
+	 * Test method for {@link Person#compareTo(Person)}.
+	 */
+	@Test
+	public void testCompareTo()
+	{
+		/** For use of the expected result. */
+		boolean expected;
+		/** For use of the result of the comparison. */
+		int actual;
+		
+		Person o1;
+		Person o2;
+
+
+		o1 = Person.builder().build();
+		o2 = Person.builder().build();
+		actual = o1.compareTo(o2);
+		expected = actual == 0;
+		assertTrue(expected);
 	}
 
 	/**

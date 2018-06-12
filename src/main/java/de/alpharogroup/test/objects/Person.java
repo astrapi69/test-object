@@ -38,9 +38,9 @@ import lombok.ToString;
 /**
  * The class {@link Person} is a class intended for use in unit tests.
  */
+@EqualsAndHashCode
 @Getter
 @Setter
-@EqualsAndHashCode
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
