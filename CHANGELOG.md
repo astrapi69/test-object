@@ -4,6 +4,9 @@
 Version 4.28-SNAPSHOT
 -------------
 
+ADDED: 
+
+- new base unit test class for comparators
 
 Version 4.27
 -------------
