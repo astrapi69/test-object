@@ -65,6 +65,22 @@ public class PremiumMemberTest
 	}
 
 	/**
+	 * Test method for {@link PremiumMember#setCredits(String)}
+	 */
+	@Test
+	public void testSetCredit()
+	{
+		String expected;
+		String actual;
+		PremiumMember model = new PremiumMember();
+		assertNotNull(model);
+		expected = "1000";
+		model.setCredits(expected);
+		actual = model.getCredits();
+		assertEquals(expected, actual);
+	}
+
+	/**
 	 * Test method for {@link PremiumMember#equals(Object)} , {@link PremiumMember#hashCode()} and
 	 * {@link PremiumMember#toString()}
 	 */
