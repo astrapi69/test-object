@@ -186,6 +186,7 @@
 								<!-- constant classes with only constants -->
 								<!-- explicit abstract classes -->
 								<exclude>de/alpharogroup/AbstractTestCase.class</exclude>
+								<exclude>de/alpharogroup/BaseComparatorTestCase.class</exclude>
 								<exclude>de/alpharogroup/BaseTestCase.class</exclude>
 								<exclude>de/alpharogroup/test/objects/generics/GenericDao.class</exclude>
 								<!-- explicit annotations -->
