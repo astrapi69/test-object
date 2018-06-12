@@ -11,16 +11,7 @@
 
 </div>
 
-Project that holds test objects for unit tests and evaluators.
-
-Currently supported evaluators:
-
-- ComparableEvaluator is intended to evaluate Comparable objects
-- EqualsEvaluator evaluates the equals method of objects
-- HashcodeEvaluator evaluates the hashcode method of objects
-- ToStringEvaluator evaluates the toString method of objects
-- EqualsHashCodeAndToStringEvaluator is a combination of all the above evaluators
-- SilentEqualsHashCodeAndToStringEvaluator evaluates classes in a silent manner
+Project that holds test objects for unit tests.
 
 ## License
 
@@ -36,7 +27,7 @@ Add the following maven dependency to your project `pom.xml` if you want to impo
 Than you can add the dependency to your dependencies:
 
 		<!-- TEST-OBJECTS version -->
-		<test-objects.version>4.27</test-objects.version>
+		<test-objects.version>4.28</test-objects.version>
 
 		<dependencies>
 			...

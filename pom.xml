@@ -11,7 +11,7 @@
 	</parent>
 
 	<artifactId>test-objects</artifactId>
-	<version>4.27</version>
+	<version>4.28</version>
 
 	<name>${project.artifactId}</name>
 
@@ -186,6 +186,7 @@
 								<!-- constant classes with only constants -->
 								<!-- explicit abstract classes -->
 								<exclude>de/alpharogroup/AbstractTestCase.class</exclude>
+								<exclude>de/alpharogroup/BaseComparatorTestCase.class</exclude>
 								<exclude>de/alpharogroup/BaseTestCase.class</exclude>
 								<exclude>de/alpharogroup/test/objects/generics/GenericDao.class</exclude>
 								<!-- explicit annotations -->
@@ -198,6 +199,9 @@
 								<!-- explicit bean classes -->
 								<!-- explicit classes -->
 								<exclude>de/alpharogroup/classes/inner/OuterClass.class</exclude>
+								<exclude>de/alpharogroup/classes/inner/OuterClass$InnerClass.class</exclude>
+								<exclude>de/alpharogroup/classes/inner/OuterClass$StaticNestedClass.class</exclude>
+								<exclude>de/alpharogroup/classes/inner/OuterClass$StaticNestedClass$1.class</exclude>
 								<!-- explicit deprecated classes -->
 								<!-- explicit enums -->
 								<exclude>de/alpharogroup/test/objects/enums/Brands.class</exclude>

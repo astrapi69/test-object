@@ -1,6 +1,17 @@
 ## Change log
 ----------------------
 
+Version 4.28
+-------------
+
+ADDED: 
+
+- new base unit test class for comparators
+
+CHANGED:
+
+- unit tests extended for improve code coverage to 100%
+
 Version 4.27
 -------------
 
