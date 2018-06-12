@@ -27,8 +27,8 @@ package de.alpharogroup;
 /**
  * The abstract class {@link BaseTestCase} is for unit tests.
  *
- * @version 1.0
  * @author Asterios Raptis
+ * @version 1.0
  */
 public abstract class BaseTestCase extends AbstractTestCase<Boolean, Boolean>
 {

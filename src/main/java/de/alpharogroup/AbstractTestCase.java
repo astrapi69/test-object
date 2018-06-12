@@ -29,6 +29,11 @@ import org.testng.annotations.BeforeMethod;
 
 /**
  * The abstract class {@link AbstractTestCase} is for unit tests.
+ *
+ * @param <A>
+ *            the generic type for the actual
+ * @param <E>
+ *            the element type for the expected
  */
 public abstract class AbstractTestCase<A, E>
 {
