@@ -24,8 +24,8 @@
  */
 package de.alpharogroup;
 
-import static org.testng.AssertJUnit.assertTrue;
 import static org.testng.AssertJUnit.assertEquals;
+import static org.testng.AssertJUnit.assertTrue;
 
 import java.util.Collections;
 import java.util.Comparator;
@@ -34,7 +34,6 @@ import java.util.List;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-import de.alpharogroup.AbstractTestCase;
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
 
@@ -58,6 +57,91 @@ public abstract class BaseComparatorTestCase<T> extends AbstractTestCase<Integer
 
 	/** The other object to compare. */
 	T o2;
+
+	/**
+	 * Abstract factory callback method that have to be overwritten for create the {@link List} with
+	 * objects to sort in the sort scenario.
+	 *
+	 * @return the {@link List} with objects to test the sort algorithm
+	 */
+	protected abstract List<T> newActualList();
+
+	/**
+	 * Abstract factory callback method that have to be overwritten for create the specific
+	 * comparator object
+	 *
+	 * @return the specific comparator
+	 */
+	protected abstract Comparator<T> newComparator();
+
+	/**
+	 * Abstract factory callback method that have to be overwritten for create the expected
+	 * {@link List} with objects to test the sort algorithm in the sort scenario.
+	 *
+	 * @return the {@link List} with objects to test the sort algorithm
+	 */
+	protected abstract List<T> newExpectedSortedList();
+
+	/**
+	 * Abstract factory callback method that have to be overwritten for create the {@link List} with
+	 * objects to sort in the sort scenario. <br>
+	 * <br>
+	 * Note:This list have to be equal with {@link BaseComparatorTestCase#newActualList()}
+	 *
+	 * @return the {@link List} with objects to test the sort algorithm
+	 */
+	protected abstract List<T> newExpectedUnsortedList();
+
+	/**
+	 * Abstract factory callback method that have to be overwritten for create the other object to
+	 * compare in the scenario that the objects are equal.
+	 *
+	 * @return the new created object to compare
+	 */
+	protected abstract T newO1Equal();
+
+	/**
+	 * Abstract factory callback method that have to be overwritten for create the first comparison
+	 * object in the scenario greater than.
+	 *
+	 * @return the new created first comparison object
+	 */
+	protected abstract T newO1GreaterThan();
+
+	/**
+	 * Abstract factory callback method that have to be overwritten for create the first comparison
+	 * object in the scenario less than.
+	 *
+	 * @return the new created first comparison object
+	 */
+	protected abstract T newO1LessThan();
+
+	/**
+	 * Factory callback method that can be overwritten for create the other object to compare in the
+	 * scenario that the objects are equal.
+	 *
+	 * @return the new created object to compare
+	 */
+	protected T newO2Equal()
+	{
+		return newO1Equal();
+	}
+
+	/**
+	 * Abstract factory callback method that have to be overwritten for create the other object to
+	 * compare in the scenario greater than.
+	 *
+	 * @return the new created object to compare
+	 */
+	protected abstract T newO2GreaterThan();
+
+	/**
+	 * Abstract factory callback method that have to be overwritten for create the other object to
+	 * compare in the scenario less than.
+	 *
+	 * @return the new created object to compare
+	 */
+	protected abstract T newO2LessThan();
 
 	/**
 	 * Sets up method will be invoked before every unit test method
@@ -86,14 +170,6 @@ public abstract class BaseComparatorTestCase<T> extends AbstractTestCase<Integer
 		o1 = null;
 		o2 = null;
 	}
-
-	/**
-	 * Abstract factory callback method that have to be overwritten for create the specific
-	 * comparator object
-	 *
-	 * @return the specific comparator
-	 */
-	protected abstract Comparator<T> newComparator();
 
 	/**
 	 * Test method for {@link Comparator#compare(Object, Object)}
@@ -176,82 +252,5 @@ public abstract class BaseComparatorTestCase<T> extends AbstractTestCase<Integer
 		expected = actual < 0;
 		assertTrue(expected);
 	}
-
-	/**
-	 * Abstract factory callback method that have to be overwritten for create the first comparison
-	 * object in the scenario less than.
-	 *
-	 * @return the new created first comparison object
-	 */
-	protected abstract T newO1LessThan();
-
-	/**
-	 * Abstract factory callback method that have to be overwritten for create the other object to
-	 * compare in the scenario less than.
-	 *
-	 * @return the new created object to compare
-	 */
-	protected abstract T newO2LessThan();
-
-	/**
-	 * Abstract factory callback method that have to be overwritten for create the first comparison
-	 * object in the scenario greater than.
-	 *
-	 * @return the new created first comparison object
-	 */
-	protected abstract T newO1GreaterThan();
-
-	/**
-	 * Abstract factory callback method that have to be overwritten for create the other object to
-	 * compare in the scenario greater than.
-	 *
-	 * @return the new created object to compare
-	 */
-	protected abstract T newO2GreaterThan();
-
-	/**
-	 * Abstract factory callback method that have to be overwritten for create the other object to
-	 * compare in the scenario that the objects are equal.
-	 *
-	 * @return the new created object to compare
-	 */
-	protected abstract T newO1Equal();
-
-	/**
-	 * Factory callback method that can be overwritten for create the other object to compare in the
-	 * scenario that the objects are equal.
-	 *
-	 * @return the new created object to compare
-	 */
-	protected T newO2Equal()
-	{
-		return newO1Equal();
-	}
-
-	/**
-	 * Abstract factory callback method that have to be overwritten for create the {@link List} with
-	 * objects to sort in the sort scenario.
-	 *
-	 * @return the {@link List} with objects to test the sort algorithm
-	 */
-	protected abstract List<T> newActualList();
-
-	/**
-	 * Abstract factory callback method that have to be overwritten for create the expected {@link List} with
-	 * objects to test the sort algorithm in the sort scenario.
-	 *
-	 * @return the {@link List} with objects to test the sort algorithm
-	 */
-	protected abstract List<T> newExpectedSortedList();
-
-	/**
-	 * Abstract factory callback method that have to be overwritten for create the {@link List} with
-	 * objects to sort in the sort scenario. <br>
-	 * <br>
-	 * Note:This list have to be equal with {@link BaseComparatorTestCase#newActualList()}
-	 *
-	 * @return the {@link List} with objects to test the sort algorithm
-	 */
-	protected abstract List<T> newExpectedUnsortedList();
 
 }

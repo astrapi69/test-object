@@ -66,39 +66,6 @@ public class MemberTest
 	}
 
 	/**
-	 * Test method for {@link Member#setDateofbirth(Date)} 
-	 */
-	@Test
-	public void testSetDateofbirth(){
-		Date expected;
-		Date actual;
-		Member model = new Member();
-		assertNotNull(model);
-		LocalDate.now();
-		expected = new GregorianCalendar(2007, Calendar.NOVEMBER, 8).getTime();
-		model.setDateofbirth(expected);
-		actual = model.getDateofbirth();
-		assertEquals(expected, actual);
-	}
-	
-	/**
-	 * Test method for {@link Member#setDateofMarriage(Date)} 
-	 */
-	@Test
-	public void testSetDateofMarriage(){
-		Date expected;
-		Date actual;
-		Member model = new Member();
-		assertNotNull(model);
-		LocalDate.now();
-		expected = new GregorianCalendar(2007, Calendar.NOVEMBER, 8).getTime();
-		model.setDateofMarriage(expected);
-		actual = model.getDateofMarriage();
-		assertEquals(expected, actual);
-		
-	}
-
-	/**
 	 * Test method for {@link Member#equals(Object)} , {@link Member#hashCode()} and
 	 * {@link Member#toString()}
 	 */
@@ -111,6 +78,41 @@ public class MemberTest
 			.evaluateEqualsHashcodeAndToStringQuietly(Member.class);
 		expected = true;
 		assertEquals(expected, actual);
+	}
+
+	/**
+	 * Test method for {@link Member#setDateofbirth(Date)}
+	 */
+	@Test
+	public void testSetDateofbirth()
+	{
+		Date expected;
+		Date actual;
+		Member model = new Member();
+		assertNotNull(model);
+		LocalDate.now();
+		expected = new GregorianCalendar(2007, Calendar.NOVEMBER, 8).getTime();
+		model.setDateofbirth(expected);
+		actual = model.getDateofbirth();
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * Test method for {@link Member#setDateofMarriage(Date)}
+	 */
+	@Test
+	public void testSetDateofMarriage()
+	{
+		Date expected;
+		Date actual;
+		Member model = new Member();
+		assertNotNull(model);
+		LocalDate.now();
+		expected = new GregorianCalendar(2007, Calendar.NOVEMBER, 8).getTime();
+		model.setDateofMarriage(expected);
+		actual = model.getDateofMarriage();
+		assertEquals(expected, actual);
+
 	}
 
 	/**

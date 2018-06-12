@@ -65,6 +65,21 @@ public class PremiumMemberTest
 	}
 
 	/**
+	 * Test method for {@link PremiumMember#equals(Object)} , {@link PremiumMember#hashCode()} and
+	 * {@link PremiumMember#toString()}
+	 */
+	@Test
+	public void testEqualsHashcodeAndToStringWithClassSilently()
+	{
+		boolean expected;
+		boolean actual;
+		actual = SilentEqualsHashCodeAndToStringEvaluator
+			.evaluateEqualsHashcodeAndToStringQuietly(PremiumMember.class);
+		expected = true;
+		assertEquals(expected, actual);
+	}
+
+	/**
 	 * Test method for {@link PremiumMember#setCredits(String)}
 	 */
 	@Test
@@ -77,21 +92,6 @@ public class PremiumMemberTest
 		expected = "1000";
 		model.setCredits(expected);
 		actual = model.getCredits();
-		assertEquals(expected, actual);
-	}
-
-	/**
-	 * Test method for {@link PremiumMember#equals(Object)} , {@link PremiumMember#hashCode()} and
-	 * {@link PremiumMember#toString()}
-	 */
-	@Test
-	public void testEqualsHashcodeAndToStringWithClassSilently()
-	{
-		boolean expected;
-		boolean actual;
-		actual = SilentEqualsHashCodeAndToStringEvaluator
-			.evaluateEqualsHashcodeAndToStringQuietly(PremiumMember.class);
-		expected = true;
 		assertEquals(expected, actual);
 	}
 
