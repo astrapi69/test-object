@@ -64,6 +64,8 @@ public abstract class AbstractTestCase<A, E>
 	@AfterMethod
 	protected void tearDown() throws Exception
 	{
+		actual = null;
+		expected = null;
 	}
 
 }
