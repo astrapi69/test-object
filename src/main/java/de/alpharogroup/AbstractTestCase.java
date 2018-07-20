@@ -46,24 +46,22 @@ public abstract class AbstractTestCase<A, E>
 
 	/**
 	 * Sets up method will be invoked before every unit test method
-	 *
-	 * @throws Exception
-	 *             is thrown if an exception occurs
 	 */
 	@BeforeMethod
-	protected void setUp() throws Exception
+	protected void setUp()
 	{
 	}
 
 	/**
-	 * Tear down method will be invoked after every unit test method
-	 *
-	 * @throws Exception
-	 *             is thrown if an exception occurs
+	 * Tear down method will be invoked after every unit test method <br>
+	 * <br>
+	 * Note: call {@code super.tearDown()} if you overwrite it for set actual and expected to null
 	 */
 	@AfterMethod
-	protected void tearDown() throws Exception
+	protected void tearDown()
 	{
+		actual = null;
+		expected = null;
 	}
 
 }

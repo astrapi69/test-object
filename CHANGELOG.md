@@ -1,6 +1,13 @@
 ## Change log
 ----------------------
 
+Version 4.28.1
+-------------
+
+CHANGED:
+
+- removed general exception throw clause in setUp and tearDown methods 
+
 Version 4.28
 -------------
 

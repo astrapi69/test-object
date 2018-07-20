@@ -144,27 +144,21 @@ public abstract class BaseComparatorTestCase<T> extends AbstractTestCase<Integer
 	protected abstract T newO2LessThan();
 
 	/**
-	 * Sets up method will be invoked before every unit test method
-	 *
-	 * @throws Exception
-	 *             is thrown if an exception occurs
+	 * {@inheritDoc}
 	 */
 	@Override
 	@BeforeMethod
-	public void setUp() throws Exception
+	public void setUp()
 	{
 		comparator = newComparator();
 	}
 
 	/**
-	 * Tear down method will be invoked after every unit test method
-	 *
-	 * @throws Exception
-	 *             is thrown if an exception occurs
+	 * {@inheritDoc}
 	 */
 	@Override
 	@AfterMethod
-	public void tearDown() throws Exception
+	public void tearDown()
 	{
 		comparator = null;
 		o1 = null;
