@@ -1,6 +1,14 @@
 ## Change log
 ----------------------
 
+Version 4.29-SNAPSHOT
+-------------
+
+CHANGED:
+
+- update of parent version to 4
+- update of jobject-extensions version to 1.12
+
 Version 4.28.1
 -------------
 
