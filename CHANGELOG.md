@@ -4,6 +4,9 @@
 Version 4.29-SNAPSHOT
 -------------
 
+CHANGED:
+
+- removed general exception throw clause in setUp and tearDown methods 
 
 Version 4.28
 -------------
