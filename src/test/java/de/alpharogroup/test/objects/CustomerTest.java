@@ -27,10 +27,11 @@ package de.alpharogroup.test.objects;
 import static org.testng.Assert.assertNotNull;
 import static org.testng.AssertJUnit.assertEquals;
 
+import io.github.benas.randombeans.api.EnhancedRandom;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
-import de.alpharogroup.evaluate.object.SilentEqualsHashCodeAndToStringEvaluator;
+import de.alpharogroup.evaluate.object.evaluators.SilentEqualsHashCodeAndToStringEvaluator;
 import de.alpharogroup.test.objects.enums.Brands;
 
 /**
@@ -63,7 +64,11 @@ public class CustomerTest
 		boolean expected;
 		boolean actual;
 		actual = SilentEqualsHashCodeAndToStringEvaluator
-			.evaluateEqualsHashcodeAndToStringQuietly(Customer.class);
+			.evaluateEqualsHashcodeAndToStringQuietly(Customer.class, clazz -> Customer.builder()
+				.name(EnhancedRandom.random(String.class))
+				.car(EnhancedRandom.random(Brands.class))
+				.premium(EnhancedRandom.random(Boolean.class))
+				.build());
 		expected = true;
 		assertEquals(expected, actual);
 	}

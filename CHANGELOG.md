@@ -1,12 +1,19 @@
 ## Change log
 ----------------------
 
-Version 4.28.1
+Version 4.29
 -------------
+
+ADDED: 
+
+- new lombok.config file added
 
 CHANGED:
 
-- removed general exception throw clause in setUp and tearDown methods 
+- update of parent version to 4.2
+- update of jobject-extensions version to 2
+- added general exception throw clause in setUp and tearDown methods in class AbstractTestCase
+- changed to log4j2 configuration files and removed obsolet log4j properties files
 
 Version 4.28
 -------------

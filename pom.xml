@@ -6,12 +6,12 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-java-parent</artifactId>
-		<version>3.11</version>
+		<version>4.2</version>
 		<relativePath></relativePath>
 	</parent>
 
 	<artifactId>test-objects</artifactId>
-	<version>4.28.1</version>
+	<version>4.29</version>
 
 	<name>${project.artifactId}</name>
 
@@ -27,7 +27,7 @@
 		<!-- COMMONS-BEANUTILS version -->
 		<commons-beanutils.version>1.9.3</commons-beanutils.version>
 		<!-- JOBJECT-EXTENSIONS versions -->
-		<jobject-extensions.version>1.11</jobject-extensions.version>
+		<jobject-extensions.version>2</jobject-extensions.version>
 		<jobject-evaluate.version>${jobject-extensions.version}</jobject-evaluate.version>
 	</properties>
 

@@ -28,10 +28,11 @@ import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertNotNull;
 import static org.testng.AssertJUnit.assertTrue;
 
+import io.github.benas.randombeans.api.EnhancedRandom;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
-import de.alpharogroup.evaluate.object.SilentEqualsHashCodeAndToStringEvaluator;
+import de.alpharogroup.evaluate.object.evaluators.SilentEqualsHashCodeAndToStringEvaluator;
 import de.alpharogroup.test.objects.enums.Gender;
 
 /**
@@ -91,7 +92,12 @@ public class PersonTest
 		boolean expected;
 		boolean actual;
 		actual = SilentEqualsHashCodeAndToStringEvaluator
-			.evaluateEqualsHashcodeAndToStringQuietly(Person.class);
+			.evaluateEqualsHashcodeAndToStringQuietly(Person.class, clazz -> Person.builder()
+				.name(EnhancedRandom.random(String.class))
+				.about(EnhancedRandom.random(String.class))
+				.married(EnhancedRandom.random(Boolean.class))
+				.nickname(EnhancedRandom.random(String.class))
+				.build());
 		expected = true;
 		assertEquals(expected, actual);
 	}
