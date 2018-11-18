@@ -6,15 +6,9 @@ Version 4.29-SNAPSHOT
 
 CHANGED:
 
-- update of parent version to 4
-- update of jobject-extensions version to 1.12
-
-Version 4.28.1
--------------
-
-CHANGED:
-
-- removed general exception throw clause in setUp and tearDown methods 
+- update of parent version to 4.2
+- update of jobject-extensions version to 2
+- added general exception throw clause in setUp and tearDown methods in class AbstractTestCase
 
 Version 4.28
 -------------
