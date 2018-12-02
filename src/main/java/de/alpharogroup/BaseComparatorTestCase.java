@@ -38,7 +38,8 @@ import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
 
 /**
- * The abstract class {@link BaseComparatorTestCase} is for unit tests with {@link Comparator}.
+ * The abstract class {@link BaseComparatorTestCase} is for unit tests with {@link Comparator}. An
+ * example is in the unit test class <code>DateComparatorTest</code> in project silly-collections
  *
  * @author Asterios Raptis
  * @version 1.0

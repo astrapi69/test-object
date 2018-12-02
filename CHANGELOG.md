@@ -1,6 +1,13 @@
 ## Change log
 ----------------------
 
+Version 4.29.1
+-------------
+
+CHANGED:
+
+- update of parent version to 4.4
+
 Version 4.29
 -------------
 
