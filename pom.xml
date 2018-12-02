@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-java-parent</artifactId>
-		<version>4.2</version>
+		<version>4.4</version>
 		<relativePath></relativePath>
 	</parent>
 
 	<artifactId>test-objects</artifactId>
-	<version>4.30-SNAPSHOT</version>
+	<version>4.29.1</version>
 
 	<name>${project.artifactId}</name>
 
@@ -88,6 +89,11 @@
 	</dependencyManagement>
 
 	<dependencies>
+		<!-- LOG4J-TO-SLF4J DEPENDENCY -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-to-slf4j</artifactId>
+		</dependency>
 		<!-- TESTNG DEPENDENCY -->
 		<dependency>
 			<groupId>org.testng</groupId>
