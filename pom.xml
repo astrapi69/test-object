@@ -28,7 +28,7 @@
 		<!-- COMMONS-BEANUTILS version -->
 		<commons-beanutils.version>1.9.3</commons-beanutils.version>
 		<!-- JOBJECT-EXTENSIONS versions -->
-		<jobject-extensions.version>2</jobject-extensions.version>
+		<jobject-extensions.version>2.3.2</jobject-extensions.version>
 		<jobject-evaluate.version>${jobject-extensions.version}</jobject-evaluate.version>
 	</properties>
 
@@ -76,12 +76,6 @@
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>jobject-evaluate</artifactId>
 				<version>${jobject-evaluate.version}</version>
-				<exclusions>
-					<exclusion>
-						<groupId>de.alpharogroup</groupId>
-						<artifactId>test-objects</artifactId>
-					</exclusion>
-				</exclusions>
 			</dependency>
 
 		</dependencies>
