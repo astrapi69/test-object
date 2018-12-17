@@ -28,7 +28,7 @@
 		<!-- COMMONS-BEANUTILS version -->
 		<commons-beanutils.version>1.9.3</commons-beanutils.version>
 		<!-- JOBJECT-EXTENSIONS versions -->
-		<jobject-extensions.version>2.3.2</jobject-extensions.version>
+		<jobject-extensions.version>2.5</jobject-extensions.version>
 		<jobject-evaluate.version>${jobject-extensions.version}</jobject-evaluate.version>
 	</properties>
 
@@ -83,11 +83,6 @@
 	</dependencyManagement>
 
 	<dependencies>
-		<!-- LOG4J-TO-SLF4J DEPENDENCY -->
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-to-slf4j</artifactId>
-		</dependency>
 		<!-- TESTNG DEPENDENCY -->
 		<dependency>
 			<groupId>org.testng</groupId>
@@ -113,6 +108,12 @@
 		<dependency>
 			<groupId>org.meanbean</groupId>
 			<artifactId>meanbean</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- LOG4J-TO-SLF4J DEPENDENCY -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-to-slf4j</artifactId>
 			<scope>test</scope>
 		</dependency>
 

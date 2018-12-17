@@ -24,12 +24,9 @@
  */
 package de.alpharogroup.classes.inner;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * The class {@link OuterClass} is a class intended for use in unit tests.
  */
-@Slf4j
 public class OuterClass
 {
 
@@ -51,49 +48,14 @@ public class OuterClass
 		 */
 		public static void staticNestedClassMethod()
 		{
-			final Runnable runnable = new Runnable()
+			new Runnable()
 			{
 				@Override
 				public void run()
 				{
 				};
 			};
-			showInfo(runnable.getClass());
 		}
-	}
-
-	/**
-	 * The main method.
-	 *
-	 * @param args
-	 *            the arguments
-	 */
-	public static void main(final String... args)
-	{
-		StaticNestedClass.staticNestedClassMethod();
-		showInfo(OuterClass.class);
-		showInfo(InnerClass.class);
-		showInfo(StaticNestedClass.class);
-	}
-
-	/**
-	 * Show info from given class.
-	 *
-	 * @param clazz
-	 *            the clazz
-	 */
-	public static void showInfo(Class<?> clazz)
-	{
-		log.info("========================================================================");
-		log.info("class name is {}.", clazz.getName());
-		log.info("= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = ");
-		log.info("is class {} anonymous class:{}", clazz.getSimpleName(), clazz.isAnonymousClass());
-		log.info("is class {} synthetic class:{}", clazz.getSimpleName(), clazz.isSynthetic());
-		log.info("is class {} enclosing class:{}", clazz.getSimpleName(),
-			clazz.getEnclosingClass());
-		log.info("canonical name of class {}:{}", clazz.getSimpleName(), clazz.getCanonicalName());
-		log.info("enclosing method:{}", clazz.getEnclosingMethod());
-		log.info("========================================================================");
 	}
 
 }
