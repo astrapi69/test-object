@@ -1,8 +1,14 @@
 ## Change log
 ----------------------
 
-Version 4.30-SNAPSHOT
+Version 5
 -------------
+
+CHANGED:
+
+- update of jobject-extensions version to 2.5
+- removed unneeded dependency runtime-compiler
+- changed dependencies that are needed only for unit test in the test scope 
 
 Version 4.29.1
 -------------
