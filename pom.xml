@@ -12,7 +12,7 @@
 	</parent>
 
 	<artifactId>test-objects</artifactId>
-	<version>4.29.1</version>
+	<version>5</version>
 
 	<name>${project.artifactId}</name>
 
@@ -23,12 +23,10 @@
 	<url>https://github.com/lightblueseas/test-objects</url>
 
 	<properties>
-		<!-- RUNTIME-COMPILER version -->
-		<runtime-compiler.version>1.1.0</runtime-compiler.version>
 		<!-- COMMONS-BEANUTILS version -->
 		<commons-beanutils.version>1.9.3</commons-beanutils.version>
 		<!-- JOBJECT-EXTENSIONS versions -->
-		<jobject-extensions.version>2</jobject-extensions.version>
+		<jobject-extensions.version>2.5</jobject-extensions.version>
 		<jobject-evaluate.version>${jobject-extensions.version}</jobject-evaluate.version>
 	</properties>
 
@@ -59,12 +57,6 @@
 	<dependencyManagement>
 
 		<dependencies>
-			<!-- RUNTIME-COMPILER DEPENDENCY -->
-			<dependency>
-				<groupId>de.alpharogroup</groupId>
-				<artifactId>runtime-compiler</artifactId>
-				<version>${runtime-compiler.version}</version>
-			</dependency>
 			<!-- COMMONS-BEANUTILS DEPENDENCY -->
 			<dependency>
 				<groupId>commons-beanutils</groupId>
@@ -76,12 +68,6 @@
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>jobject-evaluate</artifactId>
 				<version>${jobject-evaluate.version}</version>
-				<exclusions>
-					<exclusion>
-						<groupId>de.alpharogroup</groupId>
-						<artifactId>test-objects</artifactId>
-					</exclusion>
-				</exclusions>
 			</dependency>
 
 		</dependencies>
@@ -89,25 +75,10 @@
 	</dependencyManagement>
 
 	<dependencies>
-		<!-- LOG4J-TO-SLF4J DEPENDENCY -->
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-to-slf4j</artifactId>
-		</dependency>
 		<!-- TESTNG DEPENDENCY -->
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
-		</dependency>
-		<!-- RANDOM-BEANS DEPENDENCY -->
-		<dependency>
-			<groupId>io.github.benas</groupId>
-			<artifactId>random-beans</artifactId>
-		</dependency>
-		<!-- COMMONS-BEANUTILS DEPENDENCY -->
-		<dependency>
-			<groupId>commons-beanutils</groupId>
-			<artifactId>commons-beanutils</artifactId>
 		</dependency>
 		<!-- JOBJECT-EVALUATE DEPENDENCY -->
 		<dependency>
@@ -115,10 +86,22 @@
 			<artifactId>jobject-evaluate</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- RANDOM-BEANS DEPENDENCY -->
+		<dependency>
+			<groupId>io.github.benas</groupId>
+			<artifactId>random-beans</artifactId>
+			<scope>test</scope>
+		</dependency>
 		<!-- MEANBEAN DEPENDENCY -->
 		<dependency>
 			<groupId>org.meanbean</groupId>
 			<artifactId>meanbean</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- LOG4J-TO-SLF4J DEPENDENCY -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-to-slf4j</artifactId>
 			<scope>test</scope>
 		</dependency>
 
