@@ -7,12 +7,12 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-java-parent</artifactId>
-		<version>4.4</version>
+		<version>4.5</version>
 		<relativePath></relativePath>
 	</parent>
 
 	<artifactId>test-objects</artifactId>
-	<version>5</version>
+	<version>5.0.1</version>
 
 	<name>${project.artifactId}</name>
 
@@ -96,12 +96,6 @@
 		<dependency>
 			<groupId>org.meanbean</groupId>
 			<artifactId>meanbean</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<!-- LOG4J-TO-SLF4J DEPENDENCY -->
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-to-slf4j</artifactId>
 			<scope>test</scope>
 		</dependency>
 

@@ -46,7 +46,7 @@ public class TelevisionTest
 	{
 		Television model = new Television();
 		assertNotNull(model);
-		model = new Television(true, 0);
+		model = new Television(0, true);
 		assertNotNull(model);
 		model = Television.builder().build();
 		assertNotNull(model);

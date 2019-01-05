@@ -1,6 +1,14 @@
 ## Change log
 ----------------------
 
+Version 5.0.1
+-------------
+
+CHANGED:
+
+- update of parent version to 4.5
+- replaced log4j2 dependencies with java util logging
+
 Version 5
 -------------
 

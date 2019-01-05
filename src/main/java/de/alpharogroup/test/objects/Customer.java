@@ -52,14 +52,14 @@ public class Customer implements Serializable
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 
+	/** The car. */
+	@Builder.Default
+	public Brands car = Brands.FERRARI;
+
 	/** The name. */
 	@Mandatory
 	@Builder.Default
 	public String name = "";
-
-	/** The car. */
-	@Builder.Default
-	public Brands car = Brands.FERRARI;
 
 	/** The premium. */
 	public boolean premium;

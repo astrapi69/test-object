@@ -45,11 +45,11 @@ import lombok.ToString;
 public class Television
 {
 
-	/** The on flag. */
-	boolean on;
-
 	/** The channel. */
 	int channel;
+
+	/** The on flag. */
+	boolean on;
 
 	/**
 	 * Switch off.

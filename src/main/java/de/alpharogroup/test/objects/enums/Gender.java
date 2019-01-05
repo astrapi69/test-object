@@ -29,10 +29,10 @@ package de.alpharogroup.test.objects.enums;
  */
 public enum Gender
 {
-	/** The male. */
-	MALE,
 	/** The female. */
 	FEMALE,
+	/** The male. */
+	MALE,
 	/** The undefined. */
 	UNDEFINED;
 }
