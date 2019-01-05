@@ -45,13 +45,13 @@ import lombok.ToString;
 public class Permission
 {
 
+	/** The description. */
+	private String description;
+
 	/** The name. */
 	private String name;
 
 	/** The shortcut. */
 	private String shortcut;
-
-	/** The description. */
-	private String description;
 
 }

@@ -57,7 +57,7 @@ public class PremiumMemberTest
 		Date dateofbirth = new Date();
 		Date dateofMarriage = new Date();
 		String credits = "";
-		model = new PremiumMember(name, nickname, gender, about, married, dateofbirth,
+		model = new PremiumMember(about, gender, married, name, nickname, dateofbirth,
 			dateofMarriage, credits);
 		assertNotNull(model);
 		model = PremiumMember.buildPremiumMember().build();

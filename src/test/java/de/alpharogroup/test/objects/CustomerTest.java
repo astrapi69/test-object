@@ -27,12 +27,12 @@ package de.alpharogroup.test.objects;
 import static org.testng.Assert.assertNotNull;
 import static org.testng.AssertJUnit.assertEquals;
 
-import io.github.benas.randombeans.api.EnhancedRandom;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
 import de.alpharogroup.evaluate.object.evaluators.SilentEqualsHashCodeAndToStringEvaluator;
 import de.alpharogroup.test.objects.enums.Brands;
+import io.github.benas.randombeans.api.EnhancedRandom;
 
 /**
  * The unit test class for the class {@link Customer}.
@@ -48,7 +48,7 @@ public class CustomerTest
 	{
 		Customer model = new Customer();
 		assertNotNull(model);
-		model = new Customer("", Brands.FERRARI, true);
+		model = new Customer(Brands.FERRARI, "", true);
 		assertNotNull(model);
 		model = Customer.builder().build();
 		assertNotNull(model);
@@ -63,12 +63,11 @@ public class CustomerTest
 	{
 		boolean expected;
 		boolean actual;
-		actual = SilentEqualsHashCodeAndToStringEvaluator
-			.evaluateEqualsHashcodeAndToStringQuietly(Customer.class, clazz -> Customer.builder()
-				.name(EnhancedRandom.random(String.class))
+		actual = SilentEqualsHashCodeAndToStringEvaluator.evaluateEqualsHashcodeAndToStringQuietly(
+			Customer.class,
+			clazz -> Customer.builder().name(EnhancedRandom.random(String.class))
 				.car(EnhancedRandom.random(Brands.class))
-				.premium(EnhancedRandom.random(Boolean.class))
-				.build());
+				.premium(EnhancedRandom.random(Boolean.class)).build());
 		expected = true;
 		assertEquals(expected, actual);
 	}

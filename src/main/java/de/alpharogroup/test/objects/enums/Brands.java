@@ -33,12 +33,12 @@ import lombok.Getter;
 public enum Brands
 {
 
+	/** The ferrari. */
+	FERRARI("Ferrari"),
 	/** The lamborgini. */
 	LAMBORGINI("Lamborgini"),
 	/** The maserati. */
 	MASERATI("Maserati"),
-	/** The ferrari. */
-	FERRARI("Ferrari"),
 	/** The porsche. */
 	PORSCHE("Porsche");
 

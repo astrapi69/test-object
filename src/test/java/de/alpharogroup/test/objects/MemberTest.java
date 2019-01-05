@@ -59,7 +59,7 @@ public class MemberTest
 		Boolean married = false;
 		Date dateofbirth = new Date();
 		Date dateofMarriage = new Date();
-		model = new Member(name, nickname, gender, about, married, dateofbirth, dateofMarriage);
+		model = new Member(about, gender, married, name, nickname, dateofbirth, dateofMarriage);
 		assertNotNull(model);
 		model = Member.buildMember().build();
 		assertNotNull(model);

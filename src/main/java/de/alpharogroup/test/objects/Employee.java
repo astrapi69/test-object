@@ -51,10 +51,10 @@ public class Employee implements Serializable
 	 */
 	private static final long serialVersionUID = 1L;
 
-	/** The person. */
-	private Person person;
-
 	/** The id. */
 	private String id;
+
+	/** The person. */
+	private Person person;
 
 }

@@ -4,6 +4,11 @@
 Version 5.1-SNAPSHOT
 -------------
 
+CHANGED:
+
+- update of parent version to 4.5
+- removed log4j2 dependencies
+
 Version 5
 -------------
 

@@ -46,7 +46,7 @@ public class EmployeeTest
 	{
 		Employee model = new Employee();
 		assertNotNull(model);
-		model = new Employee(Person.builder().build(), "");
+		model = new Employee("", Person.builder().build());
 		assertNotNull(model);
 		model = Employee.builder().build();
 		assertNotNull(model);

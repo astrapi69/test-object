@@ -28,12 +28,12 @@ import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertNotNull;
 import static org.testng.AssertJUnit.assertTrue;
 
-import io.github.benas.randombeans.api.EnhancedRandom;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
 import de.alpharogroup.evaluate.object.evaluators.SilentEqualsHashCodeAndToStringEvaluator;
 import de.alpharogroup.test.objects.enums.Gender;
+import io.github.benas.randombeans.api.EnhancedRandom;
 
 /**
  * The unit test class for the class {@link Person}.
@@ -76,7 +76,7 @@ public class PersonTest
 		Gender gender = Gender.MALE;
 		String about = "";
 		Boolean married = false;
-		model = new Person(name, nickname, gender, about, married);
+		model = new Person(about, gender, married, name, nickname);
 		assertNotNull(model);
 		model = Person.builder().build();
 		assertNotNull(model);
@@ -91,13 +91,12 @@ public class PersonTest
 	{
 		boolean expected;
 		boolean actual;
-		actual = SilentEqualsHashCodeAndToStringEvaluator
-			.evaluateEqualsHashcodeAndToStringQuietly(Person.class, clazz -> Person.builder()
-				.name(EnhancedRandom.random(String.class))
+		actual = SilentEqualsHashCodeAndToStringEvaluator.evaluateEqualsHashcodeAndToStringQuietly(
+			Person.class,
+			clazz -> Person.builder().name(EnhancedRandom.random(String.class))
 				.about(EnhancedRandom.random(String.class))
 				.married(EnhancedRandom.random(Boolean.class))
-				.nickname(EnhancedRandom.random(String.class))
-				.build());
+				.nickname(EnhancedRandom.random(String.class)).build());
 		expected = true;
 		assertEquals(expected, actual);
 	}
