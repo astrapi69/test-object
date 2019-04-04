@@ -29,19 +29,13 @@ import java.io.Serializable;
 import de.alpharogroup.test.objects.enums.Gender;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
 /**
  * The class {@link Person} is a class intended for use in unit tests.
  */
-@EqualsAndHashCode
-@Getter
-@Setter
-@ToString
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(toBuilder = true)
