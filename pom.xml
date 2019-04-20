@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-java-parent</artifactId>
-		<version>4.5</version>
+		<version>4.8</version>
 		<relativePath></relativePath>
 	</parent>
 
@@ -25,9 +25,8 @@
 	<properties>
 		<!-- COMMONS-BEANUTILS version -->
 		<commons-beanutils.version>1.9.3</commons-beanutils.version>
-		<!-- JOBJECT-EXTENSIONS versions -->
-		<jobject-extensions.version>2.5</jobject-extensions.version>
-		<jobject-evaluate.version>${jobject-extensions.version}</jobject-evaluate.version>
+		<!-- JOBJ-CONTRACT-VERIFIER version -->
+		<jobj-contract-verifier.version>3</jobj-contract-verifier.version>
 	</properties>
 
 	<licenses>
@@ -63,11 +62,11 @@
 				<artifactId>commons-beanutils</artifactId>
 				<version>${commons-beanutils.version}</version>
 			</dependency>
-			<!-- JOBJECT-EVALUATE DEPENDENCY -->
+			<!-- JOBJ-CONTRACT-VERIFIER DEPENDENCY -->
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
-				<artifactId>jobject-evaluate</artifactId>
-				<version>${jobject-evaluate.version}</version>
+				<artifactId>jobj-contract-verifier</artifactId>
+				<version>${jobj-contract-verifier.version}</version>
 			</dependency>
 
 		</dependencies>
@@ -80,10 +79,10 @@
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 		</dependency>
-		<!-- JOBJECT-EVALUATE DEPENDENCY -->
+		<!-- JOBJ-CONTRACT-VERIFIER DEPENDENCY -->
 		<dependency>
 			<groupId>de.alpharogroup</groupId>
-			<artifactId>jobject-evaluate</artifactId>
+			<artifactId>jobj-contract-verifier</artifactId>
 			<scope>test</scope>
 		</dependency>
 		<!-- RANDOM-BEANS DEPENDENCY -->

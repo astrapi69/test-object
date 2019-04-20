@@ -4,6 +4,15 @@
 Version 5.1-SNAPSHOT
 -------------
 
+ADDED: 
+
+- new dependency jobj-contract-verifier in version 3 added
+
+CHANGED:
+
+- update of parent version to 4.8
+- replaced obsolet dependency jobject-evaluate with new dependency jobj-contract-verifier in version 3 
+
 Version 5.0.1
 -------------
 
