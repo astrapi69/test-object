@@ -29,7 +29,7 @@ Than you can add the dependency to your dependencies:
 	<properties>
 			...
 		<!-- TEST-OBJECTS version -->
-		<test-objects.version>5.0.1</test-objects.version>
+		<test-objects.version>5.1</test-objects.version>
 			...
 	</properties>
 			...
@@ -40,6 +40,7 @@ Than you can add the dependency to your dependencies:
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>test-objects</artifactId>
 				<version>${test-objects.version}</version>
+				<scope>test</scope>
 			</dependency>
 			...
 		</dependencies>
