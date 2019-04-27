@@ -26,19 +26,13 @@ package de.alpharogroup.test.objects;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
 /**
  * The class {@link Light} is a concrete receiver.
  */
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(toBuilder = true)
@@ -46,7 +40,7 @@ public class Light
 {
 
 	/** The on flag. */
-	private boolean on;
+	boolean on;
 
 	/**
 	 * Switch off.

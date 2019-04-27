@@ -28,19 +28,13 @@ import java.io.Serializable;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
 /**
  * The class {@link Employee} is a class intended for use in unit tests.
  */
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(toBuilder = true)
@@ -51,10 +45,10 @@ public class Employee implements Serializable
 	 */
 	private static final long serialVersionUID = 1L;
 
-	/** The person. */
-	private Person person;
-
 	/** The id. */
-	private String id;
+	String id;
+
+	/** The person. */
+	Person person;
 
 }

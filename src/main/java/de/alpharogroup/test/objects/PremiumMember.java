@@ -28,16 +28,14 @@ import java.util.Date;
 
 import de.alpharogroup.test.objects.enums.Gender;
 import lombok.Builder;
+import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
 import lombok.ToString;
 
 /**
  * The class {@link PremiumMember} is a class intended for use in unit tests.
  */
-@Getter
-@Setter
+@Data
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 public class PremiumMember extends Member
@@ -48,7 +46,7 @@ public class PremiumMember extends Member
 	private static final long serialVersionUID = 1L;
 
 	/** The credits. */
-	private String credits;
+	String credits;
 
 	/**
 	 * Instantiates a new {@link PremiumMember} object.
@@ -60,16 +58,16 @@ public class PremiumMember extends Member
 	/**
 	 * Instantiates a new {@link PremiumMember} object with the given parameters.
 	 *
+	 * @param about
+	 *            the about
+	 * @param gender
+	 *            the gender
+	 * @param married
+	 *            the married
 	 * @param name
 	 *            the name
 	 * @param nickname
 	 *            the nickname
-	 * @param gender
-	 *            the gender
-	 * @param about
-	 *            the about
-	 * @param married
-	 *            the married
 	 * @param dateofbirth
 	 *            the dateofbirth
 	 * @param dateofMarriage
@@ -78,11 +76,11 @@ public class PremiumMember extends Member
 	 *            the credits
 	 */
 	@Builder(builderMethodName = "buildPremiumMember")
-	public PremiumMember(final String name, final String nickname, final Gender gender,
-		final String about, final Boolean married, final Date dateofbirth,
-		final Date dateofMarriage, final String credits)
+	public PremiumMember(final String about, final Gender gender, final Boolean married,
+		final String name, final String nickname, final Date dateofbirth, final Date dateofMarriage,
+		final String credits)
 	{
-		super(name, nickname, gender, about, married, dateofbirth, dateofMarriage);
+		super(about, gender, married, name, nickname, dateofbirth, dateofMarriage);
 		this.credits = credits;
 	}
 

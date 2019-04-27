@@ -28,16 +28,14 @@ import java.util.Date;
 
 import de.alpharogroup.test.objects.enums.Gender;
 import lombok.Builder;
+import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
 import lombok.ToString;
 
 /**
  * The class {@link Member} is a class intended for use in unit tests.
  */
-@Getter
-@Setter
+@Data
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 public class Member extends Person
@@ -48,10 +46,10 @@ public class Member extends Person
 	private static final long serialVersionUID = 1L;
 
 	/** The dateofbirth. */
-	private Date dateofbirth;
+	Date dateofbirth;
 
 	/** The dateof marriage. */
-	private Date dateofMarriage;
+	Date dateofMarriage;
 
 	/**
 	 * Instantiates a new {@link Member} object.
@@ -63,26 +61,26 @@ public class Member extends Person
 	/**
 	 * Instantiates a new {@link Member} object with the given parameters.
 	 *
+	 * @param about
+	 *            the about
+	 * @param gender
+	 *            the gender
+	 * @param married
+	 *            the married
 	 * @param name
 	 *            the name
 	 * @param nickname
 	 *            the nickname
-	 * @param gender
-	 *            the gender
-	 * @param about
-	 *            the about
-	 * @param married
-	 *            the married
 	 * @param dateofbirth
 	 *            the dateofbirth
 	 * @param dateofMarriage
 	 *            the dateof marriage
 	 */
 	@Builder(builderMethodName = "buildMember")
-	public Member(final String name, final String nickname, final Gender gender, final String about,
-		final Boolean married, final Date dateofbirth, final Date dateofMarriage)
+	public Member(final String about, final Gender gender, final Boolean married, final String name,
+		final String nickname, final Date dateofbirth, final Date dateofMarriage)
 	{
-		super(name, nickname, gender, about, married);
+		super(about, gender, married, name, nickname);
 		this.dateofbirth = dateofbirth;
 		this.dateofMarriage = dateofMarriage;
 	}

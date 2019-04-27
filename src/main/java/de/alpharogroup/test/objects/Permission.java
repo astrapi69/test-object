@@ -26,32 +26,26 @@ package de.alpharogroup.test.objects;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
 /**
  * The class {@link Permission} is a class intended for use in unit tests.
  */
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(toBuilder = true)
 public class Permission
 {
 
+	/** The description. */
+	String description;
+
 	/** The name. */
-	private String name;
+	String name;
 
 	/** The shortcut. */
-	private String shortcut;
-
-	/** The description. */
-	private String description;
+	String shortcut;
 
 }

@@ -30,7 +30,8 @@ import static org.testng.AssertJUnit.assertEquals;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
-import de.alpharogroup.evaluate.object.SilentEqualsHashCodeAndToStringEvaluator;
+import de.alpharogroup.evaluate.object.evaluators.EqualsHashCodeAndToStringEvaluator;
+import lombok.SneakyThrows;
 
 /**
  * The unit test class for the class {@link Company}.
@@ -57,12 +58,13 @@ public class CompanyTest
 	 * {@link Company#toString()}
 	 */
 	@Test
+	@SneakyThrows
 	public void testEqualsHashcodeAndToStringWithClassSilently()
 	{
 		boolean expected;
 		boolean actual;
-		actual = SilentEqualsHashCodeAndToStringEvaluator
-			.evaluateEqualsHashcodeAndToStringQuietly(Company.class);
+		actual = EqualsHashCodeAndToStringEvaluator
+			.evaluateEqualsHashcodeAndToString(Company.class);
 		expected = true;
 		assertEquals(expected, actual);
 	}

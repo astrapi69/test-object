@@ -30,28 +30,15 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * The class {@link AlgorithmModel} is a class intended for use in unit tests.
+ * The class {@link ApplicationTestModel} for unit testing
  */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(toBuilder = true)
-public class AlgorithmModel implements Cloneable
+public class ApplicationTestModel<T>
 {
 
-	/** The a. */
-	int a;
-
-	/** The b. */
-	int b;
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public AlgorithmModel clone() throws CloneNotSupportedException
-	{
-		return this.toBuilder().build();
-	}
-
+	/** The model. */
+	T model;
 }

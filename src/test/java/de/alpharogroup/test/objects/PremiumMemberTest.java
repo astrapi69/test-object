@@ -32,8 +32,9 @@ import java.util.Date;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
-import de.alpharogroup.evaluate.object.SilentEqualsHashCodeAndToStringEvaluator;
+import de.alpharogroup.evaluate.object.evaluators.EqualsHashCodeAndToStringEvaluator;
 import de.alpharogroup.test.objects.enums.Gender;
+import lombok.SneakyThrows;
 
 /**
  * The unit test class for the class {@link PremiumMember}.
@@ -57,7 +58,7 @@ public class PremiumMemberTest
 		Date dateofbirth = new Date();
 		Date dateofMarriage = new Date();
 		String credits = "";
-		model = new PremiumMember(name, nickname, gender, about, married, dateofbirth,
+		model = new PremiumMember(about, gender, married, name, nickname, dateofbirth,
 			dateofMarriage, credits);
 		assertNotNull(model);
 		model = PremiumMember.buildPremiumMember().build();
@@ -69,12 +70,13 @@ public class PremiumMemberTest
 	 * {@link PremiumMember#toString()}
 	 */
 	@Test
+	@SneakyThrows
 	public void testEqualsHashcodeAndToStringWithClassSilently()
 	{
 		boolean expected;
 		boolean actual;
-		actual = SilentEqualsHashCodeAndToStringEvaluator
-			.evaluateEqualsHashcodeAndToStringQuietly(PremiumMember.class);
+		actual = EqualsHashCodeAndToStringEvaluator
+			.evaluateEqualsHashcodeAndToString(PremiumMember.class);
 		expected = true;
 		assertEquals(expected, actual);
 	}

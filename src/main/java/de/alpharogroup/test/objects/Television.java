@@ -26,30 +26,24 @@ package de.alpharogroup.test.objects;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
 /**
  * The class {@link Television} is a class intended for use in unit tests.
  */
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(toBuilder = true)
 public class Television
 {
 
-	/** The on flag. */
-	boolean on;
-
 	/** The channel. */
 	int channel;
+
+	/** The on flag. */
+	boolean on;
 
 	/**
 	 * Switch off.

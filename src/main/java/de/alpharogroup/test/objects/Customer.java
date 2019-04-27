@@ -30,19 +30,13 @@ import de.alpharogroup.test.objects.annotations.Mandatory;
 import de.alpharogroup.test.objects.enums.Brands;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
 /**
  * The class {@link Customer} is a class intended for use in unit tests.
  */
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(toBuilder = true)
@@ -52,14 +46,14 @@ public class Customer implements Serializable
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 
+	/** The car. */
+	@Builder.Default
+	public Brands car = Brands.FERRARI;
+
 	/** The name. */
 	@Mandatory
 	@Builder.Default
 	public String name = "";
-
-	/** The car. */
-	@Builder.Default
-	public Brands car = Brands.FERRARI;
 
 	/** The premium. */
 	public boolean premium;

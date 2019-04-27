@@ -30,12 +30,11 @@ import static org.testng.AssertJUnit.assertEquals;
 import java.sql.Timestamp;
 import java.util.Date;
 
-import org.meanbean.factories.ObjectCreationException;
-import org.meanbean.test.BeanTestException;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
-import de.alpharogroup.evaluate.object.SilentEqualsHashCodeAndToStringEvaluator;
+import de.alpharogroup.evaluate.object.evaluators.EqualsHashCodeAndToStringEvaluator;
+import lombok.SneakyThrows;
 
 /**
  * The unit test class for the class {@link SqlTimestampDecorator}.
@@ -62,12 +61,13 @@ public class SqlTimestampDecoratorTest
 	 * {@link SqlTimestampDecorator#hashCode()} and {@link SqlTimestampDecorator#toString()}
 	 */
 	@Test
+	@SneakyThrows
 	public void testEqualsHashcodeAndToStringWithClassSilently()
 	{
 		boolean expected;
 		boolean actual;
-		actual = SilentEqualsHashCodeAndToStringEvaluator
-			.evaluateEqualsHashcodeAndToStringQuietly(SqlTimestampDecorator.class);
+		actual = EqualsHashCodeAndToStringEvaluator
+			.evaluateEqualsHashcodeAndToString(SqlTimestampDecorator.class);
 		expected = true;
 		assertEquals(expected, actual);
 	}
@@ -75,7 +75,7 @@ public class SqlTimestampDecoratorTest
 	/**
 	 * Test method for {@link SqlTimestampDecorator}
 	 */
-	@Test(expectedExceptions = { BeanTestException.class, ObjectCreationException.class })
+	@Test
 	public void testWithBeanTester()
 	{
 		final BeanTester beanTester = new BeanTester();

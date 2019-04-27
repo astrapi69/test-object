@@ -29,19 +29,13 @@ import java.io.Serializable;
 import de.alpharogroup.test.objects.enums.Gender;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
 /**
  * The class {@link Person} is a class intended for use in unit tests.
  */
-@EqualsAndHashCode
-@Getter
-@Setter
-@ToString
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(toBuilder = true)
@@ -53,25 +47,25 @@ public class Person implements Serializable, Comparable<Person>
 	 */
 	private static final long serialVersionUID = 1L;
 
-	/** The name. */
+	/** The about. */
 	@Builder.Default
-	private String name = "";
-
-	/** The nickname. */
-	@Builder.Default
-	private String nickname = "";
+	String about = "";
 
 	/** The gender. */
 	@Builder.Default
-	private Gender gender = Gender.UNDEFINED;
-
-	/** The about. */
-	@Builder.Default
-	private String about = "";
+	Gender gender = Gender.UNDEFINED;
 
 	/** The married flag. */
 	@Builder.Default
-	private Boolean married = Boolean.FALSE;
+	Boolean married = Boolean.FALSE;
+
+	/** The name. */
+	@Builder.Default
+	String name = "";
+
+	/** The nickname. */
+	@Builder.Default
+	String nickname = "";
 
 	/**
 	 * {@inheritDoc}

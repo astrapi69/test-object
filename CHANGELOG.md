@@ -1,12 +1,55 @@
 ## Change log
 ----------------------
 
-Version 4.28.1
+Version 5.1
+-------------
+
+ADDED: 
+
+- new dependency jobj-contract-verifier in version 3 added
+
+CHANGED:
+
+- update of parent version to 4.8
+- replaced obsolet dependency jobject-evaluate with new dependency jobj-contract-verifier in version 3 
+
+Version 5.0.1
 -------------
 
 CHANGED:
 
-- removed general exception throw clause in setUp and tearDown methods 
+- update of parent version to 4.5
+- replaced log4j2 dependencies with java util logging
+
+Version 5
+-------------
+
+CHANGED:
+
+- update of jobject-extensions version to 2.5
+- removed unneeded dependency runtime-compiler
+- changed dependencies that are needed only for unit test in the test scope 
+
+Version 4.29.1
+-------------
+
+CHANGED:
+
+- update of parent version to 4.4
+
+Version 4.29
+-------------
+
+ADDED: 
+
+- new lombok.config file added
+
+CHANGED:
+
+- update of parent version to 4.2
+- update of jobject-extensions version to 2
+- added general exception throw clause in setUp and tearDown methods in class AbstractTestCase
+- changed to log4j2 configuration files and removed obsolet log4j properties files
 
 Version 4.28
 -------------
