@@ -26,20 +26,14 @@ package de.alpharogroup.test.objects;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
 /**
  * The class {@link ClonableObject} is a class intended for use in unit tests that represents a
  * clonable object and implements {@link Cloneable}.
  */
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(toBuilder = true)
@@ -47,7 +41,7 @@ public class ClonableObject implements Cloneable
 {
 
 	/** The name. */
-	private String name;
+	String name;
 
 	/**
 	 * {@inheritDoc}

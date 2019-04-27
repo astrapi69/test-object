@@ -27,12 +27,11 @@ package de.alpharogroup.test.objects.exceptions;
 import static org.testng.Assert.assertNotNull;
 import static org.testng.AssertJUnit.assertEquals;
 
-import org.meanbean.factories.ObjectCreationException;
-import org.meanbean.test.BeanTestException;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
-import de.alpharogroup.evaluate.object.evaluators.SilentEqualsHashCodeAndToStringEvaluator;
+import de.alpharogroup.evaluate.object.evaluators.EqualsHashCodeAndToStringEvaluator;
+import lombok.SneakyThrows;
 
 /**
  * The unit test class for the class {@link ExceptionEvent}.
@@ -59,12 +58,13 @@ public class ExceptionEventTest
 	 * {@link ExceptionEvent#toString()}
 	 */
 	@Test
+	@SneakyThrows
 	public void testEqualsHashcodeAndToStringWithClassSilently()
 	{
 		boolean expected;
 		boolean actual;
-		actual = SilentEqualsHashCodeAndToStringEvaluator
-			.evaluateEqualsHashcodeAndToStringQuietly(ExceptionEvent.class);
+		actual = EqualsHashCodeAndToStringEvaluator
+			.evaluateEqualsHashcodeAndToString(ExceptionEvent.class);
 		expected = true;
 		assertEquals(expected, actual);
 	}
@@ -72,7 +72,7 @@ public class ExceptionEventTest
 	/**
 	 * Test method for {@link ExceptionEvent}
 	 */
-	@Test(expectedExceptions = { BeanTestException.class, ObjectCreationException.class })
+	@Test
 	public void testWithBeanTester()
 	{
 		final BeanTester beanTester = new BeanTester();

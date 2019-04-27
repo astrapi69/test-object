@@ -28,16 +28,14 @@ import java.util.Date;
 
 import de.alpharogroup.test.objects.enums.Gender;
 import lombok.Builder;
+import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
 import lombok.ToString;
 
 /**
  * The class {@link Member} is a class intended for use in unit tests.
  */
-@Getter
-@Setter
+@Data
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 public class Member extends Person
@@ -48,10 +46,10 @@ public class Member extends Person
 	private static final long serialVersionUID = 1L;
 
 	/** The dateofbirth. */
-	private Date dateofbirth;
+	Date dateofbirth;
 
 	/** The dateof marriage. */
-	private Date dateofMarriage;
+	Date dateofMarriage;
 
 	/**
 	 * Instantiates a new {@link Member} object.

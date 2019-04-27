@@ -28,16 +28,14 @@ import java.util.Date;
 
 import de.alpharogroup.test.objects.enums.Gender;
 import lombok.Builder;
+import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
 import lombok.ToString;
 
 /**
  * The class {@link PremiumMember} is a class intended for use in unit tests.
  */
-@Getter
-@Setter
+@Data
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 public class PremiumMember extends Member
@@ -48,7 +46,7 @@ public class PremiumMember extends Member
 	private static final long serialVersionUID = 1L;
 
 	/** The credits. */
-	private String credits;
+	String credits;
 
 	/**
 	 * Instantiates a new {@link PremiumMember} object.

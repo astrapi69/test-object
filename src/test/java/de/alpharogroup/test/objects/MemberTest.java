@@ -35,8 +35,9 @@ import java.util.GregorianCalendar;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
-import de.alpharogroup.evaluate.object.evaluators.SilentEqualsHashCodeAndToStringEvaluator;
+import de.alpharogroup.evaluate.object.evaluators.EqualsHashCodeAndToStringEvaluator;
 import de.alpharogroup.test.objects.enums.Gender;
+import lombok.SneakyThrows;
 
 /**
  * The unit test class for the class {@link Member}.
@@ -70,12 +71,12 @@ public class MemberTest
 	 * {@link Member#toString()}
 	 */
 	@Test
+	@SneakyThrows
 	public void testEqualsHashcodeAndToStringWithClassSilently()
 	{
 		boolean expected;
 		boolean actual;
-		actual = SilentEqualsHashCodeAndToStringEvaluator
-			.evaluateEqualsHashcodeAndToStringQuietly(Member.class);
+		actual = EqualsHashCodeAndToStringEvaluator.evaluateEqualsHashcodeAndToString(Member.class);
 		expected = true;
 		assertEquals(expected, actual);
 	}

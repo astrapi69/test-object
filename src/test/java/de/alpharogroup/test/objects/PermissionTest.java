@@ -30,7 +30,8 @@ import static org.testng.AssertJUnit.assertEquals;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
-import de.alpharogroup.evaluate.object.evaluators.SilentEqualsHashCodeAndToStringEvaluator;
+import de.alpharogroup.evaluate.object.evaluators.EqualsHashCodeAndToStringEvaluator;
+import lombok.SneakyThrows;
 
 /**
  * The unit test class for the class {@link Permission}.
@@ -57,12 +58,13 @@ public class PermissionTest
 	 * {@link Permission#toString()}
 	 */
 	@Test
+	@SneakyThrows
 	public void testEqualsHashcodeAndToStringWithClassSilently()
 	{
 		boolean expected;
 		boolean actual;
-		actual = SilentEqualsHashCodeAndToStringEvaluator
-			.evaluateEqualsHashcodeAndToStringQuietly(Permission.class);
+		actual = EqualsHashCodeAndToStringEvaluator
+			.evaluateEqualsHashcodeAndToString(Permission.class);
 		expected = true;
 		assertEquals(expected, actual);
 	}

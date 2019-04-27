@@ -40,6 +40,6 @@ public class NotSerializable
 {
 
 	/** The name. */
-	private String name;
+	String name;
 
 }

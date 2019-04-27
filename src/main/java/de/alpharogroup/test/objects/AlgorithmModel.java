@@ -26,19 +26,13 @@ package de.alpharogroup.test.objects;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
 /**
  * The class {@link AlgorithmModel} is a class intended for use in unit tests.
  */
-@EqualsAndHashCode
-@Getter
-@Setter
-@ToString
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(toBuilder = true)
@@ -46,10 +40,10 @@ public class AlgorithmModel implements Cloneable
 {
 
 	/** The a. */
-	private int a;
+	int a;
 
 	/** The b. */
-	private int b;
+	int b;
 
 	/**
 	 * {@inheritDoc}

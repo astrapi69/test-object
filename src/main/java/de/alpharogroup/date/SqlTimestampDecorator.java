@@ -28,19 +28,13 @@ import java.sql.Timestamp;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
 /**
  * The class {@link SqlTimestampDecorator} is a {@link Timestamp} decorator.
  */
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(toBuilder = true)
@@ -48,6 +42,6 @@ public class SqlTimestampDecorator
 {
 
 	/** The date. */
-	private Timestamp date;
+	Timestamp date;
 
 }

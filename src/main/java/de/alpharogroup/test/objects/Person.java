@@ -49,23 +49,23 @@ public class Person implements Serializable, Comparable<Person>
 
 	/** The about. */
 	@Builder.Default
-	private String about = "";
+	String about = "";
 
 	/** The gender. */
 	@Builder.Default
-	private Gender gender = Gender.UNDEFINED;
+	Gender gender = Gender.UNDEFINED;
 
 	/** The married flag. */
 	@Builder.Default
-	private Boolean married = Boolean.FALSE;
+	Boolean married = Boolean.FALSE;
 
 	/** The name. */
 	@Builder.Default
-	private String name = "";
+	String name = "";
 
 	/** The nickname. */
 	@Builder.Default
-	private String nickname = "";
+	String nickname = "";
 
 	/**
 	 * {@inheritDoc}

@@ -29,20 +29,14 @@ import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import lombok.Singular;
-import lombok.ToString;
 
 /**
  * The class {@link EmployeeList} encapsulates a list of {@link Employee}.
  */
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(toBuilder = true)

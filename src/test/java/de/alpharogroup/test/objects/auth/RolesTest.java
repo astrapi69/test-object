@@ -32,7 +32,8 @@ import java.util.HashSet;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
-import de.alpharogroup.evaluate.object.evaluators.SilentEqualsHashCodeAndToStringEvaluator;
+import de.alpharogroup.evaluate.object.evaluators.EqualsHashCodeAndToStringEvaluator;
+import lombok.SneakyThrows;
 
 /**
  * The unit test class for the class {@link Roles}.
@@ -59,12 +60,12 @@ public class RolesTest
 	 * {@link Roles#toString()}
 	 */
 	@Test
+	@SneakyThrows
 	public void testEqualsHashcodeAndToStringWithClassSilently()
 	{
 		boolean expected;
 		boolean actual;
-		actual = SilentEqualsHashCodeAndToStringEvaluator
-			.evaluateEqualsHashcodeAndToStringQuietly(Roles.class);
+		actual = EqualsHashCodeAndToStringEvaluator.evaluateEqualsHashcodeAndToString(Roles.class);
 		expected = true;
 		assertEquals(expected, actual);
 	}

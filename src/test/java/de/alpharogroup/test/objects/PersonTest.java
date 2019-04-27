@@ -31,9 +31,10 @@ import static org.testng.AssertJUnit.assertTrue;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
-import de.alpharogroup.evaluate.object.evaluators.SilentEqualsHashCodeAndToStringEvaluator;
+import de.alpharogroup.evaluate.object.evaluators.EqualsHashCodeAndToStringEvaluator;
 import de.alpharogroup.test.objects.enums.Gender;
 import io.github.benas.randombeans.api.EnhancedRandom;
+import lombok.SneakyThrows;
 
 /**
  * The unit test class for the class {@link Person}.
@@ -87,12 +88,12 @@ public class PersonTest
 	 * {@link Person#toString()}
 	 */
 	@Test
+	@SneakyThrows
 	public void testEqualsHashcodeAndToStringWithClassSilently()
 	{
 		boolean expected;
 		boolean actual;
-		actual = SilentEqualsHashCodeAndToStringEvaluator.evaluateEqualsHashcodeAndToStringQuietly(
-			Person.class,
+		actual = EqualsHashCodeAndToStringEvaluator.evaluateEqualsHashcodeAndToString(Person.class,
 			clazz -> Person.builder().name(EnhancedRandom.random(String.class))
 				.about(EnhancedRandom.random(String.class))
 				.married(EnhancedRandom.random(Boolean.class))

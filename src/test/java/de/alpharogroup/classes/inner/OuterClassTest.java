@@ -47,13 +47,13 @@ public class OuterClassTest
 		Object[] enclCl = { clazz.getSimpleName(), clazz.getEnclosingClass() };
 		Object[] canonCl = { clazz.getSimpleName(), clazz.getCanonicalName() };
 		log.info("========================================================================");
-		log.log(Level.INFO, "class name is {0}", new Object[]{clazz.getName()});
+		log.log(Level.INFO, "class name is {0}", new Object[] { clazz.getName() });
 		log.info("= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = ");
 		log.log(Level.INFO, "is class {0} anonymous class:{1}", anonCl);
 		log.log(Level.INFO, "is class {0} synthetic class:{1}", synthCl);
 		log.log(Level.INFO, "is class {0} enclosing class:{1}", enclCl);
 		log.log(Level.INFO, "canonical name of class {0}:{1}", canonCl);
-		log.log(Level.INFO, "enclosing method:{0}", new Object[]{clazz.getEnclosingMethod()});
+		log.log(Level.INFO, "enclosing method:{0}", new Object[] { clazz.getEnclosingMethod() });
 		log.info("========================================================================");
 	}
 

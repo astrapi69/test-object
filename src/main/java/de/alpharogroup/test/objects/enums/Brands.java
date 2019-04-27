@@ -24,12 +24,17 @@
  */
 package de.alpharogroup.test.objects.enums;
 
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.experimental.FieldDefaults;
 
 /**
  * The enum {@link Brands} is an enum intended for use in unit tests and holds some brands from
  * famous cars.
  */
+@RequiredArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public enum Brands
 {
 
@@ -46,17 +51,6 @@ public enum Brands
 	 * The value
 	 */
 	@Getter
-	private final String value;
-
-	/**
-	 * Instantiates a new {@link Brands}.
-	 *
-	 * @param value
-	 *            the value
-	 */
-	Brands(final String value)
-	{
-		this.value = value;
-	}
+	String value;
 
 }
