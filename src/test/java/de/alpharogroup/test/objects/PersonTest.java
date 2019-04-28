@@ -33,7 +33,7 @@ import org.testng.annotations.Test;
 
 import de.alpharogroup.evaluate.object.evaluators.EqualsHashCodeAndToStringEvaluator;
 import de.alpharogroup.test.objects.enums.Gender;
-import io.github.benas.randombeans.api.EnhancedRandom;
+import de.alpharogroup.test.random.BaseEnhancedRandomFactory;
 import lombok.SneakyThrows;
 
 /**
@@ -94,10 +94,10 @@ public class PersonTest
 		boolean expected;
 		boolean actual;
 		actual = EqualsHashCodeAndToStringEvaluator.evaluateEqualsHashcodeAndToString(Person.class,
-			clazz -> Person.builder().name(EnhancedRandom.random(String.class))
-				.about(EnhancedRandom.random(String.class))
-				.married(EnhancedRandom.random(Boolean.class))
-				.nickname(EnhancedRandom.random(String.class)).build());
+			clazz -> Person.builder().name(BaseEnhancedRandomFactory.nextObject(String.class))
+				.about(BaseEnhancedRandomFactory.nextObject(String.class))
+				.married(BaseEnhancedRandomFactory.nextObject(Boolean.class))
+				.nickname(BaseEnhancedRandomFactory.nextObject(String.class)).build());
 		expected = true;
 		assertEquals(expected, actual);
 	}

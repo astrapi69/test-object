@@ -32,6 +32,7 @@ import org.testng.annotations.Test;
 
 import de.alpharogroup.evaluate.object.evaluators.EqualsHashCodeAndToStringEvaluator;
 import de.alpharogroup.test.objects.enums.Brands;
+import de.alpharogroup.test.random.BaseEnhancedRandomFactory;
 import io.github.benas.randombeans.api.EnhancedRandom;
 import lombok.SneakyThrows;
 
@@ -67,9 +68,9 @@ public class CustomerTest
 		boolean actual;
 		actual = EqualsHashCodeAndToStringEvaluator.evaluateEqualsHashcodeAndToString(
 			Customer.class,
-			clazz -> Customer.builder().name(EnhancedRandom.random(String.class))
-				.car(EnhancedRandom.random(Brands.class))
-				.premium(EnhancedRandom.random(Boolean.class)).build());
+			clazz -> Customer.builder().name(BaseEnhancedRandomFactory.nextObject(String.class))
+				.car(BaseEnhancedRandomFactory.nextObject(Brands.class))
+				.premium(BaseEnhancedRandomFactory.nextObject(Boolean.class)).build());
 		expected = true;
 		assertEquals(expected, actual);
 	}

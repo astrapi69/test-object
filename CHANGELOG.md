@@ -4,6 +4,10 @@
 Version 5.2-SNAPSHOT
 -------------
 
+ADDED: 
+
+- new Factory class created for create random objects with the new random-beans version
+
 Version 5.1
 -------------
 
