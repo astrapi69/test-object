@@ -4,6 +4,10 @@
 Version 5.3-SNAPSHOT
 -------------
 
+CHANGED:
+
+- update of dependency jobj-contract-verifier version to 3.1.2
+
 Version 5.2
 -------------
 
