@@ -26,14 +26,11 @@ package de.alpharogroup.test.objects;
 
 import static org.testng.Assert.assertNotNull;
 import static org.testng.AssertJUnit.assertEquals;
-import static org.testng.AssertJUnit.assertNotSame;
-import static org.testng.AssertJUnit.assertTrue;
 
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
-import de.alpharogroup.evaluate.object.evaluators.EqualsEvaluator;
-import de.alpharogroup.evaluate.object.evaluators.HashcodeEvaluator;
+import de.alpharogroup.evaluate.object.verifier.ContractVerifier;
 
 /**
  * The unit test class for the class {@link Light}.
@@ -54,48 +51,6 @@ public class LightTest
 		model = Light.builder().build();
 		assertNotNull(model);
 	}
-
-	/**
-	 * Test method for {@link Light#equals(Object)}
-	 */
-	@Test
-	public void testEqualsObject()
-	{
-		final Light expected = Light.builder().on(false).build();
-		final Light actual = new Light(true);
-
-		assertNotSame(expected, actual);
-		final Light third = new Light(false);
-		assertEquals(expected, third);
-		assertTrue(
-			EqualsEvaluator.evaluateReflexivityNonNullSymmetricAndConsistency(expected, actual));
-		assertTrue(EqualsEvaluator.evaluateReflexivityNonNullSymmetricConsistencyAndTransitivity(
-			expected, third, new Light(false)));
-	}
-
-	/**
-	 * Test method for {@link Light#hashCode()}
-	 */
-	@Test
-	public void testHashcode()
-	{
-		boolean expected;
-		boolean actual;
-		final Light first = Light.builder().on(false).build();
-		Light second = new Light(true);
-		actual = HashcodeEvaluator.evaluateEquality(first, new Light(false));
-		expected = true;
-		assertEquals(expected, actual);
-
-		actual = HashcodeEvaluator.evaluateConsistency(first);
-		expected = true;
-		assertEquals(expected, actual);
-
-		expected = true;
-		actual = HashcodeEvaluator.evaluateUnequality(first, second);
-		assertEquals(expected, actual);
-	}
-
 
 	/**
 	 * Test method for {@link Light#switchOff()}
@@ -133,5 +88,15 @@ public class LightTest
 	{
 		final BeanTester beanTester = new BeanTester();
 		beanTester.testBean(Light.class);
+	}
+
+	/**
+	 * Test method for {@link Employee#equals(Object)} , {@link Employee#hashCode()} and
+	 * {@link Employee#toString()}
+	 */
+	@Test
+	public void verifyEqualsHashcodeAndToStringContracts()
+	{
+		ContractVerifier.of(Light.class).verify();
 	}
 }

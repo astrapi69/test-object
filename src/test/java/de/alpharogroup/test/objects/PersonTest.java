@@ -24,17 +24,14 @@
  */
 package de.alpharogroup.test.objects;
 
-import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertNotNull;
 import static org.testng.AssertJUnit.assertTrue;
 
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
-import de.alpharogroup.evaluate.object.evaluators.EqualsHashCodeAndToStringEvaluator;
+import de.alpharogroup.evaluate.object.verifier.ContractVerifier;
 import de.alpharogroup.test.objects.enums.Gender;
-import io.github.benas.randombeans.api.EnhancedRandom;
-import lombok.SneakyThrows;
 
 /**
  * The unit test class for the class {@link Person}.
@@ -84,25 +81,6 @@ public class PersonTest
 	}
 
 	/**
-	 * Test method for {@link Person#equals(Object)} , {@link Person#hashCode()} and
-	 * {@link Person#toString()}
-	 */
-	@Test
-	@SneakyThrows
-	public void testEqualsHashcodeAndToStringWithClassSilently()
-	{
-		boolean expected;
-		boolean actual;
-		actual = EqualsHashCodeAndToStringEvaluator.evaluateEqualsHashcodeAndToString(Person.class,
-			clazz -> Person.builder().name(EnhancedRandom.random(String.class))
-				.about(EnhancedRandom.random(String.class))
-				.married(EnhancedRandom.random(Boolean.class))
-				.nickname(EnhancedRandom.random(String.class)).build());
-		expected = true;
-		assertEquals(expected, actual);
-	}
-
-	/**
 	 * Test method for {@link Person}
 	 */
 	@Test
@@ -110,5 +88,15 @@ public class PersonTest
 	{
 		final BeanTester beanTester = new BeanTester();
 		beanTester.testBean(Person.class);
+	}
+
+	/**
+	 * Test method for {@link Person#equals(Object)} , {@link Person#hashCode()} and
+	 * {@link Person#toString()}
+	 */
+	@Test
+	public void verifyEqualsHashcodeAndToStringContracts()
+	{
+		ContractVerifier.of(Person.class).verify();
 	}
 }

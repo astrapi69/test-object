@@ -24,14 +24,12 @@
  */
 package de.alpharogroup.test.objects;
 
-import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertNotNull;
 
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
-import de.alpharogroup.evaluate.object.evaluators.EqualsHashCodeAndToStringEvaluator;
-import lombok.SneakyThrows;
+import de.alpharogroup.evaluate.object.verifier.ContractVerifier;
 
 /**
  * The unit test class for the class {@link A}.
@@ -53,21 +51,6 @@ public class ATest
 		assertNotNull(model);
 	}
 
-
-	/**
-	 * Test method for {@link A#equals(Object)} , {@link A#hashCode()} and {@link A#toString()}
-	 */
-	@Test
-	@SneakyThrows
-	public void testEqualsHashcodeAndToStringWithClassSilently()
-	{
-		boolean expected;
-		boolean actual;
-		actual = EqualsHashCodeAndToStringEvaluator.evaluateEqualsHashcodeAndToString(A.class);
-		expected = true;
-		assertEquals(expected, actual);
-	}
-
 	/**
 	 * Test method for {@link A}
 	 */
@@ -76,5 +59,14 @@ public class ATest
 	{
 		final BeanTester beanTester = new BeanTester();
 		beanTester.testBean(A.class);
+	}
+
+	/**
+	 * Test method for {@link A#equals(Object)} , {@link A#hashCode()} and {@link A#toString()}
+	 */
+	@Test
+	public void verifyEqualsHashcodeAndToStringContracts()
+	{
+		ContractVerifier.of(A.class).verify();
 	}
 }

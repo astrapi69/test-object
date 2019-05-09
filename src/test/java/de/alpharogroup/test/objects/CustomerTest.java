@@ -25,15 +25,13 @@
 package de.alpharogroup.test.objects;
 
 import static org.testng.Assert.assertNotNull;
-import static org.testng.AssertJUnit.assertEquals;
 
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
-import de.alpharogroup.evaluate.object.evaluators.EqualsHashCodeAndToStringEvaluator;
+import de.alpharogroup.evaluate.object.verifier.ContractVerifier;
+import de.alpharogroup.test.objects.auth.AccessRight;
 import de.alpharogroup.test.objects.enums.Brands;
-import io.github.benas.randombeans.api.EnhancedRandom;
-import lombok.SneakyThrows;
 
 /**
  * The unit test class for the class {@link Customer}.
@@ -56,25 +54,6 @@ public class CustomerTest
 	}
 
 	/**
-	 * Test method for {@link Customer#equals(Object)} , {@link Customer#hashCode()} and
-	 * {@link Customer#toString()}
-	 */
-	@Test
-	@SneakyThrows
-	public void testEqualsHashcodeAndToStringWithClassSilently()
-	{
-		boolean expected;
-		boolean actual;
-		actual = EqualsHashCodeAndToStringEvaluator.evaluateEqualsHashcodeAndToString(
-			Customer.class,
-			clazz -> Customer.builder().name(EnhancedRandom.random(String.class))
-				.car(EnhancedRandom.random(Brands.class))
-				.premium(EnhancedRandom.random(Boolean.class)).build());
-		expected = true;
-		assertEquals(expected, actual);
-	}
-
-	/**
 	 * Test method for {@link Customer}
 	 */
 	@Test
@@ -82,5 +61,15 @@ public class CustomerTest
 	{
 		final BeanTester beanTester = new BeanTester();
 		beanTester.testBean(Customer.class);
+	}
+
+	/**
+	 * Test method for {@link Customer#equals(Object)} , {@link Customer#hashCode()} and
+	 * {@link Customer#toString()}
+	 */
+	@Test
+	public void verifyEqualsHashcodeAndToStringContracts()
+	{
+		ContractVerifier.of(AccessRight.class).verify();
 	}
 }

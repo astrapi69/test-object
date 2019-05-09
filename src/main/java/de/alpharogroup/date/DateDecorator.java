@@ -28,13 +28,19 @@ import java.util.Date;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 /**
  * The class {@link DateDecorator} is a {@link Date} decorator.
  */
-@Data
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(toBuilder = true)

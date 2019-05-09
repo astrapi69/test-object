@@ -12,7 +12,7 @@
 	</parent>
 
 	<artifactId>test-objects</artifactId>
-	<version>5.1</version>
+	<version>5.2</version>
 
 	<name>${project.artifactId}</name>
 
@@ -26,7 +26,7 @@
 		<!-- COMMONS-BEANUTILS version -->
 		<commons-beanutils.version>1.9.3</commons-beanutils.version>
 		<!-- JOBJ-CONTRACT-VERIFIER version -->
-		<jobj-contract-verifier.version>3</jobj-contract-verifier.version>
+		<jobj-contract-verifier.version>3.1.1</jobj-contract-verifier.version>
 	</properties>
 
 	<licenses>
@@ -79,6 +79,7 @@
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 		</dependency>
+		<!-- TEST-SCOPE DEPENDENCIES -->
 		<!-- JOBJ-CONTRACT-VERIFIER DEPENDENCY -->
 		<dependency>
 			<groupId>de.alpharogroup</groupId>

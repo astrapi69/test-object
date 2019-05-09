@@ -25,13 +25,12 @@
 package de.alpharogroup.test.objects;
 
 import static org.testng.Assert.assertNotNull;
-import static org.testng.AssertJUnit.assertEquals;
 
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
-import de.alpharogroup.evaluate.object.evaluators.EqualsHashCodeAndToStringEvaluator;
-import lombok.SneakyThrows;
+import de.alpharogroup.evaluate.object.verifier.ContractVerifier;
+import de.alpharogroup.test.objects.auth.AccessRight;
 
 /**
  * The unit test class for the class {@link Employee}.
@@ -54,22 +53,6 @@ public class EmployeeTest
 	}
 
 	/**
-	 * Test method for {@link Employee#equals(Object)} , {@link Employee#hashCode()} and
-	 * {@link Employee#toString()}
-	 */
-	@Test
-	@SneakyThrows
-	public void testEqualsHashcodeAndToStringWithClassSilently()
-	{
-		boolean expected;
-		boolean actual;
-		actual = EqualsHashCodeAndToStringEvaluator
-			.evaluateEqualsHashcodeAndToString(Employee.class);
-		expected = true;
-		assertEquals(expected, actual);
-	}
-
-	/**
 	 * Test method for {@link Employee}
 	 */
 	@Test
@@ -77,5 +60,15 @@ public class EmployeeTest
 	{
 		final BeanTester beanTester = new BeanTester();
 		beanTester.testBean(Employee.class);
+	}
+
+	/**
+	 * Test method for {@link Employee#equals(Object)} , {@link Employee#hashCode()} and
+	 * {@link Employee#toString()}
+	 */
+	@Test
+	public void verifyEqualsHashcodeAndToStringContracts()
+	{
+		ContractVerifier.of(AccessRight.class).verify();
 	}
 }

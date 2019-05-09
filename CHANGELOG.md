@@ -1,6 +1,18 @@
 ## Change log
 ----------------------
 
+Version 5.2
+-------------
+
+ADDED: 
+
+- new Factory class created for create random objects with the new random-beans version
+
+CHANGED:
+
+- update of dependency jobj-contract-verifier version to 3.1.1
+- replace lombok Data annotation with the corresponding annotations
+
 Version 5.1
 -------------
 

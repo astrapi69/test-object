@@ -28,13 +28,19 @@ import java.io.Serializable;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 /**
  * The class {@link Employee} is a class intended for use in unit tests.
  */
-@Data
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(toBuilder = true)

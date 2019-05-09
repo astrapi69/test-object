@@ -25,13 +25,11 @@
 package de.alpharogroup.test.objects.exceptions;
 
 import static org.testng.Assert.assertNotNull;
-import static org.testng.AssertJUnit.assertEquals;
 
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
-import de.alpharogroup.evaluate.object.evaluators.EqualsHashCodeAndToStringEvaluator;
-import lombok.SneakyThrows;
+import de.alpharogroup.evaluate.object.verifier.ContractVerifier;
 
 /**
  * The unit test class for the class {@link ExceptionEvent}.
@@ -54,22 +52,6 @@ public class ExceptionEventTest
 	}
 
 	/**
-	 * Test method for {@link ExceptionEvent#equals(Object)} , {@link ExceptionEvent#hashCode()} and
-	 * {@link ExceptionEvent#toString()}
-	 */
-	@Test
-	@SneakyThrows
-	public void testEqualsHashcodeAndToStringWithClassSilently()
-	{
-		boolean expected;
-		boolean actual;
-		actual = EqualsHashCodeAndToStringEvaluator
-			.evaluateEqualsHashcodeAndToString(ExceptionEvent.class);
-		expected = true;
-		assertEquals(expected, actual);
-	}
-
-	/**
 	 * Test method for {@link ExceptionEvent}
 	 */
 	@Test
@@ -77,5 +59,15 @@ public class ExceptionEventTest
 	{
 		final BeanTester beanTester = new BeanTester();
 		beanTester.testBean(ExceptionEvent.class);
+	}
+
+	/**
+	 * Test method for {@link ExceptionEvent#equals(Object)} , {@link ExceptionEvent#hashCode()} and
+	 * {@link ExceptionEvent#toString()}
+	 */
+	@Test
+	public void verifyEqualsHashcodeAndToStringContracts()
+	{
+		ContractVerifier.of(ExceptionEvent.class).verify();
 	}
 }
