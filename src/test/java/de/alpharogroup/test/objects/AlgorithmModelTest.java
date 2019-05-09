@@ -29,30 +29,13 @@ import static org.testng.AssertJUnit.assertEquals;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
-import de.alpharogroup.evaluate.object.evaluators.EqualsHashCodeAndToStringEvaluator;
-import lombok.SneakyThrows;
+import de.alpharogroup.evaluate.object.verifier.ContractVerifier;
 
 /**
  * The unit test class for the class {@link AlgorithmModel}.
  */
 public class AlgorithmModelTest
 {
-
-	/**
-	 * Test method for {@link AlgorithmModel#equals(Object)} , {@link AlgorithmModel#hashCode()} and
-	 * {@link AlgorithmModel#toString()}
-	 */
-	@Test
-	@SneakyThrows
-	public void testEqualsHashcodeAndToStringWithClassSilently()
-	{
-		boolean expected;
-		boolean actual;
-		actual = EqualsHashCodeAndToStringEvaluator
-			.evaluateEqualsHashcodeAndToString(AlgorithmModel.class);
-		expected = true;
-		assertEquals(expected, actual);
-	}
 
 	/**
 	 * Test method for {@link AlgorithmModel#getA()}
@@ -91,5 +74,15 @@ public class AlgorithmModelTest
 	{
 		final BeanTester beanTester = new BeanTester();
 		beanTester.testBean(AlgorithmModel.class);
+	}
+
+	/**
+	 * Test method for {@link AlgorithmModel#equals(Object)} , {@link AlgorithmModel#hashCode()} and
+	 * {@link AlgorithmModel#toString()}
+	 */
+	@Test
+	public void verifyEqualsHashcodeAndToStringContracts()
+	{
+		ContractVerifier.of(AlgorithmModel.class).verify();
 	}
 }

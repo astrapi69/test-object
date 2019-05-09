@@ -49,6 +49,7 @@ public class AnnotatedTestClassTest
 		assertEquals(expected, actual);
 	}
 
+
 	/**
 	 * Test method for {@link AnnotatedTestClass}
 	 */

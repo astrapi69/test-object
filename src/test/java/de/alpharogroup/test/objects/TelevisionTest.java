@@ -30,8 +30,7 @@ import static org.testng.AssertJUnit.assertEquals;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
-import de.alpharogroup.evaluate.object.evaluators.EqualsHashCodeAndToStringEvaluator;
-import lombok.SneakyThrows;
+import de.alpharogroup.evaluate.object.verifier.ContractVerifier;
 
 /**
  * The unit test class for the class {@link Television}.
@@ -51,22 +50,6 @@ public class TelevisionTest
 		assertNotNull(model);
 		model = Television.builder().build();
 		assertNotNull(model);
-	}
-
-	/**
-	 * Test method for {@link Television#equals(Object)} , {@link Television#hashCode()} and
-	 * {@link Television#toString()}
-	 */
-	@Test
-	@SneakyThrows
-	public void testEqualsHashcodeAndToStringWithClassSilently()
-	{
-		boolean expected;
-		boolean actual;
-		actual = EqualsHashCodeAndToStringEvaluator
-			.evaluateEqualsHashcodeAndToString(Television.class);
-		expected = true;
-		assertEquals(expected, actual);
 	}
 
 	/**
@@ -105,6 +88,16 @@ public class TelevisionTest
 	{
 		final BeanTester beanTester = new BeanTester();
 		beanTester.testBean(Television.class);
+	}
+
+	/**
+	 * Test method for {@link Television#equals(Object)} , {@link Television#hashCode()} and
+	 * {@link Television#toString()}
+	 */
+	@Test
+	public void verifyEqualsHashcodeAndToStringContracts()
+	{
+		ContractVerifier.of(Television.class).verify();
 	}
 
 }

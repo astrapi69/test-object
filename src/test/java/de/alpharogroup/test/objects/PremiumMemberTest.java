@@ -32,9 +32,8 @@ import java.util.Date;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
-import de.alpharogroup.evaluate.object.evaluators.EqualsHashCodeAndToStringEvaluator;
+import de.alpharogroup.evaluate.object.verifier.ContractVerifier;
 import de.alpharogroup.test.objects.enums.Gender;
-import lombok.SneakyThrows;
 
 /**
  * The unit test class for the class {@link PremiumMember}.
@@ -66,22 +65,6 @@ public class PremiumMemberTest
 	}
 
 	/**
-	 * Test method for {@link PremiumMember#equals(Object)} , {@link PremiumMember#hashCode()} and
-	 * {@link PremiumMember#toString()}
-	 */
-	@Test
-	@SneakyThrows
-	public void testEqualsHashcodeAndToStringWithClassSilently()
-	{
-		boolean expected;
-		boolean actual;
-		actual = EqualsHashCodeAndToStringEvaluator
-			.evaluateEqualsHashcodeAndToString(PremiumMember.class);
-		expected = true;
-		assertEquals(expected, actual);
-	}
-
-	/**
 	 * Test method for {@link PremiumMember#setCredits(String)}
 	 */
 	@Test
@@ -104,5 +87,15 @@ public class PremiumMemberTest
 	{
 		final BeanTester beanTester = new BeanTester();
 		beanTester.testBean(PremiumMember.class);
+	}
+
+	/**
+	 * Test method for {@link PremiumMember#equals(Object)} , {@link PremiumMember#hashCode()} and
+	 * {@link PremiumMember#toString()}
+	 */
+	@Test
+	public void verifyEqualsHashcodeAndToStringContracts()
+	{
+		ContractVerifier.of(PremiumMember.class).verify();
 	}
 }

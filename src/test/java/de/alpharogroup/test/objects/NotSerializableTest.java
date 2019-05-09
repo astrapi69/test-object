@@ -25,13 +25,11 @@
 package de.alpharogroup.test.objects;
 
 import static org.testng.Assert.assertNotNull;
-import static org.testng.AssertJUnit.assertEquals;
 
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
-import de.alpharogroup.evaluate.object.evaluators.EqualsHashCodeAndToStringEvaluator;
-import lombok.SneakyThrows;
+import de.alpharogroup.evaluate.object.verifier.ContractVerifier;
 
 /**
  * The unit test class for the class {@link NotSerializable}.
@@ -54,22 +52,6 @@ public class NotSerializableTest
 	}
 
 	/**
-	 * Test method for {@link NotSerializable#equals(Object)} , {@link NotSerializable#hashCode()}
-	 * and {@link NotSerializable#toString()}
-	 */
-	@Test
-	@SneakyThrows
-	public void testEqualsHashcodeAndToStringWithClassSilently()
-	{
-		boolean expected;
-		boolean actual;
-		actual = EqualsHashCodeAndToStringEvaluator
-			.evaluateEqualsHashcodeAndToString(NotSerializable.class);
-		expected = true;
-		assertEquals(expected, actual);
-	}
-
-	/**
 	 * Test method for {@link NotSerializable}
 	 */
 	@Test
@@ -77,5 +59,15 @@ public class NotSerializableTest
 	{
 		final BeanTester beanTester = new BeanTester();
 		beanTester.testBean(NotSerializable.class);
+	}
+
+	/**
+	 * Test method for {@link NotSerializable#equals(Object)} , {@link NotSerializable#hashCode()}
+	 * and {@link NotSerializable#toString()}
+	 */
+	@Test
+	public void verifyEqualsHashcodeAndToStringContracts()
+	{
+		ContractVerifier.of(NotSerializable.class).verify();
 	}
 }

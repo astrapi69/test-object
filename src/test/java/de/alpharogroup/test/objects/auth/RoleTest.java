@@ -25,15 +25,13 @@
 package de.alpharogroup.test.objects.auth;
 
 import static org.testng.Assert.assertNotNull;
-import static org.testng.AssertJUnit.assertEquals;
 
 import java.util.HashSet;
 
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
-import de.alpharogroup.evaluate.object.evaluators.EqualsHashCodeAndToStringEvaluator;
-import lombok.SneakyThrows;
+import de.alpharogroup.evaluate.object.verifier.ContractVerifier;
 
 /**
  * The unit test class for the class {@link Role}.
@@ -57,21 +55,6 @@ public class RoleTest
 	}
 
 	/**
-	 * Test method for {@link Role#equals(Object)} , {@link Role#hashCode()} and
-	 * {@link Role#toString()}
-	 */
-	@Test
-	@SneakyThrows
-	public void testEqualsHashcodeAndToStringWithClassSilently()
-	{
-		boolean expected;
-		boolean actual;
-		actual = EqualsHashCodeAndToStringEvaluator.evaluateEqualsHashcodeAndToString(Role.class);
-		expected = true;
-		assertEquals(expected, actual);
-	}
-
-	/**
 	 * Test method for {@link Role}
 	 */
 	@Test
@@ -79,5 +62,15 @@ public class RoleTest
 	{
 		final BeanTester beanTester = new BeanTester();
 		beanTester.testBean(Role.class);
+	}
+
+	/**
+	 * Test method for {@link Role#equals(Object)} , {@link Role#hashCode()} and
+	 * {@link Role#toString()}
+	 */
+	@Test
+	public void verifyEqualsHashcodeAndToStringContracts()
+	{
+		ContractVerifier.of(Role.class).verify();
 	}
 }

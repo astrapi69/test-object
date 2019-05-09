@@ -35,9 +35,8 @@ import java.util.GregorianCalendar;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
-import de.alpharogroup.evaluate.object.evaluators.EqualsHashCodeAndToStringEvaluator;
+import de.alpharogroup.evaluate.object.verifier.ContractVerifier;
 import de.alpharogroup.test.objects.enums.Gender;
-import lombok.SneakyThrows;
 
 /**
  * The unit test class for the class {@link Member}.
@@ -64,21 +63,6 @@ public class MemberTest
 		assertNotNull(model);
 		model = Member.buildMember().build();
 		assertNotNull(model);
-	}
-
-	/**
-	 * Test method for {@link Member#equals(Object)} , {@link Member#hashCode()} and
-	 * {@link Member#toString()}
-	 */
-	@Test
-	@SneakyThrows
-	public void testEqualsHashcodeAndToStringWithClassSilently()
-	{
-		boolean expected;
-		boolean actual;
-		actual = EqualsHashCodeAndToStringEvaluator.evaluateEqualsHashcodeAndToString(Member.class);
-		expected = true;
-		assertEquals(expected, actual);
 	}
 
 	/**
@@ -123,5 +107,15 @@ public class MemberTest
 	{
 		final BeanTester beanTester = new BeanTester();
 		beanTester.testBean(Member.class);
+	}
+
+	/**
+	 * Test method for {@link Member#equals(Object)} , {@link Member#hashCode()} and
+	 * {@link Member#toString()}
+	 */
+	@Test
+	public void verifyEqualsHashcodeAndToStringContracts()
+	{
+		ContractVerifier.of(Member.class).verify();
 	}
 }

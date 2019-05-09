@@ -28,14 +28,16 @@ import java.util.Date;
 
 import de.alpharogroup.test.objects.enums.Gender;
 import lombok.Builder;
-import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 
 /**
  * The class {@link PremiumMember} is a class intended for use in unit tests.
  */
-@Data
+@Getter
+@Setter
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 public class PremiumMember extends Member

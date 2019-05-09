@@ -25,15 +25,13 @@
 package de.alpharogroup.date;
 
 import static org.testng.Assert.assertNotNull;
-import static org.testng.AssertJUnit.assertEquals;
 
 import java.util.Date;
 
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
-import de.alpharogroup.evaluate.object.evaluators.EqualsHashCodeAndToStringEvaluator;
-import lombok.SneakyThrows;
+import de.alpharogroup.evaluate.object.verifier.ContractVerifier;
 
 /**
  * The unit test class for the class {@link DateDecorator}.
@@ -56,23 +54,6 @@ public class DateDecoratorTest
 	}
 
 	/**
-	 * Test method for {@link DateDecorator#equals(Object)} , {@link DateDecorator#hashCode()} and
-	 * {@link DateDecorator#toString()}
-	 */
-	@Test
-	@SneakyThrows
-	public void testEqualsHashcodeAndToStringWithClassSilently()
-	{
-		boolean expected;
-		boolean actual;
-
-		actual = EqualsHashCodeAndToStringEvaluator
-			.evaluateEqualsHashcodeAndToString(DateDecorator.class);
-		expected = true;
-		assertEquals(expected, actual);
-	}
-
-	/**
 	 * Test method for {@link DateDecorator}
 	 */
 	@Test
@@ -80,5 +61,15 @@ public class DateDecoratorTest
 	{
 		final BeanTester beanTester = new BeanTester();
 		beanTester.testBean(DateDecorator.class);
+	}
+
+	/**
+	 * Test method for {@link DateDecorator#equals(Object)} , {@link DateDecorator#hashCode()} and
+	 * {@link DateDecorator#toString()}
+	 */
+	@Test
+	public void verifyEqualsHashcodeAndToStringContracts()
+	{
+		ContractVerifier.of(DateDecorator.class).verify();
 	}
 }
