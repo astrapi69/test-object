@@ -30,7 +30,6 @@ import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
 import de.alpharogroup.evaluate.object.verifier.ContractVerifier;
-import de.alpharogroup.test.objects.auth.AccessRight;
 
 /**
  * The unit test class for the class {@link Employee}.
@@ -69,6 +68,6 @@ public class EmployeeTest
 	@Test
 	public void verifyEqualsHashcodeAndToStringContracts()
 	{
-		ContractVerifier.of(AccessRight.class).verify();
+		ContractVerifier.of(Employee.class).verify();
 	}
 }

@@ -29,6 +29,8 @@ import static org.testng.AssertJUnit.assertEquals;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
+import de.alpharogroup.evaluate.object.verifier.ContractVerifier;
+
 /**
  * The unit test class for the class {@link AnnotatedTestClass}.
  */
@@ -58,6 +60,16 @@ public class AnnotatedTestClassTest
 	{
 		final BeanTester beanTester = new BeanTester();
 		beanTester.testBean(AnnotatedTestClass.class);
+	}
+
+	/**
+	 * Test method for {@link AnnotatedTestClass#equals(Object)} , {@link AnnotatedTestClass#hashCode()} and
+	 * {@link AnnotatedTestClass#toString()}
+	 */
+	@Test
+	public void verifyEqualsHashcodeAndToStringContracts()
+	{
+		ContractVerifier.of(AnnotatedTestClass.class).verify();
 	}
 
 }

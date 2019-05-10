@@ -30,7 +30,6 @@ import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
 import de.alpharogroup.evaluate.object.verifier.ContractVerifier;
-import de.alpharogroup.test.objects.auth.AccessRight;
 import de.alpharogroup.test.objects.enums.Brands;
 
 /**
@@ -70,6 +69,6 @@ public class CustomerTest
 	@Test
 	public void verifyEqualsHashcodeAndToStringContracts()
 	{
-		ContractVerifier.of(AccessRight.class).verify();
+		ContractVerifier.of(Customer.class).verify();
 	}
 }

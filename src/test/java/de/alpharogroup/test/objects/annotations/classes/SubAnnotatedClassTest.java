@@ -27,6 +27,8 @@ package de.alpharogroup.test.objects.annotations.classes;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
+import de.alpharogroup.evaluate.object.verifier.ContractVerifier;
+
 /**
  * The unit test class for the class {@link SubAnnotatedClass}.
  */
@@ -42,4 +44,13 @@ public class SubAnnotatedClassTest
 		beanTester.testBean(SubAnnotatedClass.class);
 	}
 
+	/**
+	 * Test method for {@link SubAnnotatedClass#equals(Object)} ,
+	 * {@link SubAnnotatedClass#hashCode()} and {@link SubAnnotatedClass#toString()}
+	 */
+	@Test
+	public void verifyEqualsHashcodeAndToStringContracts()
+	{
+		ContractVerifier.of(SubAnnotatedClass.class).verify();
+	}
 }

@@ -27,6 +27,8 @@ package de.alpharogroup.test.objects.generics;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
+import de.alpharogroup.evaluate.object.verifier.ContractVerifier;
+
 /**
  * The unit test class for the class {@link PersonDao}.
  */
@@ -41,5 +43,15 @@ public class PersonDaoTest
 	{
 		final BeanTester beanTester = new BeanTester();
 		beanTester.testBean(PersonDao.class);
+	}
+
+	/**
+	 * Test method for {@link PersonDao#equals(Object)} , {@link PersonDao#hashCode()} and
+	 * {@link PersonDao#toString()}
+	 */
+	@Test
+	public void verifyEqualsHashcodeAndToStringContracts()
+	{
+		ContractVerifier.of(PersonDao.class).verify();
 	}
 }
