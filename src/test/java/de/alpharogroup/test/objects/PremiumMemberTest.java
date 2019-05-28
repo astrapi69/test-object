@@ -24,7 +24,7 @@
  */
 package de.alpharogroup.test.objects;
 
-import static org.testng.Assert.assertNotNull;
+import static org.testng.AssertJUnit.assertNotNull;
 import static org.testng.AssertJUnit.assertEquals;
 
 import java.util.Date;

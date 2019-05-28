@@ -24,7 +24,7 @@
  */
 package de.alpharogroup.date;
 
-import static org.testng.Assert.assertNotNull;
+import static org.testng.AssertJUnit.assertNotNull;
 
 import java.sql.Timestamp;
 import java.util.Date;
