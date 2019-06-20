@@ -14,6 +14,8 @@
 
 Project that holds test objects for unit tests.
 
+If you like this project put a ⭐ and donate
+
 ## Note
 
 No animals were harmed in the making of this library.
