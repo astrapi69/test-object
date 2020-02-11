@@ -24,33 +24,150 @@
  */
 package de.alpharogroup.test.objects;
 
-
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
-
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.Singular;
-import lombok.ToString;
 
 /**
  * The class {@link EmployeeList} encapsulates a list of {@link Employee}.
  */
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder(toBuilder = true)
 public class EmployeeList
 {
+	public static class EmployeeListBuilder
+	{
 
-	/** The employees. */
-	@Singular
-	List<Employee> employees;
+		private ArrayList<Employee> employees;
 
+		EmployeeListBuilder()
+		{
+		}
+
+		public EmployeeList build()
+		{
+			List<Employee> employees;
+			switch (this.employees == null ? 0 : this.employees.size())
+			{
+				case 0 :
+					employees = Collections.emptyList();
+					break;
+
+				case 1 :
+					employees = Collections.singletonList(this.employees.get(0));
+					break;
+
+				default :
+					employees = Collections
+						.unmodifiableList(new ArrayList<Employee>(this.employees));
+			}
+			return new EmployeeList(employees);
+		}
+
+		public EmployeeListBuilder clearEmployees()
+		{
+			if (this.employees != null)
+				this.employees.clear();
+			return this;
+		}
+
+		public EmployeeListBuilder employee(final Employee employee)
+		{
+			if (this.employees == null)
+				this.employees = new ArrayList<Employee>();
+			this.employees.add(employee);
+			return this;
+		}
+
+		public EmployeeListBuilder employees(final Collection<? extends Employee> employees)
+		{
+			if (this.employees == null)
+				this.employees = new ArrayList<Employee>();
+			this.employees.addAll(employees);
+			return this;
+		}
+
+		@Override
+		public String toString()
+		{
+			return "EmployeeList.EmployeeListBuilder(employees=" + this.employees + ")";
+		}
+	}
+
+	public static EmployeeListBuilder builder()
+	{
+		return new EmployeeListBuilder();
+	}
+
+	/**
+	 * The employees.
+	 */
+	private List<Employee> employees;
+
+	public EmployeeList()
+	{
+	}
+
+	public EmployeeList(final List<Employee> employees)
+	{
+		this.employees = employees;
+	}
+
+	protected boolean canEqual(final Object other)
+	{
+		return other instanceof EmployeeList;
+	}
+
+	@Override
+	public boolean equals(final Object o)
+	{
+		if (o == this)
+			return true;
+		if (!(o instanceof EmployeeList))
+			return false;
+		final EmployeeList other = (EmployeeList)o;
+		if (!other.canEqual(this))
+			return false;
+		final Object this$employees = this.getEmployees();
+		final Object other$employees = other.getEmployees();
+		if (this$employees == null
+			? other$employees != null
+			: !this$employees.equals(other$employees))
+			return false;
+		return true;
+	}
+
+	public List<Employee> getEmployees()
+	{
+		return this.employees;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		final int PRIME = 59;
+		int result = 1;
+		final Object $employees = this.getEmployees();
+		result = result * PRIME + ($employees == null ? 43 : $employees.hashCode());
+		return result;
+	}
+
+	public EmployeeList setEmployees(final List<Employee> employees)
+	{
+		this.employees = employees;
+		return this;
+	}
+
+	public EmployeeListBuilder toBuilder()
+	{
+		final EmployeeListBuilder builder = new EmployeeListBuilder();
+		if (this.employees != null)
+			builder.employees(this.employees);
+		return builder;
+	}
+
+	@Override
+	public String toString()
+	{
+		return "EmployeeList(employees=" + this.getEmployees() + ")";
+	}
 }

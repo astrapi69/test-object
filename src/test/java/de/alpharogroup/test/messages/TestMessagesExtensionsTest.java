@@ -26,8 +26,6 @@ package de.alpharogroup.test.messages;
 
 import static org.testng.AssertJUnit.assertEquals;
 
-import org.meanbean.factories.ObjectCreationException;
-import org.meanbean.test.BeanTestException;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
@@ -61,7 +59,7 @@ public class TestMessagesExtensionsTest
 	/**
 	 * Test method for {@link TestMessagesExtensions}
 	 */
-	@Test(expectedExceptions = { BeanTestException.class, ObjectCreationException.class })
+	@Test
 	public void testWithBeanTester()
 	{
 		final BeanTester beanTester = new BeanTester();

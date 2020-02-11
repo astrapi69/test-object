@@ -34,9 +34,6 @@ import java.util.List;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-import lombok.AccessLevel;
-import lombok.experimental.FieldDefaults;
-
 /**
  * The abstract class {@link BaseComparatorTestCase} is for unit tests with {@link Comparator}. An
  * example is in the unit test class <code>DateComparatorTest</code> in project silly-collections
@@ -46,18 +43,20 @@ import lombok.experimental.FieldDefaults;
  * @param <T>
  *            the generic type of the objects to compare
  */
-@FieldDefaults(level = AccessLevel.PROTECTED)
 public abstract class BaseComparatorTestCase<T> extends AbstractTestCase<Integer, Boolean>
 {
-
-	/** The comparator. */
-	Comparator<T> comparator;
-
-	/** The first comparison object. */
-	T o1;
-
-	/** The other object to compare. */
-	T o2;
+	/**
+	 * The comparator.
+	 */
+	protected Comparator<T> comparator;
+	/**
+	 * The first comparison object.
+	 */
+	protected T o1;
+	/**
+	 * The other object to compare.
+	 */
+	protected T o2;
 
 	/**
 	 * Abstract factory callback method that have to be overwritten for create the {@link List} with
@@ -195,14 +194,11 @@ public abstract class BaseComparatorTestCase<T> extends AbstractTestCase<Integer
 	{
 		o1 = newO1Equal();
 		o2 = newO2Equal();
-
 		actual = comparator.compare(o1, o2);
 		expected = actual == 0;
 		assertTrue(expected);
-
 		o1 = newO1Equal();
 		o2 = o1;
-
 		actual = comparator.compare(o1, o2);
 		expected = actual == 0;
 		assertTrue(expected);
@@ -215,14 +211,11 @@ public abstract class BaseComparatorTestCase<T> extends AbstractTestCase<Integer
 	{
 		o1 = newO1GreaterThan();
 		o2 = newO2GreaterThan();
-
 		actual = comparator.compare(o1, o2);
 		expected = actual > 0;
 		assertTrue(expected);
-
 		o1 = newO1GreaterThan();
 		o2 = null;
-
 		actual = comparator.compare(o1, o2);
 		expected = actual > 0;
 		assertTrue(expected);
@@ -235,17 +228,13 @@ public abstract class BaseComparatorTestCase<T> extends AbstractTestCase<Integer
 	{
 		o1 = newO1LessThan();
 		o2 = newO2LessThan();
-
 		actual = comparator.compare(o1, o2);
 		expected = actual < 0;
 		assertTrue(expected);
-
 		o1 = null;
 		o2 = newO2LessThan();
-
 		actual = comparator.compare(o1, o2);
 		expected = actual < 0;
 		assertTrue(expected);
 	}
-
 }

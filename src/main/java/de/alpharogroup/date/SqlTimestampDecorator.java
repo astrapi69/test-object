@@ -26,28 +26,106 @@ package de.alpharogroup.date;
 
 import java.sql.Timestamp;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-
 /**
  * The class {@link SqlTimestampDecorator} is a {@link Timestamp} decorator.
  */
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder(toBuilder = true)
 public class SqlTimestampDecorator
 {
 
-	/** The date. */
-	Timestamp date;
+	public static class SqlTimestampDecoratorBuilder
+	{
 
+		private Timestamp date;
+
+		SqlTimestampDecoratorBuilder()
+		{
+		}
+
+		public SqlTimestampDecorator build()
+		{
+			return new SqlTimestampDecorator(date);
+		}
+
+		public SqlTimestampDecoratorBuilder date(final Timestamp date)
+		{
+			this.date = date;
+			return this;
+		}
+
+		@Override
+		public String toString()
+		{
+			return "SqlTimestampDecorator.SqlTimestampDecoratorBuilder(date=" + this.date + ")";
+		}
+	}
+
+	public static SqlTimestampDecoratorBuilder builder()
+	{
+		return new SqlTimestampDecoratorBuilder();
+	}
+
+	private Timestamp date;
+
+	public SqlTimestampDecorator()
+	{
+	}
+
+	public SqlTimestampDecorator(final Timestamp date)
+	{
+		this.date = date;
+	}
+
+	protected boolean canEqual(final Object other)
+	{
+		return other instanceof SqlTimestampDecorator;
+	}
+
+	@Override
+	public boolean equals(final Object o)
+	{
+		if (o == this)
+			return true;
+		if (!(o instanceof SqlTimestampDecorator))
+			return false;
+		final SqlTimestampDecorator other = (SqlTimestampDecorator)o;
+		if (!other.canEqual(this))
+			return false;
+		final Object this$date = this.getDate();
+		final Object other$date = other.getDate();
+		if (this$date == null ? other$date != null : !this$date.equals(other$date))
+			return false;
+		return true;
+	}
+
+	public Timestamp getDate()
+	{
+		return this.date;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		final int PRIME = 59;
+		int result = 1;
+		final Object $date = this.getDate();
+		result = result * PRIME + ($date == null ? 43 : $date.hashCode());
+		return result;
+	}
+
+	public SqlTimestampDecorator setDate(final Timestamp date)
+	{
+		this.date = date;
+		return this;
+	}
+
+	public SqlTimestampDecoratorBuilder toBuilder()
+	{
+		return new SqlTimestampDecoratorBuilder().date(this.date);
+	}
+
+	@Override
+	public String toString()
+	{
+		return "SqlTimestampDecorator(date=" + this.getDate() + ")";
+	}
 }

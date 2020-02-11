@@ -1,6 +1,19 @@
 ## Change log
 ----------------------
 
+Version 5.3
+-------------
+
+ADDED:
+ 
+- new build system gradle
+
+CHANGED:
+
+- update of dependency jobj-contract-verifier version to 3.2
+- removed maven build system and all related files
+- removed all lombok dependent imports
+
 Version 5.2
 -------------
 

@@ -24,27 +24,106 @@
  */
 package de.alpharogroup.test.objects;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-
 /**
  * The class {@link A} is a class intended for use in unit tests.
  */
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder(toBuilder = true)
 public class A
 {
-	/** The a. */
-	String a;
 
+	public static class ABuilder
+	{
+
+		private String a;
+
+		ABuilder()
+		{
+		}
+
+		public ABuilder a(final String a)
+		{
+			this.a = a;
+			return this;
+		}
+
+		public A build()
+		{
+			return new A(a);
+		}
+
+		@Override
+		public String toString()
+		{
+			return "A.ABuilder(a=" + this.a + ")";
+		}
+	}
+
+	public static ABuilder builder()
+	{
+		return new ABuilder();
+	}
+
+	private String a;
+
+	public A()
+	{
+	}
+
+	public A(final String a)
+	{
+		this.a = a;
+	}
+
+	protected boolean canEqual(final Object other)
+	{
+		return other instanceof A;
+	}
+
+	@Override
+	public boolean equals(final Object o)
+	{
+		if (o == this)
+			return true;
+		if (!(o instanceof A))
+			return false;
+		final A other = (A)o;
+		if (!other.canEqual(this))
+			return false;
+		final Object this$a = this.getA();
+		final Object other$a = other.getA();
+		if (this$a == null ? other$a != null : !this$a.equals(other$a))
+			return false;
+		return true;
+	}
+
+	public String getA()
+	{
+		return this.a;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		final int PRIME = 59;
+		int result = 1;
+		final Object $a = this.getA();
+		result = result * PRIME + ($a == null ? 43 : $a.hashCode());
+		return result;
+	}
+
+	public A setA(final String a)
+	{
+		this.a = a;
+		return this;
+	}
+
+	public ABuilder toBuilder()
+	{
+		return new ABuilder().a(this.a);
+	}
+
+	@Override
+	public String toString()
+	{
+		return "A(a=" + this.getA() + ")";
+	}
 }

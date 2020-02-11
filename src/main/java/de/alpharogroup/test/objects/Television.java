@@ -24,32 +24,123 @@
  */
 package de.alpharogroup.test.objects;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-
 /**
  * The class {@link Television} is a class intended for use in unit tests.
  */
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder(toBuilder = true)
 public class Television
 {
+	public static class TelevisionBuilder
+	{
 
-	/** The channel. */
-	int channel;
+		private int channel;
 
-	/** The on flag. */
-	boolean on;
+		private boolean on;
+
+		TelevisionBuilder()
+		{
+		}
+
+		public Television build()
+		{
+			return new Television(channel, on);
+		}
+
+		public TelevisionBuilder channel(final int channel)
+		{
+			this.channel = channel;
+			return this;
+		}
+
+		public TelevisionBuilder on(final boolean on)
+		{
+			this.on = on;
+			return this;
+		}
+
+		@Override
+		public String toString()
+		{
+			return "Television.TelevisionBuilder(channel=" + this.channel + ", on=" + this.on + ")";
+		}
+	}
+	public static TelevisionBuilder builder()
+	{
+		return new TelevisionBuilder();
+	}
+
+	/**
+	 * The channel.
+	 */
+	private int channel;
+
+	/**
+	 * The on flag.
+	 */
+	private boolean on;
+
+	public Television()
+	{
+	}
+
+	public Television(final int channel, final boolean on)
+	{
+		this.channel = channel;
+		this.on = on;
+	}
+
+	protected boolean canEqual(final Object other)
+	{
+		return other instanceof Television;
+	}
+
+	@Override
+	public boolean equals(final Object o)
+	{
+		if (o == this)
+			return true;
+		if (!(o instanceof Television))
+			return false;
+		final Television other = (Television)o;
+		if (!other.canEqual(this))
+			return false;
+		if (this.getChannel() != other.getChannel())
+			return false;
+		if (this.isOn() != other.isOn())
+			return false;
+		return true;
+	}
+
+	public int getChannel()
+	{
+		return this.channel;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		final int PRIME = 59;
+		int result = 1;
+		result = result * PRIME + this.getChannel();
+		result = result * PRIME + (this.isOn() ? 79 : 97);
+		return result;
+	}
+
+	public boolean isOn()
+	{
+		return this.on;
+	}
+
+	public Television setChannel(final int channel)
+	{
+		this.channel = channel;
+		return this;
+	}
+
+	public Television setOn(final boolean on)
+	{
+		this.on = on;
+		return this;
+	}
 
 	/**
 	 * Switch off.
@@ -71,5 +162,16 @@ public class Television
 	{
 		this.on = true;
 		return this;
+	}
+
+	public TelevisionBuilder toBuilder()
+	{
+		return new TelevisionBuilder().channel(this.channel).on(this.on);
+	}
+
+	@Override
+	public String toString()
+	{
+		return "Television(channel=" + this.getChannel() + ", on=" + this.isOn() + ")";
 	}
 }

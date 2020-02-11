@@ -24,32 +24,74 @@
  */
 package de.alpharogroup.test.objects;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-
 /**
  * The class {@link AlgorithmModel} is a class intended for use in unit tests.
  */
-@EqualsAndHashCode
-@Getter
-@Setter
-@ToString
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder(toBuilder = true)
 public class AlgorithmModel implements Cloneable
 {
+	public static class AlgorithmModelBuilder
+	{
 
-	/** The a. */
-	int a;
+		private int a;
 
-	/** The b. */
-	int b;
+		private int b;
+
+		AlgorithmModelBuilder()
+		{
+		}
+
+		public AlgorithmModelBuilder a(final int a)
+		{
+			this.a = a;
+			return this;
+		}
+
+		public AlgorithmModelBuilder b(final int b)
+		{
+			this.b = b;
+			return this;
+		}
+
+		public AlgorithmModel build()
+		{
+			return new AlgorithmModel(a, b);
+		}
+
+		@Override
+		public String toString()
+		{
+			return "AlgorithmModel.AlgorithmModelBuilder(a=" + this.a + ", b=" + this.b + ")";
+		}
+	}
+	public static AlgorithmModelBuilder builder()
+	{
+		return new AlgorithmModelBuilder();
+	}
+
+	/**
+	 * The a.
+	 */
+	private int a;
+
+	/**
+	 * The b.
+	 */
+	private int b;
+
+	public AlgorithmModel()
+	{
+	}
+
+	public AlgorithmModel(final int a, final int b)
+	{
+		this.a = a;
+		this.b = b;
+	}
+
+	protected boolean canEqual(final Object other)
+	{
+		return other instanceof AlgorithmModel;
+	}
 
 	/**
 	 * {@inheritDoc}
@@ -60,4 +102,63 @@ public class AlgorithmModel implements Cloneable
 		return this.toBuilder().build();
 	}
 
+	@Override
+	public boolean equals(final Object o)
+	{
+		if (o == this)
+			return true;
+		if (!(o instanceof AlgorithmModel))
+			return false;
+		final AlgorithmModel other = (AlgorithmModel)o;
+		if (!other.canEqual(this))
+			return false;
+		if (this.getA() != other.getA())
+			return false;
+		if (this.getB() != other.getB())
+			return false;
+		return true;
+	}
+
+	public int getA()
+	{
+		return this.a;
+	}
+
+	public int getB()
+	{
+		return this.b;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		final int PRIME = 59;
+		int result = 1;
+		result = result * PRIME + this.getA();
+		result = result * PRIME + this.getB();
+		return result;
+	}
+
+	public AlgorithmModel setA(final int a)
+	{
+		this.a = a;
+		return this;
+	}
+
+	public AlgorithmModel setB(final int b)
+	{
+		this.b = b;
+		return this;
+	}
+
+	public AlgorithmModelBuilder toBuilder()
+	{
+		return new AlgorithmModelBuilder().a(this.a).b(this.b);
+	}
+
+	@Override
+	public String toString()
+	{
+		return "AlgorithmModel(a=" + this.getA() + ", b=" + this.getB() + ")";
+	}
 }

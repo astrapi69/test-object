@@ -2,8 +2,8 @@
 
 <div align="center">
 
-[![Build Status](https://travis-ci.org/lightblueseas/test-objects.svg?branch=master)](https://travis-ci.org/lightblueseas/test-objects)
-[![Coverage Status](https://coveralls.io/repos/github/lightblueseas/test-objects/badge.svg?branch=master)](https://coveralls.io/github/lightblueseas/test-objects?branch=master)
+[![Build Status](https://travis-ci.org/lightblueseas/test-objects.svg?branch=develop)](https://travis-ci.org/lightblueseas/test-objects)
+[![Coverage Status](https://coveralls.io/repos/github/lightblueseas/test-objects/badge.svg?branch=develop)](https://coveralls.io/github/lightblueseas/test-objects?branch=develop)
 [![Open Issues](https://img.shields.io/github/issues/lightblueseas/test-objects.svg?style=flat)](https://github.com/lightblueseas/test-objects/issues) 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/test-objects/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/test-objects)
 [![Javadocs](http://www.javadoc.io/badge/de.alpharogroup/test-objects.svg)](http://www.javadoc.io/doc/de.alpharogroup/test-objects)
@@ -13,6 +13,8 @@
 </div>
 
 Project that holds test objects for unit tests.
+
+If you like this project put a ⭐ and donate
 
 ## Note
 
@@ -53,7 +55,7 @@ Than you can add the dependency to your dependencies:
 	<properties>
 			...
 		<!-- TEST-OBJECTS version -->
-		<test-objects.version>5.2</test-objects.version>
+		<test-objects.version>5.3</test-objects.version>
 			...
 	</properties>
 			...
@@ -68,6 +70,24 @@ Than you can add the dependency to your dependencies:
 			</dependency>
 			...
 		</dependencies>
+			
+## gradle dependency
+
+You can first define the version in the ext section and add than the following gradle dependency to your project `build.gradle` if you want to import the core functionality of test-objects:
+
+```
+ext {
+			...
+    testObjectsVersion = "5.3"
+			...
+}
+dependencies {
+			...
+compile("de.alpharogroup:test-objects:$testObjectsVersion")
+			...
+}
+	
+```
 
 ## Semantic Versioning
 

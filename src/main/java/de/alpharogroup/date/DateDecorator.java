@@ -26,27 +26,106 @@ package de.alpharogroup.date;
 
 import java.util.Date;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-
 /**
  * The class {@link DateDecorator} is a {@link Date} decorator.
  */
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder(toBuilder = true)
 public class DateDecorator
 {
 
-	/** The date. */
-	Date date;
+	public static class DateDecoratorBuilder
+	{
+
+		private Date date;
+
+		DateDecoratorBuilder()
+		{
+		}
+
+		public DateDecorator build()
+		{
+			return new DateDecorator(date);
+		}
+
+		public DateDecoratorBuilder date(final Date date)
+		{
+			this.date = date;
+			return this;
+		}
+
+		@Override
+		public String toString()
+		{
+			return "DateDecorator.DateDecoratorBuilder(date=" + this.date + ")";
+		}
+	}
+
+	public static DateDecoratorBuilder builder()
+	{
+		return new DateDecoratorBuilder();
+	}
+
+	private Date date;
+
+	public DateDecorator()
+	{
+	}
+
+	public DateDecorator(final Date date)
+	{
+		this.date = date;
+	}
+
+	protected boolean canEqual(final Object other)
+	{
+		return other instanceof DateDecorator;
+	}
+
+	@Override
+	public boolean equals(final Object o)
+	{
+		if (o == this)
+			return true;
+		if (!(o instanceof DateDecorator))
+			return false;
+		final DateDecorator other = (DateDecorator)o;
+		if (!other.canEqual(this))
+			return false;
+		final Object this$date = this.getDate();
+		final Object other$date = other.getDate();
+		if (this$date == null ? other$date != null : !this$date.equals(other$date))
+			return false;
+		return true;
+	}
+
+	public Date getDate()
+	{
+		return this.date;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		final int PRIME = 59;
+		int result = 1;
+		final Object $date = this.getDate();
+		result = result * PRIME + ($date == null ? 43 : $date.hashCode());
+		return result;
+	}
+
+	public DateDecorator setDate(final Date date)
+	{
+		this.date = date;
+		return this;
+	}
+
+	public DateDecoratorBuilder toBuilder()
+	{
+		return new DateDecoratorBuilder().date(this.date);
+	}
+
+	@Override
+	public String toString()
+	{
+		return "DateDecorator(date=" + this.getDate() + ")";
+	}
 }

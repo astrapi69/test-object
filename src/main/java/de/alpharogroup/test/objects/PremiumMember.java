@@ -27,28 +27,112 @@ package de.alpharogroup.test.objects;
 import java.util.Date;
 
 import de.alpharogroup.test.objects.enums.Gender;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
 
 /**
  * The class {@link PremiumMember} is a class intended for use in unit tests.
  */
-@Getter
-@Setter
-@EqualsAndHashCode(callSuper = true)
-@ToString(callSuper = true)
 public class PremiumMember extends Member
 {
+	public static class PremiumMemberBuilder
+	{
 
+		private String about;
 
-	/** The Constant serialVersionUID. */
+		private String credits;
+
+		private Date dateofbirth;
+
+		private Date dateofMarriage;
+
+		private Gender gender;
+
+		private Boolean married;
+
+		private String name;
+
+		private String nickname;
+
+		PremiumMemberBuilder()
+		{
+		}
+
+		public PremiumMemberBuilder about(final String about)
+		{
+			this.about = about;
+			return this;
+		}
+
+		public PremiumMember build()
+		{
+			return new PremiumMember(about, gender, married, name, nickname, dateofbirth,
+				dateofMarriage, credits);
+		}
+
+		public PremiumMemberBuilder credits(final String credits)
+		{
+			this.credits = credits;
+			return this;
+		}
+
+		public PremiumMemberBuilder dateofbirth(final Date dateofbirth)
+		{
+			this.dateofbirth = dateofbirth;
+			return this;
+		}
+
+		public PremiumMemberBuilder dateofMarriage(final Date dateofMarriage)
+		{
+			this.dateofMarriage = dateofMarriage;
+			return this;
+		}
+
+		public PremiumMemberBuilder gender(final Gender gender)
+		{
+			this.gender = gender;
+			return this;
+		}
+
+		public PremiumMemberBuilder married(final Boolean married)
+		{
+			this.married = married;
+			return this;
+		}
+
+		public PremiumMemberBuilder name(final String name)
+		{
+			this.name = name;
+			return this;
+		}
+
+		public PremiumMemberBuilder nickname(final String nickname)
+		{
+			this.nickname = nickname;
+			return this;
+		}
+
+		@Override
+		public String toString()
+		{
+			return "PremiumMember.PremiumMemberBuilder(about=" + this.about + ", gender="
+				+ this.gender + ", married=" + this.married + ", name=" + this.name + ", nickname="
+				+ this.nickname + ", dateofbirth=" + this.dateofbirth + ", dateofMarriage="
+				+ this.dateofMarriage + ", credits=" + this.credits + ")";
+		}
+	}
+	/**
+	 * The Constant serialVersionUID.
+	 */
 	private static final long serialVersionUID = 1L;
 
-	/** The credits. */
-	String credits;
+	public static PremiumMemberBuilder buildPremiumMember()
+	{
+		return new PremiumMemberBuilder();
+	}
+
+	/**
+	 * The credits.
+	 */
+	private String credits;
 
 	/**
 	 * Instantiates a new {@link PremiumMember} object.
@@ -77,7 +161,6 @@ public class PremiumMember extends Member
 	 * @param credits
 	 *            the credits
 	 */
-	@Builder(builderMethodName = "buildPremiumMember")
 	public PremiumMember(final String about, final Gender gender, final Boolean married,
 		final String name, final String nickname, final Date dateofbirth, final Date dateofMarriage,
 		final String credits)
@@ -86,4 +169,55 @@ public class PremiumMember extends Member
 		this.credits = credits;
 	}
 
+	@Override
+	protected boolean canEqual(final Object other)
+	{
+		return other instanceof PremiumMember;
+	}
+
+	@Override
+	public boolean equals(final Object o)
+	{
+		if (o == this)
+			return true;
+		if (!(o instanceof PremiumMember))
+			return false;
+		final PremiumMember other = (PremiumMember)o;
+		if (!other.canEqual(this))
+			return false;
+		if (!super.equals(o))
+			return false;
+		final Object this$credits = this.getCredits();
+		final Object other$credits = other.getCredits();
+		if (this$credits == null ? other$credits != null : !this$credits.equals(other$credits))
+			return false;
+		return true;
+	}
+
+	public String getCredits()
+	{
+		return this.credits;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		final int PRIME = 59;
+		int result = super.hashCode();
+		final Object $credits = this.getCredits();
+		result = result * PRIME + ($credits == null ? 43 : $credits.hashCode());
+		return result;
+	}
+
+	public PremiumMember setCredits(final String credits)
+	{
+		this.credits = credits;
+		return this;
+	}
+
+	@Override
+	public String toString()
+	{
+		return "PremiumMember(super=" + super.toString() + ", credits=" + this.getCredits() + ")";
+	}
 }

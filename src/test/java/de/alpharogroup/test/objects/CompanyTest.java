@@ -24,7 +24,7 @@
  */
 package de.alpharogroup.test.objects;
 
-import static org.testng.Assert.assertNotNull;
+import static org.testng.AssertJUnit.assertNotNull;
 
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
@@ -32,13 +32,13 @@ import org.testng.annotations.Test;
 import de.alpharogroup.evaluate.object.verifier.ContractVerifier;
 
 /**
- * The unit test class for the class {@link Company}.
+ * The unit test class for the class {@link Company}
  */
 public class CompanyTest
 {
 
 	/**
-	 * Test method for {@link Company} constructors
+	 * Test method for {@link Company} constructors and builders
 	 */
 	@Test
 	public final void testConstructors()

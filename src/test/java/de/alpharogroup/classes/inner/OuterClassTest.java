@@ -25,14 +25,14 @@
 package de.alpharogroup.classes.inner;
 
 import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import de.alpharogroup.classes.inner.OuterClass.InnerClass;
 import de.alpharogroup.classes.inner.OuterClass.StaticNestedClass;
-import lombok.extern.java.Log;
 
-@Log
 public class OuterClassTest
 {
+	private final static Logger log = Logger.getLogger(OuterClassTest.class.getName());
 
 	/**
 	 * Show info from given class.

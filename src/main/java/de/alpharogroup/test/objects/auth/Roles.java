@@ -24,32 +24,153 @@
  */
 package de.alpharogroup.test.objects.auth;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.LinkedHashSet;
 import java.util.Set;
-
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.Singular;
-import lombok.ToString;
 
 /**
  * The class {@link Roles} is a class intended for use in unit tests.
  */
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder(toBuilder = true)
 public class Roles
 {
+	public static class RolesBuilder
+	{
 
-	/** The roles. */
-	@Singular
-	Set<Role> roles;
+		private ArrayList<Role> roles;
 
+		RolesBuilder()
+		{
+		}
+
+		public Roles build()
+		{
+			Set<Role> roles;
+			switch (this.roles == null ? 0 : this.roles.size())
+			{
+				case 0 :
+					roles = Collections.emptySet();
+					break;
+
+				case 1 :
+					roles = Collections.singleton(this.roles.get(0));
+					break;
+
+				default :
+					roles = new LinkedHashSet<Role>(this.roles.size() < 1073741824
+						? 1 + this.roles.size() + (this.roles.size() - 3) / 3
+						: Integer.MAX_VALUE);
+					roles.addAll(this.roles);
+					roles = Collections.unmodifiableSet(roles);
+			}
+			return new Roles(roles);
+		}
+
+		public RolesBuilder clearRoles()
+		{
+			if (this.roles != null)
+				this.roles.clear();
+			return this;
+		}
+
+		public RolesBuilder role(final Role role)
+		{
+			if (this.roles == null)
+				this.roles = new ArrayList<Role>();
+			this.roles.add(role);
+			return this;
+		}
+
+		public RolesBuilder roles(final Collection<? extends Role> roles)
+		{
+			if (this.roles == null)
+				this.roles = new ArrayList<Role>();
+			this.roles.addAll(roles);
+			return this;
+		}
+
+		@Override
+		public String toString()
+		{
+			return "Roles.RolesBuilder(roles=" + this.roles + ")";
+		}
+	}
+
+
+	public static RolesBuilder builder()
+	{
+		return new RolesBuilder();
+	}
+
+	/**
+	 * The roles.
+	 */
+	private Set<Role> roles;
+
+	public Roles()
+	{
+	}
+
+	public Roles(final Set<Role> roles)
+	{
+		this.roles = roles;
+	}
+
+	protected boolean canEqual(final Object other)
+	{
+		return other instanceof Roles;
+	}
+
+	@Override
+	public boolean equals(final Object o)
+	{
+		if (o == this)
+			return true;
+		if (!(o instanceof Roles))
+			return false;
+		final Roles other = (Roles)o;
+		if (!other.canEqual(this))
+			return false;
+		final Object this$roles = this.getRoles();
+		final Object other$roles = other.getRoles();
+		if (this$roles == null ? other$roles != null : !this$roles.equals(other$roles))
+			return false;
+		return true;
+	}
+
+	public Set<Role> getRoles()
+	{
+		return this.roles;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		final int PRIME = 59;
+		int result = 1;
+		final Object $roles = this.getRoles();
+		result = result * PRIME + ($roles == null ? 43 : $roles.hashCode());
+		return result;
+	}
+
+	public Roles setRoles(final Set<Role> roles)
+	{
+		this.roles = roles;
+		return this;
+	}
+
+	public RolesBuilder toBuilder()
+	{
+		final RolesBuilder builder = new RolesBuilder();
+		if (this.roles != null)
+			builder.roles(this.roles);
+		return builder;
+	}
+
+	@Override
+	public String toString()
+	{
+		return "Roles(roles=" + this.getRoles() + ")";
+	}
 }

@@ -24,29 +24,96 @@
  */
 package de.alpharogroup.test.objects;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-
 /**
  * The class {@link Light} is a concrete receiver.
  */
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder(toBuilder = true)
 public class Light
 {
+	public static class LightBuilder
+	{
 
-	/** The on flag. */
-	boolean on;
+		private boolean on;
+
+		LightBuilder()
+		{
+		}
+
+		public Light build()
+		{
+			return new Light(on);
+		}
+
+		public LightBuilder on(final boolean on)
+		{
+			this.on = on;
+			return this;
+		}
+
+		@Override
+		public String toString()
+		{
+			return "Light.LightBuilder(on=" + this.on + ")";
+		}
+	}
+
+	public static LightBuilder builder()
+	{
+		return new LightBuilder();
+	}
+
+	/**
+	 * The on flag.
+	 */
+	private boolean on;
+
+	public Light()
+	{
+	}
+
+	public Light(final boolean on)
+	{
+		this.on = on;
+	}
+
+	protected boolean canEqual(final Object other)
+	{
+		return other instanceof Light;
+	}
+
+	@Override
+	public boolean equals(final Object o)
+	{
+		if (o == this)
+			return true;
+		if (!(o instanceof Light))
+			return false;
+		final Light other = (Light)o;
+		if (!other.canEqual(this))
+			return false;
+		if (this.isOn() != other.isOn())
+			return false;
+		return true;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		final int PRIME = 59;
+		int result = 1;
+		result = result * PRIME + (this.isOn() ? 79 : 97);
+		return result;
+	}
+
+	public boolean isOn()
+	{
+		return this.on;
+	}
+
+	public Light setOn(final boolean on)
+	{
+		this.on = on;
+		return this;
+	}
 
 	/**
 	 * Switch off.
@@ -68,5 +135,16 @@ public class Light
 	{
 		setOn(true);
 		return this;
+	}
+
+	public LightBuilder toBuilder()
+	{
+		return new LightBuilder().on(this.on);
+	}
+
+	@Override
+	public String toString()
+	{
+		return "Light(on=" + this.isOn() + ")";
 	}
 }

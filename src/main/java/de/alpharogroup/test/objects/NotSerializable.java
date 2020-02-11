@@ -24,28 +24,108 @@
  */
 package de.alpharogroup.test.objects;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-
 /**
  * The class {@link NotSerializable} is a class intended for use in unit tests.
  */
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder(toBuilder = true)
 public class NotSerializable
 {
+	public static class NotSerializableBuilder
+	{
 
-	/** The name. */
-	String name;
+		private String name;
 
+		NotSerializableBuilder()
+		{
+		}
+
+		public NotSerializable build()
+		{
+			return new NotSerializable(name);
+		}
+
+		public NotSerializableBuilder name(final String name)
+		{
+			this.name = name;
+			return this;
+		}
+
+		@Override
+		public String toString()
+		{
+			return "NotSerializable.NotSerializableBuilder(name=" + this.name + ")";
+		}
+	}
+
+	public static NotSerializableBuilder builder()
+	{
+		return new NotSerializableBuilder();
+	}
+
+	/**
+	 * The name.
+	 */
+	private String name;
+
+	public NotSerializable()
+	{
+	}
+
+	public NotSerializable(final String name)
+	{
+		this.name = name;
+	}
+
+	protected boolean canEqual(final Object other)
+	{
+		return other instanceof NotSerializable;
+	}
+
+	@Override
+	public boolean equals(final Object o)
+	{
+		if (o == this)
+			return true;
+		if (!(o instanceof NotSerializable))
+			return false;
+		final NotSerializable other = (NotSerializable)o;
+		if (!other.canEqual(this))
+			return false;
+		final Object this$name = this.getName();
+		final Object other$name = other.getName();
+		if (this$name == null ? other$name != null : !this$name.equals(other$name))
+			return false;
+		return true;
+	}
+
+	public String getName()
+	{
+		return this.name;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		final int PRIME = 59;
+		int result = 1;
+		final Object $name = this.getName();
+		result = result * PRIME + ($name == null ? 43 : $name.hashCode());
+		return result;
+	}
+
+	public NotSerializable setName(final String name)
+	{
+		this.name = name;
+		return this;
+	}
+
+	public NotSerializableBuilder toBuilder()
+	{
+		return new NotSerializableBuilder().name(this.name);
+	}
+
+	@Override
+	public String toString()
+	{
+		return "NotSerializable(name=" + this.getName() + ")";
+	}
 }

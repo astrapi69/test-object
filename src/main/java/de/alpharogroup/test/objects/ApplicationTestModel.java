@@ -24,21 +24,108 @@
  */
 package de.alpharogroup.test.objects;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 /**
  * The class {@link ApplicationTestModel} for unit testing
  */
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder(toBuilder = true)
 public class ApplicationTestModel<T>
 {
+	public static class ApplicationTestModelBuilder<T>
+	{
 
-	/** The model. */
-	T model;
+		private T model;
+
+		ApplicationTestModelBuilder()
+		{
+		}
+
+		public ApplicationTestModel<T> build()
+		{
+			return new ApplicationTestModel<T>(model);
+		}
+
+		public ApplicationTestModelBuilder<T> model(final T model)
+		{
+			this.model = model;
+			return this;
+		}
+
+		@Override
+		public String toString()
+		{
+			return "ApplicationTestModel.ApplicationTestModelBuilder(model=" + this.model + ")";
+		}
+	}
+
+	public static <T> ApplicationTestModelBuilder<T> builder()
+	{
+		return new ApplicationTestModelBuilder<T>();
+	}
+
+	/**
+	 * The model.
+	 */
+	private T model;
+
+	public ApplicationTestModel()
+	{
+	}
+
+	public ApplicationTestModel(final T model)
+	{
+		this.model = model;
+	}
+
+	protected boolean canEqual(final Object other)
+	{
+		return other instanceof ApplicationTestModel;
+	}
+
+	@Override
+	public boolean equals(final Object o)
+	{
+		if (o == this)
+			return true;
+		if (!(o instanceof ApplicationTestModel))
+			return false;
+		final ApplicationTestModel<?> other = (ApplicationTestModel<?>)o;
+		if (!other.canEqual(this))
+			return false;
+		final Object this$model = this.getModel();
+		final Object other$model = other.getModel();
+		if (this$model == null ? other$model != null : !this$model.equals(other$model))
+			return false;
+		return true;
+	}
+
+	public T getModel()
+	{
+		return this.model;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		final int PRIME = 59;
+		int result = 1;
+		final Object $model = this.getModel();
+		result = result * PRIME + ($model == null ? 43 : $model.hashCode());
+		return result;
+	}
+
+	public ApplicationTestModel<T> setModel(final T model)
+	{
+		this.model = model;
+		return this;
+	}
+
+	public ApplicationTestModelBuilder<T> toBuilder()
+	{
+		return new ApplicationTestModelBuilder<T>().model(this.model);
+	}
+
+	@Override
+	public String toString()
+	{
+		return "ApplicationTestModel(model=" + this.getModel() + ")";
+	}
 }
