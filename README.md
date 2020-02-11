@@ -55,7 +55,7 @@ Than you can add the dependency to your dependencies:
 	<properties>
 			...
 		<!-- TEST-OBJECTS version -->
-		<test-objects.version>5.2</test-objects.version>
+		<test-objects.version>5.3</test-objects.version>
 			...
 	</properties>
 			...
@@ -78,7 +78,7 @@ You can first define the version in the ext section and add than the following g
 ```
 ext {
 			...
-    testObjectsVersion = "5.2"
+    testObjectsVersion = "5.3"
 			...
 }
 dependencies {
