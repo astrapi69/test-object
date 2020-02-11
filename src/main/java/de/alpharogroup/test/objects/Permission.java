@@ -24,34 +24,173 @@
  */
 package de.alpharogroup.test.objects;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-
 /**
  * The class {@link Permission} is a class intended for use in unit tests.
  */
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder(toBuilder = true)
 public class Permission
 {
+	/**
+	 * The description.
+	 */
+	private String description;
+	/**
+	 * The name.
+	 */
+	private String name;
+	/**
+	 * The shortcut.
+	 */
+	private String shortcut;
 
-	/** The description. */
-	String description;
+	public static class PermissionBuilder
+	{
 
-	/** The name. */
-	String name;
+		private String description;
 
-	/** The shortcut. */
-	String shortcut;
+		private String name;
 
+		private String shortcut;
+
+		PermissionBuilder()
+		{
+		}
+
+		public PermissionBuilder description(final String description)
+		{
+			this.description = description;
+			return this;
+		}
+
+		public PermissionBuilder name(final String name)
+		{
+			this.name = name;
+			return this;
+		}
+
+		public PermissionBuilder shortcut(final String shortcut)
+		{
+			this.shortcut = shortcut;
+			return this;
+		}
+
+		public Permission build()
+		{
+			return new Permission(description, name, shortcut);
+		}
+
+		@Override
+		public String toString()
+		{
+			return "Permission.PermissionBuilder(description=" + this.description + ", name="
+				+ this.name + ", shortcut=" + this.shortcut + ")";
+		}
+	}
+
+	public static PermissionBuilder builder()
+	{
+		return new PermissionBuilder();
+	}
+
+	public PermissionBuilder toBuilder()
+	{
+		return new PermissionBuilder().description(this.description).name(this.name)
+			.shortcut(this.shortcut);
+	}
+
+	public String getDescription()
+	{
+		return this.description;
+	}
+
+	public String getName()
+	{
+		return this.name;
+	}
+
+	public String getShortcut()
+	{
+		return this.shortcut;
+	}
+
+	public Permission setDescription(final String description)
+	{
+		this.description = description;
+		return this;
+	}
+
+	public Permission setName(final String name)
+	{
+		this.name = name;
+		return this;
+	}
+
+	public Permission setShortcut(final String shortcut)
+	{
+		this.shortcut = shortcut;
+		return this;
+	}
+
+	@Override
+	public boolean equals(final Object o)
+	{
+		if (o == this)
+			return true;
+		if (!(o instanceof Permission))
+			return false;
+		final Permission other = (Permission)o;
+		if (!other.canEqual((Object)this))
+			return false;
+		final Object this$description = this.getDescription();
+		final Object other$description = other.getDescription();
+		if (this$description == null
+			? other$description != null
+			: !this$description.equals(other$description))
+			return false;
+		final Object this$name = this.getName();
+		final Object other$name = other.getName();
+		if (this$name == null ? other$name != null : !this$name.equals(other$name))
+			return false;
+		final Object this$shortcut = this.getShortcut();
+		final Object other$shortcut = other.getShortcut();
+		if (this$shortcut == null ? other$shortcut != null : !this$shortcut.equals(other$shortcut))
+			return false;
+		return true;
+	}
+
+	protected boolean canEqual(final Object other)
+	{
+		return other instanceof Permission;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		final int PRIME = 59;
+		int result = 1;
+		final Object $description = this.getDescription();
+		result = result * PRIME + ($description == null ? 43 : $description.hashCode());
+		final Object $name = this.getName();
+		result = result * PRIME + ($name == null ? 43 : $name.hashCode());
+		final Object $shortcut = this.getShortcut();
+		result = result * PRIME + ($shortcut == null ? 43 : $shortcut.hashCode());
+		return result;
+	}
+
+	@Override
+	public String toString()
+	{
+		return "Permission(description=" + this.getDescription() + ", name=" + this.getName()
+			+ ", shortcut=" + this.getShortcut() + ")";
+	}
+
+	public Permission()
+	{
+	}
+
+	public Permission(final String description, final String name, final String shortcut)
+	{
+		this.description = description;
+		this.name = name;
+		this.shortcut = shortcut;
+	}
 }

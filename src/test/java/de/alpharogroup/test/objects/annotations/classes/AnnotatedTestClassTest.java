@@ -63,8 +63,8 @@ public class AnnotatedTestClassTest
 	}
 
 	/**
-	 * Test method for {@link AnnotatedTestClass#equals(Object)} , {@link AnnotatedTestClass#hashCode()} and
-	 * {@link AnnotatedTestClass#toString()}
+	 * Test method for {@link AnnotatedTestClass#equals(Object)} ,
+	 * {@link AnnotatedTestClass#hashCode()} and {@link AnnotatedTestClass#toString()}
 	 */
 	@Test
 	public void verifyEqualsHashcodeAndToStringContracts()

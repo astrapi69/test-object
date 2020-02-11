@@ -26,35 +26,142 @@ package de.alpharogroup.test.objects;
 
 import java.io.Serializable;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-
 /**
  * The class {@link Employee} is a class intended for use in unit tests.
  */
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder(toBuilder = true)
 public class Employee implements Serializable
 {
 	/**
 	 * The serialVersionUID.
 	 */
 	private static final long serialVersionUID = 1L;
+	/**
+	 * The id.
+	 */
+	private String id;
+	/**
+	 * The person.
+	 */
+	private Person person;
 
-	/** The id. */
-	String id;
+	public static class EmployeeBuilder
+	{
 
-	/** The person. */
-	Person person;
+		private String id;
 
+		private Person person;
+
+		EmployeeBuilder()
+		{
+		}
+
+		public EmployeeBuilder id(final String id)
+		{
+			this.id = id;
+			return this;
+		}
+
+		public EmployeeBuilder person(final Person person)
+		{
+			this.person = person;
+			return this;
+		}
+
+		public Employee build()
+		{
+			return new Employee(id, person);
+		}
+
+		@Override
+		public String toString()
+		{
+			return "Employee.EmployeeBuilder(id=" + this.id + ", person=" + this.person + ")";
+		}
+	}
+
+	public static EmployeeBuilder builder()
+	{
+		return new EmployeeBuilder();
+	}
+
+	public EmployeeBuilder toBuilder()
+	{
+		return new EmployeeBuilder().id(this.id).person(this.person);
+	}
+
+	public String getId()
+	{
+		return this.id;
+	}
+
+	public Person getPerson()
+	{
+		return this.person;
+	}
+
+	public Employee setId(final String id)
+	{
+		this.id = id;
+		return this;
+	}
+
+	public Employee setPerson(final Person person)
+	{
+		this.person = person;
+		return this;
+	}
+
+	@Override
+	public boolean equals(final Object o)
+	{
+		if (o == this)
+			return true;
+		if (!(o instanceof Employee))
+			return false;
+		final Employee other = (Employee)o;
+		if (!other.canEqual((Object)this))
+			return false;
+		final Object this$id = this.getId();
+		final Object other$id = other.getId();
+		if (this$id == null ? other$id != null : !this$id.equals(other$id))
+			return false;
+		final Object this$person = this.getPerson();
+		final Object other$person = other.getPerson();
+		if (this$person == null ? other$person != null : !this$person.equals(other$person))
+			return false;
+		return true;
+	}
+
+	protected boolean canEqual(final Object other)
+	{
+		return other instanceof Employee;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		final int PRIME = 59;
+		int result = 1;
+		final Object $id = this.getId();
+		result = result * PRIME + ($id == null ? 43 : $id.hashCode());
+		final Object $person = this.getPerson();
+		result = result * PRIME + ($person == null ? 43 : $person.hashCode());
+		return result;
+	}
+
+	@Override
+	public String toString()
+	{
+		return "Employee(id=" + this.getId() + ", person=" + this.getPerson() + ")";
+	}
+
+	public Employee()
+	{
+	}
+
+	public Employee(final String id, final Person person)
+	{
+		this.id = id;
+		this.person = person;
+	}
 }

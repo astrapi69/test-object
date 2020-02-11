@@ -70,6 +70,24 @@ Than you can add the dependency to your dependencies:
 			</dependency>
 			...
 		</dependencies>
+			
+## gradle dependency
+
+You can first define the version in the ext section and add than the following gradle dependency to your project `build.gradle` if you want to import the core functionality of test-objects:
+
+```
+ext {
+			...
+    testObjectsVersion = "5.2"
+			...
+}
+dependencies {
+			...
+compile("de.alpharogroup:test-objects:$testObjectsVersion")
+			...
+}
+	
+```
 
 ## Semantic Versioning
 

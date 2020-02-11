@@ -24,28 +24,108 @@
  */
 package de.alpharogroup.test.objects.auth;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-
 /**
  * The class {@link AccessRight} is a class intended for use in unit tests.
  */
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder(toBuilder = true)
 public class AccessRight
 {
 
-	/** The description. */
-	String description;
+	private String description;
 
+	public static class AccessRightBuilder
+	{
+
+		private String description;
+
+		AccessRightBuilder()
+		{
+		}
+
+		public AccessRightBuilder description(final String description)
+		{
+			this.description = description;
+			return this;
+		}
+
+		public AccessRight build()
+		{
+			return new AccessRight(description);
+		}
+
+		@Override
+		public String toString()
+		{
+			return "AccessRight.AccessRightBuilder(description=" + this.description + ")";
+		}
+	}
+
+	public static AccessRightBuilder builder()
+	{
+		return new AccessRightBuilder();
+	}
+
+	public AccessRightBuilder toBuilder()
+	{
+		return new AccessRightBuilder().description(this.description);
+	}
+
+	public String getDescription()
+	{
+		return this.description;
+	}
+
+	public AccessRight setDescription(final String description)
+	{
+		this.description = description;
+		return this;
+	}
+
+	@Override
+	public boolean equals(final Object o)
+	{
+		if (o == this)
+			return true;
+		if (!(o instanceof AccessRight))
+			return false;
+		final AccessRight other = (AccessRight)o;
+		if (!other.canEqual((Object)this))
+			return false;
+		final Object this$description = this.getDescription();
+		final Object other$description = other.getDescription();
+		if (this$description == null
+			? other$description != null
+			: !this$description.equals(other$description))
+			return false;
+		return true;
+	}
+
+	protected boolean canEqual(final Object other)
+	{
+		return other instanceof AccessRight;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		final int PRIME = 59;
+		int result = 1;
+		final Object $description = this.getDescription();
+		result = result * PRIME + ($description == null ? 43 : $description.hashCode());
+		return result;
+	}
+
+	@Override
+	public String toString()
+	{
+		return "AccessRight(description=" + this.getDescription() + ")";
+	}
+
+	public AccessRight()
+	{
+	}
+
+	public AccessRight(final String description)
+	{
+		this.description = description;
+	}
 }

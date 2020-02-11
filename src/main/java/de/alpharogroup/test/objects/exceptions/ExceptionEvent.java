@@ -24,27 +24,106 @@
  */
 package de.alpharogroup.test.objects.exceptions;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-
 /**
  * The class {@link ExceptionEvent} is a class intended for use in unit tests.
  */
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder(toBuilder = true)
 public class ExceptionEvent
 {
-	/** The value. */
-	Throwable value;
 
+	private Throwable value;
+
+	public static class ExceptionEventBuilder
+	{
+
+		private Throwable value;
+
+		ExceptionEventBuilder()
+		{
+		}
+
+		public ExceptionEventBuilder value(final Throwable value)
+		{
+			this.value = value;
+			return this;
+		}
+
+		public ExceptionEvent build()
+		{
+			return new ExceptionEvent(value);
+		}
+
+		@Override
+		public String toString()
+		{
+			return "ExceptionEvent.ExceptionEventBuilder(value=" + this.value + ")";
+		}
+	}
+
+	public static ExceptionEventBuilder builder()
+	{
+		return new ExceptionEventBuilder();
+	}
+
+	public ExceptionEventBuilder toBuilder()
+	{
+		return new ExceptionEventBuilder().value(this.value);
+	}
+
+	public Throwable getValue()
+	{
+		return this.value;
+	}
+
+	public ExceptionEvent setValue(final Throwable value)
+	{
+		this.value = value;
+		return this;
+	}
+
+	@Override
+	public boolean equals(final Object o)
+	{
+		if (o == this)
+			return true;
+		if (!(o instanceof ExceptionEvent))
+			return false;
+		final ExceptionEvent other = (ExceptionEvent)o;
+		if (!other.canEqual((Object)this))
+			return false;
+		final Object this$value = this.getValue();
+		final Object other$value = other.getValue();
+		if (this$value == null ? other$value != null : !this$value.equals(other$value))
+			return false;
+		return true;
+	}
+
+	protected boolean canEqual(final Object other)
+	{
+		return other instanceof ExceptionEvent;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		final int PRIME = 59;
+		int result = 1;
+		final Object $value = this.getValue();
+		result = result * PRIME + ($value == null ? 43 : $value.hashCode());
+		return result;
+	}
+
+	@Override
+	public String toString()
+	{
+		return "ExceptionEvent(value=" + this.getValue() + ")";
+	}
+
+	public ExceptionEvent()
+	{
+	}
+
+	public ExceptionEvent(final Throwable value)
+	{
+		this.value = value;
+	}
 }

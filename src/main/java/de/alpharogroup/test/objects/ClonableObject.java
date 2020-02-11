@@ -24,30 +24,16 @@
  */
 package de.alpharogroup.test.objects;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-
 /**
  * The class {@link ClonableObject} is a class intended for use in unit tests that represents a
  * clonable object and implements {@link Cloneable}.
  */
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder(toBuilder = true)
 public class ClonableObject implements Cloneable
 {
-
-	/** The name. */
-	String name;
+	/**
+	 * The name.
+	 */
+	private String name;
 
 	/**
 	 * {@inheritDoc}
@@ -60,4 +46,98 @@ public class ClonableObject implements Cloneable
 		return clone;
 	}
 
+	public static class ClonableObjectBuilder
+	{
+
+		private String name;
+
+		ClonableObjectBuilder()
+		{
+		}
+
+		public ClonableObjectBuilder name(final String name)
+		{
+			this.name = name;
+			return this;
+		}
+
+		public ClonableObject build()
+		{
+			return new ClonableObject(name);
+		}
+
+		@Override
+		public String toString()
+		{
+			return "ClonableObject.ClonableObjectBuilder(name=" + this.name + ")";
+		}
+	}
+
+	public static ClonableObjectBuilder builder()
+	{
+		return new ClonableObjectBuilder();
+	}
+
+	public ClonableObjectBuilder toBuilder()
+	{
+		return new ClonableObjectBuilder().name(this.name);
+	}
+
+	public String getName()
+	{
+		return this.name;
+	}
+
+	public ClonableObject setName(final String name)
+	{
+		this.name = name;
+		return this;
+	}
+
+	@Override
+	public boolean equals(final Object o)
+	{
+		if (o == this)
+			return true;
+		if (!(o instanceof ClonableObject))
+			return false;
+		final ClonableObject other = (ClonableObject)o;
+		if (!other.canEqual((Object)this))
+			return false;
+		final Object this$name = this.getName();
+		final Object other$name = other.getName();
+		if (this$name == null ? other$name != null : !this$name.equals(other$name))
+			return false;
+		return true;
+	}
+
+	protected boolean canEqual(final Object other)
+	{
+		return other instanceof ClonableObject;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		final int PRIME = 59;
+		int result = 1;
+		final Object $name = this.getName();
+		result = result * PRIME + ($name == null ? 43 : $name.hashCode());
+		return result;
+	}
+
+	@Override
+	public String toString()
+	{
+		return "ClonableObject(name=" + this.getName() + ")";
+	}
+
+	public ClonableObject()
+	{
+	}
+
+	public ClonableObject(final String name)
+	{
+		this.name = name;
+	}
 }

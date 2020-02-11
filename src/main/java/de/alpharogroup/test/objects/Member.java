@@ -27,31 +27,24 @@ package de.alpharogroup.test.objects;
 import java.util.Date;
 
 import de.alpharogroup.test.objects.enums.Gender;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
 
 /**
  * The class {@link Member} is a class intended for use in unit tests.
  */
-@Getter
-@Setter
-@EqualsAndHashCode(callSuper = true)
-@ToString(callSuper = true)
 public class Member extends Person
 {
-
-
-	/** The Constant serialVersionUID. */
+	/**
+	 * The Constant serialVersionUID.
+	 */
 	private static final long serialVersionUID = 1L;
-
-	/** The dateofbirth. */
-	Date dateofbirth;
-
-	/** The dateof marriage. */
-	Date dateofMarriage;
+	/**
+	 * The dateofbirth.
+	 */
+	private Date dateofbirth;
+	/**
+	 * The dateof marriage.
+	 */
+	private Date dateofMarriage;
 
 	/**
 	 * Instantiates a new {@link Member} object.
@@ -78,12 +71,167 @@ public class Member extends Person
 	 * @param dateofMarriage
 	 *            the dateof marriage
 	 */
-	@Builder(builderMethodName = "buildMember")
 	public Member(final String about, final Gender gender, final Boolean married, final String name,
 		final String nickname, final Date dateofbirth, final Date dateofMarriage)
 	{
 		super(about, gender, married, name, nickname);
 		this.dateofbirth = dateofbirth;
 		this.dateofMarriage = dateofMarriage;
+	}
+
+	public static class MemberBuilder
+	{
+
+		private String about;
+
+		private Gender gender;
+
+		private Boolean married;
+
+		private String name;
+
+		private String nickname;
+
+		private Date dateofbirth;
+
+		private Date dateofMarriage;
+
+		MemberBuilder()
+		{
+		}
+
+		public MemberBuilder about(final String about)
+		{
+			this.about = about;
+			return this;
+		}
+
+		public MemberBuilder gender(final Gender gender)
+		{
+			this.gender = gender;
+			return this;
+		}
+
+		public MemberBuilder married(final Boolean married)
+		{
+			this.married = married;
+			return this;
+		}
+
+		public MemberBuilder name(final String name)
+		{
+			this.name = name;
+			return this;
+		}
+
+		public MemberBuilder nickname(final String nickname)
+		{
+			this.nickname = nickname;
+			return this;
+		}
+
+		public MemberBuilder dateofbirth(final Date dateofbirth)
+		{
+			this.dateofbirth = dateofbirth;
+			return this;
+		}
+
+		public MemberBuilder dateofMarriage(final Date dateofMarriage)
+		{
+			this.dateofMarriage = dateofMarriage;
+			return this;
+		}
+
+		public Member build()
+		{
+			return new Member(about, gender, married, name, nickname, dateofbirth, dateofMarriage);
+		}
+
+		@Override
+		public String toString()
+		{
+			return "Member.MemberBuilder(about=" + this.about + ", gender=" + this.gender
+				+ ", married=" + this.married + ", name=" + this.name + ", nickname="
+				+ this.nickname + ", dateofbirth=" + this.dateofbirth + ", dateofMarriage="
+				+ this.dateofMarriage + ")";
+		}
+	}
+
+	public static MemberBuilder buildMember()
+	{
+		return new MemberBuilder();
+	}
+
+	public Date getDateofbirth()
+	{
+		return this.dateofbirth;
+	}
+
+	public Date getDateofMarriage()
+	{
+		return this.dateofMarriage;
+	}
+
+	public Member setDateofbirth(final Date dateofbirth)
+	{
+		this.dateofbirth = dateofbirth;
+		return this;
+	}
+
+	public Member setDateofMarriage(final Date dateofMarriage)
+	{
+		this.dateofMarriage = dateofMarriage;
+		return this;
+	}
+
+	@Override
+	public boolean equals(final Object o)
+	{
+		if (o == this)
+			return true;
+		if (!(o instanceof Member))
+			return false;
+		final Member other = (Member)o;
+		if (!other.canEqual((Object)this))
+			return false;
+		if (!super.equals(o))
+			return false;
+		final Object this$dateofbirth = this.getDateofbirth();
+		final Object other$dateofbirth = other.getDateofbirth();
+		if (this$dateofbirth == null
+			? other$dateofbirth != null
+			: !this$dateofbirth.equals(other$dateofbirth))
+			return false;
+		final Object this$dateofMarriage = this.getDateofMarriage();
+		final Object other$dateofMarriage = other.getDateofMarriage();
+		if (this$dateofMarriage == null
+			? other$dateofMarriage != null
+			: !this$dateofMarriage.equals(other$dateofMarriage))
+			return false;
+		return true;
+	}
+
+	protected boolean canEqual(final Object other)
+	{
+		return other instanceof Member;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		final int PRIME = 59;
+		int result = super.hashCode();
+		final Object $dateofbirth = this.getDateofbirth();
+		result = result * PRIME + ($dateofbirth == null ? 43 : $dateofbirth.hashCode());
+		final Object $dateofMarriage = this.getDateofMarriage();
+		result = result * PRIME + ($dateofMarriage == null ? 43 : $dateofMarriage.hashCode());
+		return result;
+	}
+
+	@Override
+	public String toString()
+	{
+		return "Member(super=" + super.toString() + ", dateofbirth=" + this.getDateofbirth()
+			+ ", dateofMarriage=" + this.getDateofMarriage() + ")";
 	}
 }

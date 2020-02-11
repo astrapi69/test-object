@@ -61,7 +61,7 @@ public class TestMessagesExtensionsTest
 	/**
 	 * Test method for {@link TestMessagesExtensions}
 	 */
-	@Test(expectedExceptions = { BeanTestException.class, ObjectCreationException.class })
+	@Test
 	public void testWithBeanTester()
 	{
 		final BeanTester beanTester = new BeanTester();

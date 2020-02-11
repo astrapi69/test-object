@@ -45,8 +45,8 @@ public class AnotherAnnotatedClassTest
 	}
 
 	/**
-	 * Test method for {@link AnotherAnnotatedClass#equals(Object)} , {@link AnotherAnnotatedClass#hashCode()} and
-	 * {@link AnotherAnnotatedClass#toString()}
+	 * Test method for {@link AnotherAnnotatedClass#equals(Object)} ,
+	 * {@link AnotherAnnotatedClass#hashCode()} and {@link AnotherAnnotatedClass#toString()}
 	 */
 	@Test
 	public void verifyEqualsHashcodeAndToStringContracts()

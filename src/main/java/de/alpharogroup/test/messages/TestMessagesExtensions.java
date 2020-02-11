@@ -24,14 +24,14 @@
  */
 package de.alpharogroup.test.messages;
 
-import lombok.experimental.UtilityClass;
-
 /**
  * The class {@link TestMessagesExtensions} generates any messages that are needed in test classes.
  */
-@UtilityClass
-public class TestMessagesExtensions
+public final class TestMessagesExtensions
 {
+	private TestMessagesExtensions()
+	{
+	}
 
 	/**
 	 * Factory method for create a new fail message for a test as String object.
