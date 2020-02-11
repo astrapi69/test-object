@@ -34,49 +34,32 @@ import de.alpharogroup.test.objects.enums.Brands;
  */
 public class Customer implements Serializable
 {
-	/**
-	 * The Constant serialVersionUID.
-	 */
-	private static final long serialVersionUID = 1L;
-	/**
-	 * The car.
-	 */
-	public Brands car;
-	/**
-	 * The name.
-	 */
-	@Mandatory
-	public String name;
-	/**
-	 * The premium.
-	 */
-	public boolean premium;
-
-	private static Brands $default$car()
-	{
-		return Brands.FERRARI;
-	}
-
-	private static String $default$name()
-	{
-		return "";
-	}
-
 	public static class CustomerBuilder
 	{
 
-		private boolean car$set;
-
 		private Brands car;
 
-		private boolean name$set;
+		private boolean car$set;
 
 		private String name;
+
+		private boolean name$set;
 
 		private boolean premium;
 
 		CustomerBuilder()
 		{
+		}
+
+		public Customer build()
+		{
+			Brands car = this.car;
+			if (!car$set)
+				car = Customer.$default$car();
+			String name = this.name;
+			if (!name$set)
+				name = Customer.$default$name();
+			return new Customer(car, name, premium);
 		}
 
 		public CustomerBuilder car(final Brands car)
@@ -99,17 +82,6 @@ public class Customer implements Serializable
 			return this;
 		}
 
-		public Customer build()
-		{
-			Brands car = this.car;
-			if (!car$set)
-				car = Customer.$default$car();
-			String name = this.name;
-			if (!name$set)
-				name = Customer.$default$name();
-			return new Customer(car, name, premium);
-		}
-
 		@Override
 		public String toString()
 		{
@@ -117,15 +89,79 @@ public class Customer implements Serializable
 				+ this.premium + ")";
 		}
 	}
+	/**
+	 * The Constant serialVersionUID.
+	 */
+	private static final long serialVersionUID = 1L;
+	private static Brands $default$car()
+	{
+		return Brands.FERRARI;
+	}
+	private static String $default$name()
+	{
+		return "";
+	}
 
 	public static CustomerBuilder builder()
 	{
 		return new CustomerBuilder();
 	}
 
-	public CustomerBuilder toBuilder()
+	/**
+	 * The car.
+	 */
+	public Brands car;
+
+	/**
+	 * The name.
+	 */
+	@Mandatory
+	public String name;
+
+	/**
+	 * The premium.
+	 */
+	public boolean premium;
+
+	public Customer()
 	{
-		return new CustomerBuilder().car(this.car).name(this.name).premium(this.premium);
+		this.car = Customer.$default$car();
+		this.name = Customer.$default$name();
+	}
+
+	public Customer(final Brands car, final String name, final boolean premium)
+	{
+		this.car = car;
+		this.name = name;
+		this.premium = premium;
+	}
+
+	protected boolean canEqual(final Object other)
+	{
+		return other instanceof Customer;
+	}
+
+	@Override
+	public boolean equals(final Object o)
+	{
+		if (o == this)
+			return true;
+		if (!(o instanceof Customer))
+			return false;
+		final Customer other = (Customer)o;
+		if (!other.canEqual(this))
+			return false;
+		final Object this$car = this.getCar();
+		final Object other$car = other.getCar();
+		if (this$car == null ? other$car != null : !this$car.equals(other$car))
+			return false;
+		final Object this$name = this.getName();
+		final Object other$name = other.getName();
+		if (this$name == null ? other$name != null : !this$name.equals(other$name))
+			return false;
+		if (this.isPremium() != other.isPremium())
+			return false;
+		return true;
 	}
 
 	public Brands getCar()
@@ -136,6 +172,19 @@ public class Customer implements Serializable
 	public String getName()
 	{
 		return this.name;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		final int PRIME = 59;
+		int result = 1;
+		final Object $car = this.getCar();
+		result = result * PRIME + ($car == null ? 43 : $car.hashCode());
+		final Object $name = this.getName();
+		result = result * PRIME + ($name == null ? 43 : $name.hashCode());
+		result = result * PRIME + (this.isPremium() ? 79 : 97);
+		return result;
 	}
 
 	public boolean isPremium()
@@ -161,45 +210,9 @@ public class Customer implements Serializable
 		return this;
 	}
 
-	@Override
-	public boolean equals(final Object o)
+	public CustomerBuilder toBuilder()
 	{
-		if (o == this)
-			return true;
-		if (!(o instanceof Customer))
-			return false;
-		final Customer other = (Customer)o;
-		if (!other.canEqual((Object)this))
-			return false;
-		final Object this$car = this.getCar();
-		final Object other$car = other.getCar();
-		if (this$car == null ? other$car != null : !this$car.equals(other$car))
-			return false;
-		final Object this$name = this.getName();
-		final Object other$name = other.getName();
-		if (this$name == null ? other$name != null : !this$name.equals(other$name))
-			return false;
-		if (this.isPremium() != other.isPremium())
-			return false;
-		return true;
-	}
-
-	protected boolean canEqual(final Object other)
-	{
-		return other instanceof Customer;
-	}
-
-	@Override
-	public int hashCode()
-	{
-		final int PRIME = 59;
-		int result = 1;
-		final Object $car = this.getCar();
-		result = result * PRIME + ($car == null ? 43 : $car.hashCode());
-		final Object $name = this.getName();
-		result = result * PRIME + ($name == null ? 43 : $name.hashCode());
-		result = result * PRIME + (this.isPremium() ? 79 : 97);
-		return result;
+		return new CustomerBuilder().car(this.car).name(this.name).premium(this.premium);
 	}
 
 	@Override
@@ -207,18 +220,5 @@ public class Customer implements Serializable
 	{
 		return "Customer(car=" + this.getCar() + ", name=" + this.getName() + ", premium="
 			+ this.isPremium() + ")";
-	}
-
-	public Customer()
-	{
-		this.car = Customer.$default$car();
-		this.name = Customer.$default$name();
-	}
-
-	public Customer(final Brands car, final String name, final boolean premium)
-	{
-		this.car = car;
-		this.name = name;
-		this.premium = premium;
 	}
 }

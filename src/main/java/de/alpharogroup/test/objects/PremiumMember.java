@@ -33,10 +33,102 @@ import de.alpharogroup.test.objects.enums.Gender;
  */
 public class PremiumMember extends Member
 {
+	public static class PremiumMemberBuilder
+	{
+
+		private String about;
+
+		private String credits;
+
+		private Date dateofbirth;
+
+		private Date dateofMarriage;
+
+		private Gender gender;
+
+		private Boolean married;
+
+		private String name;
+
+		private String nickname;
+
+		PremiumMemberBuilder()
+		{
+		}
+
+		public PremiumMemberBuilder about(final String about)
+		{
+			this.about = about;
+			return this;
+		}
+
+		public PremiumMember build()
+		{
+			return new PremiumMember(about, gender, married, name, nickname, dateofbirth,
+				dateofMarriage, credits);
+		}
+
+		public PremiumMemberBuilder credits(final String credits)
+		{
+			this.credits = credits;
+			return this;
+		}
+
+		public PremiumMemberBuilder dateofbirth(final Date dateofbirth)
+		{
+			this.dateofbirth = dateofbirth;
+			return this;
+		}
+
+		public PremiumMemberBuilder dateofMarriage(final Date dateofMarriage)
+		{
+			this.dateofMarriage = dateofMarriage;
+			return this;
+		}
+
+		public PremiumMemberBuilder gender(final Gender gender)
+		{
+			this.gender = gender;
+			return this;
+		}
+
+		public PremiumMemberBuilder married(final Boolean married)
+		{
+			this.married = married;
+			return this;
+		}
+
+		public PremiumMemberBuilder name(final String name)
+		{
+			this.name = name;
+			return this;
+		}
+
+		public PremiumMemberBuilder nickname(final String nickname)
+		{
+			this.nickname = nickname;
+			return this;
+		}
+
+		@Override
+		public String toString()
+		{
+			return "PremiumMember.PremiumMemberBuilder(about=" + this.about + ", gender="
+				+ this.gender + ", married=" + this.married + ", name=" + this.name + ", nickname="
+				+ this.nickname + ", dateofbirth=" + this.dateofbirth + ", dateofMarriage="
+				+ this.dateofMarriage + ", credits=" + this.credits + ")";
+		}
+	}
 	/**
 	 * The Constant serialVersionUID.
 	 */
 	private static final long serialVersionUID = 1L;
+
+	public static PremiumMemberBuilder buildPremiumMember()
+	{
+		return new PremiumMemberBuilder();
+	}
+
 	/**
 	 * The credits.
 	 */
@@ -77,107 +169,10 @@ public class PremiumMember extends Member
 		this.credits = credits;
 	}
 
-	public static class PremiumMemberBuilder
+	@Override
+	protected boolean canEqual(final Object other)
 	{
-
-		private String about;
-
-		private Gender gender;
-
-		private Boolean married;
-
-		private String name;
-
-		private String nickname;
-
-		private Date dateofbirth;
-
-		private Date dateofMarriage;
-
-		private String credits;
-
-		PremiumMemberBuilder()
-		{
-		}
-
-		public PremiumMemberBuilder about(final String about)
-		{
-			this.about = about;
-			return this;
-		}
-
-		public PremiumMemberBuilder gender(final Gender gender)
-		{
-			this.gender = gender;
-			return this;
-		}
-
-		public PremiumMemberBuilder married(final Boolean married)
-		{
-			this.married = married;
-			return this;
-		}
-
-		public PremiumMemberBuilder name(final String name)
-		{
-			this.name = name;
-			return this;
-		}
-
-		public PremiumMemberBuilder nickname(final String nickname)
-		{
-			this.nickname = nickname;
-			return this;
-		}
-
-		public PremiumMemberBuilder dateofbirth(final Date dateofbirth)
-		{
-			this.dateofbirth = dateofbirth;
-			return this;
-		}
-
-		public PremiumMemberBuilder dateofMarriage(final Date dateofMarriage)
-		{
-			this.dateofMarriage = dateofMarriage;
-			return this;
-		}
-
-		public PremiumMemberBuilder credits(final String credits)
-		{
-			this.credits = credits;
-			return this;
-		}
-
-		public PremiumMember build()
-		{
-			return new PremiumMember(about, gender, married, name, nickname, dateofbirth,
-				dateofMarriage, credits);
-		}
-
-		@Override
-		public String toString()
-		{
-			return "PremiumMember.PremiumMemberBuilder(about=" + this.about + ", gender="
-				+ this.gender + ", married=" + this.married + ", name=" + this.name + ", nickname="
-				+ this.nickname + ", dateofbirth=" + this.dateofbirth + ", dateofMarriage="
-				+ this.dateofMarriage + ", credits=" + this.credits + ")";
-		}
-	}
-
-	public static PremiumMemberBuilder buildPremiumMember()
-	{
-		return new PremiumMemberBuilder();
-	}
-
-	public String getCredits()
-	{
-		return this.credits;
-	}
-
-	public PremiumMember setCredits(final String credits)
-	{
-		this.credits = credits;
-		return this;
+		return other instanceof PremiumMember;
 	}
 
 	@Override
@@ -188,7 +183,7 @@ public class PremiumMember extends Member
 		if (!(o instanceof PremiumMember))
 			return false;
 		final PremiumMember other = (PremiumMember)o;
-		if (!other.canEqual((Object)this))
+		if (!other.canEqual(this))
 			return false;
 		if (!super.equals(o))
 			return false;
@@ -199,9 +194,9 @@ public class PremiumMember extends Member
 		return true;
 	}
 
-	protected boolean canEqual(final Object other)
+	public String getCredits()
 	{
-		return other instanceof PremiumMember;
+		return this.credits;
 	}
 
 	@Override
@@ -212,6 +207,12 @@ public class PremiumMember extends Member
 		final Object $credits = this.getCredits();
 		result = result * PRIME + ($credits == null ? 43 : $credits.hashCode());
 		return result;
+	}
+
+	public PremiumMember setCredits(final String credits)
+	{
+		this.credits = credits;
+		return this;
 	}
 
 	@Override

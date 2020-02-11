@@ -31,19 +31,6 @@ import java.io.Serializable;
  */
 public class Employee implements Serializable
 {
-	/**
-	 * The serialVersionUID.
-	 */
-	private static final long serialVersionUID = 1L;
-	/**
-	 * The id.
-	 */
-	private String id;
-	/**
-	 * The person.
-	 */
-	private Person person;
-
 	public static class EmployeeBuilder
 	{
 
@@ -53,6 +40,11 @@ public class Employee implements Serializable
 
 		EmployeeBuilder()
 		{
+		}
+
+		public Employee build()
+		{
+			return new Employee(id, person);
 		}
 
 		public EmployeeBuilder id(final String id)
@@ -67,48 +59,44 @@ public class Employee implements Serializable
 			return this;
 		}
 
-		public Employee build()
-		{
-			return new Employee(id, person);
-		}
-
 		@Override
 		public String toString()
 		{
 			return "Employee.EmployeeBuilder(id=" + this.id + ", person=" + this.person + ")";
 		}
 	}
-
+	/**
+	 * The serialVersionUID.
+	 */
+	private static final long serialVersionUID = 1L;
 	public static EmployeeBuilder builder()
 	{
 		return new EmployeeBuilder();
 	}
 
-	public EmployeeBuilder toBuilder()
+	/**
+	 * The id.
+	 */
+	private String id;
+
+	/**
+	 * The person.
+	 */
+	private Person person;
+
+	public Employee()
 	{
-		return new EmployeeBuilder().id(this.id).person(this.person);
 	}
 
-	public String getId()
-	{
-		return this.id;
-	}
-
-	public Person getPerson()
-	{
-		return this.person;
-	}
-
-	public Employee setId(final String id)
+	public Employee(final String id, final Person person)
 	{
 		this.id = id;
-		return this;
+		this.person = person;
 	}
 
-	public Employee setPerson(final Person person)
+	protected boolean canEqual(final Object other)
 	{
-		this.person = person;
-		return this;
+		return other instanceof Employee;
 	}
 
 	@Override
@@ -119,7 +107,7 @@ public class Employee implements Serializable
 		if (!(o instanceof Employee))
 			return false;
 		final Employee other = (Employee)o;
-		if (!other.canEqual((Object)this))
+		if (!other.canEqual(this))
 			return false;
 		final Object this$id = this.getId();
 		final Object other$id = other.getId();
@@ -132,9 +120,14 @@ public class Employee implements Serializable
 		return true;
 	}
 
-	protected boolean canEqual(final Object other)
+	public String getId()
 	{
-		return other instanceof Employee;
+		return this.id;
+	}
+
+	public Person getPerson()
+	{
+		return this.person;
 	}
 
 	@Override
@@ -149,19 +142,26 @@ public class Employee implements Serializable
 		return result;
 	}
 
+	public Employee setId(final String id)
+	{
+		this.id = id;
+		return this;
+	}
+
+	public Employee setPerson(final Person person)
+	{
+		this.person = person;
+		return this;
+	}
+
+	public EmployeeBuilder toBuilder()
+	{
+		return new EmployeeBuilder().id(this.id).person(this.person);
+	}
+
 	@Override
 	public String toString()
 	{
 		return "Employee(id=" + this.getId() + ", person=" + this.getPerson() + ")";
-	}
-
-	public Employee()
-	{
-	}
-
-	public Employee(final String id, final Person person)
-	{
-		this.id = id;
-		this.person = person;
 	}
 }

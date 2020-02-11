@@ -29,24 +29,6 @@ package de.alpharogroup.test.objects;
  */
 public class AlgorithmModel implements Cloneable
 {
-	/**
-	 * The a.
-	 */
-	private int a;
-	/**
-	 * The b.
-	 */
-	private int b;
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public AlgorithmModel clone() throws CloneNotSupportedException
-	{
-		return this.toBuilder().build();
-	}
-
 	public static class AlgorithmModelBuilder
 	{
 
@@ -81,15 +63,43 @@ public class AlgorithmModel implements Cloneable
 			return "AlgorithmModel.AlgorithmModelBuilder(a=" + this.a + ", b=" + this.b + ")";
 		}
 	}
-
 	public static AlgorithmModelBuilder builder()
 	{
 		return new AlgorithmModelBuilder();
 	}
 
-	public AlgorithmModelBuilder toBuilder()
+	/**
+	 * The a.
+	 */
+	private int a;
+
+	/**
+	 * The b.
+	 */
+	private int b;
+
+	public AlgorithmModel()
 	{
-		return new AlgorithmModelBuilder().a(this.a).b(this.b);
+	}
+
+	public AlgorithmModel(final int a, final int b)
+	{
+		this.a = a;
+		this.b = b;
+	}
+
+	protected boolean canEqual(final Object other)
+	{
+		return other instanceof AlgorithmModel;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public AlgorithmModel clone() throws CloneNotSupportedException
+	{
+		return this.toBuilder().build();
 	}
 
 	@Override
@@ -100,28 +110,13 @@ public class AlgorithmModel implements Cloneable
 		if (!(o instanceof AlgorithmModel))
 			return false;
 		final AlgorithmModel other = (AlgorithmModel)o;
-		if (!other.canEqual((Object)this))
+		if (!other.canEqual(this))
 			return false;
 		if (this.getA() != other.getA())
 			return false;
 		if (this.getB() != other.getB())
 			return false;
 		return true;
-	}
-
-	protected boolean canEqual(final Object other)
-	{
-		return other instanceof AlgorithmModel;
-	}
-
-	@Override
-	public int hashCode()
-	{
-		final int PRIME = 59;
-		int result = 1;
-		result = result * PRIME + this.getA();
-		result = result * PRIME + this.getB();
-		return result;
 	}
 
 	public int getA()
@@ -132,6 +127,16 @@ public class AlgorithmModel implements Cloneable
 	public int getB()
 	{
 		return this.b;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		final int PRIME = 59;
+		int result = 1;
+		result = result * PRIME + this.getA();
+		result = result * PRIME + this.getB();
+		return result;
 	}
 
 	public AlgorithmModel setA(final int a)
@@ -146,19 +151,14 @@ public class AlgorithmModel implements Cloneable
 		return this;
 	}
 
+	public AlgorithmModelBuilder toBuilder()
+	{
+		return new AlgorithmModelBuilder().a(this.a).b(this.b);
+	}
+
 	@Override
 	public String toString()
 	{
 		return "AlgorithmModel(a=" + this.getA() + ", b=" + this.getB() + ")";
-	}
-
-	public AlgorithmModel()
-	{
-	}
-
-	public AlgorithmModel(final int a, final int b)
-	{
-		this.a = a;
-		this.b = b;
 	}
 }

@@ -29,10 +29,6 @@ package de.alpharogroup.test.messages;
  */
 public final class TestMessagesExtensions
 {
-	private TestMessagesExtensions()
-	{
-	}
-
 	/**
 	 * Factory method for create a new fail message for a test as String object.
 	 *
@@ -50,6 +46,10 @@ public final class TestMessagesExtensions
 		final String failMessage = "Expected " + expectedVariableName + " should be '" + expected
 			+ "' but actual result is '" + actual + "'.";
 		return failMessage;
+	}
+
+	private TestMessagesExtensions()
+	{
 	}
 
 }

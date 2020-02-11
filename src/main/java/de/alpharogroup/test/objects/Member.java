@@ -33,14 +33,97 @@ import de.alpharogroup.test.objects.enums.Gender;
  */
 public class Member extends Person
 {
+	public static class MemberBuilder
+	{
+
+		private String about;
+
+		private Date dateofbirth;
+
+		private Date dateofMarriage;
+
+		private Gender gender;
+
+		private Boolean married;
+
+		private String name;
+
+		private String nickname;
+
+		MemberBuilder()
+		{
+		}
+
+		public MemberBuilder about(final String about)
+		{
+			this.about = about;
+			return this;
+		}
+
+		public Member build()
+		{
+			return new Member(about, gender, married, name, nickname, dateofbirth, dateofMarriage);
+		}
+
+		public MemberBuilder dateofbirth(final Date dateofbirth)
+		{
+			this.dateofbirth = dateofbirth;
+			return this;
+		}
+
+		public MemberBuilder dateofMarriage(final Date dateofMarriage)
+		{
+			this.dateofMarriage = dateofMarriage;
+			return this;
+		}
+
+		public MemberBuilder gender(final Gender gender)
+		{
+			this.gender = gender;
+			return this;
+		}
+
+		public MemberBuilder married(final Boolean married)
+		{
+			this.married = married;
+			return this;
+		}
+
+		public MemberBuilder name(final String name)
+		{
+			this.name = name;
+			return this;
+		}
+
+		public MemberBuilder nickname(final String nickname)
+		{
+			this.nickname = nickname;
+			return this;
+		}
+
+		@Override
+		public String toString()
+		{
+			return "Member.MemberBuilder(about=" + this.about + ", gender=" + this.gender
+				+ ", married=" + this.married + ", name=" + this.name + ", nickname="
+				+ this.nickname + ", dateofbirth=" + this.dateofbirth + ", dateofMarriage="
+				+ this.dateofMarriage + ")";
+		}
+	}
 	/**
 	 * The Constant serialVersionUID.
 	 */
 	private static final long serialVersionUID = 1L;
+	public static MemberBuilder buildMember()
+	{
+		return new MemberBuilder();
+	}
+
 	/**
 	 * The dateofbirth.
 	 */
 	private Date dateofbirth;
+
 	/**
 	 * The dateof marriage.
 	 */
@@ -79,109 +162,10 @@ public class Member extends Person
 		this.dateofMarriage = dateofMarriage;
 	}
 
-	public static class MemberBuilder
+	@Override
+	protected boolean canEqual(final Object other)
 	{
-
-		private String about;
-
-		private Gender gender;
-
-		private Boolean married;
-
-		private String name;
-
-		private String nickname;
-
-		private Date dateofbirth;
-
-		private Date dateofMarriage;
-
-		MemberBuilder()
-		{
-		}
-
-		public MemberBuilder about(final String about)
-		{
-			this.about = about;
-			return this;
-		}
-
-		public MemberBuilder gender(final Gender gender)
-		{
-			this.gender = gender;
-			return this;
-		}
-
-		public MemberBuilder married(final Boolean married)
-		{
-			this.married = married;
-			return this;
-		}
-
-		public MemberBuilder name(final String name)
-		{
-			this.name = name;
-			return this;
-		}
-
-		public MemberBuilder nickname(final String nickname)
-		{
-			this.nickname = nickname;
-			return this;
-		}
-
-		public MemberBuilder dateofbirth(final Date dateofbirth)
-		{
-			this.dateofbirth = dateofbirth;
-			return this;
-		}
-
-		public MemberBuilder dateofMarriage(final Date dateofMarriage)
-		{
-			this.dateofMarriage = dateofMarriage;
-			return this;
-		}
-
-		public Member build()
-		{
-			return new Member(about, gender, married, name, nickname, dateofbirth, dateofMarriage);
-		}
-
-		@Override
-		public String toString()
-		{
-			return "Member.MemberBuilder(about=" + this.about + ", gender=" + this.gender
-				+ ", married=" + this.married + ", name=" + this.name + ", nickname="
-				+ this.nickname + ", dateofbirth=" + this.dateofbirth + ", dateofMarriage="
-				+ this.dateofMarriage + ")";
-		}
-	}
-
-	public static MemberBuilder buildMember()
-	{
-		return new MemberBuilder();
-	}
-
-	public Date getDateofbirth()
-	{
-		return this.dateofbirth;
-	}
-
-	public Date getDateofMarriage()
-	{
-		return this.dateofMarriage;
-	}
-
-	public Member setDateofbirth(final Date dateofbirth)
-	{
-		this.dateofbirth = dateofbirth;
-		return this;
-	}
-
-	public Member setDateofMarriage(final Date dateofMarriage)
-	{
-		this.dateofMarriage = dateofMarriage;
-		return this;
+		return other instanceof Member;
 	}
 
 	@Override
@@ -192,7 +176,7 @@ public class Member extends Person
 		if (!(o instanceof Member))
 			return false;
 		final Member other = (Member)o;
-		if (!other.canEqual((Object)this))
+		if (!other.canEqual(this))
 			return false;
 		if (!super.equals(o))
 			return false;
@@ -211,9 +195,14 @@ public class Member extends Person
 		return true;
 	}
 
-	protected boolean canEqual(final Object other)
+	public Date getDateofbirth()
 	{
-		return other instanceof Member;
+		return this.dateofbirth;
+	}
+
+	public Date getDateofMarriage()
+	{
+		return this.dateofMarriage;
 	}
 
 	@Override
@@ -226,6 +215,18 @@ public class Member extends Person
 		final Object $dateofMarriage = this.getDateofMarriage();
 		result = result * PRIME + ($dateofMarriage == null ? 43 : $dateofMarriage.hashCode());
 		return result;
+	}
+
+	public Member setDateofbirth(final Date dateofbirth)
+	{
+		this.dateofbirth = dateofbirth;
+		return this;
+	}
+
+	public Member setDateofMarriage(final Date dateofMarriage)
+	{
+		this.dateofMarriage = dateofMarriage;
+		return this;
 	}
 
 	@Override

@@ -33,87 +33,28 @@ import de.alpharogroup.test.objects.enums.Gender;
  */
 public class Person implements Serializable, Comparable<Person>
 {
-	/**
-	 * The serialVersionUID.
-	 */
-	private static final long serialVersionUID = 1L;
-	/**
-	 * The about.
-	 */
-	private String about;
-	/**
-	 * The gender.
-	 */
-	private Gender gender;
-	/**
-	 * The married flag.
-	 */
-	private Boolean married;
-	/**
-	 * The name.
-	 */
-	private String name;
-	/**
-	 * The nickname.
-	 */
-	private String nickname;
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public int compareTo(final Person o)
-	{
-		return this.getName().toString().compareTo(o.getName().toString());
-	}
-
-	private static String $default$about()
-	{
-		return "";
-	}
-
-	private static Gender $default$gender()
-	{
-		return Gender.UNDEFINED;
-	}
-
-	private static Boolean $default$married()
-	{
-		return Boolean.FALSE;
-	}
-
-	private static String $default$name()
-	{
-		return "";
-	}
-
-	private static String $default$nickname()
-	{
-		return "";
-	}
-
 	public static class PersonBuilder
 	{
 
-		private boolean about$set;
-
 		private String about;
 
-		private boolean gender$set;
+		private boolean about$set;
 
 		private Gender gender;
 
-		private boolean married$set;
+		private boolean gender$set;
 
 		private Boolean married;
 
-		private boolean name$set;
+		private boolean married$set;
 
 		private String name;
 
-		private boolean nickname$set;
+		private boolean name$set;
 
 		private String nickname;
+
+		private boolean nickname$set;
 
 		PersonBuilder()
 		{
@@ -124,6 +65,26 @@ public class Person implements Serializable, Comparable<Person>
 			this.about = about;
 			about$set = true;
 			return this;
+		}
+
+		public Person build()
+		{
+			String about = this.about;
+			if (!about$set)
+				about = Person.$default$about();
+			Gender gender = this.gender;
+			if (!gender$set)
+				gender = Person.$default$gender();
+			Boolean married = this.married;
+			if (!married$set)
+				married = Person.$default$married();
+			String name = this.name;
+			if (!name$set)
+				name = Person.$default$name();
+			String nickname = this.nickname;
+			if (!nickname$set)
+				nickname = Person.$default$nickname();
+			return new Person(about, gender, married, name, nickname);
 		}
 
 		public PersonBuilder gender(final Gender gender)
@@ -154,26 +115,6 @@ public class Person implements Serializable, Comparable<Person>
 			return this;
 		}
 
-		public Person build()
-		{
-			String about = this.about;
-			if (!about$set)
-				about = Person.$default$about();
-			Gender gender = this.gender;
-			if (!gender$set)
-				gender = Person.$default$gender();
-			Boolean married = this.married;
-			if (!married$set)
-				married = Person.$default$married();
-			String name = this.name;
-			if (!name$set)
-				name = Person.$default$name();
-			String nickname = this.nickname;
-			if (!nickname$set)
-				nickname = Person.$default$nickname();
-			return new Person(about, gender, married, name, nickname);
-		}
-
 		@Override
 		public String toString()
 		{
@@ -182,16 +123,93 @@ public class Person implements Serializable, Comparable<Person>
 				+ this.nickname + ")";
 		}
 	}
+	/**
+	 * The serialVersionUID.
+	 */
+	private static final long serialVersionUID = 1L;
+	private static String $default$about()
+	{
+		return "";
+	}
+	private static Gender $default$gender()
+	{
+		return Gender.UNDEFINED;
+	}
+	private static Boolean $default$married()
+	{
+		return Boolean.FALSE;
+	}
+	private static String $default$name()
+	{
+		return "";
+	}
+
+	private static String $default$nickname()
+	{
+		return "";
+	}
 
 	public static PersonBuilder builder()
 	{
 		return new PersonBuilder();
 	}
 
-	public PersonBuilder toBuilder()
+	/**
+	 * The about.
+	 */
+	private String about;
+
+	/**
+	 * The gender.
+	 */
+	private Gender gender;
+
+	/**
+	 * The married flag.
+	 */
+	private Boolean married;
+
+	/**
+	 * The name.
+	 */
+	private String name;
+
+	/**
+	 * The nickname.
+	 */
+	private String nickname;
+
+	public Person()
 	{
-		return new PersonBuilder().about(this.about).gender(this.gender).married(this.married)
-			.name(this.name).nickname(this.nickname);
+		this.about = Person.$default$about();
+		this.gender = Person.$default$gender();
+		this.married = Person.$default$married();
+		this.name = Person.$default$name();
+		this.nickname = Person.$default$nickname();
+	}
+
+	public Person(final String about, final Gender gender, final Boolean married, final String name,
+		final String nickname)
+	{
+		this.about = about;
+		this.gender = gender;
+		this.married = married;
+		this.name = name;
+		this.nickname = nickname;
+	}
+
+	protected boolean canEqual(final Object other)
+	{
+		return other instanceof Person;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public int compareTo(final Person o)
+	{
+		return this.getName().toString().compareTo(o.getName().toString());
 	}
 
 	@Override
@@ -202,7 +220,7 @@ public class Person implements Serializable, Comparable<Person>
 		if (!(o instanceof Person))
 			return false;
 		final Person other = (Person)o;
-		if (!other.canEqual((Object)this))
+		if (!other.canEqual(this))
 			return false;
 		final Object this$about = this.getAbout();
 		final Object other$about = other.getAbout();
@@ -225,29 +243,6 @@ public class Person implements Serializable, Comparable<Person>
 		if (this$nickname == null ? other$nickname != null : !this$nickname.equals(other$nickname))
 			return false;
 		return true;
-	}
-
-	protected boolean canEqual(final Object other)
-	{
-		return other instanceof Person;
-	}
-
-	@Override
-	public int hashCode()
-	{
-		final int PRIME = 59;
-		int result = 1;
-		final Object $about = this.getAbout();
-		result = result * PRIME + ($about == null ? 43 : $about.hashCode());
-		final Object $gender = this.getGender();
-		result = result * PRIME + ($gender == null ? 43 : $gender.hashCode());
-		final Object $married = this.getMarried();
-		result = result * PRIME + ($married == null ? 43 : $married.hashCode());
-		final Object $name = this.getName();
-		result = result * PRIME + ($name == null ? 43 : $name.hashCode());
-		final Object $nickname = this.getNickname();
-		result = result * PRIME + ($nickname == null ? 43 : $nickname.hashCode());
-		return result;
 	}
 
 	public String getAbout()
@@ -273,6 +268,24 @@ public class Person implements Serializable, Comparable<Person>
 	public String getNickname()
 	{
 		return this.nickname;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		final int PRIME = 59;
+		int result = 1;
+		final Object $about = this.getAbout();
+		result = result * PRIME + ($about == null ? 43 : $about.hashCode());
+		final Object $gender = this.getGender();
+		result = result * PRIME + ($gender == null ? 43 : $gender.hashCode());
+		final Object $married = this.getMarried();
+		result = result * PRIME + ($married == null ? 43 : $married.hashCode());
+		final Object $name = this.getName();
+		result = result * PRIME + ($name == null ? 43 : $name.hashCode());
+		final Object $nickname = this.getNickname();
+		result = result * PRIME + ($nickname == null ? 43 : $nickname.hashCode());
+		return result;
 	}
 
 	public Person setAbout(final String about)
@@ -305,30 +318,17 @@ public class Person implements Serializable, Comparable<Person>
 		return this;
 	}
 
+	public PersonBuilder toBuilder()
+	{
+		return new PersonBuilder().about(this.about).gender(this.gender).married(this.married)
+			.name(this.name).nickname(this.nickname);
+	}
+
 	@Override
 	public String toString()
 	{
 		return "Person(about=" + this.getAbout() + ", gender=" + this.getGender() + ", married="
 			+ this.getMarried() + ", name=" + this.getName() + ", nickname=" + this.getNickname()
 			+ ")";
-	}
-
-	public Person()
-	{
-		this.about = Person.$default$about();
-		this.gender = Person.$default$gender();
-		this.married = Person.$default$married();
-		this.name = Person.$default$name();
-		this.nickname = Person.$default$nickname();
-	}
-
-	public Person(final String about, final Gender gender, final Boolean married, final String name,
-		final String nickname)
-	{
-		this.about = about;
-		this.gender = gender;
-		this.married = married;
-		this.name = name;
-		this.nickname = nickname;
 	}
 }

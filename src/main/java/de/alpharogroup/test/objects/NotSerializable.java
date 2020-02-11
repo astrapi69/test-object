@@ -29,11 +29,6 @@ package de.alpharogroup.test.objects;
  */
 public class NotSerializable
 {
-	/**
-	 * The name.
-	 */
-	private String name;
-
 	public static class NotSerializableBuilder
 	{
 
@@ -43,15 +38,15 @@ public class NotSerializable
 		{
 		}
 
+		public NotSerializable build()
+		{
+			return new NotSerializable(name);
+		}
+
 		public NotSerializableBuilder name(final String name)
 		{
 			this.name = name;
 			return this;
-		}
-
-		public NotSerializable build()
-		{
-			return new NotSerializable(name);
 		}
 
 		@Override
@@ -66,20 +61,23 @@ public class NotSerializable
 		return new NotSerializableBuilder();
 	}
 
-	public NotSerializableBuilder toBuilder()
+	/**
+	 * The name.
+	 */
+	private String name;
+
+	public NotSerializable()
 	{
-		return new NotSerializableBuilder().name(this.name);
 	}
 
-	public String getName()
-	{
-		return this.name;
-	}
-
-	public NotSerializable setName(final String name)
+	public NotSerializable(final String name)
 	{
 		this.name = name;
-		return this;
+	}
+
+	protected boolean canEqual(final Object other)
+	{
+		return other instanceof NotSerializable;
 	}
 
 	@Override
@@ -90,7 +88,7 @@ public class NotSerializable
 		if (!(o instanceof NotSerializable))
 			return false;
 		final NotSerializable other = (NotSerializable)o;
-		if (!other.canEqual((Object)this))
+		if (!other.canEqual(this))
 			return false;
 		final Object this$name = this.getName();
 		final Object other$name = other.getName();
@@ -99,9 +97,9 @@ public class NotSerializable
 		return true;
 	}
 
-	protected boolean canEqual(final Object other)
+	public String getName()
 	{
-		return other instanceof NotSerializable;
+		return this.name;
 	}
 
 	@Override
@@ -114,18 +112,20 @@ public class NotSerializable
 		return result;
 	}
 
+	public NotSerializable setName(final String name)
+	{
+		this.name = name;
+		return this;
+	}
+
+	public NotSerializableBuilder toBuilder()
+	{
+		return new NotSerializableBuilder().name(this.name);
+	}
+
 	@Override
 	public String toString()
 	{
 		return "NotSerializable(name=" + this.getName() + ")";
-	}
-
-	public NotSerializable()
-	{
-	}
-
-	public NotSerializable(final String name)
-	{
-		this.name = name;
 	}
 }

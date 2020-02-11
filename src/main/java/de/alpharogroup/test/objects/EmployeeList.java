@@ -24,18 +24,16 @@
  */
 package de.alpharogroup.test.objects;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * The class {@link EmployeeList} encapsulates a list of {@link Employee}.
  */
 public class EmployeeList
 {
-	/**
-	 * The employees.
-	 */
-	private List<Employee> employees;
-
 	public static class EmployeeListBuilder
 	{
 
@@ -43,30 +41,6 @@ public class EmployeeList
 
 		EmployeeListBuilder()
 		{
-		}
-
-		public EmployeeListBuilder employee(final Employee employee)
-		{
-			if (this.employees == null)
-				this.employees = new ArrayList<Employee>();
-			this.employees.add(employee);
-			return this;
-		}
-
-		public EmployeeListBuilder employees(
-			final Collection<? extends Employee> employees)
-		{
-			if (this.employees == null)
-				this.employees = new ArrayList<Employee>();
-			this.employees.addAll(employees);
-			return this;
-		}
-
-		public EmployeeListBuilder clearEmployees()
-		{
-			if (this.employees != null)
-				this.employees.clear();
-			return this;
 		}
 
 		public EmployeeList build()
@@ -89,6 +63,29 @@ public class EmployeeList
 			return new EmployeeList(employees);
 		}
 
+		public EmployeeListBuilder clearEmployees()
+		{
+			if (this.employees != null)
+				this.employees.clear();
+			return this;
+		}
+
+		public EmployeeListBuilder employee(final Employee employee)
+		{
+			if (this.employees == null)
+				this.employees = new ArrayList<Employee>();
+			this.employees.add(employee);
+			return this;
+		}
+
+		public EmployeeListBuilder employees(final Collection<? extends Employee> employees)
+		{
+			if (this.employees == null)
+				this.employees = new ArrayList<Employee>();
+			this.employees.addAll(employees);
+			return this;
+		}
+
 		@Override
 		public String toString()
 		{
@@ -101,23 +98,23 @@ public class EmployeeList
 		return new EmployeeListBuilder();
 	}
 
-	public EmployeeListBuilder toBuilder()
+	/**
+	 * The employees.
+	 */
+	private List<Employee> employees;
+
+	public EmployeeList()
 	{
-		final EmployeeListBuilder builder = new EmployeeListBuilder();
-		if (this.employees != null)
-			builder.employees(this.employees);
-		return builder;
 	}
 
-	public List<Employee> getEmployees()
-	{
-		return this.employees;
-	}
-
-	public EmployeeList setEmployees(final List<Employee> employees)
+	public EmployeeList(final List<Employee> employees)
 	{
 		this.employees = employees;
-		return this;
+	}
+
+	protected boolean canEqual(final Object other)
+	{
+		return other instanceof EmployeeList;
 	}
 
 	@Override
@@ -128,7 +125,7 @@ public class EmployeeList
 		if (!(o instanceof EmployeeList))
 			return false;
 		final EmployeeList other = (EmployeeList)o;
-		if (!other.canEqual((Object)this))
+		if (!other.canEqual(this))
 			return false;
 		final Object this$employees = this.getEmployees();
 		final Object other$employees = other.getEmployees();
@@ -139,9 +136,9 @@ public class EmployeeList
 		return true;
 	}
 
-	protected boolean canEqual(final Object other)
+	public List<Employee> getEmployees()
 	{
-		return other instanceof EmployeeList;
+		return this.employees;
 	}
 
 	@Override
@@ -154,18 +151,23 @@ public class EmployeeList
 		return result;
 	}
 
+	public EmployeeList setEmployees(final List<Employee> employees)
+	{
+		this.employees = employees;
+		return this;
+	}
+
+	public EmployeeListBuilder toBuilder()
+	{
+		final EmployeeListBuilder builder = new EmployeeListBuilder();
+		if (this.employees != null)
+			builder.employees(this.employees);
+		return builder;
+	}
+
 	@Override
 	public String toString()
 	{
 		return "EmployeeList(employees=" + this.getEmployees() + ")";
-	}
-
-	public EmployeeList()
-	{
-	}
-
-	public EmployeeList(final List<Employee> employees)
-	{
-		this.employees = employees;
 	}
 }

@@ -30,8 +30,6 @@ package de.alpharogroup.test.objects;
 public class A
 {
 
-	private String a;
-
 	public static class ABuilder
 	{
 
@@ -64,20 +62,20 @@ public class A
 		return new ABuilder();
 	}
 
-	public ABuilder toBuilder()
+	private String a;
+
+	public A()
 	{
-		return new ABuilder().a(this.a);
 	}
 
-	public String getA()
-	{
-		return this.a;
-	}
-
-	public A setA(final String a)
+	public A(final String a)
 	{
 		this.a = a;
-		return this;
+	}
+
+	protected boolean canEqual(final Object other)
+	{
+		return other instanceof A;
 	}
 
 	@Override
@@ -88,7 +86,7 @@ public class A
 		if (!(o instanceof A))
 			return false;
 		final A other = (A)o;
-		if (!other.canEqual((Object)this))
+		if (!other.canEqual(this))
 			return false;
 		final Object this$a = this.getA();
 		final Object other$a = other.getA();
@@ -97,9 +95,9 @@ public class A
 		return true;
 	}
 
-	protected boolean canEqual(final Object other)
+	public String getA()
 	{
-		return other instanceof A;
+		return this.a;
 	}
 
 	@Override
@@ -112,18 +110,20 @@ public class A
 		return result;
 	}
 
+	public A setA(final String a)
+	{
+		this.a = a;
+		return this;
+	}
+
+	public ABuilder toBuilder()
+	{
+		return new ABuilder().a(this.a);
+	}
+
 	@Override
 	public String toString()
 	{
 		return "A(a=" + this.getA() + ")";
-	}
-
-	public A()
-	{
-	}
-
-	public A(final String a)
-	{
-		this.a = a;
 	}
 }

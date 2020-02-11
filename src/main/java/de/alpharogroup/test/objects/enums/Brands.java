@@ -40,11 +40,6 @@ public enum Brands
 	/** The porsche. */
 	PORSCHE("Porsche");
 
-	public String getValue()
-	{
-		return value;
-	}
-
 	/**
 	 * The value
 	 */
@@ -53,5 +48,10 @@ public enum Brands
 	Brands(final String value)
 	{
 		this.value = value;
+	}
+
+	public String getValue()
+	{
+		return value;
 	}
 }

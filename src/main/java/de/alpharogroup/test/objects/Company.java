@@ -31,15 +31,6 @@ import java.io.Serializable;
  */
 public class Company implements Serializable
 {
-	/**
-	 * The serialVersionUID.
-	 */
-	private static final long serialVersionUID = 1L;
-	/**
-	 * The name.
-	 */
-	private String name;
-
 	public static class CompanyBuilder
 	{
 
@@ -49,15 +40,15 @@ public class Company implements Serializable
 		{
 		}
 
+		public Company build()
+		{
+			return new Company(name);
+		}
+
 		public CompanyBuilder name(final String name)
 		{
 			this.name = name;
 			return this;
-		}
-
-		public Company build()
-		{
-			return new Company(name);
 		}
 
 		@Override
@@ -66,26 +57,33 @@ public class Company implements Serializable
 			return "Company.CompanyBuilder(name=" + this.name + ")";
 		}
 	}
+	/**
+	 * The serialVersionUID.
+	 */
+	private static final long serialVersionUID = 1L;
 
 	public static CompanyBuilder builder()
 	{
 		return new CompanyBuilder();
 	}
 
-	public CompanyBuilder toBuilder()
+	/**
+	 * The name.
+	 */
+	private String name;
+
+	public Company()
 	{
-		return new CompanyBuilder().name(this.name);
 	}
 
-	public String getName()
-	{
-		return this.name;
-	}
-
-	public Company setName(final String name)
+	public Company(final String name)
 	{
 		this.name = name;
-		return this;
+	}
+
+	protected boolean canEqual(final Object other)
+	{
+		return other instanceof Company;
 	}
 
 	@Override
@@ -96,7 +94,7 @@ public class Company implements Serializable
 		if (!(o instanceof Company))
 			return false;
 		final Company other = (Company)o;
-		if (!other.canEqual((Object)this))
+		if (!other.canEqual(this))
 			return false;
 		final Object this$name = this.getName();
 		final Object other$name = other.getName();
@@ -105,9 +103,9 @@ public class Company implements Serializable
 		return true;
 	}
 
-	protected boolean canEqual(final Object other)
+	public String getName()
 	{
-		return other instanceof Company;
+		return this.name;
 	}
 
 	@Override
@@ -120,18 +118,20 @@ public class Company implements Serializable
 		return result;
 	}
 
+	public Company setName(final String name)
+	{
+		this.name = name;
+		return this;
+	}
+
+	public CompanyBuilder toBuilder()
+	{
+		return new CompanyBuilder().name(this.name);
+	}
+
 	@Override
 	public String toString()
 	{
 		return "Company(name=" + this.getName() + ")";
-	}
-
-	public Company()
-	{
-	}
-
-	public Company(final String name)
-	{
-		this.name = name;
 	}
 }

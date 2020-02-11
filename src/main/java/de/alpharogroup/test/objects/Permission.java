@@ -29,19 +29,6 @@ package de.alpharogroup.test.objects;
  */
 public class Permission
 {
-	/**
-	 * The description.
-	 */
-	private String description;
-	/**
-	 * The name.
-	 */
-	private String name;
-	/**
-	 * The shortcut.
-	 */
-	private String shortcut;
-
 	public static class PermissionBuilder
 	{
 
@@ -53,6 +40,11 @@ public class Permission
 
 		PermissionBuilder()
 		{
+		}
+
+		public Permission build()
+		{
+			return new Permission(description, name, shortcut);
 		}
 
 		public PermissionBuilder description(final String description)
@@ -73,11 +65,6 @@ public class Permission
 			return this;
 		}
 
-		public Permission build()
-		{
-			return new Permission(description, name, shortcut);
-		}
-
 		@Override
 		public String toString()
 		{
@@ -85,16 +72,66 @@ public class Permission
 				+ this.name + ", shortcut=" + this.shortcut + ")";
 		}
 	}
-
 	public static PermissionBuilder builder()
 	{
 		return new PermissionBuilder();
 	}
+	/**
+	 * The description.
+	 */
+	private String description;
 
-	public PermissionBuilder toBuilder()
+	/**
+	 * The name.
+	 */
+	private String name;
+
+	/**
+	 * The shortcut.
+	 */
+	private String shortcut;
+
+	public Permission()
 	{
-		return new PermissionBuilder().description(this.description).name(this.name)
-			.shortcut(this.shortcut);
+	}
+
+	public Permission(final String description, final String name, final String shortcut)
+	{
+		this.description = description;
+		this.name = name;
+		this.shortcut = shortcut;
+	}
+
+	protected boolean canEqual(final Object other)
+	{
+		return other instanceof Permission;
+	}
+
+	@Override
+	public boolean equals(final Object o)
+	{
+		if (o == this)
+			return true;
+		if (!(o instanceof Permission))
+			return false;
+		final Permission other = (Permission)o;
+		if (!other.canEqual(this))
+			return false;
+		final Object this$description = this.getDescription();
+		final Object other$description = other.getDescription();
+		if (this$description == null
+			? other$description != null
+			: !this$description.equals(other$description))
+			return false;
+		final Object this$name = this.getName();
+		final Object other$name = other.getName();
+		if (this$name == null ? other$name != null : !this$name.equals(other$name))
+			return false;
+		final Object this$shortcut = this.getShortcut();
+		final Object other$shortcut = other.getShortcut();
+		if (this$shortcut == null ? other$shortcut != null : !this$shortcut.equals(other$shortcut))
+			return false;
+		return true;
 	}
 
 	public String getDescription()
@@ -110,6 +147,20 @@ public class Permission
 	public String getShortcut()
 	{
 		return this.shortcut;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		final int PRIME = 59;
+		int result = 1;
+		final Object $description = this.getDescription();
+		result = result * PRIME + ($description == null ? 43 : $description.hashCode());
+		final Object $name = this.getName();
+		result = result * PRIME + ($name == null ? 43 : $name.hashCode());
+		final Object $shortcut = this.getShortcut();
+		result = result * PRIME + ($shortcut == null ? 43 : $shortcut.hashCode());
+		return result;
 	}
 
 	public Permission setDescription(final String description)
@@ -130,50 +181,10 @@ public class Permission
 		return this;
 	}
 
-	@Override
-	public boolean equals(final Object o)
+	public PermissionBuilder toBuilder()
 	{
-		if (o == this)
-			return true;
-		if (!(o instanceof Permission))
-			return false;
-		final Permission other = (Permission)o;
-		if (!other.canEqual((Object)this))
-			return false;
-		final Object this$description = this.getDescription();
-		final Object other$description = other.getDescription();
-		if (this$description == null
-			? other$description != null
-			: !this$description.equals(other$description))
-			return false;
-		final Object this$name = this.getName();
-		final Object other$name = other.getName();
-		if (this$name == null ? other$name != null : !this$name.equals(other$name))
-			return false;
-		final Object this$shortcut = this.getShortcut();
-		final Object other$shortcut = other.getShortcut();
-		if (this$shortcut == null ? other$shortcut != null : !this$shortcut.equals(other$shortcut))
-			return false;
-		return true;
-	}
-
-	protected boolean canEqual(final Object other)
-	{
-		return other instanceof Permission;
-	}
-
-	@Override
-	public int hashCode()
-	{
-		final int PRIME = 59;
-		int result = 1;
-		final Object $description = this.getDescription();
-		result = result * PRIME + ($description == null ? 43 : $description.hashCode());
-		final Object $name = this.getName();
-		result = result * PRIME + ($name == null ? 43 : $name.hashCode());
-		final Object $shortcut = this.getShortcut();
-		result = result * PRIME + ($shortcut == null ? 43 : $shortcut.hashCode());
-		return result;
+		return new PermissionBuilder().description(this.description).name(this.name)
+			.shortcut(this.shortcut);
 	}
 
 	@Override
@@ -181,16 +192,5 @@ public class Permission
 	{
 		return "Permission(description=" + this.getDescription() + ", name=" + this.getName()
 			+ ", shortcut=" + this.getShortcut() + ")";
-	}
-
-	public Permission()
-	{
-	}
-
-	public Permission(final String description, final String name, final String shortcut)
-	{
-		this.description = description;
-		this.name = name;
-		this.shortcut = shortcut;
 	}
 }

@@ -30,22 +30,6 @@ package de.alpharogroup.test.objects;
  */
 public class ClonableObject implements Cloneable
 {
-	/**
-	 * The name.
-	 */
-	private String name;
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	protected Object clone() throws CloneNotSupportedException
-	{
-		ClonableObject clone = new ClonableObject();
-		clone.setName(this.name);
-		return clone;
-	}
-
 	public static class ClonableObjectBuilder
 	{
 
@@ -55,15 +39,15 @@ public class ClonableObject implements Cloneable
 		{
 		}
 
+		public ClonableObject build()
+		{
+			return new ClonableObject(name);
+		}
+
 		public ClonableObjectBuilder name(final String name)
 		{
 			this.name = name;
 			return this;
-		}
-
-		public ClonableObject build()
-		{
-			return new ClonableObject(name);
 		}
 
 		@Override
@@ -78,20 +62,34 @@ public class ClonableObject implements Cloneable
 		return new ClonableObjectBuilder();
 	}
 
-	public ClonableObjectBuilder toBuilder()
+	/**
+	 * The name.
+	 */
+	private String name;
+
+	public ClonableObject()
 	{
-		return new ClonableObjectBuilder().name(this.name);
 	}
 
-	public String getName()
-	{
-		return this.name;
-	}
-
-	public ClonableObject setName(final String name)
+	public ClonableObject(final String name)
 	{
 		this.name = name;
-		return this;
+	}
+
+	protected boolean canEqual(final Object other)
+	{
+		return other instanceof ClonableObject;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	protected Object clone() throws CloneNotSupportedException
+	{
+		ClonableObject clone = new ClonableObject();
+		clone.setName(this.name);
+		return clone;
 	}
 
 	@Override
@@ -102,7 +100,7 @@ public class ClonableObject implements Cloneable
 		if (!(o instanceof ClonableObject))
 			return false;
 		final ClonableObject other = (ClonableObject)o;
-		if (!other.canEqual((Object)this))
+		if (!other.canEqual(this))
 			return false;
 		final Object this$name = this.getName();
 		final Object other$name = other.getName();
@@ -111,9 +109,9 @@ public class ClonableObject implements Cloneable
 		return true;
 	}
 
-	protected boolean canEqual(final Object other)
+	public String getName()
 	{
-		return other instanceof ClonableObject;
+		return this.name;
 	}
 
 	@Override
@@ -126,18 +124,20 @@ public class ClonableObject implements Cloneable
 		return result;
 	}
 
+	public ClonableObject setName(final String name)
+	{
+		this.name = name;
+		return this;
+	}
+
+	public ClonableObjectBuilder toBuilder()
+	{
+		return new ClonableObjectBuilder().name(this.name);
+	}
+
 	@Override
 	public String toString()
 	{
 		return "ClonableObject(name=" + this.getName() + ")";
-	}
-
-	public ClonableObject()
-	{
-	}
-
-	public ClonableObject(final String name)
-	{
-		this.name = name;
 	}
 }

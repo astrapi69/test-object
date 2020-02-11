@@ -32,8 +32,6 @@ import java.sql.Timestamp;
 public class SqlTimestampDecorator
 {
 
-	private Timestamp date;
-
 	public static class SqlTimestampDecoratorBuilder
 	{
 
@@ -43,15 +41,15 @@ public class SqlTimestampDecorator
 		{
 		}
 
+		public SqlTimestampDecorator build()
+		{
+			return new SqlTimestampDecorator(date);
+		}
+
 		public SqlTimestampDecoratorBuilder date(final Timestamp date)
 		{
 			this.date = date;
 			return this;
-		}
-
-		public SqlTimestampDecorator build()
-		{
-			return new SqlTimestampDecorator(date);
 		}
 
 		@Override
@@ -66,20 +64,20 @@ public class SqlTimestampDecorator
 		return new SqlTimestampDecoratorBuilder();
 	}
 
-	public SqlTimestampDecoratorBuilder toBuilder()
+	private Timestamp date;
+
+	public SqlTimestampDecorator()
 	{
-		return new SqlTimestampDecoratorBuilder().date(this.date);
 	}
 
-	public Timestamp getDate()
-	{
-		return this.date;
-	}
-
-	public SqlTimestampDecorator setDate(final Timestamp date)
+	public SqlTimestampDecorator(final Timestamp date)
 	{
 		this.date = date;
-		return this;
+	}
+
+	protected boolean canEqual(final Object other)
+	{
+		return other instanceof SqlTimestampDecorator;
 	}
 
 	@Override
@@ -90,7 +88,7 @@ public class SqlTimestampDecorator
 		if (!(o instanceof SqlTimestampDecorator))
 			return false;
 		final SqlTimestampDecorator other = (SqlTimestampDecorator)o;
-		if (!other.canEqual((Object)this))
+		if (!other.canEqual(this))
 			return false;
 		final Object this$date = this.getDate();
 		final Object other$date = other.getDate();
@@ -99,9 +97,9 @@ public class SqlTimestampDecorator
 		return true;
 	}
 
-	protected boolean canEqual(final Object other)
+	public Timestamp getDate()
 	{
-		return other instanceof SqlTimestampDecorator;
+		return this.date;
 	}
 
 	@Override
@@ -114,18 +112,20 @@ public class SqlTimestampDecorator
 		return result;
 	}
 
+	public SqlTimestampDecorator setDate(final Timestamp date)
+	{
+		this.date = date;
+		return this;
+	}
+
+	public SqlTimestampDecoratorBuilder toBuilder()
+	{
+		return new SqlTimestampDecoratorBuilder().date(this.date);
+	}
+
 	@Override
 	public String toString()
 	{
 		return "SqlTimestampDecorator(date=" + this.getDate() + ")";
-	}
-
-	public SqlTimestampDecorator()
-	{
-	}
-
-	public SqlTimestampDecorator(final Timestamp date)
-	{
-		this.date = date;
 	}
 }

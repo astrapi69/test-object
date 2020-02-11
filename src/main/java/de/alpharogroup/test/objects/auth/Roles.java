@@ -35,12 +35,6 @@ import java.util.Set;
  */
 public class Roles
 {
-	/**
-	 * The roles.
-	 */
-	private Set<Role> roles;
-
-
 	public static class RolesBuilder
 	{
 
@@ -48,29 +42,6 @@ public class Roles
 
 		RolesBuilder()
 		{
-		}
-
-		public RolesBuilder role(final Role role)
-		{
-			if (this.roles == null)
-				this.roles = new ArrayList<Role>();
-			this.roles.add(role);
-			return this;
-		}
-
-		public RolesBuilder roles(final Collection<? extends Role> roles)
-		{
-			if (this.roles == null)
-				this.roles = new ArrayList<Role>();
-			this.roles.addAll(roles);
-			return this;
-		}
-
-		public RolesBuilder clearRoles()
-		{
-			if (this.roles != null)
-				this.roles.clear();
-			return this;
 		}
 
 		public Roles build()
@@ -96,6 +67,29 @@ public class Roles
 			return new Roles(roles);
 		}
 
+		public RolesBuilder clearRoles()
+		{
+			if (this.roles != null)
+				this.roles.clear();
+			return this;
+		}
+
+		public RolesBuilder role(final Role role)
+		{
+			if (this.roles == null)
+				this.roles = new ArrayList<Role>();
+			this.roles.add(role);
+			return this;
+		}
+
+		public RolesBuilder roles(final Collection<? extends Role> roles)
+		{
+			if (this.roles == null)
+				this.roles = new ArrayList<Role>();
+			this.roles.addAll(roles);
+			return this;
+		}
+
 		@Override
 		public String toString()
 		{
@@ -103,28 +97,29 @@ public class Roles
 		}
 	}
 
+
 	public static RolesBuilder builder()
 	{
 		return new RolesBuilder();
 	}
 
-	public RolesBuilder toBuilder()
+	/**
+	 * The roles.
+	 */
+	private Set<Role> roles;
+
+	public Roles()
 	{
-		final RolesBuilder builder = new RolesBuilder();
-		if (this.roles != null)
-			builder.roles(this.roles);
-		return builder;
 	}
 
-	public Set<Role> getRoles()
-	{
-		return this.roles;
-	}
-
-	public Roles setRoles(final Set<Role> roles)
+	public Roles(final Set<Role> roles)
 	{
 		this.roles = roles;
-		return this;
+	}
+
+	protected boolean canEqual(final Object other)
+	{
+		return other instanceof Roles;
 	}
 
 	@Override
@@ -135,7 +130,7 @@ public class Roles
 		if (!(o instanceof Roles))
 			return false;
 		final Roles other = (Roles)o;
-		if (!other.canEqual((Object)this))
+		if (!other.canEqual(this))
 			return false;
 		final Object this$roles = this.getRoles();
 		final Object other$roles = other.getRoles();
@@ -144,9 +139,9 @@ public class Roles
 		return true;
 	}
 
-	protected boolean canEqual(final Object other)
+	public Set<Role> getRoles()
 	{
-		return other instanceof Roles;
+		return this.roles;
 	}
 
 	@Override
@@ -159,18 +154,23 @@ public class Roles
 		return result;
 	}
 
+	public Roles setRoles(final Set<Role> roles)
+	{
+		this.roles = roles;
+		return this;
+	}
+
+	public RolesBuilder toBuilder()
+	{
+		final RolesBuilder builder = new RolesBuilder();
+		if (this.roles != null)
+			builder.roles(this.roles);
+		return builder;
+	}
+
 	@Override
 	public String toString()
 	{
 		return "Roles(roles=" + this.getRoles() + ")";
-	}
-
-	public Roles()
-	{
-	}
-
-	public Roles(final Set<Role> roles)
-	{
-		this.roles = roles;
 	}
 }

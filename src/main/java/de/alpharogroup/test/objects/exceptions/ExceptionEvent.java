@@ -30,8 +30,6 @@ package de.alpharogroup.test.objects.exceptions;
 public class ExceptionEvent
 {
 
-	private Throwable value;
-
 	public static class ExceptionEventBuilder
 	{
 
@@ -39,12 +37,6 @@ public class ExceptionEvent
 
 		ExceptionEventBuilder()
 		{
-		}
-
-		public ExceptionEventBuilder value(final Throwable value)
-		{
-			this.value = value;
-			return this;
 		}
 
 		public ExceptionEvent build()
@@ -57,6 +49,12 @@ public class ExceptionEvent
 		{
 			return "ExceptionEvent.ExceptionEventBuilder(value=" + this.value + ")";
 		}
+
+		public ExceptionEventBuilder value(final Throwable value)
+		{
+			this.value = value;
+			return this;
+		}
 	}
 
 	public static ExceptionEventBuilder builder()
@@ -64,20 +62,20 @@ public class ExceptionEvent
 		return new ExceptionEventBuilder();
 	}
 
-	public ExceptionEventBuilder toBuilder()
+	private Throwable value;
+
+	public ExceptionEvent()
 	{
-		return new ExceptionEventBuilder().value(this.value);
 	}
 
-	public Throwable getValue()
-	{
-		return this.value;
-	}
-
-	public ExceptionEvent setValue(final Throwable value)
+	public ExceptionEvent(final Throwable value)
 	{
 		this.value = value;
-		return this;
+	}
+
+	protected boolean canEqual(final Object other)
+	{
+		return other instanceof ExceptionEvent;
 	}
 
 	@Override
@@ -88,7 +86,7 @@ public class ExceptionEvent
 		if (!(o instanceof ExceptionEvent))
 			return false;
 		final ExceptionEvent other = (ExceptionEvent)o;
-		if (!other.canEqual((Object)this))
+		if (!other.canEqual(this))
 			return false;
 		final Object this$value = this.getValue();
 		final Object other$value = other.getValue();
@@ -97,9 +95,9 @@ public class ExceptionEvent
 		return true;
 	}
 
-	protected boolean canEqual(final Object other)
+	public Throwable getValue()
 	{
-		return other instanceof ExceptionEvent;
+		return this.value;
 	}
 
 	@Override
@@ -112,18 +110,20 @@ public class ExceptionEvent
 		return result;
 	}
 
+	public ExceptionEvent setValue(final Throwable value)
+	{
+		this.value = value;
+		return this;
+	}
+
+	public ExceptionEventBuilder toBuilder()
+	{
+		return new ExceptionEventBuilder().value(this.value);
+	}
+
 	@Override
 	public String toString()
 	{
 		return "ExceptionEvent(value=" + this.getValue() + ")";
-	}
-
-	public ExceptionEvent()
-	{
-	}
-
-	public ExceptionEvent(final Throwable value)
-	{
-		this.value = value;
 	}
 }

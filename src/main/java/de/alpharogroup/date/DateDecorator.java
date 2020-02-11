@@ -32,8 +32,6 @@ import java.util.Date;
 public class DateDecorator
 {
 
-	private Date date;
-
 	public static class DateDecoratorBuilder
 	{
 
@@ -43,15 +41,15 @@ public class DateDecorator
 		{
 		}
 
+		public DateDecorator build()
+		{
+			return new DateDecorator(date);
+		}
+
 		public DateDecoratorBuilder date(final Date date)
 		{
 			this.date = date;
 			return this;
-		}
-
-		public DateDecorator build()
-		{
-			return new DateDecorator(date);
 		}
 
 		@Override
@@ -66,20 +64,20 @@ public class DateDecorator
 		return new DateDecoratorBuilder();
 	}
 
-	public DateDecoratorBuilder toBuilder()
+	private Date date;
+
+	public DateDecorator()
 	{
-		return new DateDecoratorBuilder().date(this.date);
 	}
 
-	public Date getDate()
-	{
-		return this.date;
-	}
-
-	public DateDecorator setDate(final Date date)
+	public DateDecorator(final Date date)
 	{
 		this.date = date;
-		return this;
+	}
+
+	protected boolean canEqual(final Object other)
+	{
+		return other instanceof DateDecorator;
 	}
 
 	@Override
@@ -90,7 +88,7 @@ public class DateDecorator
 		if (!(o instanceof DateDecorator))
 			return false;
 		final DateDecorator other = (DateDecorator)o;
-		if (!other.canEqual((Object)this))
+		if (!other.canEqual(this))
 			return false;
 		final Object this$date = this.getDate();
 		final Object other$date = other.getDate();
@@ -99,9 +97,9 @@ public class DateDecorator
 		return true;
 	}
 
-	protected boolean canEqual(final Object other)
+	public Date getDate()
 	{
-		return other instanceof DateDecorator;
+		return this.date;
 	}
 
 	@Override
@@ -114,18 +112,20 @@ public class DateDecorator
 		return result;
 	}
 
+	public DateDecorator setDate(final Date date)
+	{
+		this.date = date;
+		return this;
+	}
+
+	public DateDecoratorBuilder toBuilder()
+	{
+		return new DateDecoratorBuilder().date(this.date);
+	}
+
 	@Override
 	public String toString()
 	{
 		return "DateDecorator(date=" + this.getDate() + ")";
-	}
-
-	public DateDecorator()
-	{
-	}
-
-	public DateDecorator(final Date date)
-	{
-		this.date = date;
 	}
 }

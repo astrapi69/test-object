@@ -30,8 +30,6 @@ package de.alpharogroup.test.objects.auth;
 public class AccessRight
 {
 
-	private String description;
-
 	public static class AccessRightBuilder
 	{
 
@@ -41,15 +39,15 @@ public class AccessRight
 		{
 		}
 
+		public AccessRight build()
+		{
+			return new AccessRight(description);
+		}
+
 		public AccessRightBuilder description(final String description)
 		{
 			this.description = description;
 			return this;
-		}
-
-		public AccessRight build()
-		{
-			return new AccessRight(description);
 		}
 
 		@Override
@@ -64,20 +62,20 @@ public class AccessRight
 		return new AccessRightBuilder();
 	}
 
-	public AccessRightBuilder toBuilder()
+	private String description;
+
+	public AccessRight()
 	{
-		return new AccessRightBuilder().description(this.description);
 	}
 
-	public String getDescription()
-	{
-		return this.description;
-	}
-
-	public AccessRight setDescription(final String description)
+	public AccessRight(final String description)
 	{
 		this.description = description;
-		return this;
+	}
+
+	protected boolean canEqual(final Object other)
+	{
+		return other instanceof AccessRight;
 	}
 
 	@Override
@@ -88,7 +86,7 @@ public class AccessRight
 		if (!(o instanceof AccessRight))
 			return false;
 		final AccessRight other = (AccessRight)o;
-		if (!other.canEqual((Object)this))
+		if (!other.canEqual(this))
 			return false;
 		final Object this$description = this.getDescription();
 		final Object other$description = other.getDescription();
@@ -99,9 +97,9 @@ public class AccessRight
 		return true;
 	}
 
-	protected boolean canEqual(final Object other)
+	public String getDescription()
 	{
-		return other instanceof AccessRight;
+		return this.description;
 	}
 
 	@Override
@@ -114,18 +112,20 @@ public class AccessRight
 		return result;
 	}
 
+	public AccessRight setDescription(final String description)
+	{
+		this.description = description;
+		return this;
+	}
+
+	public AccessRightBuilder toBuilder()
+	{
+		return new AccessRightBuilder().description(this.description);
+	}
+
 	@Override
 	public String toString()
 	{
 		return "AccessRight(description=" + this.getDescription() + ")";
-	}
-
-	public AccessRight()
-	{
-	}
-
-	public AccessRight(final String description)
-	{
-		this.description = description;
 	}
 }

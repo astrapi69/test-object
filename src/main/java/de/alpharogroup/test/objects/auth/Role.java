@@ -32,10 +32,6 @@ import java.util.Set;
 public class Role
 {
 
-	private String description;
-
-	private Set<AccessRight> rights;
-
 	public static class RoleBuilder
 	{
 
@@ -45,6 +41,11 @@ public class Role
 
 		RoleBuilder()
 		{
+		}
+
+		public Role build()
+		{
+			return new Role(description, rights);
 		}
 
 		public RoleBuilder description(final String description)
@@ -57,11 +58,6 @@ public class Role
 		{
 			this.rights = rights;
 			return this;
-		}
-
-		public Role build()
-		{
-			return new Role(description, rights);
 		}
 
 		@Override
@@ -77,31 +73,23 @@ public class Role
 		return new RoleBuilder();
 	}
 
-	public RoleBuilder toBuilder()
+	private String description;
+
+	private Set<AccessRight> rights;
+
+	public Role()
 	{
-		return new RoleBuilder().description(this.description).rights(this.rights);
 	}
 
-	public String getDescription()
-	{
-		return this.description;
-	}
-
-	public Set<AccessRight> getRights()
-	{
-		return this.rights;
-	}
-
-	public Role setDescription(final String description)
+	public Role(final String description, final Set<AccessRight> rights)
 	{
 		this.description = description;
-		return this;
+		this.rights = rights;
 	}
 
-	public Role setRights(final Set<AccessRight> rights)
+	protected boolean canEqual(final Object other)
 	{
-		this.rights = rights;
-		return this;
+		return other instanceof Role;
 	}
 
 	@Override
@@ -112,7 +100,7 @@ public class Role
 		if (!(o instanceof Role))
 			return false;
 		final Role other = (Role)o;
-		if (!other.canEqual((Object)this))
+		if (!other.canEqual(this))
 			return false;
 		final Object this$description = this.getDescription();
 		final Object other$description = other.getDescription();
@@ -127,9 +115,14 @@ public class Role
 		return true;
 	}
 
-	protected boolean canEqual(final Object other)
+	public String getDescription()
 	{
-		return other instanceof Role;
+		return this.description;
+	}
+
+	public Set<AccessRight> getRights()
+	{
+		return this.rights;
 	}
 
 	@Override
@@ -144,19 +137,26 @@ public class Role
 		return result;
 	}
 
+	public Role setDescription(final String description)
+	{
+		this.description = description;
+		return this;
+	}
+
+	public Role setRights(final Set<AccessRight> rights)
+	{
+		this.rights = rights;
+		return this;
+	}
+
+	public RoleBuilder toBuilder()
+	{
+		return new RoleBuilder().description(this.description).rights(this.rights);
+	}
+
 	@Override
 	public String toString()
 	{
 		return "Role(description=" + this.getDescription() + ", rights=" + this.getRights() + ")";
-	}
-
-	public Role()
-	{
-	}
-
-	public Role(final String description, final Set<AccessRight> rights)
-	{
-		this.description = description;
-		this.rights = rights;
 	}
 }
