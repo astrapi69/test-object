@@ -4,6 +4,10 @@
 Version 5.4-SNAPSHOT
 -------------
 
+CHANGED:
+
+- update of jobj-contract-verifier version to 3.3
+
 Version 5.3
 -------------
 
