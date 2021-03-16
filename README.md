@@ -59,7 +59,7 @@ Than you can add the dependency to your dependencies:
 	<properties>
 			...
 		<!-- TEST-OBJECTS version -->
-		<test-objects.version>5.3</test-objects.version>
+		<test-objects.version>5.4</test-objects.version>
 			...
 	</properties>
 			...
@@ -80,15 +80,28 @@ Than you can add the dependency to your dependencies:
 You can first define the version in the ext section and add than the following gradle dependency to
 your project `build.gradle` if you want to import the core functionality of test-objects:
 
+define version in file gradle.properties
+```
+
+testObjectsVersion=5.4
+```
+
+or in build.gradle ext area
+
 ```
 ext {
 			...
-    testObjectsVersion = "5.3"
+    testObjectsVersion = "5.4"
 			...
 }
+```
+
+and than add the dependency to the dependencies area
+
+```
 dependencies {
 			...
-compile("io.github.astrapi69:test-objects:$testObjectsVersion")
+    implementation("io.github.astrapi69:test-objects:$testObjectsVersion")
 			...
 }
 	
