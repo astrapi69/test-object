@@ -1,6 +1,9 @@
 ## Change log
 ----------------------
 
+Version 6-SNAPSHOT
+-------------
+
 Version 5.4
 -------------
 
