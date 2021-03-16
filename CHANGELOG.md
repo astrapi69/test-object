@@ -1,11 +1,21 @@
 ## Change log
 ----------------------
 
+Version 5.4
+-------------
+
+CHANGED:
+
+- update of gradle to new version 6.8.3
+- update of jobj-contract-verifier version to 3.3
+- update of com.github.ben-manes.versions.gradle.plugin to new version 0.38.0
+- changed to new package io.github.astrapi69
+
 Version 5.3
 -------------
 
 ADDED:
- 
+
 - new build system gradle
 
 CHANGED:
@@ -17,7 +27,7 @@ CHANGED:
 Version 5.2
 -------------
 
-ADDED: 
+ADDED:
 
 - new Factory class created for create random objects with the new random-beans version
 
@@ -29,14 +39,15 @@ CHANGED:
 Version 5.1
 -------------
 
-ADDED: 
+ADDED:
 
 - new dependency jobj-contract-verifier in version 3 added
 
 CHANGED:
 
 - update of parent version to 4.8
-- replaced obsolet dependency jobject-evaluate with new dependency jobj-contract-verifier in version 3 
+- replaced obsolet dependency jobject-evaluate with new dependency jobj-contract-verifier in version
+  3
 
 Version 5.0.1
 -------------
@@ -53,7 +64,7 @@ CHANGED:
 
 - update of jobject-extensions version to 2.5
 - removed unneeded dependency runtime-compiler
-- changed dependencies that are needed only for unit test in the test scope 
+- changed dependencies that are needed only for unit test in the test scope
 
 Version 4.29.1
 -------------
@@ -65,7 +76,7 @@ CHANGED:
 Version 4.29
 -------------
 
-ADDED: 
+ADDED:
 
 - new lombok.config file added
 
@@ -79,7 +90,7 @@ CHANGED:
 Version 4.28
 -------------
 
-ADDED: 
+ADDED:
 
 - new base unit test class for comparators
 
@@ -90,7 +101,7 @@ CHANGED:
 Version 4.27
 -------------
 
-ADDED: 
+ADDED:
 
 - new coverage status icon
 - new abstract class AbstractTestCase with generic types for actual and expected
@@ -106,15 +117,15 @@ Version 4.26
 
 CHANGED:
 
-- removed deprecated classes in the package de.alpharogroup.test.objects.evaluations
+- removed deprecated classes in the package io.github.astrapi69.test.objects.evaluations
 - removed deprecated boolean flag result in class BaseTestCase
 
 Version 4.25
 -------------
 
-ADDED: 
+ADDED:
 
-- new boolean expected instance variable in class BaseTestCase 
+- new boolean expected instance variable in class BaseTestCase
 
 CHANGED:
 
@@ -126,7 +137,7 @@ CHANGED:
 Version 4.24.0
 -------------
 
-ADDED: 
+ADDED:
 
 - new evaluator that evaluates classes in a silent manner
 - new launch script for display dependencies updates
@@ -138,7 +149,7 @@ CHANGED:
 Version 4.23.0
 -------------
 
-ADDED: 
+ADDED:
 
 - new evaluator method created for equals, hashcode and toString with class parameter
 - new dependency of random-beans
@@ -152,9 +163,9 @@ CHANGED:
 Version 4.22.0
 -------------
 
-ADDED: 
+ADDED:
 
-- new evaluator methods created for equals, hashcode and toString 
+- new evaluator methods created for equals, hashcode and toString
 - new section for credits in the README.md file
 
 CHANGED:
@@ -166,10 +177,10 @@ CHANGED:
 Version 4.21.0
 -------------
 
-ADDED: 
+ADDED:
 
-- new evaluator class for the toString method 
-- new class EqualsHashCodeAndToStringEvaluator created 
+- new evaluator class for the toString method
+- new class EqualsHashCodeAndToStringEvaluator created
 - extended README.md with similar project reference link
 - new launch script for change log created
 - new CHANGELOG.md file created
@@ -181,16 +192,15 @@ FIXED:
 Version 4.20.0
 -------------
 
-ADDED: 
+ADDED:
 
 - implement methods for evaluate contract conditions of equals method
 - implement methods for evaluate contract conditions of hashcode method
 
-
 Version 4.19.0
 -------------
 
-ADDED: 
+ADDED:
 
 - new classes created for evaluation of equals, hashcode and comparable
 - provide package.html for the javadoc of packages
@@ -202,9 +212,10 @@ CHANGED:
 Version 4.18.0
 -------------
 
-ADDED: 
+ADDED:
 
-- created new test objects(=tobs) and moved tobs to appropriated packages  f5bd6832f4d1039e872440c5b56b23ffb4051681
+- created new test objects(=tobs) and moved tobs to appropriated packages
+  f5bd6832f4d1039e872440c5b56b23ffb4051681
 - launch script for preparing release
 - sorted pom.xml
 - Donation buttons extended for paypal and bitcoin
@@ -214,4 +225,5 @@ CHANGED:
 - javadoc extended and improved
 
 Notable links:
-[keep a changelog](http://keepachangelog.com/en/1.0.0/) Don’t let your friends dump git logs into changelogs
+[keep a changelog](http://keepachangelog.com/en/1.0.0/) Don’t let your friends dump git logs into
+changelogs
