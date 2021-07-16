@@ -14,7 +14,12 @@
 
 Project that holds test objects for unit tests.
 
-If you like this project put a ⭐ and donate
+> Please support this project by simply putting a Github <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/lightblueseas/test-objects" data-icon="octicon-star" aria-label="Star lightblueseas/test-objects on GitHub">Star ⭐</a>
+>
+> Share this library with friends on Twitter and everywhere else you can
+>
+> If you love this project [![donation](https://img.shields.io/badge/donate-❤-ff2244.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GVBTWLRAZ7HB8)
 
 ## Note
 
@@ -97,7 +102,7 @@ Than you can add the dependency to your dependencies:
 	<properties>
 			...
 		<!-- TEST-OBJECTS version -->
-		<test-objects.version>5.4</test-objects.version>
+		<test-objects.version>5.5</test-objects.version>
 			...
 	</properties>
 			...
@@ -121,7 +126,7 @@ your project `build.gradle` if you want to import the core functionality of test
 define version in file gradle.properties
 ```
 
-testObjectsVersion=5.4
+testObjectsVersion=5.5
 ```
 
 or in build.gradle ext area
@@ -129,7 +134,7 @@ or in build.gradle ext area
 ```
 ext {
 			...
-    testObjectsVersion = "5.4"
+    testObjectsVersion = "5.5"
 			...
 }
 ```
@@ -190,7 +195,7 @@ reports, or feature requests.
 
 |**Travis CI**|
 |     :---:      |
-|[![Travis CI](https://travis-ci.com/images/logos/TravisCI-Full-Color.png)](https://coveralls.io/github/lightblueseas/test-objects?branch=master)|
+|[![Travis CI](https://travis-ci.com/images/logos/TravisCI-Full-Color.png)](https://api.travis-ci.com/lightblueseas/test-objects.svg?branch=develop)|
 |Special thanks to [Travis CI](https://travis-ci.com) for providing a free continuous integration service for open source projects|
 |     <img width=1000/>     |
 
