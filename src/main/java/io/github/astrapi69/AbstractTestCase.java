@@ -24,9 +24,6 @@
  */
 package io.github.astrapi69;
 
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-
 /**
  * The abstract class {@link AbstractTestCase} is for unit tests.
  *
@@ -50,7 +47,6 @@ public abstract class AbstractTestCase<A, E>
 	 * @throws Exception
 	 *             is thrown if an exception occurs
 	 */
-	@BeforeMethod
 	protected void setUp() throws Exception
 	{
 	}
@@ -63,7 +59,6 @@ public abstract class AbstractTestCase<A, E>
 	 * @throws Exception
 	 *             is thrown if an exception occurs
 	 */
-	@AfterMethod
 	protected void tearDown() throws Exception
 	{
 		actual = null;

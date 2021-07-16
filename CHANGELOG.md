@@ -1,8 +1,17 @@
 ## Change log
 ----------------------
 
-Version 6-SNAPSHOT
+Version 5.5-SNAPSHOT
 -------------
+
+CHANGED:
+
+- update gradle to new version 7.1
+- changed all dependencies from groupid de.alpharogroup to new groupid io.github.astrapi69
+- update gradle-plugin dependency of gradle.plugin.com.hierynomus.gradle.plugins:license-gradle-plugin to new version 0.16.1
+- moved testng dependency to test dependency
+- update of jobj-contract-verifier version to 3.4
+- update of com.github.ben-manes.versions.gradle.plugin to new version 0.39.0
 
 Version 5.4
 -------------

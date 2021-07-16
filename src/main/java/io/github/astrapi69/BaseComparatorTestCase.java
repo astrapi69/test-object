@@ -24,15 +24,9 @@
  */
 package io.github.astrapi69;
 
-import static org.testng.AssertJUnit.assertEquals;
-import static org.testng.AssertJUnit.assertTrue;
-
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 
 /**
  * The abstract class {@link BaseComparatorTestCase} is for unit tests with {@link Comparator}. An
@@ -147,7 +141,6 @@ public abstract class BaseComparatorTestCase<T> extends AbstractTestCase<Integer
 	 * {@inheritDoc}
 	 */
 	@Override
-	@BeforeMethod
 	public void setUp()
 	{
 		comparator = newComparator();
@@ -157,7 +150,6 @@ public abstract class BaseComparatorTestCase<T> extends AbstractTestCase<Integer
 	 * {@inheritDoc}
 	 */
 	@Override
-	@AfterMethod
 	public void tearDown()
 	{
 		comparator = null;
@@ -203,6 +195,26 @@ public abstract class BaseComparatorTestCase<T> extends AbstractTestCase<Integer
 		expected = actual == 0;
 		assertTrue(expected);
 	}
+
+	/**
+	 * Abstract method that have to be implemented from derived classes with the specific unit
+	 * framework
+	 * 
+	 * @param expected
+	 *            the expected boolean value
+	 */
+	protected abstract void assertTrue(Boolean expected);
+
+	/**
+	 * Abstract method that have to be implemented from derived classes with the specific unit
+	 * framework
+	 * 
+	 * @param expected
+	 *            the expected value
+	 * @param actual
+	 *            the actual value
+	 */
+	protected abstract void assertEquals(T expected, T actual);
 
 	/**
 	 * Test scenario when a comparison object is greater than the other object to compare.
