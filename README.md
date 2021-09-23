@@ -14,16 +14,82 @@
 
 Project that holds test objects for unit tests.
 
+# Support this project
+
 > Please support this project by simply putting a Github <!-- Place this tag where you want the button to render. -->
 <a class="github-button" href="https://github.com/lightblueseas/test-objects" data-icon="octicon-star" aria-label="Star lightblueseas/test-objects on GitHub">Star ⭐</a>
 >
 > Share this library with friends on Twitter and everywhere else you can
 >
 > If you love this project [![donation](https://img.shields.io/badge/donate-❤-ff2244.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GVBTWLRAZ7HB8)
+>
+> or for more donation options go the [donations section](#Donations)
 
 ## Note
 
 No animals were harmed in the making of this library.
+
+## Maven dependency
+
+Maven dependency is now on sonatype. Check
+out [sonatype repository](https://oss.sonatype.org/index.html#nexus-search;gav~io.github.astrapi69~test-objects~~~)
+for latest snapshots and releases.
+
+Add the following maven dependency to your project `pom.xml` if you want to import the core
+functionality of test-objects:
+
+Than you can add the dependency to your dependencies:
+
+	<properties>
+			...
+		<!-- TEST-OBJECTS version -->
+		<test-objects.version>5.5</test-objects.version>
+			...
+	</properties>
+			...
+		<dependencies>
+			...
+			<!-- TEST-OBJECTS DEPENDENCY -->
+			<dependency>
+				<groupId>io.github.astrapi69</groupId>
+				<artifactId>test-objects</artifactId>
+				<version>${test-objects.version}</version>
+				<scope>test</scope>
+			</dependency>
+			...
+		</dependencies>
+
+## gradle dependency
+
+You can first define the version in the ext section and add than the following gradle dependency to
+your project `build.gradle` if you want to import the core functionality of test-objects:
+
+define version in file gradle.properties
+```
+
+testObjectsVersion=5.5
+```
+
+or in build.gradle ext area
+
+```
+ext {
+			...
+    testObjectsVersion = "5.5"
+			...
+}
+```
+
+and than add the dependency to the dependencies area
+
+```
+dependencies {
+			...
+    implementation("io.github.astrapi69:test-objects:$testObjectsVersion")
+			...
+}
+	
+```
 
 # Donations
 
@@ -87,68 +153,6 @@ or over flattr:
 
 The source code comes under the liberal MIT License, making test-objects great for all types of
 applications.
-
-## Maven dependency
-
-Maven dependency is now on sonatype. Check
-out [sonatype repository](https://oss.sonatype.org/index.html#nexus-search;gav~io.github.astrapi69~test-objects~~~)
-for latest snapshots and releases.
-
-Add the following maven dependency to your project `pom.xml` if you want to import the core
-functionality of test-objects:
-
-Than you can add the dependency to your dependencies:
-
-	<properties>
-			...
-		<!-- TEST-OBJECTS version -->
-		<test-objects.version>5.5</test-objects.version>
-			...
-	</properties>
-			...
-		<dependencies>
-			...
-			<!-- TEST-OBJECTS DEPENDENCY -->
-			<dependency>
-				<groupId>io.github.astrapi69</groupId>
-				<artifactId>test-objects</artifactId>
-				<version>${test-objects.version}</version>
-				<scope>test</scope>
-			</dependency>
-			...
-		</dependencies>
-
-## gradle dependency
-
-You can first define the version in the ext section and add than the following gradle dependency to
-your project `build.gradle` if you want to import the core functionality of test-objects:
-
-define version in file gradle.properties
-```
-
-testObjectsVersion=5.5
-```
-
-or in build.gradle ext area
-
-```
-ext {
-			...
-    testObjectsVersion = "5.5"
-			...
-}
-```
-
-and than add the dependency to the dependencies area
-
-```
-dependencies {
-			...
-    implementation("io.github.astrapi69:test-objects:$testObjectsVersion")
-			...
-}
-	
-```
 
 ## Semantic Versioning
 
