@@ -4,7 +4,11 @@
 Version 5.6-SNAPSHOT
 -------------
 
-Version 5.5
+ADDED:
+
+- new test factory class for test class Permission
+
+  Version 5.5
 -------------
 
 CHANGED:
