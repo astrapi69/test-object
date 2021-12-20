@@ -31,35 +31,51 @@ import java.io.Serializable;
  */
 public class Company implements Serializable
 {
+
 	/**
 	 * The serialVersionUID.
 	 */
 	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The name.
 	 */
 	private String name;
 
-	public Company()
+	protected Company(CompanyBuilder<?, ?> b)
 	{
+		this.name = b.name;
 	}
 
-	public Company(final String name)
+	public Company(String name)
 	{
 		this.name = name;
 	}
 
-	public static CompanyBuilder builder()
+	public Company()
 	{
-		return new CompanyBuilder();
 	}
 
-	protected boolean canEqual(final Object other)
+	public static CompanyBuilder<?, ?> builder()
 	{
-		return other instanceof Company;
+		return new CompanyBuilderImpl();
 	}
 
-	@Override
+	public CompanyBuilder<?, ?> toBuilder()
+	{
+		return new CompanyBuilderImpl().$fillValuesFrom(this);
+	}
+
+	public String getName()
+	{
+		return this.name;
+	}
+
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+
 	public boolean equals(final Object o)
 	{
 		if (o == this)
@@ -67,7 +83,7 @@ public class Company implements Serializable
 		if (!(o instanceof Company))
 			return false;
 		final Company other = (Company)o;
-		if (!other.canEqual(this))
+		if (!other.canEqual((Object)this))
 			return false;
 		final Object this$name = this.getName();
 		final Object other$name = other.getName();
@@ -76,18 +92,11 @@ public class Company implements Serializable
 		return true;
 	}
 
-	public String getName()
+	protected boolean canEqual(final Object other)
 	{
-		return this.name;
+		return other instanceof Company;
 	}
 
-	public Company setName(final String name)
-	{
-		this.name = name;
-		return this;
-	}
-
-	@Override
 	public int hashCode()
 	{
 		final int PRIME = 59;
@@ -97,41 +106,59 @@ public class Company implements Serializable
 		return result;
 	}
 
-	public CompanyBuilder toBuilder()
-	{
-		return new CompanyBuilder().name(this.name);
-	}
-
-	@Override
 	public String toString()
 	{
 		return "Company(name=" + this.getName() + ")";
 	}
 
-	public static class CompanyBuilder
+	public static abstract class CompanyBuilder<C extends Company, B extends CompanyBuilder<C, B>>
 	{
-
 		private String name;
 
-		CompanyBuilder()
+		private static void $fillValuesFromInstanceIntoBuilder(Company instance,
+															   CompanyBuilder<?, ?> b)
 		{
+			b.name(instance.name);
+		}
+
+		public B name(String name)
+		{
+			this.name = name;
+			return self();
+		}
+
+		protected B $fillValuesFrom(C instance)
+		{
+			CompanyBuilder.$fillValuesFromInstanceIntoBuilder(instance, this);
+			return self();
+		}
+
+		protected abstract B self();
+
+		public abstract C build();
+
+		public String toString()
+		{
+			return "Company.CompanyBuilder(name=" + this.name + ")";
+		}
+	}
+
+	private static final class CompanyBuilderImpl
+			extends
+			CompanyBuilder<Company, CompanyBuilderImpl>
+	{
+		private CompanyBuilderImpl()
+		{
+		}
+
+		protected CompanyBuilderImpl self()
+		{
+			return this;
 		}
 
 		public Company build()
 		{
-			return new Company(name);
-		}
-
-		public CompanyBuilder name(final String name)
-		{
-			this.name = name;
-			return this;
-		}
-
-		@Override
-		public String toString()
-		{
-			return "Company.CompanyBuilder(name=" + this.name + ")";
+			return new Company(this);
 		}
 	}
 }
