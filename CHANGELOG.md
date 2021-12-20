@@ -1,12 +1,14 @@
 ## Change log
 ----------------------
 
-Version 5.6-SNAPSHOT
+Version 5.6
 -------------
 
 ADDED:
 
 - new test factory class for test class Permission
+- new test class Factory created
+- new test class CompanyGroup created
 
 CHANGED:
 
