@@ -13,6 +13,7 @@ ADDED:
 CHANGED:
 
 - update gradle to new version 7.3.2
+- improve gradle build performance by adding new gradle parameters for caching, parallel, configure on demand and file
 
 Version 5.5
 -------------
