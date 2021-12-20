@@ -102,9 +102,7 @@ public class PremiumMember extends Member
 			return false;
 		final Object this$credits = this.getCredits();
 		final Object other$credits = other.getCredits();
-		if (this$credits == null ? other$credits != null : !this$credits.equals(other$credits))
-			return false;
-		return true;
+		return this$credits == null ? other$credits == null : this$credits.equals(other$credits);
 	}
 
 	public String getCredits()

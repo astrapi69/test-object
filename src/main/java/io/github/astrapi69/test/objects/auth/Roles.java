@@ -72,9 +72,7 @@ public class Roles
 			return false;
 		final Object this$roles = this.getRoles();
 		final Object other$roles = other.getRoles();
-		if (this$roles == null ? other$roles != null : !this$roles.equals(other$roles))
-			return false;
-		return true;
+		return this$roles == null ? other$roles == null : this$roles.equals(other$roles);
 	}
 
 	public Set<Role> getRoles()

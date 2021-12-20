@@ -68,9 +68,9 @@ public class Signin
 			return false;
 		final Object this$username = this.getUsername();
 		final Object other$username = other.getUsername();
-		if (this$username == null ? other$username != null : !this$username.equals(other$username))
-			return false;
-		return true;
+		return this$username == null
+			? other$username == null
+			: this$username.equals(other$username);
 	}
 
 	public String getPassword()

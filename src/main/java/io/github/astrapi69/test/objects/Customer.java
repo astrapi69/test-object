@@ -103,9 +103,7 @@ public class Customer implements Serializable
 		final Object other$name = other.getName();
 		if (this$name == null ? other$name != null : !this$name.equals(other$name))
 			return false;
-		if (this.isPremium() != other.isPremium())
-			return false;
-		return true;
+		return this.isPremium() == other.isPremium();
 	}
 
 	public Brands getCar()

@@ -63,9 +63,7 @@ public class A
 			return false;
 		final Object this$a = this.getA();
 		final Object other$a = other.getA();
-		if (this$a == null ? other$a != null : !this$a.equals(other$a))
-			return false;
-		return true;
+		return this$a == null ? other$a == null : this$a.equals(other$a);
 	}
 
 	public String getA()

@@ -79,9 +79,7 @@ public class AlgorithmModel implements Cloneable
 			return false;
 		if (this.getA() != other.getA())
 			return false;
-		if (this.getB() != other.getB())
-			return false;
-		return true;
+		return this.getB() == other.getB();
 	}
 
 	public int getA()

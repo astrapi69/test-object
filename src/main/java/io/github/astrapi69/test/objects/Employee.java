@@ -80,9 +80,7 @@ public class Employee implements Serializable
 			return false;
 		final Object this$person = this.getPerson();
 		final Object other$person = other.getPerson();
-		if (this$person == null ? other$person != null : !this$person.equals(other$person))
-			return false;
-		return true;
+		return this$person == null ? other$person == null : this$person.equals(other$person);
 	}
 
 	public String getId()

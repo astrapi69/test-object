@@ -8,7 +8,11 @@ ADDED:
 
 - new test factory class for test class Permission
 
-  Version 5.5
+CHANGED:
+
+- update gradle to new version 7.3.2
+
+Version 5.5
 -------------
 
 CHANGED:
