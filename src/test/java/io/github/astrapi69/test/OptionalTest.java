@@ -18,6 +18,9 @@ public class OptionalTest {
         Optional<String> optionalGenderName = resolve(() -> companyGroup.getParent().getCeo().getPerson().getGender().name());
 
         assertFalse(optionalGenderName.isPresent());
+
+        String undefinedGender = getCeoGender(companyGroup);
+        assertEquals(undefinedGender, Gender.UNDEFINED.name());
     }
 
     public static <T> Optional<T> resolve(Supplier<T> resolver) {
