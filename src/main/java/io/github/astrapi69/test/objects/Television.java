@@ -70,9 +70,7 @@ public class Television
 			return false;
 		if (this.getChannel() != other.getChannel())
 			return false;
-		if (this.isOn() != other.isOn())
-			return false;
-		return true;
+		return this.isOn() == other.isOn();
 	}
 
 	public int getChannel()

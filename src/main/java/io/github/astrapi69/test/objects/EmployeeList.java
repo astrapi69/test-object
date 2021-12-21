@@ -70,11 +70,9 @@ public class EmployeeList
 			return false;
 		final Object this$employees = this.getEmployees();
 		final Object other$employees = other.getEmployees();
-		if (this$employees == null
-			? other$employees != null
-			: !this$employees.equals(other$employees))
-			return false;
-		return true;
+		return this$employees == null
+			? other$employees == null
+			: this$employees.equals(other$employees);
 	}
 
 	public List<Employee> getEmployees()

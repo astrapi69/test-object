@@ -65,9 +65,7 @@ public class ApplicationTestModel<T>
 			return false;
 		final Object this$model = this.getModel();
 		final Object other$model = other.getModel();
-		if (this$model == null ? other$model != null : !this$model.equals(other$model))
-			return false;
-		return true;
+		return this$model == null ? other$model == null : this$model.equals(other$model);
 	}
 
 	public T getModel()

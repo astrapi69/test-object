@@ -118,7 +118,7 @@ public class Person implements Serializable, Comparable<Person>
 	@Override
 	public int compareTo(final Person o)
 	{
-		return this.getName().toString().compareTo(o.getName().toString());
+		return this.getName().compareTo(o.getName());
 	}
 
 	@Override
@@ -149,9 +149,9 @@ public class Person implements Serializable, Comparable<Person>
 			return false;
 		final Object this$nickname = this.getNickname();
 		final Object other$nickname = other.getNickname();
-		if (this$nickname == null ? other$nickname != null : !this$nickname.equals(other$nickname))
-			return false;
-		return true;
+		return this$nickname == null
+			? other$nickname == null
+			: this$nickname.equals(other$nickname);
 	}
 
 	public String getAbout()

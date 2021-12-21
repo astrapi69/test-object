@@ -65,9 +65,7 @@ public class DateDecorator
 			return false;
 		final Object this$date = this.getDate();
 		final Object other$date = other.getDate();
-		if (this$date == null ? other$date != null : !this$date.equals(other$date))
-			return false;
-		return true;
+		return this$date == null ? other$date == null : this$date.equals(other$date);
 	}
 
 	public Date getDate()

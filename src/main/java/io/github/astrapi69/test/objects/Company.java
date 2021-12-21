@@ -83,13 +83,11 @@ public class Company implements Serializable
 		if (!(o instanceof Company))
 			return false;
 		final Company other = (Company)o;
-		if (!other.canEqual((Object)this))
+		if (!other.canEqual(this))
 			return false;
 		final Object this$name = this.getName();
 		final Object other$name = other.getName();
-		if (this$name == null ? other$name != null : !this$name.equals(other$name))
-			return false;
-		return true;
+		return this$name == null ? other$name == null : this$name.equals(other$name);
 	}
 
 	protected boolean canEqual(final Object other)
@@ -116,7 +114,7 @@ public class Company implements Serializable
 		private String name;
 
 		private static void $fillValuesFromInstanceIntoBuilder(Company instance,
-															   CompanyBuilder<?, ?> b)
+			CompanyBuilder<?, ?> b)
 		{
 			b.name(instance.name);
 		}
@@ -144,7 +142,7 @@ public class Company implements Serializable
 	}
 
 	private static final class CompanyBuilderImpl
-			extends
+		extends
 			CompanyBuilder<Company, CompanyBuilderImpl>
 	{
 		private CompanyBuilderImpl()

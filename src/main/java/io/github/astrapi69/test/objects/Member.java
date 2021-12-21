@@ -110,11 +110,9 @@ public class Member extends Person
 			return false;
 		final Object this$dateofMarriage = this.getDateofMarriage();
 		final Object other$dateofMarriage = other.getDateofMarriage();
-		if (this$dateofMarriage == null
-			? other$dateofMarriage != null
-			: !this$dateofMarriage.equals(other$dateofMarriage))
-			return false;
-		return true;
+		return this$dateofMarriage == null
+			? other$dateofMarriage == null
+			: this$dateofMarriage.equals(other$dateofMarriage);
 	}
 
 	public Date getDateofbirth()

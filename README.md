@@ -43,7 +43,7 @@ Than you can add the dependency to your dependencies:
 	<properties>
 			...
 		<!-- TEST-OBJECTS version -->
-		<test-objects.version>5.5</test-objects.version>
+		<test-objects.version>5.6</test-objects.version>
 			...
 	</properties>
 			...
@@ -67,7 +67,7 @@ your project `build.gradle` if you want to import the core functionality of test
 define version in file gradle.properties
 ```
 
-testObjectsVersion=5.5
+testObjectsVersion=5.6
 ```
 
 or in build.gradle ext area
@@ -75,7 +75,7 @@ or in build.gradle ext area
 ```
 ext {
 			...
-    testObjectsVersion = "5.5"
+    testObjectsVersion = "5.6"
 			...
 }
 ```

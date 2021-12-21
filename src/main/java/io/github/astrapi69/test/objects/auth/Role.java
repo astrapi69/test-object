@@ -73,9 +73,7 @@ public class Role
 			return false;
 		final Object this$rights = this.getRights();
 		final Object other$rights = other.getRights();
-		if (this$rights == null ? other$rights != null : !this$rights.equals(other$rights))
-			return false;
-		return true;
+		return this$rights == null ? other$rights == null : this$rights.equals(other$rights);
 	}
 
 	public String getDescription()

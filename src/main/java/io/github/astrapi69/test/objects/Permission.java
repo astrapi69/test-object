@@ -85,9 +85,9 @@ public class Permission
 			return false;
 		final Object this$shortcut = this.getShortcut();
 		final Object other$shortcut = other.getShortcut();
-		if (this$shortcut == null ? other$shortcut != null : !this$shortcut.equals(other$shortcut))
-			return false;
-		return true;
+		return this$shortcut == null
+			? other$shortcut == null
+			: this$shortcut.equals(other$shortcut);
 	}
 
 	public String getDescription()

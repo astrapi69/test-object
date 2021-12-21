@@ -34,5 +34,5 @@ public enum Gender
 	/** The male. */
 	MALE,
 	/** The undefined. */
-	UNDEFINED;
+	UNDEFINED
 }

@@ -63,11 +63,9 @@ public class AccessRight
 			return false;
 		final Object this$description = this.getDescription();
 		final Object other$description = other.getDescription();
-		if (this$description == null
-			? other$description != null
-			: !this$description.equals(other$description))
-			return false;
-		return true;
+		return this$description == null
+			? other$description == null
+			: this$description.equals(other$description);
 	}
 
 	public String getDescription()

@@ -46,7 +46,7 @@ public class OuterClass
 				@Override
 				public void run()
 				{
-				};
+				}
 			};
 		}
 	}

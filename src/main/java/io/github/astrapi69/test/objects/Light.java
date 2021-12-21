@@ -63,9 +63,7 @@ public class Light
 		final Light other = (Light)o;
 		if (!other.canEqual(this))
 			return false;
-		if (this.isOn() != other.isOn())
-			return false;
-		return true;
+		return this.isOn() == other.isOn();
 	}
 
 	@Override
