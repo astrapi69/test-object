@@ -3,6 +3,7 @@ package io.github.astrapi69.test;
 import io.github.astrapi69.test.objects.CompanyGroup;
 import io.github.astrapi69.test.objects.Employee;
 import io.github.astrapi69.test.objects.Factory;
+import io.github.astrapi69.test.objects.Person;
 import io.github.astrapi69.test.objects.enums.Gender;
 import org.testng.annotations.Test;
 
@@ -21,6 +22,9 @@ public class OptionalTest {
 
         String undefinedGender = getCeoGender(companyGroup);
         assertEquals(undefinedGender, Gender.UNDEFINED.name());
+
+        String ceoNickname = getCeoNickname(companyGroup);
+        assertEquals(ceoNickname, "bro");
     }
 
     public static <T> Optional<T> resolve(Supplier<T> resolver) {
@@ -41,4 +45,13 @@ public class OptionalTest {
                 .map(gender -> gender.name())
                 .orElse(Gender.UNDEFINED.name());
     }
+
+    public static String getCeoNickname(CompanyGroup companyGroup) {
+        return Optional.ofNullable(companyGroup).map(CompanyGroup::getParent)
+                .map(Factory::getCeo)
+                .map(Employee::getPerson)
+                .map(Person::getNickname)
+                .orElse("bro");
+    }
+
 }
