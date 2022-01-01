@@ -1,10 +1,18 @@
 ## Change log
 ----------------------
 
-Version 5.7-SNAPSHOT
+Version 5.7
 -------------
 
+ADDED:
 
+- new test class PrimitiveArrays created
+- new test class PrimitiveObjectClassArrays created
+
+CHANGED:
+
+- update gradle to new version 7.3.3
+- update of com.github.ben-manes.versions.gradle.plugin to new version 0.40.0
 
 Version 5.6
 -------------
