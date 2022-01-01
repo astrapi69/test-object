@@ -57,44 +57,14 @@ public class PrimitiveObjectClassArrays
 		return this.booleanArray;
 	}
 
-	public Byte[] getByteArray()
-	{
-		return this.byteArray;
-	}
-
-	public Character[] getCharArray()
-	{
-		return this.charArray;
-	}
-
-	public Short[] getShortArray()
-	{
-		return this.shortArray;
-	}
-
-	public Integer[] getIntArray()
-	{
-		return this.intArray;
-	}
-
-	public Long[] getLongArray()
-	{
-		return this.longArray;
-	}
-
-	public Float[] getFloatArray()
-	{
-		return this.floatArray;
-	}
-
-	public Double[] getDoubleArray()
-	{
-		return this.doubleArray;
-	}
-
 	public void setBooleanArray(Boolean[] booleanArray)
 	{
 		this.booleanArray = booleanArray;
+	}
+
+	public Byte[] getByteArray()
+	{
+		return this.byteArray;
 	}
 
 	public void setByteArray(Byte[] byteArray)
@@ -102,9 +72,19 @@ public class PrimitiveObjectClassArrays
 		this.byteArray = byteArray;
 	}
 
+	public Character[] getCharArray()
+	{
+		return this.charArray;
+	}
+
 	public void setCharArray(Character[] charArray)
 	{
 		this.charArray = charArray;
+	}
+
+	public Short[] getShortArray()
+	{
+		return this.shortArray;
 	}
 
 	public void setShortArray(Short[] shortArray)
@@ -112,9 +92,19 @@ public class PrimitiveObjectClassArrays
 		this.shortArray = shortArray;
 	}
 
+	public Integer[] getIntArray()
+	{
+		return this.intArray;
+	}
+
 	public void setIntArray(Integer[] intArray)
 	{
 		this.intArray = intArray;
+	}
+
+	public Long[] getLongArray()
+	{
+		return this.longArray;
 	}
 
 	public void setLongArray(Long[] longArray)
@@ -122,9 +112,19 @@ public class PrimitiveObjectClassArrays
 		this.longArray = longArray;
 	}
 
+	public Float[] getFloatArray()
+	{
+		return this.floatArray;
+	}
+
 	public void setFloatArray(Float[] floatArray)
 	{
 		this.floatArray = floatArray;
+	}
+
+	public Double[] getDoubleArray()
+	{
+		return this.doubleArray;
 	}
 
 	public void setDoubleArray(Double[] doubleArray)
@@ -182,15 +182,15 @@ public class PrimitiveObjectClassArrays
 
 	public String toString()
 	{
-		return "PrimitiveObjectClassArrays(booleanArray=" + java.util.Arrays.deepToString(
-			this.getBooleanArray()) + ", byteArray=" + java.util.Arrays.deepToString(
-			this.getByteArray()) + ", charArray=" + java.util.Arrays.deepToString(
-			this.getCharArray()) + ", shortArray=" + java.util.Arrays.deepToString(
-			this.getShortArray()) + ", intArray=" + java.util.Arrays.deepToString(
-			this.getIntArray()) + ", longArray=" + java.util.Arrays.deepToString(
-			this.getLongArray()) + ", floatArray=" + java.util.Arrays.deepToString(
-			this.getFloatArray()) + ", doubleArray=" + java.util.Arrays.deepToString(
-			this.getDoubleArray()) + ")";
+		return "PrimitiveObjectClassArrays(booleanArray="
+			+ java.util.Arrays.deepToString(this.getBooleanArray()) + ", byteArray="
+			+ java.util.Arrays.deepToString(this.getByteArray()) + ", charArray="
+			+ java.util.Arrays.deepToString(this.getCharArray()) + ", shortArray="
+			+ java.util.Arrays.deepToString(this.getShortArray()) + ", intArray="
+			+ java.util.Arrays.deepToString(this.getIntArray()) + ", longArray="
+			+ java.util.Arrays.deepToString(this.getLongArray()) + ", floatArray="
+			+ java.util.Arrays.deepToString(this.getFloatArray()) + ", doubleArray="
+			+ java.util.Arrays.deepToString(this.getDoubleArray()) + ")";
 	}
 
 	public static abstract class PrimitiveObjectClassArraysBuilder<C extends PrimitiveObjectClassArrays, B extends PrimitiveObjectClassArraysBuilder<C, B>>
@@ -258,20 +258,21 @@ public class PrimitiveObjectClassArrays
 
 		public String toString()
 		{
-			return "PrimitiveObjectClassArrays.PrimitiveObjectClassArraysBuilder(booleanArray=" + java.util.Arrays.deepToString(
-				this.booleanArray) + ", byteArray=" + java.util.Arrays.deepToString(
-				this.byteArray) + ", charArray=" + java.util.Arrays.deepToString(
-				this.charArray) + ", shortArray=" + java.util.Arrays.deepToString(
-				this.shortArray) + ", intArray=" + java.util.Arrays.deepToString(
-				this.intArray) + ", longArray=" + java.util.Arrays.deepToString(
-				this.longArray) + ", floatArray=" + java.util.Arrays.deepToString(
-				this.floatArray) + ", doubleArray=" + java.util.Arrays.deepToString(
-				this.doubleArray) + ")";
+			return "PrimitiveObjectClassArrays.PrimitiveObjectClassArraysBuilder(booleanArray="
+				+ java.util.Arrays.deepToString(this.booleanArray) + ", byteArray="
+				+ java.util.Arrays.deepToString(this.byteArray) + ", charArray="
+				+ java.util.Arrays.deepToString(this.charArray) + ", shortArray="
+				+ java.util.Arrays.deepToString(this.shortArray) + ", intArray="
+				+ java.util.Arrays.deepToString(this.intArray) + ", longArray="
+				+ java.util.Arrays.deepToString(this.longArray) + ", floatArray="
+				+ java.util.Arrays.deepToString(this.floatArray) + ", doubleArray="
+				+ java.util.Arrays.deepToString(this.doubleArray) + ")";
 		}
 	}
 
 	private static final class PrimitiveObjectClassArraysBuilderImpl
-		extends PrimitiveObjectClassArraysBuilder<PrimitiveObjectClassArrays, PrimitiveObjectClassArraysBuilderImpl>
+		extends
+			PrimitiveObjectClassArraysBuilder<PrimitiveObjectClassArrays, PrimitiveObjectClassArraysBuilderImpl>
 	{
 		private PrimitiveObjectClassArraysBuilderImpl()
 		{

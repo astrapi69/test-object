@@ -29,6 +29,28 @@ Project that holds test objects for unit tests.
 
 No animals were harmed in the making of this library.
 
+## gradle dependency
+
+You can first define the version in the ext section and add than the following gradle dependency to
+your project `build.gradle` if you want to import the core functionality of test-objects:
+
+define version in file gradle.properties
+```
+testObjectsVersion=5.7
+```
+
+or in build.gradle ext area
+
+```
+    testObjectsVersion = "5.7"
+```
+
+and than add the dependency to the dependencies area
+
+```
+    implementation("io.github.astrapi69:test-objects:$testObjectsVersion")
+```
+
 ## Maven dependency
 
 Maven dependency is now on sonatype. Check
@@ -43,7 +65,7 @@ Than you can add the dependency to your dependencies:
 	<properties>
 			...
 		<!-- TEST-OBJECTS version -->
-		<test-objects.version>5.6</test-objects.version>
+		<test-objects.version>5.7</test-objects.version>
 			...
 	</properties>
 			...
@@ -58,38 +80,6 @@ Than you can add the dependency to your dependencies:
 			</dependency>
 			...
 		</dependencies>
-
-## gradle dependency
-
-You can first define the version in the ext section and add than the following gradle dependency to
-your project `build.gradle` if you want to import the core functionality of test-objects:
-
-define version in file gradle.properties
-```
-
-testObjectsVersion=5.6
-```
-
-or in build.gradle ext area
-
-```
-ext {
-			...
-    testObjectsVersion = "5.6"
-			...
-}
-```
-
-and than add the dependency to the dependencies area
-
-```
-dependencies {
-			...
-    implementation("io.github.astrapi69:test-objects:$testObjectsVersion")
-			...
-}
-	
-```
 
 # Donations
 
