@@ -84,4 +84,13 @@ public class OptionalTest
 		assertEquals(ceoNickname, "bro");
 	}
 
+	public static <T> T getOptionalValue(final Optional<T> optionalValue, final T defaultValue)
+	{
+		if (optionalValue.isPresent())
+		{
+			return optionalValue.get();
+		}
+		return defaultValue;
+	}
+
 }
