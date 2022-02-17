@@ -3,7 +3,7 @@
 <div style="text-align: center">
 
 [![Java CI with Gradle](https://github.com/lightblueseas/test-objects/actions/workflows/gradle.yml/badge.svg)](https://github.com/lightblueseas/test-objects/actions/workflows/gradle.yml)
-[![Coverage Status](https://codecov.io/gh/lightblueseas/test-objects/branch/develop/graph/badge.svg)](https://codecov.io/gh/astrapi69/test-objects)
+[![Coverage Status](https://codecov.io/gh/lightblueseas/test-objects/branch/develop/graph/badge.svg)](https://codecov.io/gh/lightblueseas/test-objects)
 [![Open Issues](https://img.shields.io/github/issues/lightblueseas/test-objects.svg?style=flat)](https://github.com/lightblueseas/test-objects/issues)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/test-objects/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/test-objects)
 [![Javadocs](http://www.javadoc.io/badge/io.github.astrapi69/test-objects.svg)](http://www.javadoc.io/doc/io.github.astrapi69/test-objects)
