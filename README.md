@@ -2,13 +2,14 @@
 
 <div style="text-align: center">
 
-[![Build Status](https://api.travis-ci.com/lightblueseas/test-objects.svg?branch=develop)](https://travis-ci.com/github/lightblueseas/test-objects)
-[![Coverage Status](https://coveralls.io/repos/github/lightblueseas/test-objects/badge.svg?branch=develop)](https://coveralls.io/github/lightblueseas/test-objects?branch=develop)
+[![Java CI with Gradle](https://github.com/lightblueseas/test-objects/actions/workflows/gradle.yml/badge.svg)](https://github.com/lightblueseas/test-objects/actions/workflows/gradle.yml)
+[![Coverage Status](https://codecov.io/gh/lightblueseas/test-objects/branch/develop/graph/badge.svg)](https://codecov.io/gh/astrapi69/test-objects)
 [![Open Issues](https://img.shields.io/github/issues/lightblueseas/test-objects.svg?style=flat)](https://github.com/lightblueseas/test-objects/issues)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/test-objects/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/test-objects)
 [![Javadocs](http://www.javadoc.io/badge/io.github.astrapi69/test-objects.svg)](http://www.javadoc.io/doc/io.github.astrapi69/test-objects)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](http://opensource.org/licenses/MIT)
 [![Donate](https://img.shields.io/badge/donate-❤-ff2244.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GVBTWLRAZ7HB8)
+[![Hits Of Code](https://hitsofcode.com/github/lightblueseas/test-objects?branch=develop)](https://hitsofcode.com/github/lightblueseas/test-objects/view?branch=develop)
 
 </div>
 
