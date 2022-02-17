@@ -32,11 +32,11 @@ import java.util.function.Supplier;
 
 import org.testng.annotations.Test;
 
-import io.github.astrapi69.test.objects.CompanyGroup;
-import io.github.astrapi69.test.objects.Employee;
-import io.github.astrapi69.test.objects.Factory;
-import io.github.astrapi69.test.objects.Person;
-import io.github.astrapi69.test.objects.enums.Gender;
+import io.github.astrapi69.test.object.CompanyGroup;
+import io.github.astrapi69.test.object.Employee;
+import io.github.astrapi69.test.object.Factory;
+import io.github.astrapi69.test.object.Person;
+import io.github.astrapi69.test.object.enumtype.Gender;
 
 public class OptionalTest
 {
@@ -68,6 +68,15 @@ public class OptionalTest
 			.map(Employee::getPerson).map(Person::getNickname).orElse("bro");
 	}
 
+	public static <T> T getOptionalValue(final Optional<T> optionalValue, final T defaultValue)
+	{
+		if (optionalValue.isPresent())
+		{
+			return optionalValue.get();
+		}
+		return defaultValue;
+	}
+
 	@Test
 	public void testNestedOptionalOfNullable()
 	{
@@ -82,15 +91,6 @@ public class OptionalTest
 
 		String ceoNickname = getCeoNickname(companyGroup);
 		assertEquals(ceoNickname, "bro");
-	}
-
-	public static <T> T getOptionalValue(final Optional<T> optionalValue, final T defaultValue)
-	{
-		if (optionalValue.isPresent())
-		{
-			return optionalValue.get();
-		}
-		return defaultValue;
 	}
 
 }

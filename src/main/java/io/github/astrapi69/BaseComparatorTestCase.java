@@ -199,7 +199,7 @@ public abstract class BaseComparatorTestCase<T> extends AbstractTestCase<Integer
 	/**
 	 * Abstract method that have to be implemented from derived classes with the specific unit
 	 * framework
-	 * 
+	 *
 	 * @param expected
 	 *            the expected boolean value
 	 */
@@ -208,7 +208,7 @@ public abstract class BaseComparatorTestCase<T> extends AbstractTestCase<Integer
 	/**
 	 * Abstract method that have to be implemented from derived classes with the specific unit
 	 * framework
-	 * 
+	 *
 	 * @param expected
 	 *            the expected value
 	 * @param actual

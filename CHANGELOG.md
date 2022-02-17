@@ -4,6 +4,23 @@
 Version 5.8-SNAPSHOT
 -------------
 
+ADDED:
+
+- new test interface class Animal created
+- new test interface class Shape created
+- new test class Dog created
+- new test class Snake created
+- new test class Circle created
+- new test class Rectangle created
+- new gradle plugin spotless in version 6.3.0
+
+CHANGED:
+
+- update gradle to new version 7.4
+- update of com.github.ben-manes.versions.gradle.plugin to new version 0.42.0
+- update of test dependency jobj-contract-verifier to new version 3.5
+- update of test dependency testng to new version 7.5
+
 Version 5.7
 -------------
 
@@ -29,7 +46,8 @@ ADDED:
 CHANGED:
 
 - update gradle to new version 7.3.2
-- improve gradle build performance by adding new gradle parameters for caching, parallel, configure on demand and file watch
+- improve gradle build performance by adding new gradle parameters for caching, parallel, configure on demand and file
+  watch
 
 Version 5.5
 -------------
@@ -38,7 +56,8 @@ CHANGED:
 
 - update gradle to new version 7.1
 - changed all dependencies from groupid de.alpharogroup to new groupid io.github.astrapi69
-- update gradle-plugin dependency of gradle.plugin.com.hierynomus.gradle.plugins:license-gradle-plugin to new version 0.16.1
+- update gradle-plugin dependency of gradle.plugin.com.hierynomus.gradle.plugins:license-gradle-plugin to new version
+  0.16.1
 - moved testng dependency to test dependency
 - update of jobj-contract-verifier version to 3.4
 - update of com.github.ben-manes.versions.gradle.plugin to new version 0.39.0
@@ -88,8 +107,7 @@ ADDED:
 CHANGED:
 
 - update of parent version to 4.8
-- replaced obsolet dependency jobject-evaluate with new dependency jobj-contract-verifier in version
-  3
+- replaced obsolet dependency jobject-evaluate with new dependency jobj-contract-verifier in version 3
 
 Version 5.0.1
 -------------
@@ -159,7 +177,7 @@ Version 4.26
 
 CHANGED:
 
-- removed deprecated classes in the package io.github.astrapi69.test.objects.evaluations
+- removed deprecated classes in the package io.github.astrapi69.test.object.evaluations
 - removed deprecated boolean flag result in class BaseTestCase
 
 Version 4.25
@@ -256,8 +274,7 @@ Version 4.18.0
 
 ADDED:
 
-- created new test objects(=tobs) and moved tobs to appropriated packages
-  f5bd6832f4d1039e872440c5b56b23ffb4051681
+- created new test objects(=tobs) and moved tobs to appropriated packages f5bd6832f4d1039e872440c5b56b23ffb4051681
 - launch script for preparing release
 - sorted pom.xml
 - Donation buttons extended for paypal and bitcoin
@@ -267,5 +284,4 @@ CHANGED:
 - javadoc extended and improved
 
 Notable links:
-[keep a changelog](http://keepachangelog.com/en/1.0.0/) Don’t let your friends dump git logs into
-changelogs
+[keep a changelog](http://keepachangelog.com/en/1.0.0/) Don’t let your friends dump git logs into changelogs
