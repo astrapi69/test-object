@@ -56,14 +56,14 @@ public class Rectangle implements Shape
 		return this.height;
 	}
 
-	public double getWidth()
-	{
-		return this.width;
-	}
-
 	public void setHeight(double height)
 	{
 		this.height = height;
+	}
+
+	public double getWidth()
+	{
+		return this.width;
 	}
 
 	public void setWidth(double width)
