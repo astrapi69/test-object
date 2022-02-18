@@ -22,95 +22,92 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69.test.object.typehierarchy.shape;
+package io.github.astrapi69.test.object.type.hierarchy.animal;
 
-public class Circle implements Shape
+public class Forbidden
 {
-	private double radius;
 
-	public Circle(double radius)
+	private Animal animal;
+
+	public Forbidden(Animal animal)
 	{
-		this.radius = radius;
+		this.animal = animal;
 	}
 
-	public Circle()
+	public Forbidden()
 	{
 	}
 
-	public static CircleBuilder builder()
+	public static ForbiddenBuilder builder()
 	{
-		return new CircleBuilder();
+		return new ForbiddenBuilder();
 	}
 
-	@Override
-	public double calculateArea()
+	public Animal getAnimal()
 	{
-		return 3.14 * radius * radius;
+		return this.animal;
 	}
 
-	public double getRadius()
+	public void setAnimal(Animal animal)
 	{
-		return this.radius;
-	}
-
-	public void setRadius(double radius)
-	{
-		this.radius = radius;
+		this.animal = animal;
 	}
 
 	public boolean equals(final Object o)
 	{
 		if (o == this)
 			return true;
-		if (!(o instanceof Circle))
+		if (!(o instanceof Forbidden))
 			return false;
-		final Circle other = (Circle)o;
+		final Forbidden other = (Forbidden)o;
 		if (!other.canEqual(this))
 			return false;
-		return Double.compare(this.getRadius(), other.getRadius()) == 0;
+		final Object this$animal = this.getAnimal();
+		final Object other$animal = other.getAnimal();
+		return this$animal == null ? other$animal == null : this$animal.equals(other$animal);
 	}
 
 	protected boolean canEqual(final Object other)
 	{
-		return other instanceof Circle;
+		return other instanceof Forbidden;
 	}
 
 	public int hashCode()
 	{
 		final int PRIME = 59;
 		int result = 1;
-		final long $radius = Double.doubleToLongBits(this.getRadius());
-		result = result * PRIME + (int)($radius >>> 32 ^ $radius);
+		final Object $animal = this.getAnimal();
+		result = result * PRIME + ($animal == null ? 43 : $animal.hashCode());
 		return result;
 	}
 
 	public String toString()
 	{
-		return "Circle(radius=" + this.getRadius() + ")";
+		return "Forbidden(animal=" + this.getAnimal() + ")";
 	}
 
-	public static class CircleBuilder
+	public static class ForbiddenBuilder
 	{
-		private double radius;
+		private Animal animal;
 
-		CircleBuilder()
+		ForbiddenBuilder()
 		{
 		}
 
-		public CircleBuilder radius(double radius)
+		public ForbiddenBuilder animal(Animal animal)
 		{
-			this.radius = radius;
+			this.animal = animal;
 			return this;
 		}
 
-		public Circle build()
+		public Forbidden build()
 		{
-			return new Circle(radius);
+			return new Forbidden(animal);
 		}
 
 		public String toString()
 		{
-			return "Circle.CircleBuilder(radius=" + this.radius + ")";
+			return "Forbidden.ForbiddenBuilder(animal=" + this.animal + ")";
 		}
 	}
 }

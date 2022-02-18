@@ -22,120 +22,95 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69.test.object.typehierarchy.shape;
+package io.github.astrapi69.test.object.type.hierarchy.shape;
 
-public class Rectangle implements Shape
+public class Circle implements Shape
 {
+	private double radius;
 
-	private double height;
-	private double width;
-
-	public Rectangle(double height, double width)
+	public Circle(double radius)
 	{
-		this.height = height;
-		this.width = width;
+		this.radius = radius;
 	}
 
-	public Rectangle()
+	public Circle()
 	{
 	}
 
-	public static RectangleBuilder builder()
+	public static CircleBuilder builder()
 	{
-		return new RectangleBuilder();
+		return new CircleBuilder();
 	}
 
 	@Override
 	public double calculateArea()
 	{
-		return height * width;
+		return 3.14 * radius * radius;
 	}
 
-	public double getHeight()
+	public double getRadius()
 	{
-		return this.height;
+		return this.radius;
 	}
 
-	public double getWidth()
+	public void setRadius(double radius)
 	{
-		return this.width;
-	}
-
-	public void setHeight(double height)
-	{
-		this.height = height;
-	}
-
-	public void setWidth(double width)
-	{
-		this.width = width;
+		this.radius = radius;
 	}
 
 	public boolean equals(final Object o)
 	{
 		if (o == this)
 			return true;
-		if (!(o instanceof Rectangle))
+		if (!(o instanceof Circle))
 			return false;
-		final Rectangle other = (Rectangle)o;
+		final Circle other = (Circle)o;
 		if (!other.canEqual(this))
 			return false;
-		if (Double.compare(this.getHeight(), other.getHeight()) != 0)
-			return false;
-		return Double.compare(this.getWidth(), other.getWidth()) == 0;
+		return Double.compare(this.getRadius(), other.getRadius()) == 0;
 	}
 
 	protected boolean canEqual(final Object other)
 	{
-		return other instanceof Rectangle;
+		return other instanceof Circle;
 	}
 
 	public int hashCode()
 	{
 		final int PRIME = 59;
 		int result = 1;
-		final long $height = Double.doubleToLongBits(this.getHeight());
-		result = result * PRIME + (int)($height >>> 32 ^ $height);
-		final long $width = Double.doubleToLongBits(this.getWidth());
-		result = result * PRIME + (int)($width >>> 32 ^ $width);
+		final long $radius = Double.doubleToLongBits(this.getRadius());
+		result = result * PRIME + (int)($radius >>> 32 ^ $radius);
 		return result;
 	}
 
 	public String toString()
 	{
-		return "Rectangle(height=" + this.getHeight() + ", width=" + this.getWidth() + ")";
+		return "Circle(radius=" + this.getRadius() + ")";
 	}
 
-	public static class RectangleBuilder
+	public static class CircleBuilder
 	{
-		private double height;
-		private double width;
+		private double radius;
 
-		RectangleBuilder()
+		CircleBuilder()
 		{
 		}
 
-		public RectangleBuilder height(double height)
+		public CircleBuilder radius(double radius)
 		{
-			this.height = height;
+			this.radius = radius;
 			return this;
 		}
 
-		public RectangleBuilder width(double width)
+		public Circle build()
 		{
-			this.width = width;
-			return this;
-		}
-
-		public Rectangle build()
-		{
-			return new Rectangle(height, width);
+			return new Circle(radius);
 		}
 
 		public String toString()
 		{
-			return "Rectangle.RectangleBuilder(height=" + this.height + ", width=" + this.width
-				+ ")";
+			return "Circle.CircleBuilder(radius=" + this.radius + ")";
 		}
 	}
 }
