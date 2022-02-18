@@ -145,8 +145,7 @@ public class ShapeStore
 					shapes = Collections.singletonList(this.shapes.get(0));
 					break;
 				default :
-					shapes = Collections
-						.unmodifiableList(new ArrayList<Shape>(this.shapes));
+					shapes = Collections.unmodifiableList(new ArrayList<Shape>(this.shapes));
 			}
 
 			return new ShapeStore(shapes);
