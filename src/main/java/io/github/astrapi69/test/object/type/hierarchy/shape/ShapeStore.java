@@ -25,15 +25,17 @@
 package io.github.astrapi69.test.object.type.hierarchy.shape;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class ShapeStore
 {
-	private List<Shape> store = new ArrayList<>();
+	private List<Shape> shapes;
 
-	public ShapeStore(List<Shape> store)
+	public ShapeStore(List<Shape> shapes)
 	{
-		this.store = store;
+		this.shapes = shapes;
 	}
 
 	public ShapeStore()
@@ -47,22 +49,22 @@ public class ShapeStore
 
 	public void add(Shape shape)
 	{
-		store.add(shape);
+		shapes.add(shape);
 	}
 
 	public void remove(Shape shape)
 	{
-		store.remove(shape);
+		shapes.remove(shape);
 	}
 
-	public List<Shape> getStore()
+	public List<Shape> getShapes()
 	{
-		return this.store;
+		return this.shapes;
 	}
 
-	public void setStore(List<Shape> store)
+	public void setShapes(List<Shape> shapes)
 	{
-		this.store = store;
+		this.shapes = shapes;
 	}
 
 	public boolean equals(final Object o)
@@ -72,11 +74,13 @@ public class ShapeStore
 		if (!(o instanceof ShapeStore))
 			return false;
 		final ShapeStore other = (ShapeStore)o;
-		if (!other.canEqual(this))
+		if (!other.canEqual((Object)this))
 			return false;
-		final Object this$store = this.getStore();
-		final Object other$store = other.getStore();
-		return this$store == null ? other$store == null : this$store.equals(other$store);
+		final Object this$shapes = this.getShapes();
+		final Object other$shapes = other.getShapes();
+		if (this$shapes == null ? other$shapes != null : !this$shapes.equals(other$shapes))
+			return false;
+		return true;
 	}
 
 	protected boolean canEqual(final Object other)
@@ -88,38 +92,69 @@ public class ShapeStore
 	{
 		final int PRIME = 59;
 		int result = 1;
-		final Object $store = this.getStore();
-		result = result * PRIME + ($store == null ? 43 : $store.hashCode());
+		final Object $shapes = this.getShapes();
+		result = result * PRIME + ($shapes == null ? 43 : $shapes.hashCode());
 		return result;
 	}
 
 	public String toString()
 	{
-		return "ShapeStore(store=" + this.getStore() + ")";
+		return "ShapeStore(shapes=" + this.getShapes() + ")";
 	}
 
 	public static class ShapeStoreBuilder
 	{
-		private List<Shape> store;
+		private ArrayList<Shape> shapes;
 
 		ShapeStoreBuilder()
 		{
 		}
 
-		public ShapeStoreBuilder store(List<Shape> store)
+		public ShapeStoreBuilder shape(Shape shape)
 		{
-			this.store = store;
+			if (this.shapes == null)
+				this.shapes = new ArrayList<Shape>();
+			this.shapes.add(shape);
+			return this;
+		}
+
+		public ShapeStoreBuilder shapes(Collection<? extends Shape> shapes)
+		{
+			if (this.shapes == null)
+				this.shapes = new ArrayList<Shape>();
+			this.shapes.addAll(shapes);
+			return this;
+		}
+
+		public ShapeStoreBuilder clearShapes()
+		{
+			if (this.shapes != null)
+				this.shapes.clear();
 			return this;
 		}
 
 		public ShapeStore build()
 		{
-			return new ShapeStore(store);
+			List<Shape> shapes;
+			switch (this.shapes == null ? 0 : this.shapes.size())
+			{
+				case 0 :
+					shapes = Collections.emptyList();
+					break;
+				case 1 :
+					shapes = Collections.singletonList(this.shapes.get(0));
+					break;
+				default :
+					shapes = Collections
+						.unmodifiableList(new ArrayList<Shape>(this.shapes));
+			}
+
+			return new ShapeStore(shapes);
 		}
 
 		public String toString()
 		{
-			return "ShapeStore.ShapeStoreBuilder(store=" + this.store + ")";
+			return "ShapeStore.ShapeStoreBuilder(shapes=" + this.shapes + ")";
 		}
 	}
 }
