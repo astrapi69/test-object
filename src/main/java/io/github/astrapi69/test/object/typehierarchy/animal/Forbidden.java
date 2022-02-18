@@ -29,13 +29,85 @@ public class Forbidden
 
 	private Animal animal;
 
+	public Forbidden(Animal animal)
+	{
+		this.animal = animal;
+	}
+
+	public Forbidden()
+	{
+	}
+
+	public static ForbiddenBuilder builder()
+	{
+		return new ForbiddenBuilder();
+	}
+
 	public Animal getAnimal()
 	{
-		return animal;
+		return this.animal;
 	}
 
 	public void setAnimal(Animal animal)
 	{
 		this.animal = animal;
+	}
+
+	public boolean equals(final Object o)
+	{
+		if (o == this)
+			return true;
+		if (!(o instanceof Forbidden))
+			return false;
+		final Forbidden other = (Forbidden)o;
+		if (!other.canEqual(this))
+			return false;
+		final Object this$animal = this.getAnimal();
+		final Object other$animal = other.getAnimal();
+		return this$animal == null ? other$animal == null : this$animal.equals(other$animal);
+	}
+
+	protected boolean canEqual(final Object other)
+	{
+		return other instanceof Forbidden;
+	}
+
+	public int hashCode()
+	{
+		final int PRIME = 59;
+		int result = 1;
+		final Object $animal = this.getAnimal();
+		result = result * PRIME + ($animal == null ? 43 : $animal.hashCode());
+		return result;
+	}
+
+	public String toString()
+	{
+		return "Forbidden(animal=" + this.getAnimal() + ")";
+	}
+
+	public static class ForbiddenBuilder
+	{
+		private Animal animal;
+
+		ForbiddenBuilder()
+		{
+		}
+
+		public ForbiddenBuilder animal(Animal animal)
+		{
+			this.animal = animal;
+			return this;
+		}
+
+		public Forbidden build()
+		{
+			return new Forbidden(animal);
+		}
+
+		public String toString()
+		{
+			return "Forbidden.ForbiddenBuilder(animal=" + this.animal + ")";
+		}
 	}
 }

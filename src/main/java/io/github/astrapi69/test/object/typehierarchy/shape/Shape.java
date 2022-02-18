@@ -26,6 +26,5 @@ package io.github.astrapi69.test.object.typehierarchy.shape;
 
 public interface Shape
 {
-
 	double calculateArea();
 }

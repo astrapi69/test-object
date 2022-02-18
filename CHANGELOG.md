@@ -1,7 +1,7 @@
 ## Change log
 ----------------------
 
-Version 5.8-SNAPSHOT
+Version 6-SNAPSHOT
 -------------
 
 ADDED:
@@ -20,6 +20,7 @@ CHANGED:
 - update of com.github.ben-manes.versions.gradle.plugin to new version 0.42.0
 - update of test dependency jobj-contract-verifier to new version 3.5
 - update of test dependency testng to new version 7.5
+- renamed all packages that was in plural form to singular form
 
 Version 5.7
 -------------

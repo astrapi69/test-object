@@ -31,6 +31,20 @@ public class ShapeStore
 {
 	private List<Shape> store = new ArrayList<>();
 
+	public ShapeStore(List<Shape> store)
+	{
+		this.store = store;
+	}
+
+	public ShapeStore()
+	{
+	}
+
+	public static ShapeStoreBuilder builder()
+	{
+		return new ShapeStoreBuilder();
+	}
+
 	public void add(Shape shape)
 	{
 		store.add(shape);
@@ -41,4 +55,71 @@ public class ShapeStore
 		store.remove(shape);
 	}
 
+	public List<Shape> getStore()
+	{
+		return this.store;
+	}
+
+	public void setStore(List<Shape> store)
+	{
+		this.store = store;
+	}
+
+	public boolean equals(final Object o)
+	{
+		if (o == this)
+			return true;
+		if (!(o instanceof ShapeStore))
+			return false;
+		final ShapeStore other = (ShapeStore)o;
+		if (!other.canEqual(this))
+			return false;
+		final Object this$store = this.getStore();
+		final Object other$store = other.getStore();
+		return this$store == null ? other$store == null : this$store.equals(other$store);
+	}
+
+	protected boolean canEqual(final Object other)
+	{
+		return other instanceof ShapeStore;
+	}
+
+	public int hashCode()
+	{
+		final int PRIME = 59;
+		int result = 1;
+		final Object $store = this.getStore();
+		result = result * PRIME + ($store == null ? 43 : $store.hashCode());
+		return result;
+	}
+
+	public String toString()
+	{
+		return "ShapeStore(store=" + this.getStore() + ")";
+	}
+
+	public static class ShapeStoreBuilder
+	{
+		private List<Shape> store;
+
+		ShapeStoreBuilder()
+		{
+		}
+
+		public ShapeStoreBuilder store(List<Shape> store)
+		{
+			this.store = store;
+			return this;
+		}
+
+		public ShapeStore build()
+		{
+			return new ShapeStore(store);
+		}
+
+		public String toString()
+		{
+			return "ShapeStore.ShapeStoreBuilder(store=" + this.store + ")";
+		}
+	}
 }

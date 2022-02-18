@@ -26,5 +26,7 @@ package io.github.astrapi69.test.object.typehierarchy.animal;
 
 public interface Animal
 {
+	String getName();
+
 	String getDescription();
 }

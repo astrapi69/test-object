@@ -30,6 +30,21 @@ public class Rectangle implements Shape
 	private double height;
 	private double width;
 
+	public Rectangle(double height, double width)
+	{
+		this.height = height;
+		this.width = width;
+	}
+
+	public Rectangle()
+	{
+	}
+
+	public static RectangleBuilder builder()
+	{
+		return new RectangleBuilder();
+	}
+
 	@Override
 	public double calculateArea()
 	{
@@ -38,7 +53,12 @@ public class Rectangle implements Shape
 
 	public double getHeight()
 	{
-		return height;
+		return this.height;
+	}
+
+	public double getWidth()
+	{
+		return this.width;
 	}
 
 	public void setHeight(double height)
@@ -46,13 +66,76 @@ public class Rectangle implements Shape
 		this.height = height;
 	}
 
-	public double getWidth()
-	{
-		return width;
-	}
-
 	public void setWidth(double width)
 	{
 		this.width = width;
+	}
+
+	public boolean equals(final Object o)
+	{
+		if (o == this)
+			return true;
+		if (!(o instanceof Rectangle))
+			return false;
+		final Rectangle other = (Rectangle)o;
+		if (!other.canEqual(this))
+			return false;
+		if (Double.compare(this.getHeight(), other.getHeight()) != 0)
+			return false;
+		return Double.compare(this.getWidth(), other.getWidth()) == 0;
+	}
+
+	protected boolean canEqual(final Object other)
+	{
+		return other instanceof Rectangle;
+	}
+
+	public int hashCode()
+	{
+		final int PRIME = 59;
+		int result = 1;
+		final long $height = Double.doubleToLongBits(this.getHeight());
+		result = result * PRIME + (int)($height >>> 32 ^ $height);
+		final long $width = Double.doubleToLongBits(this.getWidth());
+		result = result * PRIME + (int)($width >>> 32 ^ $width);
+		return result;
+	}
+
+	public String toString()
+	{
+		return "Rectangle(height=" + this.getHeight() + ", width=" + this.getWidth() + ")";
+	}
+
+	public static class RectangleBuilder
+	{
+		private double height;
+		private double width;
+
+		RectangleBuilder()
+		{
+		}
+
+		public RectangleBuilder height(double height)
+		{
+			this.height = height;
+			return this;
+		}
+
+		public RectangleBuilder width(double width)
+		{
+			this.width = width;
+			return this;
+		}
+
+		public Rectangle build()
+		{
+			return new Rectangle(height, width);
+		}
+
+		public String toString()
+		{
+			return "Rectangle.RectangleBuilder(height=" + this.height + ", width=" + this.width
+				+ ")";
+		}
 	}
 }

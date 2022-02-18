@@ -26,11 +26,91 @@ package io.github.astrapi69.test.object.typehierarchy.shape;
 
 public class Circle implements Shape
 {
-	double radius;
+	private double radius;
+
+	public Circle(double radius)
+	{
+		this.radius = radius;
+	}
+
+	public Circle()
+	{
+	}
+
+	public static CircleBuilder builder()
+	{
+		return new CircleBuilder();
+	}
 
 	@Override
 	public double calculateArea()
 	{
 		return 3.14 * radius * radius;
+	}
+
+	public double getRadius()
+	{
+		return this.radius;
+	}
+
+	public void setRadius(double radius)
+	{
+		this.radius = radius;
+	}
+
+	public boolean equals(final Object o)
+	{
+		if (o == this)
+			return true;
+		if (!(o instanceof Circle))
+			return false;
+		final Circle other = (Circle)o;
+		if (!other.canEqual(this))
+			return false;
+		return Double.compare(this.getRadius(), other.getRadius()) == 0;
+	}
+
+	protected boolean canEqual(final Object other)
+	{
+		return other instanceof Circle;
+	}
+
+	public int hashCode()
+	{
+		final int PRIME = 59;
+		int result = 1;
+		final long $radius = Double.doubleToLongBits(this.getRadius());
+		result = result * PRIME + (int)($radius >>> 32 ^ $radius);
+		return result;
+	}
+
+	public String toString()
+	{
+		return "Circle(radius=" + this.getRadius() + ")";
+	}
+
+	public static class CircleBuilder
+	{
+		private double radius;
+
+		CircleBuilder()
+		{
+		}
+
+		public CircleBuilder radius(double radius)
+		{
+			this.radius = radius;
+			return this;
+		}
+
+		public Circle build()
+		{
+			return new Circle(radius);
+		}
+
+		public String toString()
+		{
+			return "Circle.CircleBuilder(radius=" + this.radius + ")";
+		}
 	}
 }
