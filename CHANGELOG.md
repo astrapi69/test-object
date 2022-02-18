@@ -9,9 +9,11 @@ ADDED:
 - new test interface class Animal created
 - new test interface class Shape created
 - new test class Dog created
+- new test class Forbidden created
 - new test class Snake created
 - new test class Circle created
 - new test class Rectangle created
+- new test class ShapeStore created
 - new gradle plugin spotless in version 6.3.0
 
 CHANGED:
