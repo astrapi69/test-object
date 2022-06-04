@@ -1,0 +1,7 @@
+
+dependencies {
+    testImplementation("io.github.astrapi69:jobj-contract-verifier:$jobjContractVerifierVersion")
+    testImplementation("io.github.benas:random-beans:$randomBeansVersion")
+    testImplementation("org.testng:testng:$testngVersion")
+    testImplementation("org.meanbean:meanbean:$meanbeanVersion")
+}

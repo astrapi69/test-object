@@ -4,7 +4,11 @@
 Version 6.1-SNAPSHOT
 -------------
 
+CHANGED:
 
+- update gradle to new version 7.4.2
+- extracted sections from build.gradle to own gradle files
+- update of gradle plugin dependency com.diffplug.spotless:spotless-plugin-gradle to new patch version 6.6.1
 
 Version 6
 -------------
