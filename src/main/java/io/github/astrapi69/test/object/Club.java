@@ -24,53 +24,46 @@
  */
 package io.github.astrapi69.test.object;
 
-import java.io.Serializable;
-
+import java.util.List;
 /**
- * The class {@link Company} is a class intended for use in unit tests.
+ * The class {@link Club} is a class intended for use in unit tests.
  */
-public class Company implements Serializable
+public class Club
 {
-	/**
-	 * The serialVersionUID.
-	 */
-	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The name.
-	 */
+	private List<Member> members;
 	private String name;
 	private String location;
 
-	protected Company(CompanyBuilder<?, ?> b)
+	public Club()
 	{
-		this.name = b.name;
-		this.location = b.location;
 	}
 
-	public Company(String name)
+	public Club(String name)
 	{
 		this.name = name;
 	}
 
-	public Company(String name, String location)
+	public Club(String name, String location)
 	{
 		this.name = name;
 		this.location = location;
 	}
 
-	public Company()
+	protected Club(ClubBuilder<?, ?> b)
 	{
+		this.members = b.members;
+		this.name = b.name;
+		this.location = b.location;
 	}
 
-	public static CompanyBuilder<?, ?> builder()
+	public static ClubBuilder<?, ?> builder()
 	{
-		return new CompanyBuilderImpl();
+		return new ClubBuilderImpl();
 	}
 
-	public CompanyBuilder<?, ?> toBuilder()
+	public List<Member> getMembers()
 	{
-		return new CompanyBuilderImpl().$fillValuesFrom(this);
+		return this.members;
 	}
 
 	public String getName()
@@ -81,6 +74,11 @@ public class Company implements Serializable
 	public String getLocation()
 	{
 		return this.location;
+	}
+
+	public void setMembers(List<Member> members)
+	{
+		this.members = members;
 	}
 
 	public void setName(String name)
@@ -97,10 +95,14 @@ public class Company implements Serializable
 	{
 		if (o == this)
 			return true;
-		if (!(o instanceof Company))
+		if (!(o instanceof Club))
 			return false;
-		final Company other = (Company)o;
+		final Club other = (Club)o;
 		if (!other.canEqual((Object)this))
+			return false;
+		final Object this$members = this.getMembers();
+		final Object other$members = other.getMembers();
+		if (this$members == null ? other$members != null : !this$members.equals(other$members))
 			return false;
 		final Object this$name = this.getName();
 		final Object other$name = other.getName();
@@ -115,13 +117,15 @@ public class Company implements Serializable
 
 	protected boolean canEqual(final Object other)
 	{
-		return other instanceof Company;
+		return other instanceof Club;
 	}
 
 	public int hashCode()
 	{
 		final int PRIME = 59;
 		int result = 1;
+		final Object $members = this.getMembers();
+		result = result * PRIME + ($members == null ? 43 : $members.hashCode());
 		final Object $name = this.getName();
 		result = result * PRIME + ($name == null ? 43 : $name.hashCode());
 		final Object $location = this.getLocation();
@@ -131,19 +135,32 @@ public class Company implements Serializable
 
 	public String toString()
 	{
-		return "Company(name=" + this.getName() + ", location=" + this.getLocation() + ")";
+		return "Club(members=" + this.getMembers() + ", name=" + this.getName() + ", location="
+			+ this.getLocation() + ")";
 	}
 
-	public static abstract class CompanyBuilder<C extends Company, B extends CompanyBuilder<C, B>>
+	public ClubBuilder<?, ?> toBuilder()
 	{
+		return new ClubBuilderImpl().$fillValuesFrom(this);
+	}
+
+	public static abstract class ClubBuilder<C extends Club, B extends ClubBuilder<C, B>>
+	{
+		private List<Member> members;
 		private String name;
 		private String location;
 
-		private static void $fillValuesFromInstanceIntoBuilder(Company instance,
-			CompanyBuilder<?, ?> b)
+		private static void $fillValuesFromInstanceIntoBuilder(Club instance, ClubBuilder<?, ?> b)
 		{
+			b.members(instance.members);
 			b.name(instance.name);
 			b.location(instance.location);
+		}
+
+		public B members(List<Member> members)
+		{
+			this.members = members;
+			return self();
 		}
 
 		public B name(String name)
@@ -160,7 +177,7 @@ public class Company implements Serializable
 
 		protected B $fillValuesFrom(C instance)
 		{
-			CompanyBuilder.$fillValuesFromInstanceIntoBuilder(instance, this);
+			ClubBuilder.$fillValuesFromInstanceIntoBuilder(instance, this);
 			return self();
 		}
 
@@ -170,26 +187,25 @@ public class Company implements Serializable
 
 		public String toString()
 		{
-			return "Company.CompanyBuilder(name=" + this.name + ", location=" + this.location + ")";
+			return "Club.ClubBuilder(members=" + this.members + ", name=" + this.name
+				+ ", location=" + this.location + ")";
 		}
 	}
 
-	private static final class CompanyBuilderImpl
-		extends
-			CompanyBuilder<Company, CompanyBuilderImpl>
+	private static final class ClubBuilderImpl extends ClubBuilder<Club, ClubBuilderImpl>
 	{
-		private CompanyBuilderImpl()
+		private ClubBuilderImpl()
 		{
 		}
 
-		protected CompanyBuilderImpl self()
+		protected ClubBuilderImpl self()
 		{
 			return this;
 		}
 
-		public Company build()
+		public Club build()
 		{
-			return new Company(this);
+			return new Club(this);
 		}
 	}
 }

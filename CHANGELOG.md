@@ -4,6 +4,11 @@
 Version 6.1-SNAPSHOT
 -------------
 
+ADDED:
+
+- new test class Club for unit tests
+- new field location in test class Company 
+
 CHANGED:
 
 - update gradle to new version 7.4.2

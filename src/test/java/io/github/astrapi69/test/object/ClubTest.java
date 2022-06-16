@@ -32,44 +32,44 @@ import org.testng.annotations.Test;
 import io.github.astrapi69.evaluate.object.verifier.ContractVerifier;
 
 /**
- * The unit test class for the class {@link Company}
+ * The unit test class for the class {@link Club}
  */
-public class CompanyTest
+public class ClubTest
 {
 
 	/**
-	 * Test method for {@link Company} constructors and builders
+	 * Test method for {@link Club} constructors and builders
 	 */
 	@Test
 	public final void testConstructors()
 	{
-		Company model = new Company();
+		Club model = new Club();
 		assertNotNull(model);
-		model = new Company("foo");
+		model = new Club("beautiful beaches");
 		assertNotNull(model);
-		model = new Company("prime olive oil", "Crete, Agios Nikolaos");
+		model = new Club("beautiful beaches", "Crete, Agios Nikolaos");
 		assertNotNull(model);
-		model = Company.builder().build();
+		model = Club.builder().build();
 		assertNotNull(model);
 	}
 
 	/**
-	 * Test method for {@link Company}
+	 * Test method for {@link Club}
 	 */
 	@Test
 	public void testWithBeanTester()
 	{
 		final BeanTester beanTester = new BeanTester();
-		beanTester.testBean(Company.class);
+		beanTester.testBean(Club.class);
 	}
 
 	/**
-	 * Test method for {@link Company#equals(Object)} , {@link Company#hashCode()} and
-	 * {@link Company#toString()}
+	 * Test method for {@link Club#equals(Object)} , {@link Club#hashCode()} and
+	 * {@link Club#toString()}
 	 */
 	@Test
 	public void verifyEqualsHashcodeAndToStringContracts()
 	{
-		ContractVerifier.of(Company.class).verify();
+		ContractVerifier.of(Club.class).verify();
 	}
 }
