@@ -67,24 +67,24 @@ public class Club
 		return this.members;
 	}
 
-	public String getName()
-	{
-		return this.name;
-	}
-
-	public String getLocation()
-	{
-		return this.location;
-	}
-
 	public void setMembers(List<Member> members)
 	{
 		this.members = members;
 	}
 
+	public String getName()
+	{
+		return this.name;
+	}
+
 	public void setName(String name)
 	{
 		this.name = name;
+	}
+
+	public String getLocation()
+	{
+		return this.location;
 	}
 
 	public void setLocation(String location)

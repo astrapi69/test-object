@@ -78,14 +78,14 @@ public class Company implements Serializable
 		return this.name;
 	}
 
-	public String getLocation()
-	{
-		return this.location;
-	}
-
 	public void setName(String name)
 	{
 		this.name = name;
+	}
+
+	public String getLocation()
+	{
+		return this.location;
 	}
 
 	public void setLocation(String location)

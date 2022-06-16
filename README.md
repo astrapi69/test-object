@@ -37,13 +37,13 @@ project `build.gradle` if you want to import the core functionality of test-obje
 define version in file gradle.properties
 
 ```
-testObjectsVersion=6
+testObjectsVersion=6.1
 ```
 
 or in build.gradle ext area
 
 ```
-    testObjectsVersion = "6"
+    testObjectsVersion = "6.1"
 ```
 
 and than add the dependency to the dependencies area
@@ -66,7 +66,7 @@ Than you can add the dependency to your dependencies:
     <properties>
             ...
         <!-- TEST-OBJECTS version -->
-        <test-objects.version>6</test-objects.version>
+        <test-objects.version>6.1</test-objects.version>
             ...
     </properties>
             ...
