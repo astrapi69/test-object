@@ -25,6 +25,7 @@
 package io.github.astrapi69.test.object;
 
 import java.util.List;
+
 /**
  * The class {@link Club} is a class intended for use in unit tests.
  */
