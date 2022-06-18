@@ -24,32 +24,55 @@
  */
 package io.github.astrapi69.test.object.factory;
 
-import java.util.ArrayList;
-import java.util.List;
+import static org.testng.AssertJUnit.assertEquals;
+import static org.testng.AssertJUnit.assertNotNull;
 
-import io.github.astrapi69.test.object.Club;
+import io.github.astrapi69.test.object.AlgorithmModel;
 import io.github.astrapi69.test.object.Employee;
 import io.github.astrapi69.test.object.Factory;
-import io.github.astrapi69.test.object.Member;
 import io.github.astrapi69.test.object.Person;
+import org.testng.annotations.Test;
+
+import io.github.astrapi69.test.object.Club;
+import io.github.astrapi69.test.object.Member;
 import io.github.astrapi69.test.object.enumtype.Gender;
 
-public class TestObjectFactory
+/**
+ * The unit test class for the class {@link TestObjectFactory}
+ */
+public class TestObjectFactoryTest
 {
 
-	public static Club newClub()
+	/**
+	 * Test method for {@link TestObjectFactory#newClub()}
+	 */
+	@Test
+	public void testNewClub()
 	{
-		return Club.builder()
+		Club actual;
+		Club expected;
+		actual = TestObjectFactory.newClub();
+		assertNotNull(actual);
+		expected = Club.builder()
 			.member(Member.buildMember().name("Lea").gender(Gender.FEMALE).married(Boolean.FALSE)
 				.nickname("princess").build())
 			.member(Member.buildMember().name("Luke").gender(Gender.MALE).married(Boolean.FALSE)
 				.nickname("wannabejedi").build())
 			.name("StarPiece").location("Greece/Katerini").build();
+		assertEquals(expected, actual);
 	}
 
-	public static Factory newFactory()
+	/**
+	 * Test method for {@link TestObjectFactory#newFactory()}
+	 */
+	@Test
+	public void testNewFactory()
 	{
-		return Factory.builder()
+		Factory actual;
+		Factory expected;
+		actual = TestObjectFactory.newFactory();
+		assertNotNull(actual);
+		expected = Factory.builder()
 			.employee(Employee.builder().id("1")
 				.person(Person.builder().name("Lea").gender(Gender.FEMALE).married(Boolean.FALSE)
 					.build())
@@ -58,5 +81,6 @@ public class TestObjectFactory
 				Person.builder().name("Luke").gender(Gender.MALE).married(Boolean.FALSE).build())
 				.build())
 			.name("StarPiece").location("Greece/Katerini").build();
+		assertEquals(expected, actual);
 	}
 }

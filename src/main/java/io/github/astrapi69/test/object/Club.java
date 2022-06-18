@@ -24,6 +24,7 @@
  */
 package io.github.astrapi69.test.object;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -156,6 +157,14 @@ public class Club
 			b.members(instance.members);
 			b.name(instance.name);
 			b.location(instance.location);
+		}
+
+		public B member(Member member)
+		{
+			if (this.members == null)
+				this.members = new ArrayList<>();
+			this.members.add(member);
+			return self();
 		}
 
 		public B members(List<Member> members)
