@@ -26,6 +26,7 @@ package io.github.astrapi69.test.object.factory;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import io.github.astrapi69.test.object.Club;
 import io.github.astrapi69.test.object.Employee;
@@ -36,6 +37,17 @@ import io.github.astrapi69.test.object.enumtype.Gender;
 
 public class TestObjectFactory
 {
+
+	public static Employee newEmployee()
+	{
+		return Employee.builder().id("1234").person(newPerson()).build();
+	}
+
+	public static Person newPerson()
+	{
+		return Person.builder().gender(Gender.FEMALE).name("Anna").married(false)
+			.about("I'm a beast and beautiful").nickname("beast").build();
+	}
 
 	public static Club newClub()
 	{

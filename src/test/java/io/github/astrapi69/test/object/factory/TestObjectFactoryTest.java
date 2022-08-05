@@ -27,14 +27,13 @@ package io.github.astrapi69.test.object.factory;
 import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertNotNull;
 
-import io.github.astrapi69.test.object.AlgorithmModel;
-import io.github.astrapi69.test.object.Employee;
-import io.github.astrapi69.test.object.Factory;
-import io.github.astrapi69.test.object.Person;
 import org.testng.annotations.Test;
 
 import io.github.astrapi69.test.object.Club;
+import io.github.astrapi69.test.object.Employee;
+import io.github.astrapi69.test.object.Factory;
 import io.github.astrapi69.test.object.Member;
+import io.github.astrapi69.test.object.Person;
 import io.github.astrapi69.test.object.enumtype.Gender;
 
 /**
@@ -42,6 +41,21 @@ import io.github.astrapi69.test.object.enumtype.Gender;
  */
 public class TestObjectFactoryTest
 {
+
+	/**
+	 * Test method for {@link TestObjectFactory#newPerson()}
+	 */
+	@Test
+	public void testNewPerson()
+	{
+		Person actual;
+		Person expected;
+		actual = TestObjectFactory.newPerson();
+		assertNotNull(actual);
+		expected = Person.builder().gender(Gender.FEMALE).name("Anna").married(false)
+			.about("I'm a beast and beautiful").nickname("beast").build();
+		assertEquals(expected, actual);
+	}
 
 	/**
 	 * Test method for {@link TestObjectFactory#newClub()}
