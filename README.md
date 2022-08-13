@@ -2,13 +2,13 @@
 
 <div style="text-align: center">
 
-[![Java CI with Gradle](https://github.com/lightblueseas/test-objects/actions/workflows/gradle.yml/badge.svg)](https://github.com/lightblueseas/test-objects/actions/workflows/gradle.yml)
-[![Open Issues](https://img.shields.io/github/issues/lightblueseas/test-objects.svg?style=flat)](https://github.com/lightblueseas/test-objects/issues)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/test-objects/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/test-objects)
-[![Javadocs](http://www.javadoc.io/badge/io.github.astrapi69/test-objects.svg)](http://www.javadoc.io/doc/io.github.astrapi69/test-objects)
+[![Java CI with Gradle](https://github.com/lightblueseas/test-object/actions/workflows/gradle.yml/badge.svg)](https://github.com/lightblueseas/test-object/actions/workflows/gradle.yml)
+[![Open Issues](https://img.shields.io/github/issues/lightblueseas/test-object.svg?style=flat)](https://github.com/lightblueseas/test-object/issues)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/test-object/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/test-object)
+[![Javadocs](http://www.javadoc.io/badge/io.github.astrapi69/test-object.svg)](http://www.javadoc.io/doc/io.github.astrapi69/test-object)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](http://opensource.org/licenses/MIT)
 [![Donate](https://img.shields.io/badge/donate-❤-ff2244.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GVBTWLRAZ7HB8)
-[![Hits Of Code](https://hitsofcode.com/github/lightblueseas/test-objects?branch=develop)](https://hitsofcode.com/github/lightblueseas/test-objects/view?branch=develop)
+[![Hits Of Code](https://hitsofcode.com/github/lightblueseas/test-object?branch=develop)](https://hitsofcode.com/github/lightblueseas/test-object/view?branch=develop)
 
 </div>
 
@@ -17,7 +17,7 @@ Project that holds test objects for unit tests.
 # Support this project
 
 > Please support this project by simply putting a Github <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/lightblueseas/test-objects" data-icon="octicon-star" aria-label="Star lightblueseas/test-objects on GitHub">Star ⭐</a>
+<a class="github-button" href="https://github.com/lightblueseas/test-object" data-icon="octicon-star" aria-label="Star lightblueseas/test-object on GitHub">Star ⭐</a>
 >
 > Share this library with friends on Twitter and everywhere else you can
 >
@@ -37,46 +37,46 @@ project `build.gradle` if you want to import the core functionality oftest-objec
 define version in file gradle.properties
 
 ```
-testObjectsVersion=6.1
+testObjectVersion=7
 ```
 
 or in build.gradle ext area
 
 ```
-    testObjectsVersion = "6.1"
+    testObjectVersion = "7"
 ```
 
 and than add the dependency to the dependencies area
 
 ```
-    implementation("io.github.astrapi69:test-objects:$testObjectsVersion")
+    implementation("io.github.astrapi69:test-object:$testObjectVersion")
 ```
 
 ## Maven dependency
 
 Maven dependency is now on sonatype. Check
-out [sonatype repository](https://oss.sonatype.org/index.html#nexus-search;gav~io.github.astrapi69~test-objects~~~)
+out [sonatype repository](https://oss.sonatype.org/index.html#nexus-search;gav~io.github.astrapi69~test-object~~~)
 for latest snapshots and releases.
 
 Add the following maven dependency to your project `pom.xml` if you want to import the core functionality of
-test-objects:
+test-object:
 
 Than you can add the dependency to your dependencies:
 
     <properties>
             ...
-        <!-- TEST-OBJECTS version -->
-        <test-objects.version>6.1</test-objects.version>
+        <!-- TEST-OBJECT version -->
+        <test-object.version>7</test-object.version>
             ...
     </properties>
             ...
         <dependencies>
             ...
-            <!-- TEST-OBJECTS DEPENDENCY -->
+            <!-- TEST-OBJECT DEPENDENCY -->
             <dependency>
                 <groupId>io.github.astrapi69</groupId>
-                <artifactId>test-objects</artifactId>
-                <version>${test-objects.version}</version>
+                <artifactId>test-object</artifactId>
+                <version>${test-object.version}</version>
                 <scope>test</scope>
             </dependency>
             ...
@@ -142,7 +142,7 @@ alt="Donation Monero Wallet" width="250"/>
 
 or over flattr:
 
-<a href="https://flattr.com/submit/auto?fid=r7vp62&url=https%3A%2F%2Fgithub.com%2Flightblueseas%2Ftest-objects" target="_blank">
+<a href="https://flattr.com/submit/auto?fid=r7vp62&url=https%3A%2F%2Fgithub.com%2Flightblueseas%2Ftest-object" target="_blank">
 <img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" style="border: none" />
 </a>
 
@@ -165,9 +165,9 @@ the [wiki page](https://github.com/lightblueseas/mvn-parent-projects/wiki/Semant
 
 The source code fortest-object are on GitHub. Please feel free to fork and send pull requests!
 
-Create your own fork of [lightblueseas/test-objects/fork](https://github.com/lightblueseas/test-objects/fork)
+Create your own fork of [lightblueseas/test-object/fork](https://github.com/lightblueseas/test-object/fork)
 
-To share your changes, [submit a pull request](https://github.com/lightblueseas/test-objects/pull/new/develop).
+To share your changes, [submit a pull request](https://github.com/lightblueseas/test-object/pull/new/develop).
 
 Don't forget to add new units tests on your changes.
 
@@ -177,7 +177,7 @@ Do not hesitate to contact thetest-object developers with your questions, concer
 requests.
 
 - Feature requests, questions and bug reports can be reported at
-  the [issues page](https://github.com/lightblueseas/test-objects/issues).
+  the [issues page](https://github.com/lightblueseas/test-object/issues).
 
 # Similar projects
 
@@ -191,24 +191,24 @@ requests.
 
 |**Travis CI**|
 |     :---:      |
-|[![Travis CI](https://travis-ci.com/images/logos/TravisCI-Full-Color.png)](https://api.travis-ci.com/lightblueseas/test-objects.svg?branch=develop)|
+|[![Travis CI](https://travis-ci.com/images/logos/TravisCI-Full-Color.png)](https://api.travis-ci.com/lightblueseas/test-object.svg?branch=develop)|
 |Special thanks to [Travis CI](https://travis-ci.com) for providing a free continuous integration service for open source projects|
 |     <img width=1000/>     |
 
 |**Nexus Sonatype repositories**|
 |     :---:      |
-|[![sonatype repository](https://img.shields.io/nexus/r/https/oss.sonatype.org/io.github.astrapi69/test-objects.svg?style=for-the-badge)](https://oss.sonatype.org/index.html#nexus-search;gav~io.github.astrapi69~test-objects~~~)|
+|[![sonatype repository](https://img.shields.io/nexus/r/https/oss.sonatype.org/io.github.astrapi69/test-object.svg?style=for-the-badge)](https://oss.sonatype.org/index.html#nexus-search;gav~io.github.astrapi69~test-object~~~)|
 |Special thanks to [sonatype repository](https://www.sonatype.com) for providing a free maven repository service for open source projects|
 |     <img width=1000/>     |
 
 |**coveralls.io**|
 |     :---:      |
-|[![Coverage Status](https://coveralls.io/repos/github/lightblueseas/test-objects/badge.svg?branch=master)](https://coveralls.io/github/lightblueseas/test-objects?branch=master)|
+|[![Coverage Status](https://coveralls.io/repos/github/lightblueseas/test-object/badge.svg?branch=master)](https://coveralls.io/github/lightblueseas/test-object?branch=master)|
 |Special thanks to [coveralls.io](https://coveralls.io) for providing a free code coverage for open source projects|
 |     <img width=1000/>     |
 
 |**javadoc.io**|
 |     :---:      |
-|[![Javadocs](http://www.javadoc.io/badge/io.github.astrapi69/test-objects.svg)](http://www.javadoc.io/doc/io.github.astrapi69/test-objects)|
+|[![Javadocs](http://www.javadoc.io/badge/io.github.astrapi69/test-object.svg)](http://www.javadoc.io/doc/io.github.astrapi69/test-object)|
 |Special thanks to [javadoc.io](http://www.javadoc.io) for providing a free javadoc documentation for open source projects|
 |     <img width=1000/>     |

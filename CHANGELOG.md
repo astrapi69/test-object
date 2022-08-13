@@ -1,12 +1,13 @@
 ## Change log
 ----------------------
 
-Version 7-SNAPSHOT
+Version 7
 -------------
 
 ADDED:
 
 - new unit test framework junit-jupiter-api(junit5)
+- new set of subordinates in data class Employee
 
 CHANGED:
 
