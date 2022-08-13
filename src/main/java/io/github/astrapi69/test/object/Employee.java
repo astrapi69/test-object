@@ -100,24 +100,24 @@ public class Employee implements Serializable
 		return this.id;
 	}
 
-	public Person getPerson()
-	{
-		return this.person;
-	}
-
-	public Set<Employee> getSubOrdinates()
-	{
-		return this.subOrdinates;
-	}
-
 	public void setId(String id)
 	{
 		this.id = id;
 	}
 
+	public Person getPerson()
+	{
+		return this.person;
+	}
+
 	public void setPerson(Person person)
 	{
 		this.person = person;
+	}
+
+	public Set<Employee> getSubOrdinates()
+	{
+		return this.subOrdinates;
 	}
 
 	public void setSubOrdinates(Set<Employee> subOrdinates)

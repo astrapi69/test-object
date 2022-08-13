@@ -26,12 +26,12 @@ package io.github.astrapi69.test.object;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import org.meanbean.test.BeanTester;
+import java.util.HashSet;
+
 import org.junit.jupiter.api.Test;
+import org.meanbean.test.BeanTester;
 
 import io.github.astrapi69.evaluate.object.verifier.ContractVerifier;
-
-import java.util.HashSet;
 
 /**
  * The unit test class for the class {@link Employee}.

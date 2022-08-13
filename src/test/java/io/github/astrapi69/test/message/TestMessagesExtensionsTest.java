@@ -26,8 +26,8 @@ package io.github.astrapi69.test.message;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.meanbean.test.BeanTester;
 import org.junit.jupiter.api.Test;
+import org.meanbean.test.BeanTester;
 
 /**
  * The unit test class for the class {@link TestMessagesExtensions}.

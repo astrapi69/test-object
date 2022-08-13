@@ -29,8 +29,8 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import java.sql.Timestamp;
 import java.util.Date;
 
-import org.meanbean.test.BeanTester;
 import org.junit.jupiter.api.Test;
+import org.meanbean.test.BeanTester;
 
 import io.github.astrapi69.evaluate.object.verifier.ContractVerifier;
 

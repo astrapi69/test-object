@@ -27,8 +27,8 @@ package io.github.astrapi69.test.object;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import org.meanbean.test.BeanTester;
 import org.junit.jupiter.api.Test;
+import org.meanbean.test.BeanTester;
 
 import io.github.astrapi69.evaluate.object.verifier.ContractVerifier;
 import io.github.astrapi69.test.object.enumtype.Gender;

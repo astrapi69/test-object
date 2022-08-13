@@ -24,9 +24,6 @@
  */
 package io.github.astrapi69.test.object.factory;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import io.github.astrapi69.test.object.Club;
 import io.github.astrapi69.test.object.Employee;
 import io.github.astrapi69.test.object.Factory;

@@ -32,8 +32,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-import org.meanbean.test.BeanTester;
 import org.junit.jupiter.api.Test;
+import org.meanbean.test.BeanTester;
 
 import io.github.astrapi69.evaluate.object.verifier.ContractVerifier;
 import io.github.astrapi69.test.object.enumtype.Gender;

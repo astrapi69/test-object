@@ -24,8 +24,8 @@
  */
 package io.github.astrapi69.test.object.annotation.classtype;
 
-import org.meanbean.test.BeanTester;
 import org.junit.jupiter.api.Test;
+import org.meanbean.test.BeanTester;
 
 import io.github.astrapi69.evaluate.object.verifier.ContractVerifier;
 
