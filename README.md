@@ -32,7 +32,7 @@ No animals were harmed in the making of this library.
 ## gradle dependency
 
 You can first define the version in the ext section and add than the following gradle dependency to your
-project `build.gradle` if you want to import the core functionality of test-objects:
+project `build.gradle` if you want to import the core functionality oftest-object:
 
 define version in file gradle.properties
 
@@ -148,7 +148,7 @@ or over flattr:
 
 ## License
 
-The source code comes under the liberal MIT License, making test-objects great for all types of applications.
+The source code comes under the liberal MIT License, makingtest-object great for all types of applications.
 
 ## Semantic Versioning
 
@@ -163,7 +163,7 @@ the [wiki page](https://github.com/lightblueseas/mvn-parent-projects/wiki/Semant
 
 ## Want to Help and improve it? ###
 
-The source code for test-objects are on GitHub. Please feel free to fork and send pull requests!
+The source code fortest-object are on GitHub. Please feel free to fork and send pull requests!
 
 Create your own fork of [lightblueseas/test-objects/fork](https://github.com/lightblueseas/test-objects/fork)
 
@@ -173,7 +173,7 @@ Don't forget to add new units tests on your changes.
 
 ## Contacting the Developers
 
-Do not hesitate to contact the test-objects developers with your questions, concerns, comments, bug reports, or feature
+Do not hesitate to contact thetest-object developers with your questions, concerns, comments, bug reports, or feature
 requests.
 
 - Feature requests, questions and bug reports can be reported at
