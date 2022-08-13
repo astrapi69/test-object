@@ -25,141 +25,46 @@
 package io.github.astrapi69.test.object;
 
 import java.io.Serializable;
+import java.util.Set;
+
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.Singular;
+import lombok.experimental.FieldDefaults;
+import lombok.experimental.SuperBuilder;
 
 /**
- * The class {@link Employee} is a class intended for use in unit tests.
+ * The class {@link Employee} is a class intended for use in unit tests
  */
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@SuperBuilder(toBuilder = true)
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class Employee implements Serializable
 {
+
 	/**
 	 * The serialVersionUID.
 	 */
 	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The id.
 	 */
-	private String id;
+	String id;
+
 	/**
-	 * The person.
+	 * The person
 	 */
-	private Person person;
+	Person person;
 
-	public Employee()
-	{
-	}
+	/**
+	 * The set with the subordinates employees
+	 */
+	@Singular
+	Set<Employee> subOrdinates;
 
-	public Employee(final String id, final Person person)
-	{
-		this.id = id;
-		this.person = person;
-	}
-
-	public static EmployeeBuilder builder()
-	{
-		return new EmployeeBuilder();
-	}
-
-	protected boolean canEqual(final Object other)
-	{
-		return other instanceof Employee;
-	}
-
-	@Override
-	public boolean equals(final Object o)
-	{
-		if (o == this)
-			return true;
-		if (!(o instanceof Employee))
-			return false;
-		final Employee other = (Employee)o;
-		if (!other.canEqual(this))
-			return false;
-		final Object this$id = this.getId();
-		final Object other$id = other.getId();
-		if (this$id == null ? other$id != null : !this$id.equals(other$id))
-			return false;
-		final Object this$person = this.getPerson();
-		final Object other$person = other.getPerson();
-		return this$person == null ? other$person == null : this$person.equals(other$person);
-	}
-
-	public String getId()
-	{
-		return this.id;
-	}
-
-	public Employee setId(final String id)
-	{
-		this.id = id;
-		return this;
-	}
-
-	public Person getPerson()
-	{
-		return this.person;
-	}
-
-	public Employee setPerson(final Person person)
-	{
-		this.person = person;
-		return this;
-	}
-
-	@Override
-	public int hashCode()
-	{
-		final int PRIME = 59;
-		int result = 1;
-		final Object $id = this.getId();
-		result = result * PRIME + ($id == null ? 43 : $id.hashCode());
-		final Object $person = this.getPerson();
-		result = result * PRIME + ($person == null ? 43 : $person.hashCode());
-		return result;
-	}
-
-	public EmployeeBuilder toBuilder()
-	{
-		return new EmployeeBuilder().id(this.id).person(this.person);
-	}
-
-	@Override
-	public String toString()
-	{
-		return "Employee(id=" + this.getId() + ", person=" + this.getPerson() + ")";
-	}
-
-	public static class EmployeeBuilder
-	{
-
-		private String id;
-
-		private Person person;
-
-		EmployeeBuilder()
-		{
-		}
-
-		public Employee build()
-		{
-			return new Employee(id, person);
-		}
-
-		public EmployeeBuilder id(final String id)
-		{
-			this.id = id;
-			return this;
-		}
-
-		public EmployeeBuilder person(final Person person)
-		{
-			this.person = person;
-			return this;
-		}
-
-		@Override
-		public String toString()
-		{
-			return "Employee.EmployeeBuilder(id=" + this.id + ", person=" + this.person + ")";
-		}
-	}
 }
