@@ -24,12 +24,14 @@
  */
 package io.github.astrapi69.test.object;
 
-import static org.testng.AssertJUnit.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.meanbean.test.BeanTester;
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.Test;
 
 import io.github.astrapi69.evaluate.object.verifier.ContractVerifier;
+
+import java.util.HashSet;
 
 /**
  * The unit test class for the class {@link Employee}.
@@ -45,7 +47,7 @@ public class EmployeeTest
 	{
 		Employee model = new Employee();
 		assertNotNull(model);
-		model = new Employee("", Person.builder().build());
+		model = new Employee("", Person.builder().build(), new HashSet<>());
 		assertNotNull(model);
 		model = Employee.builder().build();
 		assertNotNull(model);

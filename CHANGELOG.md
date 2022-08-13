@@ -1,9 +1,20 @@
 ## Change log
 ----------------------
 
-Version 6.2-SNAPSHOT
+Version 7-SNAPSHOT
 -------------
 
+ADDED:
+
+- new unit test framework junit-jupiter-api(junit5)
+
+CHANGED:
+
+- update of jdk to version 11
+- update of gradle to new version 7.5.1
+- update of gradle-plugin dependency of 'com.diffplug.spotless:spotless-plugin-gradle' in version 6.9.1
+- remove of unit test framework testng
+- rename of module and repository from plural-form test-objects to singular-form test-object
 
 Version 6.1
 -------------

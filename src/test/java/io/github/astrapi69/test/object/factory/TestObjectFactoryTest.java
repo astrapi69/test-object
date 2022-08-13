@@ -24,14 +24,14 @@
  */
 package io.github.astrapi69.test.object.factory;
 
-import static org.testng.AssertJUnit.assertEquals;
-import static org.testng.AssertJUnit.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import io.github.astrapi69.test.object.AlgorithmModel;
 import io.github.astrapi69.test.object.Employee;
 import io.github.astrapi69.test.object.Factory;
 import io.github.astrapi69.test.object.Person;
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.Test;
 
 import io.github.astrapi69.test.object.Club;
 import io.github.astrapi69.test.object.Member;

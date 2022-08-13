@@ -25,7 +25,7 @@
 package io.github.astrapi69.test.object.annotation.foobar;
 
 import org.meanbean.test.BeanTester;
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.Test;
 
 import io.github.astrapi69.evaluate.object.verifier.ContractVerifier;
 
