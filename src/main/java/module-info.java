@@ -1,4 +1,5 @@
 module test.object.main {
+	requires java.sql;
 	exports io.github.astrapi69;
 	exports io.github.astrapi69.classes.inner;
 	exports io.github.astrapi69.date;
