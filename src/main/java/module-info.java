@@ -1,4 +1,4 @@
-module test.objects.main {
+module test.object.main {
 	exports io.github.astrapi69;
 	exports io.github.astrapi69.classes.inner;
 	exports io.github.astrapi69.date;
