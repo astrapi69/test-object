@@ -31,6 +31,8 @@ import org.testng.annotations.Test;
 
 import io.github.astrapi69.evaluate.object.verifier.ContractVerifier;
 
+import java.util.HashSet;
+
 /**
  * The unit test class for the class {@link Employee}.
  */
@@ -45,7 +47,7 @@ public class EmployeeTest
 	{
 		Employee model = new Employee();
 		assertNotNull(model);
-		model = new Employee("", Person.builder().build());
+		model = new Employee("1", Person.builder().build(), new HashSet<>());
 		assertNotNull(model);
 		model = Employee.builder().build();
 		assertNotNull(model);
