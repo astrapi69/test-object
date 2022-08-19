@@ -26,10 +26,9 @@ package io.github.astrapi69.test.object;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.meanbean.test.BeanTester;
-
-import io.github.astrapi69.evaluate.object.verifier.ContractVerifier;
 
 /**
  * The unit test class for the class {@link Company}
@@ -63,13 +62,4 @@ public class CompanyTest
 		beanTester.testBean(Company.class);
 	}
 
-	/**
-	 * Test method for {@link Company#equals(Object)} , {@link Company#hashCode()} and
-	 * {@link Company#toString()}
-	 */
-	@Test
-	public void verifyEqualsHashcodeAndToStringContracts()
-	{
-		ContractVerifier.of(Company.class).verify();
-	}
 }

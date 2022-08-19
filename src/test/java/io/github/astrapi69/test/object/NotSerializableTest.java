@@ -26,10 +26,9 @@ package io.github.astrapi69.test.object;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.meanbean.test.BeanTester;
-
-import io.github.astrapi69.evaluate.object.verifier.ContractVerifier;
 
 /**
  * The unit test class for the class {@link NotSerializable}.
@@ -61,13 +60,4 @@ public class NotSerializableTest
 		beanTester.testBean(NotSerializable.class);
 	}
 
-	/**
-	 * Test method for {@link NotSerializable#equals(Object)} , {@link NotSerializable#hashCode()}
-	 * and {@link NotSerializable#toString()}
-	 */
-	@Test
-	public void verifyEqualsHashcodeAndToStringContracts()
-	{
-		ContractVerifier.of(NotSerializable.class).verify();
-	}
 }

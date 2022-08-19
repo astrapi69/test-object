@@ -28,10 +28,9 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.util.HashSet;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.meanbean.test.BeanTester;
-
-import io.github.astrapi69.evaluate.object.verifier.ContractVerifier;
 
 /**
  * The unit test class for the class {@link Role}.
@@ -64,13 +63,4 @@ public class RoleTest
 		beanTester.testBean(Role.class);
 	}
 
-	/**
-	 * Test method for {@link Role#equals(Object)} , {@link Role#hashCode()} and
-	 * {@link Role#toString()}
-	 */
-	@Test
-	public void verifyEqualsHashcodeAndToStringContracts()
-	{
-		ContractVerifier.of(Role.class).verify();
-	}
 }

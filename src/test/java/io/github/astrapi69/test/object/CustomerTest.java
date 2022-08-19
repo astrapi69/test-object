@@ -26,10 +26,10 @@ package io.github.astrapi69.test.object;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.meanbean.test.BeanTester;
 
-import io.github.astrapi69.evaluate.object.verifier.ContractVerifier;
 import io.github.astrapi69.test.object.enumtype.Brand;
 
 /**
@@ -62,13 +62,4 @@ public class CustomerTest
 		beanTester.testBean(Customer.class);
 	}
 
-	/**
-	 * Test method for {@link Customer#equals(Object)} , {@link Customer#hashCode()} and
-	 * {@link Customer#toString()}
-	 */
-	@Test
-	public void verifyEqualsHashcodeAndToStringContracts()
-	{
-		ContractVerifier.of(Customer.class).verify();
-	}
 }

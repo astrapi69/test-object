@@ -32,10 +32,10 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.meanbean.test.BeanTester;
 
-import io.github.astrapi69.evaluate.object.verifier.ContractVerifier;
 import io.github.astrapi69.test.object.enumtype.Gender;
 
 /**
@@ -109,13 +109,4 @@ public class MemberTest
 		beanTester.testBean(Member.class);
 	}
 
-	/**
-	 * Test method for {@link Member#equals(Object)} , {@link Member#hashCode()} and
-	 * {@link Member#toString()}
-	 */
-	@Test
-	public void verifyEqualsHashcodeAndToStringContracts()
-	{
-		ContractVerifier.of(Member.class).verify();
-	}
 }

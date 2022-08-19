@@ -26,10 +26,9 @@ package io.github.astrapi69.test.object.auth;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.meanbean.test.BeanTester;
-
-import io.github.astrapi69.evaluate.object.verifier.ContractVerifier;
 
 /**
  * The unit test class for the class {@link AccessRight}.
@@ -61,13 +60,4 @@ public class AccessRightTest
 		beanTester.testBean(AccessRight.class);
 	}
 
-	/**
-	 * Test method for {@link AccessRight#equals(Object)} , {@link AccessRight#hashCode()} and
-	 * {@link AccessRight#toString()}
-	 */
-	@Test
-	public void verifyEqualsHashcodeAndToStringContracts()
-	{
-		ContractVerifier.of(AccessRight.class).verify();
-	}
 }

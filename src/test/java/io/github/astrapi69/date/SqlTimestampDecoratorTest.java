@@ -29,10 +29,9 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import java.sql.Timestamp;
 import java.util.Date;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.meanbean.test.BeanTester;
-
-import io.github.astrapi69.evaluate.object.verifier.ContractVerifier;
 
 /**
  * The unit test class for the class {@link SqlTimestampDecorator}.
@@ -64,13 +63,4 @@ public class SqlTimestampDecoratorTest
 		beanTester.testBean(SqlTimestampDecorator.class);
 	}
 
-	/**
-	 * Test method for {@link SqlTimestampDecorator#equals(Object)} ,
-	 * {@link SqlTimestampDecorator#hashCode()} and {@link SqlTimestampDecorator#toString()}
-	 */
-	@Test
-	public void verifyEqualsHashcodeAndToStringContracts()
-	{
-		ContractVerifier.of(SqlTimestampDecorator.class).verify();
-	}
 }

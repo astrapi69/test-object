@@ -27,10 +27,9 @@ package io.github.astrapi69.test.object;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.meanbean.test.BeanTester;
-
-import io.github.astrapi69.evaluate.object.verifier.ContractVerifier;
 
 /**
  * The unit test class for the class {@link Light}.
@@ -90,13 +89,4 @@ public class LightTest
 		beanTester.testBean(Light.class);
 	}
 
-	/**
-	 * Test method for {@link Employee#equals(Object)} , {@link Employee#hashCode()} and
-	 * {@link Employee#toString()}
-	 */
-	@Test
-	public void verifyEqualsHashcodeAndToStringContracts()
-	{
-		ContractVerifier.of(Light.class).verify();
-	}
 }

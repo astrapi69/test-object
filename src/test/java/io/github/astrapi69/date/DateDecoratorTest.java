@@ -28,10 +28,9 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.util.Date;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.meanbean.test.BeanTester;
-
-import io.github.astrapi69.evaluate.object.verifier.ContractVerifier;
 
 /**
  * The unit test class for the class {@link DateDecorator}.
@@ -63,13 +62,4 @@ public class DateDecoratorTest
 		beanTester.testBean(DateDecorator.class);
 	}
 
-	/**
-	 * Test method for {@link DateDecorator#equals(Object)} , {@link DateDecorator#hashCode()} and
-	 * {@link DateDecorator#toString()}
-	 */
-	@Test
-	public void verifyEqualsHashcodeAndToStringContracts()
-	{
-		ContractVerifier.of(DateDecorator.class).verify();
-	}
 }

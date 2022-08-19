@@ -29,10 +29,10 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.util.Date;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.meanbean.test.BeanTester;
 
-import io.github.astrapi69.evaluate.object.verifier.ContractVerifier;
 import io.github.astrapi69.test.object.enumtype.Gender;
 
 /**
@@ -89,13 +89,4 @@ public class PremiumMemberTest
 		beanTester.testBean(PremiumMember.class);
 	}
 
-	/**
-	 * Test method for {@link PremiumMember#equals(Object)} , {@link PremiumMember#hashCode()} and
-	 * {@link PremiumMember#toString()}
-	 */
-	@Test
-	public void verifyEqualsHashcodeAndToStringContracts()
-	{
-		ContractVerifier.of(PremiumMember.class).verify();
-	}
 }

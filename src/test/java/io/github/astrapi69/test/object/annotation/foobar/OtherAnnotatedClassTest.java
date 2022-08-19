@@ -24,10 +24,9 @@
  */
 package io.github.astrapi69.test.object.annotation.foobar;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.meanbean.test.BeanTester;
-
-import io.github.astrapi69.evaluate.object.verifier.ContractVerifier;
 
 /**
  * The unit test class for the class {@link OtherAnnotatedClass}.
@@ -42,16 +41,6 @@ public class OtherAnnotatedClassTest
 	{
 		final BeanTester beanTester = new BeanTester();
 		beanTester.testBean(OtherAnnotatedClass.class);
-	}
-
-	/**
-	 * Test method for {@link OtherAnnotatedClass#equals(Object)} ,
-	 * {@link OtherAnnotatedClass#hashCode()} and {@link OtherAnnotatedClass#toString()}
-	 */
-	@Test
-	public void verifyEqualsHashcodeAndToStringContracts()
-	{
-		ContractVerifier.of(OtherAnnotatedClass.class).verify();
 	}
 
 }

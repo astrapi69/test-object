@@ -4,7 +4,9 @@
 Version 7.1-SNAPSHOT
 -------------
 
+CHANGED:
 
+- update of test dependency jobj-contract-verifier to new version 4
 
 Version 7
 -------------
