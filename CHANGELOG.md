@@ -7,6 +7,7 @@ Version 7.1-SNAPSHOT
 CHANGED:
 
 - update of test dependency jobj-contract-verifier to new version 4
+- update of test dependency silly-collection to new version 20
 
 Version 7
 -------------
