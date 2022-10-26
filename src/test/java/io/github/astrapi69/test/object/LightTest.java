@@ -27,7 +27,6 @@ package io.github.astrapi69.test.object;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.meanbean.test.BeanTester;
 

@@ -24,7 +24,6 @@
  */
 package io.github.astrapi69.test.object.generic;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.meanbean.test.BeanTester;
 
