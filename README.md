@@ -37,13 +37,13 @@ project `build.gradle` if you want to import the core functionality oftest-objec
 define version in file gradle.properties
 
 ```
-testObjectVersion=7.1
+testObjectVersion=7.2
 ```
 
 or in build.gradle ext area
 
 ```
-    testObjectVersion = "7.1"
+    testObjectVersion = "7.2"
 ```
 
 and than add the dependency to the dependencies area
@@ -66,7 +66,7 @@ Than you can add the dependency to your dependencies:
     <properties>
             ...
         <!-- TEST-OBJECT version -->
-        <test-object.version>7.1</test-object.version>
+        <test-object.version>7.2</test-object.version>
             ...
     </properties>
             ...
