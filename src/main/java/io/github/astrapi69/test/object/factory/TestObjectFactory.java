@@ -34,6 +34,12 @@ import io.github.astrapi69.test.object.enumtype.Gender;
 public class TestObjectFactory
 {
 
+	public static Person newPerson()
+	{
+		return Person.builder().gender(Gender.FEMALE).name("Anna").married(false)
+			.about("I'm a beast and beautiful").nickname("beast").build();
+	}
+
 	public static Club newClub()
 	{
 		return Club.builder()
