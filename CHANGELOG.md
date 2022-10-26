@@ -4,7 +4,16 @@
 Version 7.2-SNAPSHOT
 -------------
 
+ADDED:
 
+- new factory method for test object Person
+
+CHANGED:
+
+- update of com.github.ben-manes.versions.gradle.plugin to new version 0.43.0
+- update of gradle-plugin dependency of 'com.diffplug.spotless:spotless-plugin-gradle' in version 6.11.0
+- update of test dependency silly-collection to new version 20.1
+- update of test dependency junit-juniper-api to new version 5.9.1
 
 Version 7.1
 -------------
