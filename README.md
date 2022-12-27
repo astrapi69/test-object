@@ -2,13 +2,13 @@
 
 <div style="text-align: center">
 
-[![Java CI with Gradle](https://github.com/lightblueseas/test-object/actions/workflows/gradle.yml/badge.svg)](https://github.com/lightblueseas/test-object/actions/workflows/gradle.yml)
-[![Open Issues](https://img.shields.io/github/issues/lightblueseas/test-object.svg?style=flat)](https://github.com/lightblueseas/test-object/issues)
+[![Java CI with Gradle](https://github.com/astrapi69/test-object/actions/workflows/gradle.yml/badge.svg)](https://github.com/astrapi69/test-object/actions/workflows/gradle.yml)
+[![Open Issues](https://img.shields.io/github/issues/astrapi69/test-object.svg?style=flat)](https://github.com/astrapi69/test-object/issues)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/test-object/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/test-object)
 [![Javadocs](http://www.javadoc.io/badge/io.github.astrapi69/test-object.svg)](http://www.javadoc.io/doc/io.github.astrapi69/test-object)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](http://opensource.org/licenses/MIT)
 [![Donate](https://img.shields.io/badge/donate-❤-ff2244.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GVBTWLRAZ7HB8)
-[![Hits Of Code](https://hitsofcode.com/github/lightblueseas/test-object?branch=develop)](https://hitsofcode.com/github/lightblueseas/test-object/view?branch=develop)
+[![Hits Of Code](https://hitsofcode.com/github/astrapi69/test-object?branch=develop)](https://hitsofcode.com/github/astrapi69/test-object/view?branch=develop)
 
 </div>
 
@@ -17,7 +17,7 @@ Project that holds test objects for unit tests.
 # Support this project
 
 > Please support this project by simply putting a Github <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/lightblueseas/test-object" data-icon="octicon-star" aria-label="Star lightblueseas/test-object on GitHub">Star ⭐</a>
+<a class="github-button" href="https://github.com/astrapi69/test-object" data-icon="octicon-star" aria-label="Star astrapi69/test-object on GitHub">Star ⭐</a>
 >
 > Share this library with friends on Twitter and everywhere else you can
 >
@@ -32,7 +32,7 @@ No animals were harmed in the making of this library.
 ## gradle dependency
 
 You can first define the version in the ext section and add than the following gradle dependency to your
-project `build.gradle` if you want to import the core functionality oftest-object:
+project `build.gradle` if you want to import the core functionality of test-object:
 
 define version in file gradle.properties
 
@@ -58,8 +58,7 @@ Maven dependency is now on sonatype. Check
 out [sonatype repository](https://oss.sonatype.org/index.html#nexus-search;gav~io.github.astrapi69~test-object~~~)
 for latest snapshots and releases.
 
-Add the following maven dependency to your project `pom.xml` if you want to import the core functionality of
-test-object:
+Add the following maven dependency to your project `pom.xml` if you want to import the core functionality of test-object:
 
 Than you can add the dependency to your dependencies:
 
@@ -142,13 +141,13 @@ alt="Donation Monero Wallet" width="250"/>
 
 or over flattr:
 
-<a href="https://flattr.com/submit/auto?fid=r7vp62&url=https%3A%2F%2Fgithub.com%2Flightblueseas%2Ftest-object" target="_blank">
+<a href="https://flattr.com/submit/auto?fid=r7vp62&url=https%3A%2F%2Fgithub.com%2Fastrapi69%2Ftest-object" target="_blank">
 <img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" style="border: none" />
 </a>
 
 ## License
 
-The source code comes under the liberal MIT License, makingtest-object great for all types of applications.
+The source code comes under the liberal MIT License, making test-object great for all types of applications.
 
 ## Semantic Versioning
 
@@ -163,21 +162,21 @@ the [wiki page](https://github.com/lightblueseas/mvn-parent-projects/wiki/Semant
 
 ## Want to Help and improve it? ###
 
-The source code fortest-object are on GitHub. Please feel free to fork and send pull requests!
+The source code for test-object are on GitHub. Please feel free to fork and send pull requests!
 
-Create your own fork of [lightblueseas/test-object/fork](https://github.com/lightblueseas/test-object/fork)
+Create your own fork of [astrapi69/test-object/fork](https://github.com/astrapi69/test-object/fork)
 
-To share your changes, [submit a pull request](https://github.com/lightblueseas/test-object/pull/new/develop).
+To share your changes, [submit a pull request](https://github.com/astrapi69/test-object/pull/new/develop).
 
 Don't forget to add new units tests on your changes.
 
 ## Contacting the Developers
 
-Do not hesitate to contact thetest-object developers with your questions, concerns, comments, bug reports, or feature
+Do not hesitate to contact the test-object developers with your questions, concerns, comments, bug reports, or feature
 requests.
 
 - Feature requests, questions and bug reports can be reported at
-  the [issues page](https://github.com/lightblueseas/test-object/issues).
+  the [issues page](https://github.com/astrapi69/test-object/issues).
 
 # Similar projects
 
@@ -197,7 +196,7 @@ requests.
 
 |**coveralls.io**|
 |     :---:      |
-|[![Coverage Status](https://coveralls.io/repos/github/lightblueseas/test-object/badge.svg?branch=master)](https://coveralls.io/github/lightblueseas/test-object?branch=master)|
+|[![Coverage Status](https://coveralls.io/repos/github/astrapi69/test-object/badge.svg?branch=master)](https://coveralls.io/github/astrapi69/test-object?branch=master)|
 |Special thanks to [coveralls.io](https://coveralls.io) for providing a free code coverage for open source projects|
 |     <img width=1000/>     |
 

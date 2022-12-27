@@ -2,14 +2,14 @@
 
 ## 1. Purpose
 
-A primary goal oftest-object is to be inclusive to the largest number of contributors, with the most varied and
+A primary goal of test-object is to be inclusive to the largest number of contributors, with the most varied and
 diverse backgrounds possible. As such, we are committed to providing a friendly, safe and welcoming environment for all,
 regardless of gender, sexual orientation, ability, ethnicity, socioeconomic status, and religion (or lack thereof).
 
 This code of conduct outlines our expectations for all those who participate in our community, as well as the
 consequences for unacceptable behavior.
 
-We invite all those who participate intest-object to help us create safe and positive experiences for everyone.
+We invite all those who participate in test-object to help us create safe and positive experiences for everyone.
 
 ## 2. Open Source Citizenship
 
