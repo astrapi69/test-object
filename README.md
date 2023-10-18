@@ -39,13 +39,13 @@ project `build.gradle` if you want to import the core functionality of test-obje
 define version in file gradle.properties
 
 ```
-testObjectVersion=7.2
+testObjectVersion=8
 ```
 
 or in build.gradle ext area
 
 ```
-    testObjectVersion = "7.2"
+    testObjectVersion = "8"
 ```
 
 and than add the dependency to the dependencies area
@@ -68,7 +68,7 @@ Than you can add the dependency to your dependencies:
     <properties>
             ...
         <!-- TEST-OBJECT version -->
-        <test-object.version>7.2</test-object.version>
+        <test-object.version>8</test-object.version>
             ...
     </properties>
             ...
@@ -141,12 +141,6 @@ or over Monero(XMR) with:
 <img
 src="https://github.com/astrapi69/jgeohash/blob/master/src/main/resources/img/49bqeRQ7Bf49oJFVC72pqpe5hFbb62pfXDYPdLsadGGF81KZW2ZfrPZ8PbAVu5X2v1TYAspeczMya3cYQysNS4usRRPQHVw.png"
 alt="Donation Monero Wallet" width="250"/>
-
-or over flattr:
-
-<a href="https://flattr.com/submit/auto?fid=r7vp62&url=https%3A%2F%2Fgithub.com%2Fastrapi69%2Ftest-object" target="_blank">
-<img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" style="border: none" />
-</a>
 
 ## License
 
