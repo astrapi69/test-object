@@ -1,11 +1,12 @@
 ## Change log
 ----------------------
 
-Version 7.3-SNAPSHOT
+Version 8-SNAPSHOT
 -------------
 
 CHANGED:
 
+- update of jdk to version 17
 - update of gradle to new version 8.4
 - update of com.github.ben-manes.versions.gradle.plugin to new version 0.49.0
 - update of gradle-plugin dependency 'org.ajoberstar.grgit:grgit-gradle' to new version 5.2.0
