@@ -4,6 +4,16 @@
 Version 7.3-SNAPSHOT
 -------------
 
+CHANGED:
+
+- update of gradle to new version 8.4
+- update of com.github.ben-manes.versions.gradle.plugin to new version 0.49.0
+- update of gradle-plugin dependency 'org.ajoberstar.grgit:grgit-gradle' to new version 5.2.0
+- update of gradle-plugin dependency of 'com.diffplug.spotless:spotless-plugin-gradle' in version 6.22.0
+- update of test dependency silly-collection to new version 21
+- update of test dependency meanbean to the new milestone version 3.0.0-M9
+- update of test dependency junit-juniper-api to new version 5.10.0
+
 Version 7.2
 -------------
 

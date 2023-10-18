@@ -1,9 +1,7 @@
-
 dependencies {
     testImplementation("io.github.astrapi69:silly-collection:$sillyCollectionVersion")
     testImplementation("io.github.astrapi69:jobj-contract-verifier:$jobjContractVerifierVersion")
-    testImplementation("org.meanbean:meanbean:$meanbeanVersion")
-    testImplementation("org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion")
-    testImplementation("org.junit.jupiter:junit-jupiter-params:$junitJupiterVersion")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion")
+    testImplementation("com.github.meanbeanlib:meanbean:$meanbeanVersion")
+    testImplementation("org.junit.jupiter:junit-jupiter:$junitJupiterVersion")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }

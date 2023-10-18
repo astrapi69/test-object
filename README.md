@@ -17,11 +17,13 @@ Project that holds test objects for unit tests.
 # Support this project
 
 > Please support this project by simply putting a Github <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/astrapi69/test-object" data-icon="octicon-star" aria-label="Star astrapi69/test-object on GitHub">Star ⭐</a>
+<a class="github-button" href="https://github.com/astrapi69/test-object" data-icon="octicon-star" aria-label="Star astrapi69/test-object on GitHub">
+> Star ⭐</a>
 >
 > Share this library with friends on Twitter and everywhere else you can
 >
-> If you love this project [![donation](https://img.shields.io/badge/donate-❤-ff2244.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GVBTWLRAZ7HB8)
+> If you love this
+> project [![donation](https://img.shields.io/badge/donate-❤-ff2244.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GVBTWLRAZ7HB8)
 >
 > or for more donation options go the [donations section](#Donations)
 
@@ -58,7 +60,8 @@ Maven dependency is now on sonatype. Check
 out [sonatype repository](https://oss.sonatype.org/index.html#nexus-search;gav~io.github.astrapi69~test-object~~~)
 for latest snapshots and releases.
 
-Add the following maven dependency to your project `pom.xml` if you want to import the core functionality of test-object:
+Add the following maven dependency to your project `pom.xml` if you want to import the core functionality of
+test-object:
 
 Than you can add the dependency to your dependencies:
 
@@ -188,20 +191,20 @@ requests.
 
 ## Credits
 
-|**Nexus Sonatype repositories**|
-|     :---:      |
-|[![sonatype repository](https://img.shields.io/nexus/r/https/oss.sonatype.org/io.github.astrapi69/test-object.svg?style=for-the-badge)](https://oss.sonatype.org/index.html#nexus-search;gav~io.github.astrapi69~test-object~~~)|
-|Special thanks to [sonatype repository](https://www.sonatype.com) for providing a free maven repository service for open source projects|
-|     <img width=1000/>     |
+|                                                                                                 **Nexus Sonatype repositories**                                                                                                  |
+|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| [![sonatype repository](https://img.shields.io/nexus/r/https/oss.sonatype.org/io.github.astrapi69/test-object.svg?style=for-the-badge)](https://oss.sonatype.org/index.html#nexus-search;gav~io.github.astrapi69~test-object~~~) |
+|                                             Special thanks to [sonatype repository](https://www.sonatype.com) for providing a free maven repository service for open source projects                                             |
+|                                                                                                        <img width=1000/>                                                                                                         |
 
-|**coveralls.io**|
-|     :---:      |
-|[![Coverage Status](https://coveralls.io/repos/github/astrapi69/test-object/badge.svg?branch=master)](https://coveralls.io/github/astrapi69/test-object?branch=master)|
-|Special thanks to [coveralls.io](https://coveralls.io) for providing a free code coverage for open source projects|
-|     <img width=1000/>     |
+|                                                                            **coveralls.io**                                                                            |
+|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| [![Coverage Status](https://coveralls.io/repos/github/astrapi69/test-object/badge.svg?branch=master)](https://coveralls.io/github/astrapi69/test-object?branch=master) |
+|                           Special thanks to [coveralls.io](https://coveralls.io) for providing a free code coverage for open source projects                           |
+|                                                                           <img width=1000/>                                                                            |
 
-|**javadoc.io**|
-|     :---:      |
-|[![Javadocs](http://www.javadoc.io/badge/io.github.astrapi69/test-object.svg)](http://www.javadoc.io/doc/io.github.astrapi69/test-object)|
-|Special thanks to [javadoc.io](http://www.javadoc.io) for providing a free javadoc documentation for open source projects|
-|     <img width=1000/>     |
+|                                                              **javadoc.io**                                                               |
+|:-----------------------------------------------------------------------------------------------------------------------------------------:|
+| [![Javadocs](http://www.javadoc.io/badge/io.github.astrapi69/test-object.svg)](http://www.javadoc.io/doc/io.github.astrapi69/test-object) |
+|         Special thanks to [javadoc.io](http://www.javadoc.io) for providing a free javadoc documentation for open source projects         |
+|                                                             <img width=1000/>                                                             |

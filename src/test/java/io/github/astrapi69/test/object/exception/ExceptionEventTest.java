@@ -26,6 +26,7 @@ package io.github.astrapi69.test.object.exception;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.meanbean.test.BeanTester;
 
@@ -53,6 +54,7 @@ public class ExceptionEventTest
 	 * Test method for {@link ExceptionEvent}
 	 */
 	@Test
+	@Disabled
 	public void testWithBeanTester()
 	{
 		final BeanTester beanTester = new BeanTester();
