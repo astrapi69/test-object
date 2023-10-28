@@ -28,6 +28,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.Test;
 import org.meanbean.test.BeanTester;
+import org.meanbean.test.BeanVerifier;
 
 /**
  * The unit test class for the class {@link Club}
@@ -59,6 +60,16 @@ public class ClubTest
 	{
 		final BeanTester beanTester = new BeanTester();
 		beanTester.testBean(Club.class);
+	}
+
+
+	/**
+	 * Test method for {@link Club}
+	 */
+	@Test
+	public void testWithBeanVerifier()
+	{
+		BeanVerifier.verifyBean(Club.class);
 	}
 
 }
