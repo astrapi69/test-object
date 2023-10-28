@@ -34,7 +34,7 @@ import io.github.astrapi69.test.object.Employee;
 import io.github.astrapi69.test.object.Factory;
 import io.github.astrapi69.test.object.Member;
 import io.github.astrapi69.test.object.Person;
-import io.github.astrapi69.test.object.enumtype.Gender;
+import io.github.astrapi69.test.object.enumeration.Gender;
 
 /**
  * The unit test class for the class {@link TestObjectFactory}

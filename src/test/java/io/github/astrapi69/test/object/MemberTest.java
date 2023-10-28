@@ -28,6 +28,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -35,7 +36,7 @@ import java.util.GregorianCalendar;
 import org.junit.jupiter.api.Test;
 import org.meanbean.test.BeanTester;
 
-import io.github.astrapi69.test.object.enumtype.Gender;
+import io.github.astrapi69.test.object.enumeration.Gender;
 
 /**
  * The unit test class for the class {@link Member}.
@@ -56,8 +57,10 @@ public class MemberTest
 		Gender gender = Gender.MALE;
 		String about = "";
 		Boolean married = false;
-		Date dateofbirth = new Date();
-		Date dateofMarriage = new Date();
+		Date dateofbirth = Date
+			.from(LocalDate.of(1979, 2, 24).atStartOfDay(ZoneId.of("Europe/Berlin")).toInstant());
+		Date dateofMarriage = Date
+			.from(LocalDate.of(2017, 8, 8).atStartOfDay(ZoneId.of("Europe/Berlin")).toInstant());
 		model = new Member(about, gender, married, name, nickname, dateofbirth, dateofMarriage);
 		assertNotNull(model);
 		model = Member.buildMember().build();

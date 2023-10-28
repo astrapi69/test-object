@@ -26,7 +26,7 @@ package io.github.astrapi69.test.object;
 
 import java.util.Date;
 
-import io.github.astrapi69.test.object.enumtype.Gender;
+import io.github.astrapi69.test.object.enumeration.Gender;
 
 /**
  * The class {@link PremiumMember} is a class intended for use in unit tests.

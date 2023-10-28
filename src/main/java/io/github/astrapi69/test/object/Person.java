@@ -26,7 +26,7 @@ package io.github.astrapi69.test.object;
 
 import java.io.Serializable;
 
-import io.github.astrapi69.test.object.enumtype.Gender;
+import io.github.astrapi69.test.object.enumeration.Gender;
 
 /**
  * The class {@link Person} is a class intended for use in unit tests.

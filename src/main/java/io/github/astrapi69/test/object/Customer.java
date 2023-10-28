@@ -27,7 +27,7 @@ package io.github.astrapi69.test.object;
 import java.io.Serializable;
 
 import io.github.astrapi69.test.object.annotation.Mandatory;
-import io.github.astrapi69.test.object.enumtype.Brand;
+import io.github.astrapi69.test.object.enumeration.Brand;
 
 /**
  * The class {@link Customer} is a class intended for use in unit tests.

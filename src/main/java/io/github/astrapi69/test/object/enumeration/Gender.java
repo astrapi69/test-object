@@ -22,36 +22,17 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69.test.object.enumtype;
+package io.github.astrapi69.test.object.enumeration;
 
 /**
- * The enum {@link Brand} is an enum intended for use in unit tests and holds some brands from
- * famous cars.
+ * The enum {@link Gender} is an enum intended for use in unit tests.
  */
-public enum Brand
+public enum Gender
 {
-
-	/** The ferrari. */
-	FERRARI("Ferrari"),
-	/** The lamborgini. */
-	LAMBORGINI("Lamborgini"),
-	/** The maserati. */
-	MASERATI("Maserati"),
-	/** The porsche. */
-	PORSCHE("Porsche");
-
-	/**
-	 * The value
-	 */
-	private final String value;
-
-	Brand(final String value)
-	{
-		this.value = value;
-	}
-
-	public String getValue()
-	{
-		return value;
-	}
+	/** The female. */
+	FEMALE,
+	/** The male. */
+	MALE,
+	/** The undefined. */
+	UNDEFINED
 }

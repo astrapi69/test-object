@@ -4,7 +4,15 @@
 Version 8.1-SNAPSHOT
 -------------
 
+ADDED:
 
+- new factory methods for all missing test objects
+
+CHANGED:
+
+- update of gradle-plugin dependency 'org.ajoberstar.grgit:grgit-gradle' to new version 5.2.1
+- update of test dependency silly-collection to new version 27
+- rename of package enumtype to enumeration
 
 Version 8
 -------------

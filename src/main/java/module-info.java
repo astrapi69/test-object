@@ -33,7 +33,7 @@ module test.object.main
 	exports io.github.astrapi69.test.object.annotation.foobar;
 	exports io.github.astrapi69.test.object.annotation.interfacetype;
 	exports io.github.astrapi69.test.object.auth;
-	exports io.github.astrapi69.test.object.enumtype;
+	exports io.github.astrapi69.test.object.enumeration;
 	exports io.github.astrapi69.test.object.exception;
 	exports io.github.astrapi69.test.object.factory;
 	exports io.github.astrapi69.test.object.generic;

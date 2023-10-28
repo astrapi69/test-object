@@ -36,7 +36,7 @@ import io.github.astrapi69.test.object.CompanyGroup;
 import io.github.astrapi69.test.object.Employee;
 import io.github.astrapi69.test.object.Factory;
 import io.github.astrapi69.test.object.Person;
-import io.github.astrapi69.test.object.enumtype.Gender;
+import io.github.astrapi69.test.object.enumeration.Gender;
 
 public class OptionalTest
 {
