@@ -3,7 +3,7 @@
 <suite name="Suite">
     <test name="Test">
         <classes>
-            <class name="io.github.astrapi69.BaseTestCase"/>
+            <class name="io.github.astrapi69.test.base.BaseTestCase"/>
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->

@@ -13,6 +13,8 @@ CHANGED:
 - update of gradle-plugin dependency 'org.ajoberstar.grgit:grgit-gradle' to new version 5.2.1
 - update of test dependency silly-collection to new version 27
 - rename of package enumtype to enumeration
+- moved all abstract and base classes to its own package 'io.github.astrapi69.test.base'
+- replaced all obsolete package.html files with the new appropriate package-info.java files
 
 Version 8
 -------------

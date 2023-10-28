@@ -23,7 +23,8 @@ Project that holds test objects for unit tests.
 > Share this library with friends on Twitter and everywhere else you can
 >
 > If you love this
-> project [![donation](https://img.shields.io/badge/donate-❤-ff2244.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GVBTWLRAZ7HB8)
+>
+project [![donation](https://img.shields.io/badge/donate-❤-ff2244.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GVBTWLRAZ7HB8)
 >
 > or for more donation options go the [donations section](#Donations)
 
