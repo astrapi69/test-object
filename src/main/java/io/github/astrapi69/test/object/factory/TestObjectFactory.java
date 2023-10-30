@@ -1,8 +1,8 @@
 /**
  * The MIT License
- *
+ * <p>
  * Copyright (C) 2015 Asterios Raptis
- *
+ * <p>
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
@@ -10,10 +10,10 @@
  * distribute, sublicense, and/or sell copies of the Software, and to
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
- *
+ * <p>
  * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
- *
+ * <p>
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -26,8 +26,12 @@ package io.github.astrapi69.test.object.factory;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import io.github.astrapi69.test.object.A;
@@ -197,4 +201,45 @@ public class TestObjectFactory
 	{
 		return Television.builder().on(true).channel(1).build();
 	}
+
+	public static Map<String, Object> getAllTestObjectsInMap()
+	{
+		Map<String, Object> allTestObjects = new LinkedHashMap<>();
+		for (Object object : getAllTestObjects())
+		{
+			String name = object.getClass().getCanonicalName();
+			allTestObjects.put(name, object);
+		}
+		return allTestObjects;
+	}
+
+	public static List<Object> getAllTestObjects()
+	{
+		List<Object> allTestObjects = new ArrayList<>();
+		allTestObjects.add(newA());
+		allTestObjects.add(newAlgorithmModel());
+		allTestObjects.add(newClonableObject());
+		allTestObjects.add(newClub());
+		allTestObjects.add(newCompany());
+		allTestObjects.add(newCompanyGroup());
+		allTestObjects.add(newCustomer());
+		allTestObjects.add(newEmployee());
+		allTestObjects.add(newEmployeeList());
+		allTestObjects.add(newFactory());
+		allTestObjects.add(newLight());
+		allTestObjects.add(newMember());
+		allTestObjects.add(newNotSerializable());
+		allTestObjects.add(newPermission());
+		allTestObjects.add(newPerson());
+		allTestObjects.add(newPremiumMember());
+		allTestObjects.add(newPrimitiveArrays());
+		allTestObjects.add(newPrimitiveObjectClassArrays());
+		allTestObjects.add(newTelevision());
+		allTestObjects.add(TestAuthFactory.newAccessRight());
+		allTestObjects.add(TestAuthFactory.newRole());
+		allTestObjects.add(TestAuthFactory.newRoles());
+		allTestObjects.add(TestAuthFactory.newSignin());
+		return allTestObjects;
+	}
+
 }

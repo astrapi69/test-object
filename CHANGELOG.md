@@ -4,7 +4,11 @@
 Version 8.2-SNAPSHOT
 -------------
 
+ADDED:
 
+- new factory for test object creation from the package 'io.github.astrapi69.test.object.auth'
+- new factory method that returns a list with all test objects
+- new factory method that returns a map with all test objects with the class name as a key
 
 Version 8.1
 -------------
