@@ -35,10 +35,6 @@ public class PrimitiveObjectClassArrays
 	private Float[] floatArray;
 	private Double[] doubleArray;
 
-	public PrimitiveObjectClassArrays()
-	{
-	}
-
 	protected PrimitiveObjectClassArrays(PrimitiveObjectClassArraysBuilder<?, ?> b)
 	{
 		this.booleanArray = b.booleanArray;
