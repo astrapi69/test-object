@@ -40,13 +40,13 @@ project `build.gradle` if you want to import the core functionality of test-obje
 define version in file gradle.properties
 
 ```
-testObjectVersion=8.1
+testObjectVersion=8.2
 ```
 
 or in build.gradle ext area
 
 ```
-    testObjectVersion = "8.1"
+    testObjectVersion = "8.2"
 ```
 
 and than add the dependency to the dependencies area
@@ -69,7 +69,7 @@ Than you can add the dependency to your dependencies:
     <properties>
             ...
         <!-- TEST-OBJECT version -->
-        <test-object.version>8.1</test-object.version>
+        <test-object.version>8.2</test-object.version>
             ...
     </properties>
             ...

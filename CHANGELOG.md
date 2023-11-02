@@ -1,7 +1,7 @@
 ## Change log
 ----------------------
 
-Version 8.2-SNAPSHOT
+Version 8.2
 -------------
 
 ADDED:
@@ -9,6 +9,7 @@ ADDED:
 - new factory for test object creation from the package 'io.github.astrapi69.test.object.auth'
 - new factory method that returns a list with all test objects
 - new factory method that returns a map with all test objects with the class name as a key
+- new required version info for dependency 'org.junit.platform:junit-platform-launcher' in current version 1.10.0
 
 Version 8.1
 -------------
