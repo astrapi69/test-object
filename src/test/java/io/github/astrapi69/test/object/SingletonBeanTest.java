@@ -24,69 +24,31 @@
  */
 package io.github.astrapi69.test.object;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-
-import java.util.Date;
-
 import org.junit.jupiter.api.Test;
 import org.meanbean.test.BeanTester;
 
-import io.github.astrapi69.test.object.enumeration.Gender;
-
 /**
- * The unit test class for the class {@link PremiumMember}.
+ * The unit test class for the class {@link SingletonBean}
  */
-public class PremiumMemberTest
+class SingletonBeanTest
 {
 
 	/**
-	 * Test method for {@link PremiumMember} constructors
+	 * Test method for {@link SingletonBean#getInstance()}
 	 */
 	@Test
-	public final void testConstructors()
+	void getInstance()
 	{
-		PremiumMember model = new PremiumMember();
-		assertNotNull(model);
-		String name = "Foo";
-		String nickname = "man";
-		Gender gender = Gender.MALE;
-		String about = "";
-		Boolean married = false;
-		Date dateofbirth = new Date();
-		Date dateofMarriage = new Date();
-		String credits = "";
-		model = new PremiumMember(about, gender, married, name, nickname, dateofbirth,
-			dateofMarriage, credits);
-		assertNotNull(model);
-		model = PremiumMember.buildPremiumMember().build();
-		assertNotNull(model);
 	}
 
 	/**
-	 * Test method for {@link PremiumMember#setCredits(String)}
-	 */
-	@Test
-	public void testSetCredit()
-	{
-		String expected;
-		String actual;
-		PremiumMember model = new PremiumMember();
-		assertNotNull(model);
-		expected = "1000";
-		model.setCredits(expected);
-		actual = model.getCredits();
-		assertEquals(expected, actual);
-	}
-
-	/**
-	 * Test method for {@link PremiumMember}
+	 * Test method for {@link SingletonBean}
 	 */
 	@Test
 	public void testWithBeanTester()
 	{
 		final BeanTester beanTester = new BeanTester();
-		beanTester.testBean(PremiumMember.class);
+		beanTester.testBean(SingletonBean.class);
 	}
 
 }

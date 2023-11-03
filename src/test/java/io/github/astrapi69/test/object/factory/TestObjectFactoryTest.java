@@ -27,7 +27,10 @@ package io.github.astrapi69.test.object.factory;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+import java.util.Map;
+
 import org.junit.jupiter.api.Test;
+import org.meanbean.test.BeanTester;
 
 import io.github.astrapi69.test.object.Club;
 import io.github.astrapi69.test.object.Employee;
@@ -62,6 +65,18 @@ public class TestObjectFactoryTest
 	}
 
 	/**
+	 * Test method for {@link TestObjectFactory#getAllTestObjectsInMap()}
+	 */
+	@Test
+	public void getAllTestObjectsInMap()
+	{
+		Map<String, Object> actual;
+
+		actual = TestObjectFactory.getAllTestObjectsInMap();
+		assertNotNull(actual);
+	}
+
+	/**
 	 * Test method for {@link TestObjectFactory#newFactory()}
 	 */
 	@Test
@@ -81,5 +96,15 @@ public class TestObjectFactoryTest
 				.build())
 			.name("StarPiece").location("Greece/Katerini").build();
 		assertEquals(expected, actual);
+	}
+
+	/**
+	 * Test method for {@link TestObjectFactory}
+	 */
+	@Test
+	public void testWithBeanTester()
+	{
+		final BeanTester beanTester = new BeanTester();
+		beanTester.testBean(TestObjectFactory.class);
 	}
 }

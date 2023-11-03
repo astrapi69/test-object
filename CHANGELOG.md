@@ -4,7 +4,9 @@
 Version 8.3-SNAPSHOT
 -------------
 
+ADDED:
 
+- new singleton bean test class and added to the test object list in the class TestObjectFactory
 
 Version 8.2
 -------------

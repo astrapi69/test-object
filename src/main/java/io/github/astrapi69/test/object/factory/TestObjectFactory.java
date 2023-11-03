@@ -53,6 +53,7 @@ import io.github.astrapi69.test.object.Person;
 import io.github.astrapi69.test.object.PremiumMember;
 import io.github.astrapi69.test.object.PrimitiveArrays;
 import io.github.astrapi69.test.object.PrimitiveObjectClassArrays;
+import io.github.astrapi69.test.object.SingletonBean;
 import io.github.astrapi69.test.object.Television;
 import io.github.astrapi69.test.object.enumeration.Brand;
 import io.github.astrapi69.test.object.enumeration.Gender;
@@ -183,7 +184,7 @@ public class TestObjectFactory
 		return PrimitiveArrays.builder().booleanArray(new boolean[] { true, false, false })
 			.byteArray(new byte[] { 2, 4, 5 }).charArray(new char[] { 'a', 'c', 'd' })
 			.shortArray(new short[] { 1, 3, 6 }).intArray(new int[] { 7, 8, 0 })
-			.longArray(new long[] { 9l, 10l, 11l }).floatArray(new float[] { 12.1f, 14.3f, 15.6f })
+			.longArray(new long[] { 9L, 10L, 11L }).floatArray(new float[] { 12.1f, 14.3f, 15.6f })
 			.doubleArray(new double[] { 17.3d, 19.6d, 21.0d }).build();
 	}
 
@@ -192,9 +193,14 @@ public class TestObjectFactory
 		return PrimitiveObjectClassArrays.builder()
 			.booleanArray(new Boolean[] { true, false, false }).byteArray(new Byte[] { 2, 4, 5 })
 			.charArray(new Character[] { 'a', 'c', 'd' }).shortArray(new Short[] { 1, 3, 6 })
-			.intArray(new Integer[] { 7, 8, 0 }).longArray(new Long[] { 9l, 10l, 11l })
+			.intArray(new Integer[] { 7, 8, 0 }).longArray(new Long[] { 9L, 10L, 11L })
 			.floatArray(new Float[] { 12.1f, 14.3f, 15.6f })
 			.doubleArray(new Double[] { 17.3d, 19.6d, 21.0d }).build();
+	}
+
+	public static SingletonBean newSingletonBean()
+	{
+		return SingletonBean.getInstance();
 	}
 
 	public static Television newTelevision()
@@ -218,6 +224,7 @@ public class TestObjectFactory
 		List<Object> allTestObjects = new ArrayList<>();
 		allTestObjects.add(newA());
 		allTestObjects.add(newAlgorithmModel());
+		allTestObjects.add(newApplicationTestModel(newA()));
 		allTestObjects.add(newClonableObject());
 		allTestObjects.add(newClub());
 		allTestObjects.add(newCompany());
@@ -234,6 +241,7 @@ public class TestObjectFactory
 		allTestObjects.add(newPremiumMember());
 		allTestObjects.add(newPrimitiveArrays());
 		allTestObjects.add(newPrimitiveObjectClassArrays());
+		allTestObjects.add(newSingletonBean().setPerson(newPerson()));
 		allTestObjects.add(newTelevision());
 		allTestObjects.add(TestAuthFactory.newAccessRight());
 		allTestObjects.add(TestAuthFactory.newRole());
