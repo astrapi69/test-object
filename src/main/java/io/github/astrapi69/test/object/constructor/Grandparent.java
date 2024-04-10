@@ -22,15 +22,31 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69.test.base;
+package io.github.astrapi69.test.object.constructor;
 
-/**
- * The abstract class {@link BaseTestCase} is for unit tests.
- *
- * @author Asterios Raptis
- * @version 1.0
- */
-public abstract class BaseTestCase extends AbstractTestCase<Boolean, Boolean>
+class Grandparent
 {
+	Substitution substitution = new Substitution()
+	{
+		void print()
+		{
+			System.out.println("instance variable substitution from grandparent");
+		}
+	};
+	// Static init block
+	static
+	{
+		System.out.println("static block - grandparent");
+	}
 
+	// Instance init block
+	{
+		System.out.println("instance init block - grandparent");
+	}
+
+	// Constructor
+	public Grandparent()
+	{
+		System.out.println("constructor - grandparent");
+	}
 }

@@ -7,6 +7,16 @@ Version 8.3-SNAPSHOT
 ADDED:
 
 - new singleton bean test class and added to the test object list in the class TestObjectFactory
+- new package constructor for demonstrate the call order of static blocks and constructors of class hierarchy
+
+CHANGED:
+
+- update of gradle to new version 8.7
+- update of com.github.ben-manes.versions.gradle.plugin to new version 0.51.0
+- update of gradle-plugin dependency 'org.ajoberstar.grgit:grgit-gradle' to new version 5.2.2
+- update of gradle-plugin dependency of 'com.diffplug.spotless:spotless-plugin-gradle' in version 6.25.0
+- update of test dependency junit-juniper-api to new version 5.10.2
+- update of test dependency junit-platform-launcher to new version 1.10.2
 
 Version 8.2
 -------------

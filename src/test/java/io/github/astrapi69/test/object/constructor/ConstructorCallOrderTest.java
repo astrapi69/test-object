@@ -22,15 +22,25 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69.test.base;
+package io.github.astrapi69.test.object.constructor;
+
+import org.junit.jupiter.api.Test;
 
 /**
- * The abstract class {@link BaseTestCase} is for unit tests.
- *
- * @author Asterios Raptis
- * @version 1.0
+ * The unit test class for demonstrate the call order of the constructor from parent and child and
+ * also the static blocks
  */
-public abstract class BaseTestCase extends AbstractTestCase<Boolean, Boolean>
+public class ConstructorCallOrderTest
 {
 
+	/**
+	 * Test method for demonstrate the call order of the constructor
+	 */
+	@Test
+	public void testCallOrder()
+	{
+		System.out.println("START");
+		new Child();
+		System.out.println("END");
+	}
 }
