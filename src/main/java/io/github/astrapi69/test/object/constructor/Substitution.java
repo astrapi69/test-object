@@ -37,6 +37,7 @@ class Substitution
 	{
 		System.out.println("instance init block - Substitution");
 	}
+
 	Substitution()
 	{
 		print();

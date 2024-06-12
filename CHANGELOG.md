@@ -8,6 +8,7 @@ ADDED:
 
 - new singleton bean test class and added to the test object list in the class TestObjectFactory
 - new package constructor for demonstrate the call order of static blocks and constructors of class hierarchy
+- new libs.versions.toml file for new automatic catalog versions update
 
 CHANGED:
 
