@@ -5,10 +5,10 @@ gradle-plugin-spotless-version = "7.0.0.BETA1"
 gradle-plugin-version-catalog-update-version = "0.8.4"
 gradle-plugin-versions-version = "0.51.0"
 jobj-contract-verifier-version = "4"
-junit-jupiter-version = "5.10.2"
-junit-platform-launcher-version = "1.10.2"
+junit-jupiter-version = "5.11.0-M2"
+junit-platform-launcher-version = "1.11.0-M2"
 meanbean-version = "3.0.0-M9"
-silly-collection-version = "27"
+silly-collection-version = "27.1"
 
 [libraries]
 jobj-contract-verifier = { module = "io.github.astrapi69:jobj-contract-verifier", version.ref = "jobj-contract-verifier-version" }
