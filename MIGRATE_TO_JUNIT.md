@@ -57,6 +57,68 @@ with this one:
 import static org.junit.jupiter.api.Assertions.*;
 ```
 
+Now replace all imports from testng
+
+```java
+import org.testng.annotations.BeforeMethod;
+```
+with this one:
+```java
+import org.junit.jupiter.api.BeforeEach;
+```
+and all annotations 
+```java
+@BeforeMethod
+void setUp(){}
+```
+with this one:
+```java
+@BeforeEach
+void setUp(){}
+```
+and
+```java
+import org.testng.annotations.AfterMethod;
+```
+with this one:
+```java
+import org.junit.jupiter.api.AfterEach;
+```
+and all annotations
+```java
+@AfterMethod
+void tearDown(){}
+```
+with this one:
+```java
+@AfterEach
+void tearDown(){}
+```
+and all annotations
+```java
+@Test(enabled = false)
+void testMethod(){}
+```
+with this one:
+```java
+@Test@Disabled
+void testMethod(){}
+```
+
+and all annotations
+```java
+@Test(enabled = true)
+void testMethod(){}
+```
+with this one:
+```java
+@Test
+void testMethod(){}
+```
+
+
+
+
 # Replace testng expectedExceptions with the corresponding
 
 ```java
