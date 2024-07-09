@@ -1,5 +1,4 @@
 dependencies {
-    testImplementation libs.silly.collection
     // Note: use of bundles...
     testImplementation libs.bundles.unit.testing
     testRuntimeOnly libs.junit.platform.launcher

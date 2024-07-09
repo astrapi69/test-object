@@ -28,6 +28,7 @@ unit-testing = [
     "junit-jupiter-params",
     "meanbean",
     "mockito-core",
+    "silly-collection",
 ]
 
 [plugins]
