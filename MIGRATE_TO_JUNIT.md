@@ -33,17 +33,20 @@ test {
     useJUnitPlatform()
 }
 ```
+
+# Replace testng imports and annotations with junit-jupiter in unit tests
+
 Now replace all imports from testng
 
 ```java
 import org.testng.annotations.Test;
 ```
-with this one:
+with this one from junit-jupiter:
 ```java
 import org.junit.jupiter.api.Test;
 ```
 
-Now replace all imports from testng
+also replace all imports from testng
 
 ```java
 import static org.testng.AssertJUnit.*;
@@ -52,31 +55,31 @@ and
 ```java
 import static org.testng.Assert.*;
 ```
-with this one:
+with this one from junit-jupiter:
 ```java
 import static org.junit.jupiter.api.Assertions.*;
 ```
 
-Now replace all imports from testng
+also replace all imports from testng
 
 ```java
 import org.testng.annotations.BeforeMethod;
 ```
-with this one:
+with this one from junit-jupiter:
 ```java
 import org.junit.jupiter.api.BeforeEach;
 ```
-and all annotations 
+and all annotations from testng
 ```java
 @BeforeMethod
 void setUp(){}
 ```
-with this one:
+with this one from junit-jupiter:
 ```java
 @BeforeEach
 void setUp(){}
 ```
-and
+and replace all imports from testng
 ```java
 import org.testng.annotations.AfterMethod;
 ```
@@ -84,28 +87,31 @@ with this one:
 ```java
 import org.junit.jupiter.api.AfterEach;
 ```
-and all annotations
+and all annotations from testng
 ```java
 @AfterMethod
 void tearDown(){}
 ```
-with this one:
+with this one from junit-jupiter:
 ```java
 @AfterEach
 void tearDown(){}
 ```
-and all annotations
+
+# Replace testng enabled and disabled unit tests
+
+Replace all disabled annotations from testng
 ```java
 @Test(enabled = false)
 void testMethod(){}
 ```
-with this one:
+with this one from junit-jupiter:
 ```java
 @Test@Disabled
 void testMethod(){}
 ```
 
-and all annotations
+Replace all explicit enabled annotations from testng
 ```java
 @Test(enabled = true)
 void testMethod(){}
@@ -115,9 +121,6 @@ with this one:
 @Test
 void testMethod(){}
 ```
-
-
-
 
 # Replace testng expectedExceptions with the corresponding
 
