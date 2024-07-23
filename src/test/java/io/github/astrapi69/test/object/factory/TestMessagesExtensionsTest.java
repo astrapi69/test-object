@@ -27,7 +27,8 @@ package io.github.astrapi69.test.object.factory;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
-import org.meanbean.test.BeanTester;
+
+import io.github.astrapi69.test.MeanBeanExtensions;
 
 /**
  * The unit test class for the class {@link TestMessagesFactory}.
@@ -62,8 +63,7 @@ public class TestMessagesExtensionsTest
 	@Test
 	public void testWithBeanTester()
 	{
-		final BeanTester beanTester = new BeanTester();
-		beanTester.testBean(TestMessagesFactory.class);
+		MeanBeanExtensions.testWithBeanTester(TestMessagesFactory.class);
 	}
 
 }
