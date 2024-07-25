@@ -21,7 +21,7 @@ CHANGED:
 - update of gradle-plugin dependency 'org.ajoberstar.grgit:grgit-gradle' to new version 5.2.2
 - update of gradle-plugin dependency of 'com.diffplug.spotless:spotless-plugin-gradle' in version 7.0.0.BETA1
 - update of test dependency silly-collection to new version 27.1
-- update of test dependency jobj-contract-verifier to new version 5.1
+- update of test dependency jobj-contract-verifier to new version 5.2
 - update of test dependency junit-juniper to new version 5.11.0-M2
 - update of test dependency junit-platform-launcher to new version 1.11.0-M2
 
