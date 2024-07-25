@@ -6,7 +6,7 @@ Version 8.3-SNAPSHOT
 
 ADDED:
 
-- new extension test class MeanBeanExtensions
+- new test dependency meanbean-factory
 - new maven repository for dependency jobj-contract-verifier
 - new test dependency junit-jupiter-params in version 5.11.0-M2 for parameterized unit tests
 - new migration guide for migrate from test-ng to junit-juniper
