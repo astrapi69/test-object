@@ -5,9 +5,9 @@ gradle-plugin-spotless-version = "7.0.0.BETA1"
 gradle-plugin-version-catalog-update-version = "0.8.4"
 gradle-plugin-versions-version = "0.51.0"
 jobj-contract-verifier-version = "5.2"
-junit-jupiter-params-version = "5.11.0-M2"
-junit-jupiter-version = "5.11.0-M2"
-junit-platform-launcher-version = "1.11.0-M2"
+junit-jupiter-params-version = "5.11.0-RC1"
+junit-jupiter-version = "5.11.0-RC1"
+junit-platform-launcher-version = "1.11.0-RC1"
 meanbean-factories-version = "3"
 meanbean-version = "3.0.0-M9"
 mockito-core-version = "5.12.0"
@@ -21,6 +21,7 @@ junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher
 meanbean = { module = "com.github.meanbeanlib:meanbean", version.ref = "meanbean-version" }
 meanbean-factories = { module = "io.github.astrapi69:meanbean-factories", version.ref = "meanbean-factories-version" }
 mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockito-core-version" }
+mockito-junit-jupiter = { module = "org.mockito:mockito-junit-jupiter", version.ref = "mockito-core-version" }
 silly-collection = { module = "io.github.astrapi69:silly-collection", version.ref = "silly-collection-version" }
 
 [bundles]
@@ -31,6 +32,7 @@ unit-testing = [
     "meanbean",
     "meanbean-factories",
     "mockito-core",
+    "mockito-junit-jupiter",
     "silly-collection",
 ]
 
