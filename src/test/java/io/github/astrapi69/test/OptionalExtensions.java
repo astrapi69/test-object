@@ -71,6 +71,6 @@ public class OptionalExtensions
 	 */
 	public static <T> T getOptionalValue(final Optional<T> optionalValue, final T defaultValue)
 	{
-        return optionalValue.isPresent() ? optionalValue.get() : defaultValue;
-    }
+		return optionalValue.isPresent() ? optionalValue.get() : defaultValue;
+	}
 }
