@@ -5,9 +5,9 @@
    following:
 ```toml
 [versions]
-junit-jupiter-params-version = "5.11.0-M2"
-junit-jupiter-version = "5.11.0-M2"
-junit-platform-launcher-version = "1.11.0-M2"
+junit-jupiter-params-version = "5.11.0"
+junit-jupiter-version = "5.11.0"
+junit-platform-launcher-version = "1.11.0"
 
 [libraries]
 junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit-jupiter-version" }
