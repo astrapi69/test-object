@@ -55,6 +55,10 @@ and
 ```java
 import static org.testng.Assert.*;
 ```
+and
+```java
+import static org.testng.internal.junit.ArrayAsserts.*;
+```
 with this one from junit-jupiter:
 ```java
 import static org.junit.jupiter.api.Assertions.*;
@@ -138,7 +142,7 @@ void testMethod(){}
 public void targetReadOnly()
 {
    Assertions.assertThrows(UnsupportedOperationException.class, () -> {
-      // ...
+       
    });
 }
 ```
