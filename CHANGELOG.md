@@ -1,7 +1,7 @@
 ## Change log
 ----------------------
 
-Version 8.3-SNAPSHOT
+Version 9-SNAPSHOT
 -------------
 
 ADDED:
@@ -16,6 +16,7 @@ ADDED:
 
 CHANGED:
 
+- rename of module to new name 'io.github.astrapisixtynine.test.object'
 - update of gradle to new version 8.10
 - update of com.github.ben-manes.versions.gradle.plugin to new version 0.51.0
 - update of gradle-plugin dependency 'org.ajoberstar.grgit:grgit-gradle' to new version 5.2.2
