@@ -142,7 +142,7 @@ void testMethod(){}
 public void targetReadOnly()
 {
    Assertions.assertThrows(UnsupportedOperationException.class, () -> {
-       
+
    });
 }
 ```
