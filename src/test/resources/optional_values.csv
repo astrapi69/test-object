@@ -1,5 +1,0 @@
-optionalValue,defaultValue,expected
-test,default,test
-null,default,default
-value,default,value
-null,null,null
