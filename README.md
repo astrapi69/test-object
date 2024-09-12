@@ -78,7 +78,7 @@ test-object = { module = "io.github.astrapi69:test-object", version.ref = "test-
 then add the dependency to the dependencies area
 
 ```
-    implementation libs.test.object
+    testImplementation libs.test.object
 ```
 
 </details>
@@ -103,7 +103,7 @@ Then you can add the dependency to your dependencies:
 
 ```xml
         <!-- test-object version -->
-<test-object.version>${latestVersion}</test-object.version>
+    <test-object.version>${latestVersion}</test-object.version>
 ```
 
         ...
@@ -114,11 +114,12 @@ Then you can add the dependency to your dependencies:
 
 ```xml
             <!-- test-object DEPENDENCY -->
-<dependency>
-    <groupId>io.github.astrapi69</groupId>
-    <artifactId>test-object</artifactId>
-    <version>${test-object.version}</version>
-</dependency>
+          <dependency>
+              <groupId>io.github.astrapi69</groupId>
+              <artifactId>test-object</artifactId>
+              <version>${test-object.version}</version>
+              <scope>test</scope>
+          </dependency>
 ```
 
         ...
