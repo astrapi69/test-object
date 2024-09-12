@@ -11,7 +11,7 @@ junit-platform-launcher-version = "1.11.0"
 meanbean-factories-version = "3"
 meanbean-version = "3.0.0-M9"
 mockito-core-version = "5.13.0"
-silly-collection-version = "27.1"
+silly-collection-version = "28"
 
 [libraries]
 jobj-contract-verifier = { module = "io.github.astrapi69:jobj-contract-verifier", version.ref = "jobj-contract-verifier-version" }
