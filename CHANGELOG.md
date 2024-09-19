@@ -4,6 +4,9 @@
 Version 9.1-SNAPSHOT
 -------------
 
+ADDED:
+
+- new test dependency assertj-core
 
 Version 9
 -------------
