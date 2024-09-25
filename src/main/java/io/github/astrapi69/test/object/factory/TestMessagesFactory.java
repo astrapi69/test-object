@@ -29,6 +29,10 @@ package io.github.astrapi69.test.object.factory;
  */
 public final class TestMessagesFactory
 {
+
+	/**
+	 * Private constructor to prevent instantiation
+	 */
 	private TestMessagesFactory()
 	{
 	}
