@@ -6,7 +6,8 @@ Version 9.1-SNAPSHOT
 
 ADDED:
 
-- new test dependency assertj-core
+- new test dependency org.assertj:assertj-core in version 3.26.3
+- new test dependency nl.jqno.equalsverifier:equalsverifier in version 3.17
 
 CHANGED:
 
