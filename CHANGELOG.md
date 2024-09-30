@@ -8,6 +8,14 @@ ADDED:
 
 - new test dependency assertj-core
 
+CHANGED:
+
+- update of gradle to new version 8.10.2
+- update of test dependency mockito-core to new version 5.14.1
+- update of test dependency mockito-junit-jupiter to new version 5.14.1
+- update of test dependency junit-juniper to new version 5.11.1
+- update of test dependency junit-platform-launcher to new version 1.11.1
+
 Version 9
 -------------
 
