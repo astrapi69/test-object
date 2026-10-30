@@ -4,6 +4,12 @@
 Version 9.2-SNAPSHOT
 -------------
 
+FIXED:
+
+- the module name is `io.github.astrapisixtynine.test.object` again, as in 9. 9.1 changed it to
+  `test.object.main` by accident: it was released from a tree that branched off before the rename of 9
+  (74e3a3b). A module that requires `test.object.main` has to require the name of 9 again
+
 CHANGED:
 
 - releases go to Maven Central through the Central Portal as in the rest of the family: the
