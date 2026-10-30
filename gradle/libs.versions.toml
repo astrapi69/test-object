@@ -1,11 +1,12 @@
 [versions]
-assertj-core-version = "3.26.3"
+assertj-core-version = "3.27.7"
 equalsverifier-version = "3.17"
-gradle-plugin-grgit-version = "5.2.2"
+gradle-plugin-grgit-version = "5.3.3"
 gradle-plugin-license-version = "0.16.1"
-gradle-plugin-spotless-version = "7.0.0.BETA2"
+gradle-plugin-spotless-version = "8.10.2"
 gradle-plugin-version-catalog-update-version = "0.8.4"
 gradle-plugin-versions-version = "0.51.0"
+jackson-databind-version = "2.22.4"
 jobj-contract-verifier-version = "5.2"
 junit-jupiter-params-version = "5.11.1"
 junit-jupiter-version = "5.11.1"
@@ -13,11 +14,14 @@ junit-platform-launcher-version = "1.11.1"
 meanbean-factories-version = "3"
 meanbean-version = "3.0.0-M9"
 mockito-core-version = "5.14.1"
+plexus-utils-version = "3.6.2"
 silly-collection-version = "28"
+spring-core-version = "6.2.19"
 
 [libraries]
 assertj-core = { module = "org.assertj:assertj-core", version.ref = "assertj-core-version" }
 equalsverifier = { module = "nl.jqno.equalsverifier:equalsverifier", version.ref = "equalsverifier-version" }
+jackson-databind = { module = "com.fasterxml.jackson.core:jackson-databind", version.ref = "jackson-databind-version" }
 jobj-contract-verifier = { module = "io.github.astrapi69:jobj-contract-verifier", version.ref = "jobj-contract-verifier-version" }
 junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit-jupiter-version" }
 junit-jupiter-params = { module = "org.junit.jupiter:junit-jupiter-params", version.ref = "junit-jupiter-params-version" }
@@ -26,7 +30,9 @@ meanbean = { module = "com.github.meanbeanlib:meanbean", version.ref = "meanbean
 meanbean-factories = { module = "io.github.astrapi69:meanbean-factories", version.ref = "meanbean-factories-version" }
 mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockito-core-version" }
 mockito-junit-jupiter = { module = "org.mockito:mockito-junit-jupiter", version.ref = "mockito-core-version" }
+plexus-utils = { module = "org.codehaus.plexus:plexus-utils", version.ref = "plexus-utils-version" }
 silly-collection = { module = "io.github.astrapi69:silly-collection", version.ref = "silly-collection-version" }
+spring-core = { module = "org.springframework:spring-core", version.ref = "spring-core-version" }
 
 [bundles]
 unit-testing = [
