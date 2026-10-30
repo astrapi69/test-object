@@ -17,6 +17,11 @@ CHANGED:
   `GPG_KEY_ID` names. The OSSRH staging endpoint this project published to is shut down; its
   settings are gone, among them the switch that held the checksums to md5 and sha1, and snapshots
   resolve from the Central Portal's snapshot repository (#13)
+- test and build dependencies without known vulnerabilities (#15): assertj-core 3.27.7; spotless 8.10.2
+  and grgit 5.3.3, which bring jgit 7.7.1; the license plugin's plexus-utils 3.6.2 and spring-core 6.2.19
+  by constraint, since 0.16.1 is its last release; jackson-databind 2.22.4 for the tests by constraint,
+  until a release of jobj-contract-verifier carries randomizer 10.6. What is published does not change:
+  the artifact declares no dependency
 - update of gradle to new version 8.10.2
 - update of test dependency mockito-core to new version 5.14.1
 - update of test dependency mockito-junit-jupiter to new version 5.14.1
