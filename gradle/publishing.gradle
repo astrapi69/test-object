@@ -122,3 +122,24 @@ tasks.matching { it.name.startsWith("nmcpPublishAllPublicationsToCentralPortal")
         }
     }
 }
+
+// An upload to the Central Portal leaves only from CI: publish.yml on a RELEASE-* tag for a release, a manual
+// run of publish.yml for a snapshot. Never from a local tree: test-object 9.1 was released from a clone whose
+// commits never reached the repository (astrapi69/test-object#19, #21). Read now, not when the task runs, for the
+// configuration cache.
+def inCi = System.getenv("GITHUB_ACTIONS") == "true"
+def githubRef = System.getenv("GITHUB_REF") ?: ""
+def uploadedVersion = version.toString()
+tasks.matching { it.name.startsWith("nmcpPublish") }.configureEach {
+    doFirst {
+        if (!inCi) {
+            throw new GradleException("Uploads to the Central Portal run only in CI: a RELEASE-* tag runs "
+                + "publish.yml for a release, and a manual run of publish.yml publishes a snapshot. This is a "
+                + "local build (GITHUB_ACTIONS is not set), so ${uploadedVersion} is not uploaded.")
+        }
+        if (releaseVersion && !githubRef.startsWith("refs/tags/RELEASE-")) {
+            throw new GradleException("A release uploads only from a RELEASE-* tag. This run builds "
+                + "${githubRef ?: 'no ref'}, so ${uploadedVersion} is not uploaded.")
+        }
+    }
+}
