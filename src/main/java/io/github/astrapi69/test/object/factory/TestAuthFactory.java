@@ -37,6 +37,10 @@ import io.github.astrapi69.test.object.auth.Signin;
  */
 public final class TestAuthFactory
 {
+
+	/**
+	 * Private constructor to prevent instantiation
+	 */
 	private TestAuthFactory()
 	{
 	}

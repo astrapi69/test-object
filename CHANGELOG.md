@@ -1,22 +1,68 @@
 ## Change log
 ----------------------
 
-Version 8.3-SNAPSHOT
+Version 9.2-SNAPSHOT
+-------------
+
+CHANGED:
+
+- releases go to Maven Central through the Central Portal as in the rest of the family: the
+  `com.gradleup.nmcp` plugin uploads, the maintainer releases each deployment in the Portal, and a
+  `RELEASE-*` tag runs `publish.yml`, which signs with the signing subkey that the secret `GPG_KEY_ID`
+  names. 9.1 was uploaded from a local tree through the OSSRH staging API with a key on the maintainer's
+  machine; that path and its settings are gone (#13)
+- dependencies are raised by `versionCatalogUpdate`, which now offers stable versions only (#17): junit
+  6.1.3 (from 5.11.1), equalsverifier 4.5.2, mockito 5.24.0, meanbean-factories 3.1, silly-collection
+  28.2, the plugins spotless 8.10.4, version-catalog-update 1.1.2 and versions 0.66.0
+- test dependencies without known vulnerabilities (#15): assertj-core 3.27.7, and jackson-databind 2.22.4
+  for the tests by constraint until a release of jobj-contract-verifier carries randomizer 10.6. What is
+  published does not change: the artifact declares no dependency
+
+Version 9.1
 -------------
 
 ADDED:
 
-- new singleton bean test class and added to the test object list in the class TestObjectFactory
-- new package constructor for demonstrate the call order of static blocks and constructors of class hierarchy
+- new test dependency org.assertj:assertj-core in version 3.26.3
+- new test dependency nl.jqno.equalsverifier:equalsverifier in version 3.17
 
 CHANGED:
 
-- update of gradle to new version 8.7
+- build moved to Gradle 9.7.0 with a version catalog; spotless writes the license header, so the license
+  plugin and grgit are gone, and with them the vulnerable plexus-utils, spring-core and jgit they brought
+  onto the build's class path; a Makefile. Released from a local tree on 2026-08-24; its commits reached
+  develop afterwards, and `RELEASE-9.1` names the release commit
+- update of gradle to new version 8.10.2
+- update of test dependency mockito-core to new version 5.14.1
+- update of test dependency mockito-junit-jupiter to new version 5.14.1
+- update of test dependency junit-juniper to new version 5.11.1
+- update of test dependency junit-platform-launcher to new version 1.11.1
+
+Version 9
+-------------
+
+ADDED:
+
+- new test dependency meanbean-factory
+- new maven repository for dependency jobj-contract-verifier
+- new test dependency junit-jupiter-params in version 5.11.0 for parameterized unit tests
+- new migration guide for migrate from test-ng to junit-juniper
+- new singleton bean test class and added to the test object list in the class TestObjectFactory
+- new package constructor for demonstrate the call order of static blocks and constructors of class hierarchy
+- new libs.versions.toml file for new automatic catalog versions update
+
+CHANGED:
+
+- rename of module to new name 'io.github.astrapisixtynine.test.object'
+- update of gradle to new version 8.10.1
 - update of com.github.ben-manes.versions.gradle.plugin to new version 0.51.0
 - update of gradle-plugin dependency 'org.ajoberstar.grgit:grgit-gradle' to new version 5.2.2
-- update of gradle-plugin dependency of 'com.diffplug.spotless:spotless-plugin-gradle' in version 6.25.0
-- update of test dependency junit-juniper-api to new version 5.10.2
-- update of test dependency junit-platform-launcher to new version 1.10.2
+- update of gradle-plugin dependency of 'com.diffplug.spotless:spotless-plugin-gradle' in version 7.0.0.BETA2
+- update of test dependency silly-collection to new major version 28
+- update of test dependency jobj-contract-verifier to new version 5.2
+- update of test dependency mockito-core to new version 5.13.0
+- update of test dependency junit-juniper to new version 5.11.0
+- update of test dependency junit-platform-launcher to new version 1.11.0
 
 Version 8.2
 -------------

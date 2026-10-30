@@ -1,5 +1,10 @@
 dependencies {
     // Note: use of bundles...
     testImplementation libs.bundles.unit.testing
-    testRuntimeOnly libs.bundles.test.runtime.only
+    testRuntimeOnly libs.junit.platform.launcher
+    constraints {
+        // jobj-contract-verifier 5.2 brings jackson 2.16.0-rc1 to the tests, through randomizer 10.2 and
+        // jobj-copy 4.2; until a release of it carries randomizer 10.6, the tests take the fixed 2.22.4 (#15)
+        testImplementation(libs.jackson.databind)
+    }
 }

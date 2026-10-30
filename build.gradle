@@ -5,8 +5,9 @@ plugins {
     id 'signing'
     id 'jacoco'
     alias(libs.plugins.gradle.versions.plugin)
+    alias(libs.plugins.nmcp.gradle.plugin)
     alias(libs.plugins.spotless.plugin.gradle)
-    alias(libs.plugins.versionCatalogUpdate)
+    alias(libs.plugins.version.catalog.update)
 }
 
 group = "$groupPackage" as Object

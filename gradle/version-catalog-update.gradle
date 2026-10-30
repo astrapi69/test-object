@@ -1,0 +1,43 @@
+versionCatalogUpdate {
+    // sort the catalog by key (default is true)
+    sortByKey = true
+    // Referenced that are pinned are not automatically updated.
+    // They are also not automatically kept however (use keep for that).
+    pin {
+        // pins all libraries and plugins using the given versions
+        // versions = ["my-version-name", "other-version"]
+        // pins specific libraries that are in the version catalog
+        // libraries = [libs.my.library.reference, libs.my.other.library.reference]
+        // pins specific plugins that are in the version catalog
+        // plugins = [libs.plugins.my.plugin, libs.plugins.my.other.plugin]
+        // pins all libraries (not plugins) for the given groups
+        // groups = ["com.somegroup", "com.someothergroup"]
+    }
+    keep {
+        // keep has the same options as pin to keep specific entries
+        // note that for versions it will ONLY keep the specified version, not all
+        // entries that reference it.
+        // versions = ["my-version-name", "other-version"]
+        // libraries = [libs.my.library.reference, libs.my.other.library.reference]
+        // plugins = [libs.plugins.my.plugin, libs.plugins.my.other.plugin]
+        // groups = ["com.somegroup", "com.someothergroup"]
+
+        // keep versions without any library or plugin reference
+        keepUnusedVersions = true
+    }
+}
+
+// versionCatalogUpdate takes its candidates from dependencyUpdates, which accepts milestones and release
+// candidates: a run proposed assertj-core 4.0.0-M1 and spring-core 7.1.0-RC1, and a release candidate is
+// how jackson 2.16.0-rc1 once reached every consumer of jobj-copy. Only stable versions are offered (#17).
+def isNonStable = { String version ->
+    def stableKeyword = ["RELEASE", "FINAL", "GA"].any { version.toUpperCase().contains(it) }
+    def regex = /^[0-9,.v-]+(-r)?$/
+    return !stableKeyword && !(version ==~ regex)
+}
+
+tasks.named("dependencyUpdates").configure {
+    rejectVersionIf {
+        isNonStable(it.candidate.version) && !isNonStable(it.currentVersion)
+    }
+}
