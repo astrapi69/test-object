@@ -1,7 +1,24 @@
 ## Change log
 ----------------------
 
-Version 9.1-SNAPSHOT
+Version 9.2-SNAPSHOT
+-------------
+
+CHANGED:
+
+- releases go to Maven Central through the Central Portal as in the rest of the family: the
+  `com.gradleup.nmcp` plugin uploads, the maintainer releases each deployment in the Portal, and a
+  `RELEASE-*` tag runs `publish.yml`, which signs with the signing subkey that the secret `GPG_KEY_ID`
+  names. 9.1 was uploaded from a local tree through the OSSRH staging API with a key on the maintainer's
+  machine; that path and its settings are gone (#13)
+- dependencies are raised by `versionCatalogUpdate`, which now offers stable versions only (#17): junit
+  6.1.3 (from 5.11.1), equalsverifier 4.5.2, mockito 5.24.0, meanbean-factories 3.1, silly-collection
+  28.2, the plugins spotless 8.10.4, version-catalog-update 1.1.2 and versions 0.66.0
+- test dependencies without known vulnerabilities (#15): assertj-core 3.27.7, and jackson-databind 2.22.4
+  for the tests by constraint until a release of jobj-contract-verifier carries randomizer 10.6. What is
+  published does not change: the artifact declares no dependency
+
+Version 9.1
 -------------
 
 ADDED:
@@ -11,22 +28,10 @@ ADDED:
 
 CHANGED:
 
-- releases go to Maven Central through the Central Portal, as in the rest of the family: the
-  `com.gradleup.nmcp` plugin uploads, the maintainer releases each deployment in the Portal, and a
-  `RELEASE-*` tag runs the new `publish.yml`, which signs with the signing subkey that the secret
-  `GPG_KEY_ID` names. The OSSRH staging endpoint this project published to is shut down; its
-  settings are gone, among them the switch that held the checksums to md5 and sha1, and snapshots
-  resolve from the Central Portal's snapshot repository (#13)
-- dependencies are raised by `versionCatalogUpdate`, which now offers stable versions only (#17); this
-  run: junit 6.1.3 (from 5.11.1), equalsverifier 4.5.2, mockito 5.24.0, meanbean-factories 3.1,
-  silly-collection 28.2, plexus-utils 4.1.0 for the license plugin, the plugins spotless 8.10.4,
-  version-catalog-update 1.1.2 and versions 0.66.0. spring-core stays pinned to 6.2, the last line the
-  license plugin runs with. What is published does not change: the artifact declares no dependency
-- test and build dependencies without known vulnerabilities (#15): assertj-core 3.27.7; spotless 8.10.2
-  and grgit 5.3.3, which bring jgit 7.7.1; the license plugin's plexus-utils 3.6.2 and spring-core 6.2.19
-  by constraint, since 0.16.1 is its last release; jackson-databind 2.22.4 for the tests by constraint,
-  until a release of jobj-contract-verifier carries randomizer 10.6. What is published does not change:
-  the artifact declares no dependency
+- build moved to Gradle 9.7.0 with a version catalog; spotless writes the license header, so the license
+  plugin and grgit are gone, and with them the vulnerable plexus-utils, spring-core and jgit they brought
+  onto the build's class path; a Makefile. Released from a local tree on 2026-08-24; its commits reached
+  develop afterwards, and `RELEASE-9.1` names the release commit
 - update of gradle to new version 8.10.2
 - update of test dependency mockito-core to new version 5.14.1
 - update of test dependency mockito-junit-jupiter to new version 5.14.1

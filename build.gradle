@@ -1,28 +1,10 @@
-buildscript {
-    repositories {
-        maven {
-            url projectRepositoriesMavenUrl
-        }
-    }
-    dependencies {
-        constraints {
-            // the license plugin 0.16.1 is the last release and still brings plexus-utils 2.0.6 and
-            // spring-core 3.1.3, both with known vulnerabilities, onto the build's class path (#15)
-            classpath(libs.plexus.utils)
-            classpath(libs.spring.core)
-        }
-    }
-}
-
 plugins {
-    id 'jacoco'
     id 'java'
     id 'java-library'
     id 'maven-publish'
     id 'signing'
+    id 'jacoco'
     alias(libs.plugins.gradle.versions.plugin)
-    alias(libs.plugins.grgit.gradle)
-    alias(libs.plugins.license.gradle.plugin)
     alias(libs.plugins.nmcp.gradle.plugin)
     alias(libs.plugins.spotless.plugin.gradle)
     alias(libs.plugins.version.catalog.update)
@@ -40,10 +22,6 @@ java {
     toolchain {
         languageVersion = JavaLanguageVersion.of("$projectSourceCompatibility")
     }
-}
-
-tasks.named("test") {
-    it.mustRunAfter(tasks.named("jar"))
 }
 
 tasks.withType(JavaCompile).configureEach { javaCompiler ->
