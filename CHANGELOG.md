@@ -11,6 +11,11 @@ ADDED:
 
 CHANGED:
 
+- dependencies are raised by `versionCatalogUpdate`, which now offers stable versions only (#17); this
+  run: junit 6.1.3 (from 5.11.1), equalsverifier 4.5.2, mockito 5.24.0, meanbean-factories 3.1,
+  silly-collection 28.2, plexus-utils 4.1.0 for the license plugin, the plugins spotless 8.10.4,
+  version-catalog-update 1.1.2 and versions 0.66.0. spring-core stays pinned to 6.2, the last line the
+  license plugin runs with. What is published does not change: the artifact declares no dependency
 - test and build dependencies without known vulnerabilities (#15): assertj-core 3.27.7; spotless 8.10.2
   and grgit 5.3.3, which bring jgit 7.7.1; the license plugin's plexus-utils 3.6.2 and spring-core 6.2.19
   by constraint, since 0.16.1 is its last release; jackson-databind 2.22.4 for the tests by constraint,
