@@ -127,10 +127,12 @@ tasks.matching { it.name.startsWith("nmcpPublishAllPublicationsToCentralPortal")
 // run of publish.yml for a snapshot. Never from a local tree: test-object 9.1 was released from a clone whose
 // commits never reached the repository (astrapi69/test-object#19, #21). Read now, not when the task runs, for the
 // configuration cache.
+// The match is the tasks that send to the Central Portal, releases and snapshots; the
+// nmcpPublish...ToMavenLocal task of the same plugin writes to the local repository and stays allowed.
 def inCi = System.getenv("GITHUB_ACTIONS") == "true"
 def githubRef = System.getenv("GITHUB_REF") ?: ""
 def uploadedVersion = version.toString()
-tasks.matching { it.name.startsWith("nmcpPublish") }.configureEach {
+tasks.matching { it.name.startsWith("nmcpPublish") && it.name.contains("ToCentralPortal") }.configureEach {
     doFirst {
         if (!inCi) {
             throw new GradleException("Uploads to the Central Portal run only in CI: a RELEASE-* tag runs "
